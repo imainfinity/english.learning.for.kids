@@ -52,10 +52,10 @@
       <div class="panel">
         <h2>1. AI生成条件</h2>
         <div class="row"><select id="qType" class="inp"><option value="riddle">Riddle</option><option value="listening">Listening</option><option value="sentence">Sentence</option></select><select id="qLevel" class="inp"><option value="very_hard">very_hard</option><option value="expert">expert</option><option value="hard">hard</option><option value="normal">normal</option><option value="easy">easy</option></select><select id="qCategory" class="inp"><option value="animals">animals</option><option value="food">food</option><option value="nature">nature</option><option value="colors">colors</option><option value="body">body</option></select></div>
-        <div class="row"><input id="qCount" class="inp" type="number" min="1" max="50" value="10" placeholder="問題数"><input id="targetWords" class="inp" placeholder="対象単語 comma区切り 例: alligator,penguin,elephant"></div>
+        <div class="row"><input id="qCount" class="inp" type="number" min="10" max="50" value="10" placeholder="問題数（最低10）"><input id="targetWords" class="inp" placeholder="対象単語 comma区切り 例: alligator,penguin,elephant"></div>
         <div class="row"><button class="btn sky" id="makePrompt">AIプロンプト作成</button><button class="btn" id="copyPrompt">コピー</button><button class="btn" id="loadData">vocab/questions読込</button></div>
         <textarea id="promptBox" placeholder="ここにAI生成用プロンプトが出ます"></textarea>
-        <div class="small">このプロンプトをChatGPT等の開発AIへ渡して、返ってきたJSONを右の欄に貼ります。</div>
+        <div class="small">このプロンプトをChatGPT等の開発AIへ渡して、返ってきたJSONを右の欄に貼ります。最低10問、同じ答えばかりにならないよう、vocabから候補単語を広めに入れます。</div>
       </div>
       <div class="panel">
         <h2>2. AI生成JSONを貼り付け</h2>
@@ -114,8 +114,53 @@ function getQuestionsArray(data){if(Array.isArray(data))return data;if(data&&Arr
 function wrapQuestions(arr){return {version:1,updatedAt:new Date().toISOString(),questions:arr}}
 function upsertQuestions(base,add){var out=base.slice(),map={};out.forEach(function(q,i){if(q&&q.id)map[q.id]=i});add.forEach(function(q){if(!q||!q.id)return;if(map[q.id]!=null)out[map[q.id]]=q;else{map[q.id]=out.length;out.push(q)}});return out}
 async function loadData(){try{saveSettings();var v=await readJson("vocab.json",[]);vocab=getVocabArray(v);renderVocab();releaseQuestions=getQuestionsArray(await readJson("questions.json",{questions:[]}));devQuestions=getQuestionsArray(await readJson("questions_dev.json",{questions:[]}));qMsg("読込完了：vocab "+vocab.length+" / release "+releaseQuestions.length+" / dev "+devQuestions.length,false)}catch(e){qMsg("読込失敗: "+e.message,true)}}
-function defaultWords(){var cat=$("qCategory").value;var words=vocab.filter(function(x){return !cat||x.c===cat}).map(function(x){return x.w}).filter(Boolean);return words.slice(0,20).join(", ")}
-function makePrompt(){var type=$("qType").value,level=$("qLevel").value,cat=$("qCategory").value,count=$("qCount").value||10,words=$("targetWords").value.trim()||defaultWords()||"alligator, penguin, elephant, banana, tree";var p=[];p.push("Create English learning questions for children as VALID JSON only. No markdown, no comments.");p.push("Output schema: an array of objects.");p.push("Required fields: id, type, level, category, active, answerId, choices.");p.push("For riddle: use promptEn and hintJp. For listening: use storyEn, questionEn, hintJp. For sentence: use sentence, hintJp, answerId, choices.");p.push("Japanese must appear only in hintJp, never inside promptEn/storyEn/questionEn/sentence.");p.push("choices must contain answerId and 3 wrong choices. Use lowercase answer IDs.");p.push("level must be exactly: "+level+". type must be exactly: "+type+". category must be exactly: "+cat+".");p.push("Make "+count+" questions. Target words: "+words+".");p.push("Very hard/expert should require inference, features, comparison, or short reading comprehension. Do not make questions too obvious.");p.push("Example id format: "+type+"_alligator_"+level+"_001");$("promptBox").value=p.join("\n")}
+function uniqueList(arr){var seen={},out=[];(arr||[]).forEach(function(x){x=slug(x);if(x&&!seen[x]){seen[x]=1;out.push(x)}});return out}
+function defaultWords(){
+  var cat=$("qCategory").value;
+  var inCat=vocab.filter(function(x){return !cat||x.c===cat}).map(function(x){return x.w}).filter(Boolean);
+  var all=vocab.map(function(x){return x.w}).filter(Boolean);
+  var merged=uniqueList(inCat.concat(all));
+  return merged.slice(0,40).join(", ");
+}
+function promptWords(){
+  var manual=uniqueList(($("targetWords").value||"").split(/[,\n]/));
+  var auto=uniqueList(defaultWords().split(/[,\n]/));
+  var merged=uniqueList(manual.concat(auto));
+  if(merged.length<10){merged=uniqueList(merged.concat(["alligator","penguin","elephant","rabbit","bear","lion","fish","bird","cat","dog","turtle","snake","frog","monkey","giraffe"]));}
+  return merged.slice(0,40);
+}
+function makePrompt(){
+  var type=$("qType").value;
+  var level=$("qLevel").value;
+  var cat=$("qCategory").value;
+  var count=Math.max(10,parseInt($("qCount").value,10)||10);
+  $("qCount").value=count;
+  var wordsArr=promptWords();
+  var words=wordsArr.join(", ");
+  var minDistinct=Math.min(count, Math.max(8, Math.min(wordsArr.length, count)));
+  var p=[];
+  p.push("Create English learning questions for children as VALID JSON only. No markdown, no comments.");
+  p.push("Output schema: an array of objects.");
+  p.push("Required fields: id, type, level, category, active, answerId, choices.");
+  p.push("For riddle: use promptEn and hintJp.");
+  p.push("For listening: use storyEn, questionEn, hintJp.");
+  p.push("For sentence: use sentence, hintJp, answerId, choices.");
+  p.push("Japanese must appear only in hintJp, never inside promptEn/storyEn/questionEn/sentence.");
+  p.push("choices must contain answerId and exactly 3 wrong choices. Use lowercase answer IDs.");
+  p.push("level must be exactly: "+level+". type must be exactly: "+type+". category must be exactly: "+cat+".");
+  p.push("Make exactly "+count+" questions. Never make fewer than "+count+" questions.");
+  p.push("Use a wide variety of answerId values. Use at least "+minDistinct+" different answerId values across the "+count+" questions.");
+  p.push("Do not use the same answerId more than 2 times.");
+  p.push("Target vocabulary pool: "+words+".");
+  p.push("Do not simply rephrase the same question. Each question must test a different clue pattern, feature, comparison, action, habitat, material, color, size, sound, behavior, or short reading inference.");
+  p.push("Very hard/expert should require inference, features, comparison, elimination, or short reading comprehension. Do not make questions too obvious.");
+  p.push("For riddle: promptEn should be 2-5 English sentences and must not include the answer word.");
+  p.push("For listening: storyEn should be 2-4 English sentences, then questionEn should ask an inference or detail question.");
+  p.push("For sentence: sentence should be a complete English sentence using the answerId, and choices should be word/phrase candidates or answer IDs depending on the pattern.");
+  p.push("Wrong choices should be plausible but clearly wrong after reading carefully. Avoid random unrelated choices.");
+  p.push("Example id format: "+type+"_alligator_"+level+"_001");
+  $("promptBox").value=p.join("\n");
+}
 function parseAi(){var raw=$("aiJson").value.trim();if(!raw)throw new Error("AI JSON貼付欄が空です");var data=JSON.parse(raw);return getQuestionsArray(data).length?getQuestionsArray(data):data}
 var levels={easy:1,normal:1,hard:1,very_hard:1,expert:1},types={riddle:1,listening:1,listen:1,sentence:1,sent:1};
 function validateOne(q,i){var errs=[];if(!q||typeof q!=="object")return ["#"+(i+1)+" objectではありません"];q.type=String(q.type||"").toLowerCase()==="listen"?"listening":(String(q.type||"").toLowerCase()==="sent"?"sentence":String(q.type||"").toLowerCase());if(!q.id)errs.push("id必須");if(!types[q.type])errs.push("type不正");if(!levels[q.level])errs.push("level不正");if(!q.category)errs.push("category必須");if(q.active==null)q.active=true;if(!q.answerId)errs.push("answerId必須");if(q.type==="riddle"&&!q.promptEn)errs.push("riddleはpromptEn必須");if(q.type==="listening"&&(!q.storyEn||!q.questionEn))errs.push("listeningはstoryEn/questionEn必須");if(q.type==="sentence"&&!q.sentence)errs.push("sentence必須");if(!q.hintJp)errs.push("hintJp必須");if(!Array.isArray(q.choices)||q.choices.length<4)errs.push("choicesは4個以上");if(Array.isArray(q.choices)&&q.answerId&&!q.choices.map(norm).includes(norm(q.answerId)))errs.push("choicesにanswerIdがありません");var en=(q.promptEn||"")+" "+(q.storyEn||"")+" "+(q.questionEn||"")+" "+(q.sentence||"");if(/[ぁ-んァ-ヶ一-龠]/.test(en))errs.push("英語欄に日本語が混入しています");return errs.map(function(e){return (q.id||("#"+(i+1)))+": "+e})}

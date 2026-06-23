@@ -463,6 +463,7 @@ var sessionImgs={};     // アップロードプレビュー: path -> dataURL
 var VOCAB_URL="vocab.json";
 var QUESTIONS_URL="questions.json";
 var QUESTIONS=[];        // questions.jsonから読み込む設問マスター
+var MIN_QUESTION_COUNT=10; // Riddle / Listening は最低10問で出題
 var lsHintShown=false, rdHintShown=false;
 
 /* ===================== HELPERS ===================== */
@@ -514,15 +515,47 @@ function makeChoice(id){
 }
 function qLevel(q){return normKey(q.level||"normal");}
 function qCat(q){return normKey(q.category||q.c||"all");}
-function questionPool(type){
+function qType(q){var t=normKey(q.type); if(t==="listen")return "listening"; if(t==="sent")return "sentence"; return t;}
+function qId(q){return normKey(q.id||((q.type||"")+"_"+(q.level||"")+"_"+(q.category||"")+"_"+(q.answerId||q.answer||"")+"_"+(q.promptEn||q.storyEn||q.sentence||"")));}
+function addUniqueQuestions(out,arr){
+  var seen={};
+  out.forEach(function(q){seen[qId(q)]=true;});
+  arr.forEach(function(q){var id=qId(q);if(!seen[id]){seen[id]=true;out.push(q);}});
+  return out;
+}
+function filterQuestions(type,levelMode,catMode){
   var t=normKey(type);
   return QUESTIONS.filter(function(q){
     if(!q||q.active===false)return false;
-    if(normKey(q.type)!==t)return false;
-    if(qLevel(q)!==normKey(difficulty))return false;
-    if(activeCat!=="all"&&qCat(q)!==normKey(activeCat))return false;
+    if(qType(q)!==t)return false;
+    if(levelMode==="current"&&qLevel(q)!==normKey(difficulty))return false;
+    if(catMode==="current"&&activeCat!=="all"&&qCat(q)!==normKey(activeCat))return false;
     return true;
   });
+}
+function questionPool(type){
+  // まず「選択中の難易度＋テーマ」で出す。少なすぎる場合は同タイプから補完して最低10問に近づける。
+  var out=[];
+  addUniqueQuestions(out,filterQuestions(type,"current","current"));
+  if(out.length<MIN_QUESTION_COUNT)addUniqueQuestions(out,filterQuestions(type,"current","all"));
+  if(out.length<MIN_QUESTION_COUNT)addUniqueQuestions(out,filterQuestions(type,"all","current"));
+  if(out.length<MIN_QUESTION_COUNT)addUniqueQuestions(out,filterQuestions(type,"all","all"));
+  return out;
+}
+function ensureMinQuestions(arr,fallback){
+  var out=(arr||[]).slice();
+  var fb=(fallback||[]).slice();
+  addUniqueQuestions(out,fb);
+  if(out.length===0)return out;
+  var base=out.slice();
+  var i=0;
+  while(out.length<MIN_QUESTION_COUNT){
+    var copy=assign({},base[i%base.length]);
+    copy._repeat=true;
+    out.push(copy);
+    i++;
+  }
+  return out;
 }
 function extRiddle(q){
   var ans=makeChoice(q.answerId||q.answer||q.ans);
@@ -656,7 +689,7 @@ function builtInStories(){return STORIES.slice();}
 function startListen(){
   var ext=questionPool("listening").map(extListen);
   // questions.jsonに該当難易度があるときは外部設問を優先。なければ従来問題で動作維持。
-  lsDeck=shuffle(ext.length?ext:builtInStories());
+  lsDeck=shuffle(ensureMinQuestions(ext,builtInStories()));
   lIdx=0;show("listen");renderListen();
 }
 function currentStoryText(){var s=lsDeck[lIdx];return DIFF[difficulty].storyTwoLines?(s.s1+(s.s2?(" "+s.s2):"")):s.s1;}
@@ -694,7 +727,7 @@ var rdDeck=[], rIdx=0, rdAnswered=false;
 function builtInRiddles(){return RIDDLES.slice();}
 function startRiddle(){
   var ext=questionPool("riddle").map(extRiddle);
-  rdDeck=shuffle(ext.length?ext:builtInRiddles());
+  rdDeck=shuffle(ensureMinQuestions(ext,builtInRiddles()));
   rIdx=0;show("riddle");renderRiddle();
 }
 function updateRiddleHint(){

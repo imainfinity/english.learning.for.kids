@@ -1,369 +1,335 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-23T12:47:17.148Z",
+  "updatedAt": "2026-06-23T12:54:02.098876Z",
   "questions": [
     {
-      "id": "riddle_alligator_vh_001",
+      "id": "riddle_alligator_very_hard_001",
       "type": "riddle",
       "level": "very_hard",
       "category": "animals",
       "active": true,
-      "promptEn": "I am a large reptile. I live near rivers and swamps. My body is covered with scales. I have sharp teeth and a powerful tail. I look like a crocodile, but my snout is wider and rounder. What am I?",
-      "hintJp": "大きな はちゅうるい。川や沼の近くにすむ。クロコダイルに似ているけど、口先が広く丸い。",
       "answerId": "alligator",
-      "choices": [
-        "alligator",
-        "crocodile",
-        "lizard",
-        "turtle"
-      ]
-    },
-    {
-      "id": "riddle_penguin_vh_001",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "animals",
-      "active": true,
-      "promptEn": "I am a bird, but I do not fly. I swim very well and live in cold places. My body is black and white. What am I?",
-      "hintJp": "鳥だけど飛ばない。泳ぐのが上手。寒いところにすむ。",
-      "answerId": "penguin",
-      "choices": [
-        "penguin",
-        "bird",
-        "fish",
-        "rabbit"
-      ]
-    },
-    {
-      "id": "riddle_elephant_vh_001",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "animals",
-      "active": true,
-      "promptEn": "I am the largest animal on land. I have big ears, thick legs, and a long trunk that I use like a hand. What am I?",
-      "hintJp": "陸の上でいちばん大きな動物。長い鼻を手のように使う。",
-      "answerId": "elephant",
-      "choices": [
-        "elephant",
-        "lion",
-        "bear",
-        "rabbit"
-      ]
-    },
-    {
-      "id": "riddle_banana_vh_001",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "food",
-      "active": true,
-      "promptEn": "I am long and curved. I grow in a bunch with many others. I am green before I am ready, and yellow when you usually eat me. What am I?",
-      "hintJp": "細長くて曲がっている。何本もくっついて育つ。緑から黄色になる。",
-      "answerId": "banana",
-      "choices": [
-        "banana",
-        "orange",
-        "bread",
-        "egg"
-      ]
-    },
-    {
-      "id": "riddle_strawberry_vh_001",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "food",
-      "active": true,
-      "promptEn": "I am small, red, and sweet. My seeds are on the outside, not hidden inside. People often eat me with cake or cream. What am I?",
-      "hintJp": "小さくて赤くて甘い。種が外側についている。ケーキにもよく使う。",
-      "answerId": "strawberry",
-      "choices": [
-        "strawberry",
-        "apple",
-        "grape",
-        "cake"
-      ]
-    },
-    {
-      "id": "riddle_train_vh_001",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "nature",
-      "active": true,
-      "promptEn": "I carry many people at once. I move on rails, stop at stations, and I am usually longer than a car. What am I?",
-      "hintJp": "たくさんの人を運ぶ。線路の上を走る。駅に止まる。",
-      "answerId": "train",
-      "choices": [
-        "train",
-        "car",
-        "house",
-        "cloud"
-      ]
-    },
-    {
-      "id": "riddle_moon_vh_001",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "nature",
-      "active": true,
-      "promptEn": "You see me in the sky at night. I do not make my own light, but I look bright because sunlight shines on me. What am I?",
-      "hintJp": "夜の空に見える。自分で光っているのではなく、太陽の光で明るく見える。",
-      "answerId": "moon",
-      "choices": [
-        "moon",
-        "sun",
-        "star",
-        "cloud"
-      ]
-    },
-    {
-      "id": "riddle_flower_vh_001",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "nature",
-      "active": true,
-      "promptEn": "I grow from a plant. I can be many colors and often smell nice. Bees visit me to collect nectar. What am I?",
-      "hintJp": "植物から咲く。いろいろな色がある。ミツバチが蜜を集めにくる。",
-      "answerId": "flower",
-      "choices": [
-        "flower",
-        "tree",
-        "rain",
-        "cloud"
-      ]
-    },
-    {
-      "id": "listen_alligator_ex_001",
-      "type": "listening",
-      "level": "expert",
-      "category": "animals",
-      "active": true,
-      "storyEn": "Some reptiles live both on land and near water. An alligator has a wide, rounded snout, strong jaws, and a powerful tail. It is often confused with a crocodile, but they are not exactly the same.",
-      "questionEn": "Which animal has a wide, rounded snout and strong jaws?",
-      "hintJp": "水辺にすむ はちゅうるい。口先が広く丸く、あごが強い。",
-      "answerId": "alligator",
+      "promptEn": "I am a large reptile. I live near rivers and swamps. My body has scales. I have a wide snout and strong jaws. What am I?",
+      "hintJp": "大きな はちゅうるい。川や沼の近くにすみ、口先が広い。",
       "choices": [
         "alligator",
         "penguin",
         "rabbit",
-        "bird"
+        "lion"
       ]
     },
     {
-      "id": "listen_penguin_ex_001",
-      "type": "listening",
-      "level": "expert",
+      "id": "riddle_penguin_very_hard_002",
+      "type": "riddle",
+      "level": "very_hard",
       "category": "animals",
       "active": true,
-      "storyEn": "This animal is a bird, but it cannot fly through the air. Instead, it uses its wings like flippers and swims under the water to catch food.",
-      "questionEn": "Which animal uses its wings like flippers?",
-      "hintJp": "鳥だけど空を飛ばず、翼をひれのように使って泳ぐ。",
       "answerId": "penguin",
+      "promptEn": "I am a bird, but I do not fly. I swim very well and live in cold places. I have black and white feathers. What am I?",
+      "hintJp": "鳥だけど飛ばない。泳ぎが得意で、黒と白の羽がある。",
+      "choices": [
+        "penguin",
+        "fish",
+        "elephant",
+        "cat"
+      ]
+    },
+    {
+      "id": "riddle_elephant_very_hard_003",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "answerId": "elephant",
+      "promptEn": "I am the largest land animal. I have big ears and a long trunk. I can use my nose like a hand. What am I?",
+      "hintJp": "陸の上でとても大きい動物。大きな耳と長い鼻がある。",
+      "choices": [
+        "elephant",
+        "rabbit",
+        "bird",
+        "fish"
+      ]
+    },
+    {
+      "id": "riddle_rabbit_very_hard_004",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "answerId": "rabbit",
+      "promptEn": "I am small and soft. I have long ears and strong back legs. I often hop instead of walk. What am I?",
+      "hintJp": "小さくてやわらかい。長い耳があり、ぴょんぴょん跳ねる。",
+      "choices": [
+        "rabbit",
+        "alligator",
+        "penguin",
+        "bear"
+      ]
+    },
+    {
+      "id": "riddle_lion_very_hard_005",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "answerId": "lion",
+      "promptEn": "I am a big cat. I have a loud roar. A male has a mane around his face. What am I?",
+      "hintJp": "大きなネコの仲間。大きな声でほえ、たてがみがある。",
+      "choices": [
+        "lion",
+        "rabbit",
+        "fish",
+        "penguin"
+      ]
+    },
+    {
+      "id": "riddle_fish_very_hard_006",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "answerId": "fish",
+      "promptEn": "I live in water all the time. I breathe with gills. I use fins to move. What am I?",
+      "hintJp": "水の中にすみ、えらで息をして、ひれで動く。",
+      "choices": [
+        "fish",
+        "bird",
+        "cat",
+        "elephant"
+      ]
+    },
+    {
+      "id": "riddle_bird_very_hard_007",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "answerId": "bird",
+      "promptEn": "I have feathers and wings. Many of my kind can fly. I may build a nest in a tree. What am I?",
+      "hintJp": "羽と翼があり、多くは飛べる。木に巣を作ることがある。",
+      "choices": [
+        "bird",
+        "fish",
+        "alligator",
+        "rabbit"
+      ]
+    },
+    {
+      "id": "riddle_bear_very_hard_008",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "answerId": "bear",
+      "promptEn": "I am large and strong. I have thick fur. Some of my kind sleep through much of winter. What am I?",
+      "hintJp": "大きくて強く、厚い毛がある。冬に長く眠る仲間もいる。",
+      "choices": [
+        "bear",
+        "cat",
+        "bird",
+        "fish"
+      ]
+    },
+    {
+      "id": "riddle_cat_very_hard_009",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "answerId": "cat",
+      "promptEn": "I am a small pet. I can climb and I often say meow. I may chase a toy mouse. What am I?",
+      "hintJp": "小さなペット。登るのが得意で、ニャーと鳴く。",
+      "choices": [
+        "cat",
+        "dog",
+        "fish",
+        "elephant"
+      ]
+    },
+    {
+      "id": "riddle_dog_very_hard_010",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "answerId": "dog",
+      "promptEn": "I am a friendly pet. I may bark when someone comes to the door. People often take me for walks. What am I?",
+      "hintJp": "人となかよくするペット。ワンと鳴き、散歩に行くことが多い。",
+      "choices": [
+        "dog",
+        "cat",
+        "penguin",
+        "alligator"
+      ]
+    },
+    {
+      "id": "listening_alligator_very_hard_001",
+      "type": "listening",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "answerId": "alligator",
+      "storyEn": "A child sees an animal resting near the water. It has short legs, scales, and a powerful tail. Its mouth is wide and full of sharp teeth.",
+      "questionEn": "Which animal is resting near the water?",
+      "hintJp": "水辺にいて、短い足、うろこ、強い尾、広い口を持つ動物。",
+      "choices": [
+        "alligator",
+        "rabbit",
+        "bird",
+        "penguin"
+      ]
+    },
+    {
+      "id": "listening_penguin_very_hard_002",
+      "type": "listening",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "answerId": "penguin",
+      "storyEn": "The animal cannot fly, even though it is a bird. It slides on ice and swims quickly in the sea. Its body is black and white.",
+      "questionEn": "Which bird is described?",
+      "hintJp": "鳥だけど飛ばず、氷の上をすべり、海で泳ぐ。",
       "choices": [
         "penguin",
         "bird",
+        "cat",
+        "lion"
+      ]
+    },
+    {
+      "id": "listening_elephant_very_hard_003",
+      "type": "listening",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "answerId": "elephant",
+      "storyEn": "The animal walks slowly across the grassland. It uses a long trunk to pick up food and water. Its ears are very large.",
+      "questionEn": "Which animal uses a trunk?",
+      "hintJp": "長い鼻で食べ物や水を取る、大きな耳の動物。",
+      "choices": [
+        "elephant",
+        "bear",
+        "dog",
+        "fish"
+      ]
+    },
+    {
+      "id": "listening_rabbit_very_hard_004",
+      "type": "listening",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "answerId": "rabbit",
+      "storyEn": "The animal hears a sound and quickly hops away. Its ears are long, and its body is small and soft.",
+      "questionEn": "Which animal hops away?",
+      "hintJp": "長い耳があり、音を聞いて跳ねて逃げる小さな動物。",
+      "choices": [
+        "rabbit",
+        "alligator",
+        "elephant",
+        "penguin"
+      ]
+    },
+    {
+      "id": "listening_lion_very_hard_005",
+      "type": "listening",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "answerId": "lion",
+      "storyEn": "The animal stands in the sun and gives a loud roar. Other animals move away because it is a strong hunter.",
+      "questionEn": "Which animal roars loudly?",
+      "hintJp": "大きくほえ、強いハンターである動物。",
+      "choices": [
+        "lion",
+        "fish",
+        "rabbit",
+        "cat"
+      ]
+    },
+    {
+      "id": "listening_fish_very_hard_006",
+      "type": "listening",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "answerId": "fish",
+      "storyEn": "The animal does not walk on land. It moves with fins and lives under the water.",
+      "questionEn": "Which animal lives under the water?",
+      "hintJp": "陸を歩かず、水中でひれを使って動く。",
+      "choices": [
+        "fish",
+        "bird",
+        "dog",
+        "bear"
+      ]
+    },
+    {
+      "id": "listening_bird_very_hard_007",
+      "type": "listening",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "answerId": "bird",
+      "storyEn": "The animal sits on a branch. It has feathers, a beak, and wings. Soon it flies to another tree.",
+      "questionEn": "Which animal flies to another tree?",
+      "hintJp": "枝にとまり、羽・くちばし・翼があり、別の木へ飛ぶ。",
+      "choices": [
+        "bird",
+        "fish",
+        "alligator",
+        "rabbit"
+      ]
+    },
+    {
+      "id": "listening_bear_very_hard_008",
+      "type": "listening",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "answerId": "bear",
+      "storyEn": "The animal is heavy and covered with thick fur. It walks through the forest looking for food before winter.",
+      "questionEn": "Which animal has thick fur and looks for food before winter?",
+      "hintJp": "厚い毛があり、冬の前に森で食べ物を探す。",
+      "choices": [
+        "bear",
+        "penguin",
         "fish",
         "cat"
       ]
     },
     {
-      "id": "listen_tree_ex_001",
+      "id": "listening_cat_very_hard_009",
       "type": "listening",
-      "level": "expert",
-      "category": "nature",
-      "active": true,
-      "storyEn": "This living thing has roots under the ground, a trunk above the ground, and branches with leaves. It can give shade on a sunny day.",
-      "questionEn": "What has roots, a trunk, branches, and leaves?",
-      "hintJp": "根、幹、枝、葉がある。晴れの日に影を作る。",
-      "answerId": "tree",
-      "choices": [
-        "tree",
-        "flower",
-        "cloud",
-        "house"
-      ]
-    },
-    {
-      "id": "listen_moon_ex_001",
-      "type": "listening",
-      "level": "expert",
-      "category": "nature",
-      "active": true,
-      "storyEn": "At night, this object can look round, half, or very thin. It is not a star, and it moves around Earth.",
-      "questionEn": "What moves around Earth and changes shape in the night sky?",
-      "hintJp": "地球の周りを回る。夜空で丸く見えたり細く見えたりする。",
-      "answerId": "moon",
-      "choices": [
-        "moon",
-        "sun",
-        "star",
-        "cloud"
-      ]
-    },
-    {
-      "id": "listen_hand_ex_001",
-      "type": "listening",
-      "level": "expert",
-      "category": "body",
-      "active": true,
-      "storyEn": "You use this part of your body to hold a pencil, wave hello, clap, and touch things. It has fingers.",
-      "questionEn": "Which body part has fingers?",
-      "hintJp": "鉛筆を持つ、手を振る、拍手する時に使う。指がある。",
-      "answerId": "hand",
-      "choices": [
-        "hand",
-        "foot",
-        "ear",
-        "eye"
-      ]
-    },
-    {
-      "id": "listen_eye_ex_001",
-      "type": "listening",
-      "level": "expert",
-      "category": "body",
-      "active": true,
-      "storyEn": "This body part helps you see colors, shapes, letters, and faces. You have two of them on your face.",
-      "questionEn": "Which body part helps you see?",
-      "hintJp": "色、形、文字、人の顔を見るために使う。顔に二つある。",
-      "answerId": "eye",
-      "choices": [
-        "eye",
-        "ear",
-        "nose",
-        "mouth"
-      ]
-    },
-    {
-      "id": "listen_car_vh_001",
-      "type": "listening",
-      "level": "very_hard",
-      "category": "nature",
-      "active": true,
-      "storyEn": "This vehicle usually has four wheels. People use it to travel on roads. It is smaller than a train and does not need rails.",
-      "questionEn": "Which vehicle travels on roads and does not need rails?",
-      "hintJp": "道路を走る乗り物。ふつう4つのタイヤがある。線路はいらない。",
-      "answerId": "car",
-      "choices": [
-        "car",
-        "train",
-        "house",
-        "cloud"
-      ]
-    },
-    {
-      "id": "listen_rain_vh_001",
-      "type": "listening",
-      "level": "very_hard",
-      "category": "nature",
-      "active": true,
-      "storyEn": "When dark clouds are in the sky, drops of water may fall from them. People use umbrellas or raincoats to stay dry.",
-      "questionEn": "What falls from clouds as drops of water?",
-      "hintJp": "雲から水のしずくが落ちてくる。かさやレインコートを使う。",
-      "answerId": "rain",
-      "choices": [
-        "rain",
-        "sun",
-        "star",
-        "tree"
-      ]
-    },
-    {
-      "id": "sentence_alligator_vh_001",
-      "type": "sentence",
       "level": "very_hard",
       "category": "animals",
       "active": true,
-      "sentence": "An alligator lives near water",
-      "hintJp": "ワニは水辺にすむ。",
-      "answerId": "alligator"
+      "answerId": "cat",
+      "storyEn": "The animal jumps onto the sofa and curls up to sleep. When it wants food, it says meow.",
+      "questionEn": "Which animal says meow?",
+      "hintJp": "ソファに乗って丸くなり、ニャーと鳴くペット。",
+      "choices": [
+        "cat",
+        "dog",
+        "lion",
+        "elephant"
+      ]
     },
     {
-      "id": "sentence_penguin_vh_001",
-      "type": "sentence",
+      "id": "listening_dog_very_hard_010",
+      "type": "listening",
       "level": "very_hard",
       "category": "animals",
       "active": true,
-      "sentence": "A penguin can swim well",
-      "hintJp": "ペンギンは泳ぐのが上手。",
-      "answerId": "penguin"
-    },
-    {
-      "id": "sentence_penguin_hard_001",
-      "type": "sentence",
-      "level": "hard",
-      "category": "animals",
-      "active": true,
-      "sentence": "The ___ cannot fly like most birds, but it uses its wings to move quickly through cold water.",
-      "hintJp": "鳥ですが空を飛ばず、翼を泳ぐために使う動物です。",
-      "answerId": "penguin",
+      "answerId": "dog",
+      "storyEn": "The animal runs to the door when it hears a knock. It barks and wags its tail.",
+      "questionEn": "Which animal barks and wags its tail?",
+      "hintJp": "ノックの音でドアへ走り、ワンと鳴いてしっぽを振る。",
       "choices": [
-        "penguin",
-        "alligator",
-        "parrot",
+        "dog",
+        "cat",
+        "fish",
         "rabbit"
-      ]
-    },
-    {
-      "id": "sentence_alligator_hard_002",
-      "type": "sentence",
-      "level": "hard",
-      "category": "animals",
-      "active": true,
-      "sentence": "The ___ waited almost still in the swamp, with only its eyes and nose above the water.",
-      "hintJp": "沼の水面に目と鼻だけを出して、じっと待つことがある動物です。",
-      "answerId": "alligator",
-      "choices": [
-        "alligator",
-        "penguin",
-        "eagle",
-        "horse"
-      ]
-    },
-    {
-      "id": "sentence_penguin_hard_003",
-      "type": "sentence",
-      "level": "hard",
-      "category": "animals",
-      "active": true,
-      "sentence": "Because its black back and white belly help it hide in the sea, the ___ is harder to notice from above or below.",
-      "hintJp": "背中が黒くお腹が白いため、水中で上からも下からも見つかりにくい鳥です。",
-      "answerId": "penguin",
-      "choices": [
-        "penguin",
-        "alligator",
-        "zebra",
-        "monkey"
-      ]
-    },
-    {
-      "id": "sentence_alligator_hard_004",
-      "type": "sentence",
-      "level": "hard",
-      "category": "animals",
-      "active": true,
-      "sentence": "A ___ looks like a floating log until it moves, opens its strong jaws, and surprises its prey.",
-      "hintJp": "水に浮かぶ丸太のように見えて、強いあごで獲物を捕まえる爬虫類です。",
-      "answerId": "alligator",
-      "choices": [
-        "alligator",
-        "penguin",
-        "deer",
-        "frog"
-      ]
-    },
-    {
-      "id": "sentence_penguin_hard_005",
-      "type": "sentence",
-      "level": "hard",
-      "category": "animals",
-      "active": true,
-      "sentence": "On ice the ___ may walk slowly or slide on its belly, but underwater it can chase fish with surprising speed.",
-      "hintJp": "氷の上ではゆっくり歩いたりお腹ですべったりしますが、水中では魚を速く追える鳥です。",
-      "answerId": "penguin",
-      "choices": [
-        "penguin",
-        "alligator",
-        "tiger",
-        "camel"
       ]
     }
   ]
