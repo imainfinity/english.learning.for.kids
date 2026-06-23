@@ -3,13 +3,13 @@
     "w": "car",
     "jp": "くるま",
     "c": "nature",
-    "img": "img/car.jpg"
+    "e": "🚗"
   },
   {
     "w": "train",
     "jp": "でんしゃ",
     "c": "nature",
-    "img": "img/train.jpg"
+    "e": "🚃"
   },
   {
     "w": "strawberry",

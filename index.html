@@ -106,6 +106,7 @@
     display:flex;align-items:center;justify-content:center;gap:10px}
   .opt:active{transform:translateY(3px)}
   .opt .oe{font-size:28px}
+  .opt .oe img.visual-img{width:42px;height:42px;object-fit:contain;border-radius:10px;box-shadow:none;background:transparent}
   .opt.good{background:var(--good);color:#fff;box-shadow:0 6px 0 #2E9A53;animation:pop .3s}
   .opt.bad{background:var(--bad);color:#fff;box-shadow:0 6px 0 #D84B4B}
   @keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.08)}100%{transform:scale(1)}}
@@ -495,11 +496,16 @@ function normWord(s){return String(s||"").trim().toLowerCase().replace(/\s+/g," 
 function isSameAnswer(a,b){return normWord(a&&a.w?a.w:a)===normWord(b&&b.w?b.w:b);}
 function resetHintCard(id){var c=$(id);if(c)c.classList.remove("show-hint");}
 function toggleHintCard(id){var c=$(id);if(c)c.classList.toggle("show-hint");}
-function imgTag(p,cls){return '<img'+(cls?' class="'+cls+'"':'')+' src="'+escAttr(imgSrc(p))+'" alt="" onerror="this.replaceWith(document.createTextNode(\u0027🖼\u0027))">';}
+function imgTag(p,cls,fallback){
+  var fb=escAttr(fallback||"🔤");
+  return '<img'+(cls?' class="'+cls+'"':'')+' src="'+escAttr(imgSrc(p))+'" alt="" onerror="this.replaceWith(document.createTextNode(\u0027'+fb+'\u0027))">';
+}
 function setVisual(el,item){
   el.innerHTML="";
-  // GitHubに置いた画像を優先。img がなければ emoji、どちらもなければ 🔤。
-  if(item&&item.img){el.innerHTML=imgTag(item.img,"visual-img");}
+  if(!item){el.textContent="🔤";return;}
+  // GitHub画像を優先。ただし画像ロード失敗時は絵文字・🔤へ戻す。
+  var fb=hasEmoji(item)?item.e:"🔤";
+  if(item.img){el.innerHTML=imgTag(item.img,"visual-img",fb);}
   else if(hasEmoji(item)){el.textContent=item.e;}
   else{el.textContent="🔤";}
 }
@@ -516,6 +522,20 @@ function imagePathForWord(word,cat,fileName){
   var safeCat=slugify(cat||"animals");
   var safeWord=slugify(word||baseName(fileName)||"image");
   return "img/"+safeCat+"/"+safeWord+".webp";
+}
+function normalizeVocabItem(x){
+  var w=slugify(x&&x.w);
+  if(!w)return null;
+  var c=x.c||"animals";
+  var item={w:w,jp:x.jp||"",c:c};
+  if(x.img){item.img=x.img;item.e=x.e||"";}
+  else if(x.e && x.e!=="🔤"){item.e=x.e;}
+  else{
+    // 旧バグで e:"🔤" だけ保存された単語は、GitHub上の標準画像パスを自動で見に行く
+    item.img=imagePathForWord(w,c,w+".webp");
+    item.e="";
+  }
+  return item;
 }
 function fileNameFromPath(path){
   return String(path||"image.webp").split("/").pop()||"image.webp";
@@ -664,7 +684,10 @@ function renderQuiz(){
   var wrongs=shuffle(pool).slice(0,optCount()-1);
   var opts=shuffle([it].concat(wrongs));
   var grid=$("qOpts");grid.innerHTML="";
-  opts.forEach(function(o){var b=document.createElement("button");b.className="opt";b.textContent=o.w;
+  opts.forEach(function(o){var b=document.createElement("button");b.className="opt";
+    var sp=document.createElement("span");sp.className="oe";setVisual(sp,o);
+    var tx=document.createElement("span");tx.textContent=o.w;
+    b.appendChild(sp);b.appendChild(tx);
     b.addEventListener("click",function(){chooseQuiz(b,o,it);});grid.appendChild(b);});
   $("quizTimer").textContent="⏱ 0.0";startTimer();
 }
@@ -1083,14 +1106,20 @@ function loadVocab(cb){
   try{
     window.fetch(VOCAB_URL,{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(data){
       var arr=Array.isArray(data)?data:(data&&data.words)||[];
+      customWords=[];overrides={};
       arr.forEach(function(x){
-        if(!x||!x.w)return;
-        if(masterHas(x.w)){
-          var o={};if("jp" in x)o.jp=x.jp;if("c" in x)o.c=x.c;if("e" in x)o.e=x.e;if("img" in x)o.img=x.img;
-          overrides[x.w]=assign(overrides[x.w]||{},o);
+        var item=normalizeVocabItem(x);
+        if(!item)return;
+        if(masterHas(item.w)){
+          var o={};
+          if("jp" in item)o.jp=item.jp;if("c" in item)o.c=item.c;
+          if(item.img){o.img=item.img;o.e=item.e||"";}else if("e" in item){o.e=item.e;}
+          overrides[item.w]=assign(overrides[item.w]||{},o);
         }else{
-          if(!x.jp)return;
-          customWords.push({w:slugify(x.w),jp:x.jp,e:x.img?(x.e||""):(x.e||"🔤"),img:x.img||null,c:x.c||"animals",custom:true});
+          if(!item.jp)return;
+          item.custom=true;
+          customWords=customWords.filter(function(y){return normWord(y.w)!==normWord(item.w);});
+          customWords.push(item);
         }
       });
       if(cb)cb();
