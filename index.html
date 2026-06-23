@@ -421,9 +421,11 @@ var RIDDLES = [
   {clue:"Small and bright. You see it at night in the sky. What is it?",jp:"ちいさくて あかるい。よるの そらに ある。",ans:{w:"star",e:"⭐"},wrong:[{w:"sun",e:"☀️"},{w:"moon",e:"🌙"},{w:"flower",e:"🌸"}]}
 ];
 var DIFF = {
-  easy:  {opts:3, showEmojiQuiz:true,  storyTwoLines:false, label:"やさしい", en:"Easy",   e:"🟢"},
-  normal:{opts:4, showEmojiQuiz:true,  storyTwoLines:true,  label:"ふつう",   en:"Normal", e:"🟡"},
-  hard:  {opts:4, showEmojiQuiz:false, storyTwoLines:true,  label:"むずかしい",en:"Hard",   e:"🔴"}
+  easy:       {opts:3, showEmojiQuiz:true,  storyTwoLines:false, label:"やさしい",    en:"Easy",      e:"🟢"},
+  normal:     {opts:4, showEmojiQuiz:true,  storyTwoLines:true,  label:"ふつう",      en:"Normal",    e:"🟡"},
+  hard:       {opts:4, showEmojiQuiz:false, storyTwoLines:true,  label:"むずかしい",  en:"Hard",      e:"🔴"},
+  very_hard:  {opts:4, showEmojiQuiz:false, storyTwoLines:true,  label:"とても難しい", en:"Very Hard", e:"🟣"},
+  expert:     {opts:4, showEmojiQuiz:false, storyTwoLines:true,  label:"名人",        en:"Expert",    e:"⚫"}
 };
 var T = {
   homeTitle:{jp:"なにを する？",en:"What do you want to do?"},
@@ -459,6 +461,9 @@ var overrides={};       // master上書き: w -> {jp?,e?,img?,c?}
 var customWords=[];     // 新規追加: {w,jp,e?,img?,c,custom:true}
 var sessionImgs={};     // アップロードプレビュー: path -> dataURL
 var VOCAB_URL="vocab.json";
+var QUESTIONS_URL="questions.json";
+var QUESTIONS=[];        // questions.jsonから読み込む設問マスター
+var lsHintShown=false, rdHintShown=false;
 
 /* ===================== HELPERS ===================== */
 function $(id){return document.getElementById(id);}
@@ -472,14 +477,66 @@ function effectiveWords(){
 function allWords(){return effectiveWords();}
 function assign(t,s){if(s){for(var k in s){if(Object.prototype.hasOwnProperty.call(s,k))t[k]=s[k];}}return t;}
 function hasEmoji(item){return item&&item.e&&String(item.e).trim()&&item.e!=="🔤";}
-function imgSrc(p){return (p&&sessionImgs[p])||p;}
+function imgSrc(p){
+  if(!p)return p;
+  if(sessionImgs[p])return sessionImgs[p];
+  // GitHub Pages/ブラウザの画像キャッシュ対策。data URLや外部URLはそのまま。
+  if(/^data:/.test(p)||/^https?:/i.test(p))return p;
+  return p+(p.indexOf("?")>=0?"&":"?")+"v="+Date.now();
+}
 function imgTag(p,cls){return '<img'+(cls?' class="'+cls+'"':'')+' src="'+imgSrc(p)+'" alt="" onerror="this.replaceWith(document.createTextNode(\u0027🖼\u0027))">';}
 function setVisual(el,item){
   if(!el)return;
   el.innerHTML="";
+  // 画像があれば画像を優先。なければ絵文字、最後に🔤。
   if(item&&item.img){el.innerHTML=imgTag(item.img,"visual-img");}
   else if(hasEmoji(item)){el.textContent=item.e;}
   else{el.textContent="🔤";}
+}
+function escHtml(v){return String(v==null?"":v).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];});}
+function normKey(v){return String(v==null?"":v).trim().toLowerCase();}
+function wordItem(id){
+  var key=normKey(id), arr=allWords();
+  for(var i=0;i<arr.length;i++){if(normKey(arr[i].w)===key)return arr[i];}
+  return {w:String(id||""),jp:"",e:"🔤",c:"all"};
+}
+function choiceHtml(o){
+  var it=typeof o==="string"?wordItem(o):o;
+  var v="";
+  if(it&&it.img){v=imgTag(it.img,"visual-img");}
+  else if(hasEmoji(it)){v=escHtml(it.e);}
+  else{v="🔤";}
+  return '<span class="oe">'+v+'</span><span>'+escHtml(it.w||it.answerId||"")+'</span>';
+}
+function makeChoice(id){
+  var it=wordItem(id);
+  return {w:it.w,e:it.e,img:it.img,jp:it.jp,c:it.c,answerId:normKey(id)};
+}
+function qLevel(q){return normKey(q.level||"normal");}
+function qCat(q){return normKey(q.category||q.c||"all");}
+function questionPool(type){
+  var t=normKey(type);
+  return QUESTIONS.filter(function(q){
+    if(!q||q.active===false)return false;
+    if(normKey(q.type)!==t)return false;
+    if(qLevel(q)!==normKey(difficulty))return false;
+    if(activeCat!=="all"&&qCat(q)!==normKey(activeCat))return false;
+    return true;
+  });
+}
+function extRiddle(q){
+  var ans=makeChoice(q.answerId||q.answer||q.ans);
+  var ch=Array.isArray(q.choices)?q.choices.slice():[];
+  if(ch.map(normKey).indexOf(normKey(ans.answerId||ans.w))<0)ch.unshift(ans.answerId||ans.w);
+  var wrong=ch.filter(function(x){return normKey(x)!==normKey(ans.answerId||ans.w);}).map(makeChoice);
+  return {id:q.id,clue:q.promptEn||q.questionEn||q.clue||"",jp:q.hintJp||q.jp||"",ans:ans,wrong:wrong,level:q.level,c:q.category};
+}
+function extListen(q){
+  var ans=makeChoice(q.answerId||q.answer||q.ans);
+  var ch=Array.isArray(q.choices)?q.choices.slice():[];
+  if(ch.map(normKey).indexOf(normKey(ans.answerId||ans.w))<0)ch.unshift(ans.answerId||ans.w);
+  var wrong=ch.filter(function(x){return normKey(x)!==normKey(ans.answerId||ans.w);}).map(makeChoice);
+  return {id:q.id,pic:(q.pic||"🎧"),s1:q.storyEn||q.promptEn||"",s2:"",jp:q.hintJp||q.jp||"",q:q.hintQuestionJp||"",qEn:q.questionEn||"What is the answer?",ans:ans,wrong:wrong,level:q.level,c:q.category};
 }
 function speak(text,slow){
   if(!canSpeak)return;
@@ -504,7 +561,9 @@ function optCount(){return DIFF[difficulty].opts;}
 
 /* ===================== LANGUAGE ===================== */
 function applyLang(){
-  ["fcJp","qJp","sentJp","lsStxt"].forEach(function(id){var el=$(id);if(el)el.style.display=showJp?"":"none";});
+  ["fcJp","qJp","sentJp"].forEach(function(id){var el=$(id);if(el)el.style.display=showJp?"":"none";});
+  if(typeof updateListenHint==="function")updateListenHint();
+  if(typeof updateRiddleHint==="function")updateRiddleHint();
   $("homeTitle").textContent=L("homeTitle");$("homeSub").textContent=L("homeSub");
   $("flashSub").textContent=L("flashSub");$("quizSub").textContent=L("quizSub");
   $("listenSub").textContent=L("listenSub");$("riddleSub").textContent=L("riddleSub");$("sentSub").textContent=L("sentSub");
@@ -593,50 +652,76 @@ function finishQuiz(){
 
 /* ===================== LISTENING ===================== */
 var lsDeck=[], lIdx=0, lsAnswered=false;
-function startListen(){lsDeck=shuffle(STORIES.slice());lIdx=0;show("listen");renderListen();}
-function currentStoryText(){var s=lsDeck[lIdx];return DIFF[difficulty].storyTwoLines?(s.s1+" "+s.s2):s.s1;}
+function builtInStories(){return STORIES.slice();}
+function startListen(){
+  var ext=questionPool("listening").map(extListen);
+  // questions.jsonに該当難易度があるときは外部設問を優先。なければ従来問題で動作維持。
+  lsDeck=shuffle(ext.length?ext:builtInStories());
+  lIdx=0;show("listen");renderListen();
+}
+function currentStoryText(){var s=lsDeck[lIdx];return DIFF[difficulty].storyTwoLines?(s.s1+(s.s2?(" "+s.s2):"")):s.s1;}
+function listenHintText(s){return (s.jp||"")+(s.q?("\n"+s.q):"");}
+function updateListenHint(){
+  var s=lsDeck[lIdx];if(!s){$("lsStxt").style.display="none";return;}
+  var hint=listenHintText(s);
+  $("lsStxt").textContent=hint;
+  $("lsStxt").style.display=(showJp&&lsHintShown&&hint)?"":"none";
+}
+function toggleListenHint(){lsHintShown=!lsHintShown;updateListenHint();}
 function renderListen(){
-  lsAnswered=false;var s=lsDeck[lIdx];
-  $("lsPic").textContent=s.pic;$("lsTxt").textContent=currentStoryText();
-  $("lsStxt").textContent=s.jp;$("lsStxt").style.display=showJp?"":"none";
-  $("lsQ").textContent=showJp?s.q:s.qEn;
+  lsAnswered=false;lsHintShown=false;var s=lsDeck[lIdx];
+  $("lsPic").textContent=s.pic||"🎧";$("lsTxt").textContent=currentStoryText();
+  $("lsQ").textContent=s.qEn||"What is the answer?";
+  updateListenHint();
   $("listenProg").textContent=(lIdx+1)+" / "+lsDeck.length;
-  var wrongs=shuffle(s.wrong.slice()).slice(0,optCount()-1);
+  var wrongs=shuffle((s.wrong||[]).slice()).slice(0,optCount()-1);
   var opts=shuffle([s.ans].concat(wrongs));
   var grid=$("lsOpts");grid.innerHTML="";
   opts.forEach(function(o){var b=document.createElement("button");b.className="opt";
-    b.innerHTML='<span class="oe">'+o.e+'</span><span>'+o.w+'</span>';
+    b.innerHTML=choiceHtml(o);
     b.addEventListener("click",function(){chooseListen(b,o,s.ans);});grid.appendChild(b);});
   speakSequence([currentStoryText(), s.qEn]);
 }
 function chooseListen(btn,chosen,ans){
   if(lsAnswered)return;
-  if(chosen.w===ans.w){lsAnswered=true;btn.classList.add("good");speak(chosen.w);addStar(2);celebrate("⭐");setTimeout(nextListen,1000);}
+  if(normKey(chosen.answerId||chosen.w)===normKey(ans.answerId||ans.w)){lsAnswered=true;btn.classList.add("good");speak(chosen.w);addStar(2);celebrate("⭐");setTimeout(nextListen,1000);}
   else{btn.classList.add("bad");btn.disabled=true;speak("try again");}
 }
 function nextListen(){lIdx++;if(lIdx>=lsDeck.length){return showDone("🏆",L("doneListen"),[{v:lsDeck.length+(showJp?"もん":""),l:L("stAns")}],startListen);}renderListen();}
 
 /* ===================== RIDDLE ===================== */
 var rdDeck=[], rIdx=0, rdAnswered=false;
-function startRiddle(){rdDeck=shuffle(RIDDLES.slice());rIdx=0;show("riddle");renderRiddle();}
+function builtInRiddles(){return RIDDLES.slice();}
+function startRiddle(){
+  var ext=questionPool("riddle").map(extRiddle);
+  rdDeck=shuffle(ext.length?ext:builtInRiddles());
+  rIdx=0;show("riddle");renderRiddle();
+}
+function updateRiddleHint(){
+  var s=rdDeck[rIdx];if(!s){$("rdJp").style.display="none";return;}
+  var hint=s.jp||"";
+  $("rdJp").textContent=hint;
+  $("rdJp").style.display=(showJp&&rdHintShown&&hint)?"":"none";
+}
+function toggleRiddleHint(){rdHintShown=!rdHintShown;updateRiddleHint();}
 function renderRiddle(){
-  rdAnswered=false;var s=rdDeck[rIdx];
+  rdAnswered=false;rdHintShown=false;var s=rdDeck[rIdx];
   $("rdTxt").textContent=s.clue;
-  $("rdJp").textContent=s.jp;$("rdJp").style.display=showJp?"":"none";
+  updateRiddleHint();
   $("riddleProg").textContent=(rIdx+1)+" / "+rdDeck.length;
-  var wrongs=shuffle(s.wrong.slice()).slice(0,optCount()-1);
+  var wrongs=shuffle((s.wrong||[]).slice()).slice(0,optCount()-1);
   var opts=shuffle([s.ans].concat(wrongs));
   var grid=$("rdOpts");grid.innerHTML="";
   opts.forEach(function(o){var b=document.createElement("button");b.className="opt";
-    b.innerHTML='<span class="oe">'+o.e+'</span><span>'+o.w+'</span>';
+    b.innerHTML=choiceHtml(o);
     b.addEventListener("click",function(){chooseRiddle(b,o,s.ans);});grid.appendChild(b);});
   speakSequence([s.clue]);
 }
 function chooseRiddle(btn,chosen,ans){
   if(rdAnswered)return;
-  if(chosen.w===ans.w){rdAnswered=true;btn.classList.add("good");
-    speak("yes! a "+ans.w);addStar(3);celebrate(ans.e||"🎉");
-    toast((showJp?"せいかい！ ":"Yes! ")+"a "+ans.w+"!");setTimeout(nextRiddle,1300);}
+  if(normKey(chosen.answerId||chosen.w)===normKey(ans.answerId||ans.w)){rdAnswered=true;btn.classList.add("good");
+    speak("yes! "+ans.w);addStar(3);celebrate(ans.e||"🎉");
+    toast((showJp?"せいかい！ ":"Yes! ")+ans.w+"!");setTimeout(nextRiddle,1300);}
   else{btn.classList.add("bad");btn.disabled=true;speak("try again");}
 }
 function nextRiddle(){rIdx++;if(rIdx>=rdDeck.length){return showDone("🧠",L("doneRiddle"),[{v:rdDeck.length+(showJp?"もん":""),l:L("stAns")}],startRiddle);}renderRiddle();}
@@ -829,6 +914,17 @@ function loadVocab(cb){
   }catch(e){if(cb)cb();}
 }
 
+/* ===================== questions.json LOAD ===================== */
+function loadQuestions(cb){
+  try{
+    window.fetch(QUESTIONS_URL,{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(data){
+      var arr=Array.isArray(data)?data:(data&&data.questions)||[];
+      QUESTIONS=arr.filter(function(q){return q&&q.type&&q.active!==false;});
+      if(cb)cb();
+    }).catch(function(){QUESTIONS=[];if(cb)cb();});
+  }catch(e){QUESTIONS=[];if(cb)cb();}
+}
+
 /* ===================== DONE ===================== */
 var doneAgainFn=null;
 function showDone(big,title,stats,againFn){
@@ -863,6 +959,8 @@ function init(){
     $("qSpeak").addEventListener("click",function(){speak(deck[idx].w,true);});
     $("lsSpeak").addEventListener("click",function(){var s=lsDeck[lIdx];speakSequence([currentStoryText(),s.qEn]);});
     $("rdSpeak").addEventListener("click",function(){speakSequence([rdDeck[rIdx].clue]);});
+    $("lsTxt").parentNode.addEventListener("click",function(){ if(!$("listen").classList.contains("hidden"))toggleListenHint(); });
+    $("rdTxt").parentNode.addEventListener("click",function(){ if(!$("riddle").classList.contains("hidden"))toggleRiddleHint(); });
     $("sentClear").addEventListener("click",function(){
       var ts=document.querySelectorAll("#sentBank .tile");Array.prototype.forEach.call(ts,function(b){b.classList.remove("used");});
       sPlaced=[];$("sentResult").textContent="";$("sentResult").className="sent-result";$("sentNext").classList.add("hidden");drawSlots();});
@@ -887,7 +985,11 @@ function init(){
 
     bindToggle();
     buildCats();buildDiff();buildAddCat();applyLang();
-    loadVocab(function(){ if(!$("manage").classList.contains("hidden"))buildMgr(); });
+    loadVocab(function(){
+      loadQuestions(function(){
+        if(!$("manage").classList.contains("hidden"))buildMgr();
+      });
+    });
   }catch(err){try{console.error("init error:",err);}catch(e){}}
 }
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",init);}else{init();}
