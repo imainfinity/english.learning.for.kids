@@ -1,5 +1,855 @@
 [
   {
+    "id": "listening_alligator_expert_004",
+    "type": "listening",
+    "level": "expert",
+    "category": "all",
+    "answerId": "alligator",
+    "choices": [
+      "alligator",
+      "crocodile",
+      "hippo",
+      "lizard"
+    ],
+    "active": true,
+    "storyEn": "Two reptiles wait in water. Choose the one more often described with a broader, rounder snout and a hidden body in warm wetlands.",
+    "questionEn": "Which answer best fits the comparison?",
+    "hintJp": "似た爬虫類と比べて、口先が広く丸いことが多く、湿地で待ち伏せします。"
+  },
+  {
+    "id": "listening_alligator_hard_002",
+    "type": "listening",
+    "level": "hard",
+    "category": "all",
+    "answerId": "alligator",
+    "choices": [
+      "alligator",
+      "crocodile",
+      "turtle",
+      "hippo"
+    ],
+    "active": true,
+    "storyEn": "Something waits in warm water with only its eyes and nose showing. It looks like a log until it moves.",
+    "questionEn": "Which animal fits both clues?",
+    "hintJp": "暖かい水辺で目と鼻だけを出し、丸太のように見える爬虫類です。"
+  },
+  {
+    "id": "listening_apple_easy_003",
+    "type": "listening",
+    "level": "easy",
+    "category": "all",
+    "answerId": "apple",
+    "choices": [
+      "apple",
+      "banana",
+      "carrot",
+      "bread"
+    ],
+    "active": true,
+    "storyEn": "This fruit can be red or green. It is crunchy when you bite it.",
+    "questionEn": "What should you choose?",
+    "hintJp": "赤や緑のことがあり、かむとシャキッとする果物です。"
+  },
+  {
+    "id": "listening_banana_easy_004",
+    "type": "listening",
+    "level": "easy",
+    "category": "all",
+    "answerId": "banana",
+    "choices": [
+      "banana",
+      "apple",
+      "corn",
+      "cheese"
+    ],
+    "active": true,
+    "storyEn": "This fruit is long and yellow. You peel it before you eat it.",
+    "questionEn": "What should you choose?",
+    "hintJp": "長くて黄色く、皮をむいて食べる果物です。"
+  },
+  {
+    "id": "listening_bat_very_hard_002",
+    "type": "listening",
+    "level": "very_hard",
+    "category": "all",
+    "answerId": "bat",
+    "choices": [
+      "bat",
+      "bird",
+      "owl",
+      "butterfly"
+    ],
+    "active": true,
+    "storyEn": "It can fly, so some children guess it is a bird. But its wings are skin stretched over long fingers, and it often hunts in the dark.",
+    "questionEn": "Which choice is the best answer?",
+    "hintJp": "鳥ではないのに飛び、暗い場所で音も使って虫を探す動物です。"
+  },
+  {
+    "id": "listening_beak_normal_008",
+    "type": "listening",
+    "level": "normal",
+    "category": "all",
+    "answerId": "beak",
+    "choices": [
+      "beak",
+      "wing",
+      "claw",
+      "horn"
+    ],
+    "active": true,
+    "storyEn": "A bird uses this hard mouth part to pick up food. It does not have teeth there.",
+    "questionEn": "Which body part should you choose?",
+    "hintJp": "鳥が食べ物をつかむために使う、かたい口の部分です。"
+  },
+  {
+    "id": "listening_bird_easy_006",
+    "type": "listening",
+    "level": "easy",
+    "category": "all",
+    "answerId": "bird",
+    "choices": [
+      "bird",
+      "bat",
+      "butterfly",
+      "fish"
+    ],
+    "active": true,
+    "storyEn": "This animal has feathers. Many kinds can fly.",
+    "questionEn": "What should you choose?",
+    "hintJp": "羽があり、多くの種類が空を飛ぶ動物です。"
+  },
+  {
+    "id": "listening_bread_normal_003",
+    "type": "listening",
+    "level": "normal",
+    "category": "all",
+    "answerId": "bread",
+    "choices": [
+      "bread",
+      "rice",
+      "soup",
+      "apple"
+    ],
+    "active": true,
+    "storyEn": "A child eats this in the morning. It can be toasted and spread with butter.",
+    "questionEn": "Which food should you choose?",
+    "hintJp": "朝ごはんに食べることがあり、焼いてバターをぬる食べ物です。"
+  },
+  {
+    "id": "listening_burrow_very_hard_007",
+    "type": "listening",
+    "level": "very_hard",
+    "category": "all",
+    "answerId": "burrow",
+    "choices": [
+      "burrow",
+      "nest",
+      "cave",
+      "pond"
+    ],
+    "active": true,
+    "storyEn": "A small animal disappears from the grass. It does not climb a tree or fly away; it goes into a safe hole under the ground.",
+    "questionEn": "Which word matches the safe place?",
+    "hintJp": "小さな動物が入る、地面の下の穴のすみかです。"
+  },
+  {
+    "id": "listening_carrot_hard_003",
+    "type": "listening",
+    "level": "hard",
+    "category": "all",
+    "answerId": "carrot",
+    "choices": [
+      "carrot",
+      "potato",
+      "corn",
+      "pumpkin"
+    ],
+    "active": true,
+    "storyEn": "This food grows under the ground. It is orange and often crunchy.",
+    "questionEn": "Which food fits both clues?",
+    "hintJp": "土の中で育ち、オレンジ色でカリッとした食べ物です。"
+  },
+  {
+    "id": "listening_cheese_normal_004",
+    "type": "listening",
+    "level": "normal",
+    "category": "all",
+    "answerId": "cheese",
+    "choices": [
+      "cheese",
+      "butter",
+      "egg",
+      "honey"
+    ],
+    "active": true,
+    "storyEn": "This food is made from milk. It can melt on pizza.",
+    "questionEn": "Which food should you choose?",
+    "hintJp": "牛乳から作られ、ピザの上でとけることがある食べ物です。"
+  },
+  {
+    "id": "listening_cheetah_expert_001",
+    "type": "listening",
+    "level": "expert",
+    "category": "all",
+    "answerId": "cheetah",
+    "choices": [
+      "cheetah",
+      "leopard",
+      "lion",
+      "tiger"
+    ],
+    "active": true,
+    "storyEn": "A spotted big cat waits in open land. It is not the one famous for dragging prey into trees; its plan depends on a very short, explosive chase.",
+    "questionEn": "Which answer best fits the clues?",
+    "hintJp": "まだら模様の大型ネコ科で、木登りよりも短距離の速さが決め手です。"
+  },
+  {
+    "id": "listening_claw_hard_007",
+    "type": "listening",
+    "level": "hard",
+    "category": "all",
+    "answerId": "claw",
+    "choices": [
+      "claw",
+      "beak",
+      "wing",
+      "hoof"
+    ],
+    "active": true,
+    "storyEn": "A hunter grips a branch or catches prey with this sharp body part. Cats and eagles both have it.",
+    "questionEn": "Which body part fits the story?",
+    "hintJp": "ネコやワシが持ち、つかんだり獲物を捕まえたりする鋭い体の部分です。"
+  },
+  {
+    "id": "listening_cliff_expert_008",
+    "type": "listening",
+    "level": "expert",
+    "category": "all",
+    "answerId": "cliff",
+    "choices": [
+      "cliff",
+      "valley",
+      "beach",
+      "meadow"
+    ],
+    "active": true,
+    "storyEn": "The land does not slope gently here. It drops steeply, so a bird may nest on the high face but a child should not stand near the edge.",
+    "questionEn": "Which nature word best fits?",
+    "hintJp": "ゆるい坂ではなく、急に落ちる高い岩や土地のふちです。"
+  },
+  {
+    "id": "listening_crimson_very_hard_010",
+    "type": "listening",
+    "level": "very_hard",
+    "category": "all",
+    "answerId": "crimson",
+    "choices": [
+      "crimson",
+      "scarlet",
+      "violet",
+      "beige"
+    ],
+    "active": true,
+    "storyEn": "The color is not light pink and not orange. It is a deep, strong kind of red, like a dark rose.",
+    "questionEn": "Which color word is described?",
+    "hintJp": "明るい赤ではなく、深く強い赤を表す言葉です。"
+  },
+  {
+    "id": "listening_crocodile_expert_003",
+    "type": "listening",
+    "level": "expert",
+    "category": "all",
+    "answerId": "crocodile",
+    "choices": [
+      "crocodile",
+      "alligator",
+      "lizard",
+      "turtle"
+    ],
+    "active": true,
+    "storyEn": "Two reptiles look similar in the water. This one is often linked with a longer, more pointed snout than its broader-snouted cousin.",
+    "questionEn": "Which answer best fits the comparison?",
+    "hintJp": "似た爬虫類と比べて、口先が長くとがっていることが多い方です。"
+  },
+  {
+    "id": "listening_curry_very_hard_005",
+    "type": "listening",
+    "level": "very_hard",
+    "category": "all",
+    "answerId": "curry",
+    "choices": [
+      "curry",
+      "soup",
+      "stew",
+      "rice"
+    ],
+    "active": true,
+    "storyEn": "This dish is not just soup, though it can be warm and thick. It often has spices and is served with rice.",
+    "questionEn": "Which food is described?",
+    "hintJp": "スパイスを使い、とろみがあり、ごはんと食べることが多い料理です。"
+  },
+  {
+    "id": "listening_desert_hard_005",
+    "type": "listening",
+    "level": "hard",
+    "category": "all",
+    "answerId": "desert",
+    "choices": [
+      "desert",
+      "forest",
+      "swamp",
+      "ocean"
+    ],
+    "active": true,
+    "storyEn": "This place is dry and has little rain. Animals that live there must handle heat and thirst.",
+    "questionEn": "Which place fits both clues?",
+    "hintJp": "雨が少なく乾いていて、暑さや水の少なさが手がかりの場所です。"
+  },
+  {
+    "id": "listening_dolphin_very_hard_001",
+    "type": "listening",
+    "level": "very_hard",
+    "category": "all",
+    "answerId": "dolphin",
+    "choices": [
+      "dolphin",
+      "fish",
+      "shark",
+      "octopus"
+    ],
+    "active": true,
+    "storyEn": "This sea animal lives with many gill-breathers, but it must come up for air. It also uses sounds to understand the world underwater.",
+    "questionEn": "Which choice is the best answer?",
+    "hintJp": "海にいますがえらではなく空気を吸い、音を使って水中を知る動物です。"
+  },
+  {
+    "id": "listening_elephant_easy_001",
+    "type": "listening",
+    "level": "easy",
+    "category": "all",
+    "answerId": "elephant",
+    "choices": [
+      "elephant",
+      "rabbit",
+      "cat",
+      "frog"
+    ],
+    "active": true,
+    "storyEn": "I see a very big animal. It has a long nose.",
+    "questionEn": "What should you choose?",
+    "hintJp": "とても大きく、長い鼻がある動物です。"
+  },
+  {
+    "id": "listening_eye_easy_009",
+    "type": "listening",
+    "level": "easy",
+    "category": "all",
+    "answerId": "eye",
+    "choices": [
+      "eye",
+      "ear",
+      "nose",
+      "hand"
+    ],
+    "active": true,
+    "storyEn": "You use this body part to see. You close it when you sleep.",
+    "questionEn": "What should you choose?",
+    "hintJp": "ものを見るために使い、眠る時に閉じる体の部分です。"
+  },
+  {
+    "id": "listening_fish_easy_005",
+    "type": "listening",
+    "level": "easy",
+    "category": "all",
+    "answerId": "fish",
+    "choices": [
+      "fish",
+      "bird",
+      "frog",
+      "duck"
+    ],
+    "active": true,
+    "storyEn": "This animal lives in water. It swims with fins.",
+    "questionEn": "What should you choose?",
+    "hintJp": "水の中にすみ、ひれで泳ぐ動物です。"
+  },
+  {
+    "id": "listening_forest_normal_005",
+    "type": "listening",
+    "level": "normal",
+    "category": "all",
+    "answerId": "forest",
+    "choices": [
+      "forest",
+      "desert",
+      "ocean",
+      "beach"
+    ],
+    "active": true,
+    "storyEn": "There are many trees in this place. Birds and squirrels may live there.",
+    "questionEn": "Which place should you choose?",
+    "hintJp": "木がたくさんあり、鳥やリスがすむことがある場所です。"
+  },
+  {
+    "id": "listening_golden_normal_009",
+    "type": "listening",
+    "level": "normal",
+    "category": "all",
+    "answerId": "golden",
+    "choices": [
+      "golden",
+      "silver",
+      "violet",
+      "beige"
+    ],
+    "active": true,
+    "storyEn": "The sun looks warm and bright. The color is like shiny treasure.",
+    "questionEn": "Which color word should you choose?",
+    "hintJp": "太陽や宝物のように、明るい金色を表す言葉です。"
+  },
+  {
+    "id": "listening_habitat_very_hard_006",
+    "type": "listening",
+    "level": "very_hard",
+    "category": "all",
+    "answerId": "habitat",
+    "choices": [
+      "habitat",
+      "forest",
+      "river",
+      "nest"
+    ],
+    "active": true,
+    "storyEn": "A teacher asks where an animal naturally lives and finds food. The answer is not one place like a lake or forest, but the general home of a living thing.",
+    "questionEn": "Which word means this idea?",
+    "hintJp": "動物や植物が自然にくらす場所全体を表す言葉です。"
+  },
+  {
+    "id": "listening_hand_easy_010",
+    "type": "listening",
+    "level": "easy",
+    "category": "all",
+    "answerId": "hand",
+    "choices": [
+      "hand",
+      "foot",
+      "eye",
+      "ear"
+    ],
+    "active": true,
+    "storyEn": "You use this body part to hold a pencil. It has fingers.",
+    "questionEn": "What should you choose?",
+    "hintJp": "えんぴつを持つ時に使い、指がある体の部分です。"
+  },
+  {
+    "id": "listening_honey_hard_004",
+    "type": "listening",
+    "level": "hard",
+    "category": "all",
+    "answerId": "honey",
+    "choices": [
+      "honey",
+      "jam",
+      "sugar",
+      "butter"
+    ],
+    "active": true,
+    "storyEn": "This sweet food comes from flowers, but people do not pick it like fruit. Tiny flying workers make it together.",
+    "questionEn": "Which food fits the story?",
+    "hintJp": "花と関係があり、小さな虫がみんなで作る甘い食べ物です。"
+  },
+  {
+    "id": "listening_horn_hard_008",
+    "type": "listening",
+    "level": "hard",
+    "category": "all",
+    "answerId": "horn",
+    "choices": [
+      "horn",
+      "mane",
+      "paw",
+      "tail"
+    ],
+    "active": true,
+    "storyEn": "This hard body part grows on an animal's head. A goat or rhino may use it for defense.",
+    "questionEn": "Which body part fits the story?",
+    "hintJp": "動物の頭にあり、防御にも使われるかたい体の部分です。"
+  },
+  {
+    "id": "listening_kelp_expert_005",
+    "type": "listening",
+    "level": "expert",
+    "category": "all",
+    "answerId": "kelp",
+    "choices": [
+      "kelp",
+      "seaweed",
+      "fish",
+      "clam"
+    ],
+    "active": true,
+    "storyEn": "This food comes from the sea, but it is not an animal. It is a large kind of sea plant used for flavor in soup.",
+    "questionEn": "Which food word best fits?",
+    "hintJp": "海からとれる大きな海そうで、だしやスープの味に使われる食べ物です。"
+  },
+  {
+    "id": "listening_leopard_expert_002",
+    "type": "listening",
+    "level": "expert",
+    "category": "all",
+    "answerId": "leopard",
+    "choices": [
+      "leopard",
+      "cheetah",
+      "lion",
+      "tiger"
+    ],
+    "active": true,
+    "storyEn": "A spotted big cat moves through broken light. Speed matters, but the stronger clue is that it can climb well and hide food above the ground.",
+    "questionEn": "Which answer best fits the clues?",
+    "hintJp": "まだら模様の大型ネコ科で、木に登って獲物を隠すことが手がかりです。"
+  },
+  {
+    "id": "listening_mane_very_hard_008",
+    "type": "listening",
+    "level": "very_hard",
+    "category": "all",
+    "answerId": "mane",
+    "choices": [
+      "mane",
+      "horn",
+      "claw",
+      "wing"
+    ],
+    "active": true,
+    "storyEn": "A male lion looks larger because of thick hair around the head and neck. It is not a horn, claw, or wing.",
+    "questionEn": "Which body feature is described?",
+    "hintJp": "ライオンのオスの頭や首の周りにある、ふさふさした毛です。"
+  },
+  {
+    "id": "listening_mountain_easy_008",
+    "type": "listening",
+    "level": "easy",
+    "category": "all",
+    "answerId": "mountain",
+    "choices": [
+      "mountain",
+      "river",
+      "lake",
+      "beach"
+    ],
+    "active": true,
+    "storyEn": "This place is very high. People may climb it.",
+    "questionEn": "What should you choose?",
+    "hintJp": "とても高く、人が登ることもある自然の場所です。"
+  },
+  {
+    "id": "listening_ocean_normal_006",
+    "type": "listening",
+    "level": "normal",
+    "category": "all",
+    "answerId": "ocean",
+    "choices": [
+      "ocean",
+      "river",
+      "lake",
+      "pond"
+    ],
+    "active": true,
+    "storyEn": "This is a very large body of salty water. Whales and dolphins live there.",
+    "questionEn": "Which place should you choose?",
+    "hintJp": "とても大きなしょっぱい水の場所で、くじらやイルカがすみます。"
+  },
+  {
+    "id": "listening_octopus_very_hard_003",
+    "type": "listening",
+    "level": "very_hard",
+    "category": "all",
+    "answerId": "octopus",
+    "choices": [
+      "octopus",
+      "squid",
+      "crab",
+      "jellyfish"
+    ],
+    "active": true,
+    "storyEn": "A jar in the sea may not be safe from this clever animal. It has a soft body, many arms, and can change color to hide.",
+    "questionEn": "Which choice is the best answer?",
+    "hintJp": "やわらかい体、多くの腕、色を変える力、賢さが手がかりの海の動物です。"
+  },
+  {
+    "id": "listening_penguin_hard_001",
+    "type": "listening",
+    "level": "hard",
+    "category": "all",
+    "answerId": "penguin",
+    "choices": [
+      "penguin",
+      "duck",
+      "seal",
+      "bird"
+    ],
+    "active": true,
+    "storyEn": "A black-and-white bird walks on ice. It cannot fly well, but it swims fast in cold water.",
+    "questionEn": "Which animal fits both clues?",
+    "hintJp": "白黒の鳥で、氷の上を歩き、水中では速く泳ぎます。"
+  },
+  {
+    "id": "listening_rabbit_easy_002",
+    "type": "listening",
+    "level": "easy",
+    "category": "all",
+    "answerId": "rabbit",
+    "choices": [
+      "rabbit",
+      "dog",
+      "frog",
+      "mouse"
+    ],
+    "active": true,
+    "storyEn": "This small animal has long ears. It hops on the grass.",
+    "questionEn": "What should you choose?",
+    "hintJp": "長い耳でぴょんぴょん跳ぶ小さな動物です。"
+  },
+  {
+    "id": "listening_river_easy_007",
+    "type": "listening",
+    "level": "easy",
+    "category": "all",
+    "answerId": "river",
+    "choices": [
+      "river",
+      "mountain",
+      "forest",
+      "desert"
+    ],
+    "active": true,
+    "storyEn": "Water moves through the land. It is long and can flow to the sea.",
+    "questionEn": "What should you choose?",
+    "hintJp": "土地の中を長く流れ、海へ向かうことがある水の流れです。"
+  },
+  {
+    "id": "listening_scale_very_hard_009",
+    "type": "listening",
+    "level": "very_hard",
+    "category": "all",
+    "answerId": "scale",
+    "choices": [
+      "scale",
+      "fur",
+      "feather",
+      "whisker"
+    ],
+    "active": true,
+    "storyEn": "Look closely at a fish or snake. The body is covered with many small flat pieces that protect the skin.",
+    "questionEn": "Which body feature is described?",
+    "hintJp": "魚やヘビの体をおおう、小さく平たい皮ふのような部分です。"
+  },
+  {
+    "id": "listening_snake_normal_002",
+    "type": "listening",
+    "level": "normal",
+    "category": "all",
+    "answerId": "snake",
+    "choices": [
+      "snake",
+      "worm",
+      "lizard",
+      "frog"
+    ],
+    "active": true,
+    "storyEn": "An animal moves through the grass without legs. It uses its tongue to sense the air.",
+    "questionEn": "Which word matches the animal?",
+    "hintJp": "足がなく、草の中を進み、舌で周りを感じる動物です。"
+  },
+  {
+    "id": "listening_spotted_normal_010",
+    "type": "listening",
+    "level": "normal",
+    "category": "all",
+    "answerId": "spotted",
+    "choices": [
+      "spotted",
+      "striped",
+      "golden",
+      "transparent"
+    ],
+    "active": true,
+    "storyEn": "The animal is not plain. It has many small round marks on its coat.",
+    "questionEn": "Which pattern word should you choose?",
+    "hintJp": "体や服に小さな丸い模様がたくさんある様子です。"
+  },
+  {
+    "id": "listening_striped_hard_009",
+    "type": "listening",
+    "level": "hard",
+    "category": "all",
+    "answerId": "striped",
+    "choices": [
+      "striped",
+      "spotted",
+      "transparent",
+      "silver"
+    ],
+    "active": true,
+    "storyEn": "A zebra has this pattern. The marks are long lines, not round dots.",
+    "questionEn": "Which pattern word fits the story?",
+    "hintJp": "しまうまのように、丸ではなく長い線の模様を表す言葉です。"
+  },
+  {
+    "id": "listening_sushi_very_hard_004",
+    "type": "listening",
+    "level": "very_hard",
+    "category": "all",
+    "answerId": "sushi",
+    "choices": [
+      "sushi",
+      "rice_ball",
+      "sandwich",
+      "noodle"
+    ],
+    "active": true,
+    "storyEn": "This food often uses rice and seafood together. It is served in small pieces, and people may eat it with soy sauce.",
+    "questionEn": "Which food is described?",
+    "hintJp": "ごはんと魚などを使い、小さく出され、しょうゆで食べることがある料理です。"
+  },
+  {
+    "id": "listening_swamp_hard_006",
+    "type": "listening",
+    "level": "hard",
+    "category": "all",
+    "answerId": "swamp",
+    "choices": [
+      "swamp",
+      "desert",
+      "mountain",
+      "meadow"
+    ],
+    "active": true,
+    "storyEn": "The ground is wet and muddy. Frogs may call there, and reptiles may hide in the water.",
+    "questionEn": "Which place fits the story?",
+    "hintJp": "ぬれていて泥が多く、カエルや爬虫類がいることがある場所です。"
+  },
+  {
+    "id": "listening_transparent_hard_010",
+    "type": "listening",
+    "level": "hard",
+    "category": "all",
+    "answerId": "transparent",
+    "choices": [
+      "transparent",
+      "golden",
+      "striped",
+      "beige"
+    ],
+    "active": true,
+    "storyEn": "You can see through this kind of material. Clear water or clean glass may look this way.",
+    "questionEn": "Which word fits the story?",
+    "hintJp": "きれいな水やガラスのように、向こう側が見える様子です。"
+  },
+  {
+    "id": "listening_turquoise_expert_009",
+    "type": "listening",
+    "level": "expert",
+    "category": "all",
+    "answerId": "turquoise",
+    "choices": [
+      "turquoise",
+      "violet",
+      "silver",
+      "beige"
+    ],
+    "active": true,
+    "storyEn": "The color is not simply blue and not simply green. It looks like clear tropical water between those two colors.",
+    "questionEn": "Which color word best fits?",
+    "hintJp": "青と緑の間のような、南の海を思わせる色です。"
+  },
+  {
+    "id": "listening_turtle_normal_001",
+    "type": "listening",
+    "level": "normal",
+    "category": "all",
+    "answerId": "turtle",
+    "choices": [
+      "turtle",
+      "frog",
+      "snake",
+      "fish"
+    ],
+    "active": true,
+    "storyEn": "A slow animal moves near the pond. It carries a hard shell on its back.",
+    "questionEn": "Which word matches the animal?",
+    "hintJp": "池の近くにいて、背中にかたい甲羅を持つ動物です。"
+  },
+  {
+    "id": "listening_valley_expert_007",
+    "type": "listening",
+    "level": "expert",
+    "category": "all",
+    "answerId": "valley",
+    "choices": [
+      "valley",
+      "mountain",
+      "cliff",
+      "meadow"
+    ],
+    "active": true,
+    "storyEn": "A river runs between two high sides of land. The place is lower than the mountains around it.",
+    "questionEn": "Which nature word best fits?",
+    "hintJp": "山と山の間にある低い土地で、川が流れることもある場所です。"
+  },
+  {
+    "id": "listening_vinegar_expert_006",
+    "type": "listening",
+    "level": "expert",
+    "category": "all",
+    "answerId": "vinegar",
+    "choices": [
+      "vinegar",
+      "sugar",
+      "salt",
+      "oil"
+    ],
+    "active": true,
+    "storyEn": "A cook adds a small amount, and the food becomes sharper and sourer. It is not sugar or salt, and it is often used in dressings.",
+    "questionEn": "Which food word best fits?",
+    "hintJp": "少し入れるとすっぱくなり、ドレッシングにも使われる調味料です。"
+  },
+  {
+    "id": "listening_whisker_expert_010",
+    "type": "listening",
+    "level": "expert",
+    "category": "all",
+    "answerId": "whisker",
+    "choices": [
+      "whisker",
+      "claw",
+      "tail",
+      "paw"
+    ],
+    "active": true,
+    "storyEn": "A cat uses these thin hairs to judge narrow spaces. They are not claws for catching or a tail for balance.",
+    "questionEn": "Which body feature best fits?",
+    "hintJp": "ネコがせまい場所を感じ取るために使う、細いひげです。"
+  },
+  {
+    "id": "listening_wing_normal_007",
+    "type": "listening",
+    "level": "normal",
+    "category": "all",
+    "answerId": "wing",
+    "choices": [
+      "wing",
+      "beak",
+      "paw",
+      "tail"
+    ],
+    "active": true,
+    "storyEn": "A bird uses this body part to fly. A penguin uses it to swim.",
+    "questionEn": "Which body part should you choose?",
+    "hintJp": "鳥は飛ぶために使い、ペンギンは泳ぐために使う体の部分です。"
+  },
+  {
     "id": "riddle_alligator_expert_015",
     "type": "riddle",
     "level": "expert",
