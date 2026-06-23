@@ -486,7 +486,12 @@ var deck=[], idx=0, canSpeak=false;
 var overrides={};       // master上書き: w -> {jp?,e?,img?,c?}
 var customWords=[];     // 新規追加: {w,jp,e?,img?,c,custom:true}
 var sessionImgs={};     // アップロードプレビュー: path -> dataURL
-var VOCAB_URL="vocab.json";
+var pendingImagePath="";  // 直近で選択した画像のGitHub保存先
+var pendingImageData="";  // 直近で選択した画像のdataURL
+var pendingImageName="";  // 元ファイル名
+var ASSET_VERSION=Date.now(); // GitHub Pages/browser cache対策
+var VOCAB_PATH="vocab.json";
+var VOCAB_URL=VOCAB_PATH+"?v="+Date.now();
 
 /* ===================== HELPERS ===================== */
 function $(id){return document.getElementById(id);}
@@ -500,7 +505,11 @@ function effectiveWords(){
 function allWords(){return effectiveWords();}
 function assign(t,s){if(s){for(var k in s){if(Object.prototype.hasOwnProperty.call(s,k))t[k]=s[k];}}return t;}
 function hasEmoji(item){return item&&item.e&&String(item.e).trim()&&item.e!=="🔤";}
-function imgSrc(p){return (p&&sessionImgs[p])||p;}
+function imgSrc(p){
+  var src=(p&&sessionImgs[p])||p||"";
+  if(src&&!/^data:/i.test(src)&&src.indexOf("?")<0)src=src+"?v="+ASSET_VERSION;
+  return src;
+}
 function escAttr(s){return String(s||"").replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");}
 function imgTag(p,cls){return '<img'+(cls?' class="'+cls+'"':'')+' src="'+escAttr(imgSrc(p))+'" alt="" onerror="this.replaceWith(document.createTextNode(\u0027🖼\u0027))">';}
 function setVisual(el,item){
@@ -529,7 +538,39 @@ function fileNameFromPath(path){
 }
 function updateImageHint(path){
   var el=$("imgPathHint"); if(!el)return;
-  el.innerHTML='GitHub保存先：<code>'+escAttr(path||"img/animals/alligator.webp")+'</code>　※この画像ファイルを同じ場所へアップロードし、vocab.jsonにはこのパスを保存します。';
+  el.innerHTML='GitHub保存先：<code>'+escAttr(path||"img/animals/alligator.webp")+'</code>　※💾保存/GitHubで画像本体とvocab.jsonをまとめて保存します。';
+}
+function rememberSelectedImage(path,data,fileName){
+  pendingImagePath=path||"";
+  pendingImageData=data||"";
+  pendingImageName=fileName||"image.webp";
+  if(path&&data)sessionImgs[path]=data;
+}
+function syncPendingImagePath(){
+  if(!pendingImageData)return ($("addImg")&&$("addImg").value.trim())||"";
+  var w=slugify(($("addW")&&$("addW").value)||baseName(pendingImageName)||baseName(pendingImagePath)||"image");
+  var cat=($("addCat")&&$("addCat").value)||"animals";
+  var next=imagePathForWord(w,cat,pendingImageName||pendingImagePath||"image.webp");
+  if(pendingImagePath&&pendingImagePath!==next&&sessionImgs[pendingImagePath])delete sessionImgs[pendingImagePath];
+  pendingImagePath=next;
+  sessionImgs[next]=pendingImageData;
+  if($("addImg"))$("addImg").value=next;
+  updateImageHint(next);
+  return next;
+}
+function currentUploadData(path){
+  if(path&&sessionImgs[path])return sessionImgs[path];
+  if(pendingImageData){
+    var synced=syncPendingImagePath();
+    if(path&&synced!==path){sessionImgs[path]=pendingImageData;return pendingImageData;}
+    return pendingImageData;
+  }
+  return null;
+}
+function resetAddForm(){
+  $("addW").value="";$("addJp").value="";$("addEmoji").value="";$("addImg").value="";$("filePrev").innerHTML="";
+  pendingImagePath="";pendingImageData="";pendingImageName="";
+  $("downloadImgBtn").classList.add("hidden");updateImageHint("");
 }
 function speak(text,slow){
   if(!canSpeak)return;
@@ -758,15 +799,14 @@ function addCustom(){
   if(masterHas(w)){  // 既存マスター語 → 上書き(override)
     var o={};if(jp)o.jp=jp;if(cat)o.c=cat;if(img){o.img=img;o.e="";}else if(emo){o.e=emo;}
     overrides[w]=assign(overrides[w]||{},o);
-    setAddMsg("マスター語 "+w+" を うわがき(override)しました。⬇ vocab.json をGitHubへ反映",false);
+    setAddMsg("一時上書きしました（このブラウザだけ）。全端末で使うには 💾 保存/GitHub を使ってください。",false);
   }else{
     var item={w:w,jp:jp,c:cat,custom:true};
     if(img){item.img=img;item.e="";}else if(emo){item.e=emo;}else{item.e="🔤";}
     customWords.push(item);
-    setAddMsg("ついか！ "+w+" → "+(img||item.e)+"　⬇ vocab.json をGitHubへ反映",false);
+    setAddMsg("一時追加しました（このブラウザだけ）。全端末で使うには 💾 保存/GitHub を使ってください。",false);
   }
-  $("addW").value="";$("addJp").value="";$("addEmoji").value="";$("addImg").value="";$("filePrev").innerHTML="";
-  $("downloadImgBtn").classList.add("hidden");updateImageHint("");
+  resetAddForm();
 }
 function buildExportList(){
   var list=[];
@@ -854,15 +894,20 @@ function formVocabItem(){
   var cat=$("addCat").value||"animals",emo=$("addEmoji").value.trim(),img=$("addImg").value.trim();
   if(!w)throw new Error("Englishを入れてください");
   if(!jp)throw new Error("にほんごを入れてください");
-  if(!img && $("filePrev").innerHTML){img=imagePathForWord(w,cat,"image.webp");$("addImg").value=img;}
+
+  // 画像を選択済みなら、必ず English＋Category から保存先を確定し、vocabにもimgを保存する。
+  if(pendingImageData){img=syncPendingImagePath();}
+
   var item={w:w,jp:jp,c:cat};
-  if(img){item.img=img;}else if(emo){item.e=emo;}else{item.e="🔤";}
+  if(img){item.img=img;}
+  else if(emo){item.e=emo;}
+  else{throw new Error("画像を選ぶか、絵文字を入れてください。画像カードにする場合は📷で画像を選んでから保存してください");}
   return item;
 }
 function upsertVocabArray(arr,item){
   if(!Array.isArray(arr))arr=[];
   var done=false;
-  arr=arr.map(function(x){if(x&&x.w===item.w){done=true;return item;}return x;});
+  arr=arr.map(function(x){if(x&&slugify(x.w)===item.w){done=true;return item;}return x;});
   if(!done)arr.push(item);
   return arr;
 }
@@ -911,22 +956,26 @@ async function saveCardToGithub(){
   try{
     saveGhSettings();
     var item=formVocabItem();
-    var imgData=item.img?sessionImgs[item.img]:null;
+    var imgData=item.img?currentUploadData(item.img):null;
     btn.disabled=true;btn.textContent="保存中…";setAddMsg("GitHubへ保存中…",false);
 
     if(item.img&&imgData){
       var b64img=String(imgData).split(",")[1];
       if(!b64img)throw new Error("画像データを読み取れません");
-      await ghPutFile(item.img,b64img,"Add image for "+item.w);
+      await ghPutFile(item.img,b64img,"Upload image: "+item.w);
+    }else if(item.img){
+      // パスだけ入力された場合は、GitHub上に画像が存在するか確認。なければJSONだけの空振りを防ぐ。
+      var remoteImg=await ghGetFile(item.img);
+      if(!remoteImg)throw new Error("画像ファイルが未選択、またはGitHub上に見つかりません："+item.img+"。📷で画像を選び直してから保存してください");
     }
 
-    var cur=await ghGetFile(VOCAB_URL);
+    var cur=await ghGetFile(VOCAB_PATH);
     var list=[];
     if(cur&&cur.content){
-      try{list=JSON.parse(b64ToUtf8(cur.content));}catch(e){throw new Error(VOCAB_URL+" のJSON形式を確認してください");}
+      try{list=JSON.parse(b64ToUtf8(cur.content));}catch(e){throw new Error(VOCAB_PATH+" のJSON形式を確認してください");}
     }
     list=upsertVocabArray(list,item);
-    await ghPutFile(VOCAB_URL,utf8ToB64(JSON.stringify(list,null,2)+"\n"),"Update vocab: "+item.w);
+    await ghPutFile(VOCAB_PATH,utf8ToB64(JSON.stringify(list,null,2)+"\n"),"Update vocab: "+item.w);
 
     applyLocalVocabItem(item);
     buildCats();
@@ -1092,12 +1141,12 @@ function init(){
       var cat=$("addCat").value||"animals";
       var name=imagePathForWord(word,cat,f.name);$("filePrev").textContent="…";
       resizeImage(f,function(data){
-        if(data)sessionImgs[name]=data;
+        if(data)rememberSelectedImage(name,data,f.name);
         $("addImg").value=name;$("addEmoji").value="";
         updateImageHint(name);
-        $("filePrev").innerHTML=data?('<img src="'+escAttr(data)+'" style="width:48px;height:34px;object-fit:contain;border-radius:7px;vertical-align:middle">'):"";
+        $("filePrev").innerHTML=data?('<img src="'+escAttr(data)+'" style="width:60px;height:40px;object-fit:contain;border-radius:7px;vertical-align:middle">'):"";
         $("downloadImgBtn").classList.toggle("hidden",!data);
-        setAddMsg(data?("プレビューOK。⬇ imageで "+fileNameFromPath(name)+" を保存 → GitHubの "+name+" へアップロード"):"がぞうエラー",!data);
+        setAddMsg(data?("画像OK。次は 💾 保存/GitHub を押すだけです → "+name):"がぞうエラー",!data);
       });
     });
     $("downloadImgBtn").addEventListener("click",function(){
@@ -1108,12 +1157,10 @@ function init(){
       setAddMsg("画像を保存しました。GitHubの "+path+" にアップロードしてください",false);
     });
     $("addW").addEventListener("input",function(){
-      var path=$("addImg").value.trim();
-      if(path&&sessionImgs[path]){var n=imagePathForWord($("addW").value,$("addCat").value,path);sessionImgs[n]=sessionImgs[path];delete sessionImgs[path];$("addImg").value=n;updateImageHint(n);}
+      if(pendingImageData)syncPendingImagePath();
     });
     $("addCat").addEventListener("change",function(){
-      var path=$("addImg").value.trim();
-      if(path&&sessionImgs[path]){var n=imagePathForWord($("addW").value,$("addCat").value,path);sessionImgs[n]=sessionImgs[path];delete sessionImgs[path];$("addImg").value=n;updateImageHint(n);}
+      if(pendingImageData)syncPendingImagePath();
     });
 
     fillGhSettings();
