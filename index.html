@@ -185,7 +185,7 @@
     <div class="brand"><span class="logo">🌟</span>
       <span>えいご れんしゅう<small>English for Kids</small></span></div>
     <div class="spacer"></div>
-    <button class="pill on" id="jpToggle">あ｜A にほんご</button>
+    <button class="pill" id="jpToggle">A English</button>
     <div class="stars">⭐ <span class="num" id="starCount">0</span></div>
   </div>
 
@@ -201,10 +201,10 @@
       <button class="mode-card mc5" data-mode="riddle"><div class="ic">🧠</div><div class="en">Riddle</div><div class="jp">なぞなぞ</div></button>
     </div>
     <div class="panel" style="margin-bottom:16px">
-      <h3>なんいど / Difficulty</h3><div class="cat-row" id="diffRow"></div>
+      <h3 id="diffTitle">Difficulty</h3><div class="cat-row" id="diffRow"></div>
     </div>
     <div class="panel" style="margin-bottom:16px">
-      <h3>テーマを えらぶ / Choose a topic</h3><div class="cat-row" id="catRow"></div>
+      <h3 id="catTitle">Choose a topic</h3><div class="cat-row" id="catRow"></div>
     </div>
     <div class="panel hidden" id="wordAddPanel">
       <h3>ことばを ふやす / Add your own word</h3>
@@ -455,7 +455,7 @@ var T = {
 };
 
 /* ===================== STATE ===================== */
-var stars=0, showJp=true, activeCat="all", difficulty="normal";
+var stars=0, showJp=false, activeCat="all", difficulty="normal";
 var deck=[], idx=0, canSpeak=false;
 var overrides={};       // master上書き: w -> {jp?,e?,img?,c?}
 var customWords=[];     // 新規追加: {w,jp,e?,img?,c,custom:true}
@@ -496,6 +496,15 @@ function setVisual(el,item){
 }
 function escHtml(v){return String(v==null?"":v).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];});}
 function normKey(v){return String(v==null?"":v).trim().toLowerCase();}
+function normLevel(v){
+  var s=normKey(v).replace(/[\s-]+/g,"_");
+  if(s==="veryhard"||s==="very_hard"||s==="very-hard"||s==="very hard")return "very_hard";
+  if(s==="expert"||s==="advanced"||s==="master")return "expert";
+  if(s==="hard")return "hard";
+  if(s==="normal"||s==="medium")return "normal";
+  if(s==="easy")return "easy";
+  return s;
+}
 function wordItem(id){
   var key=normKey(id), arr=allWords();
   for(var i=0;i<arr.length;i++){if(normKey(arr[i].w)===key)return arr[i];}
@@ -513,7 +522,7 @@ function makeChoice(id){
   var it=wordItem(id);
   return {w:it.w,e:it.e,img:it.img,jp:it.jp,c:it.c,answerId:normKey(id)};
 }
-function qLevel(q){return normKey(q.level||"normal");}
+function qLevel(q){return normLevel(q.level||"normal");}
 function qCat(q){return normKey(q.category||q.c||"all");}
 function qType(q){var t=normKey(q.type); if(t==="listen")return "listening"; if(t==="sent")return "sentence"; return t;}
 function qId(q){return normKey(q.id||((q.type||"")+"_"+(q.level||"")+"_"+(q.category||"")+"_"+(q.answerId||q.answer||"")+"_"+(q.promptEn||q.storyEn||q.sentence||"")));}
@@ -528,7 +537,7 @@ function filterQuestions(type,levelMode,catMode){
   return QUESTIONS.filter(function(q){
     if(!q||q.active===false)return false;
     if(qType(q)!==t)return false;
-    if(levelMode==="current"&&qLevel(q)!==normKey(difficulty))return false;
+    if(levelMode==="current"&&qLevel(q)!==normLevel(difficulty))return false;
     if(catMode==="current"&&activeCat!=="all"&&qCat(q)!==normKey(activeCat))return false;
     return true;
   });
@@ -594,7 +603,13 @@ function optCount(){return DIFF[difficulty].opts;}
 
 /* ===================== LANGUAGE ===================== */
 function applyLang(){
+  // English-only is the default. Japanese UI/text is shown only when the Japanese button is ON.
   ["fcJp","qJp","sentJp"].forEach(function(id){var el=$(id);if(el)el.style.display=showJp?"":"none";});
+  document.querySelectorAll(".mode-card .jp").forEach(function(el){el.style.display=showJp?"":"none";});
+  if($("diffTitle"))$("diffTitle").textContent=showJp?"なんいど / Difficulty":"Difficulty";
+  if($("catTitle"))$("catTitle").textContent=showJp?"テーマを えらぶ / Choose a topic":"Choose a topic";
+  var jt=$("jpToggle");
+  if(jt){jt.classList.toggle("on",showJp);jt.textContent=showJp?"あ｜A にほんご":"A English";}
   if(typeof updateListenHint==="function")updateListenHint();
   if(typeof updateRiddleHint==="function")updateRiddleHint();
   $("homeTitle").textContent=L("homeTitle");$("homeSub").textContent=L("homeSub");
@@ -606,9 +621,9 @@ function applyLang(){
 function bindToggle(){
   $("jpToggle").addEventListener("click",function(){
     showJp=!showJp;
-    $("jpToggle").classList.toggle("on",showJp);
-    $("jpToggle").textContent=showJp?"あ｜A にほんご":"A only ENGLISH";
     applyLang();
+    buildCats();
+    buildDiff();
     if(!$("flash").classList.contains("hidden"))renderFlash();
     if(!$("quiz").classList.contains("hidden"))renderQuiz();
     if(!$("listen").classList.contains("hidden"))renderListen();
@@ -621,13 +636,13 @@ function bindToggle(){
 function buildCats(){
   var row=$("catRow");row.innerHTML="";
   CATS.forEach(function(c){var b=document.createElement("button");
-    b.className="pill"+(c.id===activeCat?" on":"");b.textContent=c.e+" "+c.jp+" / "+c.en;
+    b.className="pill"+(c.id===activeCat?" on":"");b.textContent=c.e+" "+(showJp?(c.jp+" / "+c.en):c.en);
     b.addEventListener("click",function(){activeCat=c.id;buildCats();});row.appendChild(b);});
 }
 function buildDiff(){
   var row=$("diffRow");row.innerHTML="";
   Object.keys(DIFF).forEach(function(k){var d=DIFF[k];var b=document.createElement("button");
-    b.className="pill"+(k===difficulty?" on":"");b.textContent=d.e+" "+d.label+" / "+d.en;
+    b.className="pill"+(k===difficulty?" on":"");b.textContent=d.e+" "+(showJp?(d.label+" / "+d.en):d.en);
     b.addEventListener("click",function(){difficulty=k;buildDiff();});row.appendChild(b);});
 }
 
@@ -637,8 +652,8 @@ function renderFlash(){
   var it=deck[idx];$("flashcard").classList.remove("flip");
   setVisual($("fcEmoji"),it);setVisual($("fcEmoji2"),it);
   $("fcWord").textContent=it.w;
-  $("fcJp").textContent=showJp?it.jp:it.w;
-  $("fcJp").style.color=showJp?"var(--sky-d)":"#2D3A4A";$("fcJp").style.display="";
+  $("fcJp").textContent=showJp?it.jp:"";
+  $("fcJp").style.color="var(--sky-d)";$("fcJp").style.display=showJp?"":"none";
   $("flashProg").textContent=(idx+1)+" / "+deck.length;
 }
 
@@ -651,7 +666,7 @@ function renderQuiz(){
   quizAnswered=false;var it=deck[idx];var emo=$("qEmoji");
   if(DIFF[difficulty].showEmojiQuiz){setVisual(emo,it);emo.classList.remove("hide");}
   else{emo.textContent="❓";emo.classList.add("hide");}
-  $("qJp").textContent=it.jp;$("qJp").style.display=showJp?"":"none";
+  $("qJp").textContent=it.jp||"";$("qJp").style.display=(showJp&&it.jp)?"":"none";
   $("qAsk").textContent=L("quizAsk");
   $("quizProg").textContent=(idx+1)+" / "+deck.length;
   var pool=allWords().filter(function(x){return x.w!==it.w;});
@@ -762,10 +777,10 @@ function nextRiddle(){rIdx++;if(rIdx>=rdDeck.length){return showDone("🧠",L("d
 /* ===================== SENTENCE ===================== */
 var sentDeck=[], sIdx=0, sTarget=[], sPlaced=[];
 function startSent(){sentDeck=shuffle(SENTENCES.slice());sIdx=0;show("sent");renderSent();}
-function refreshSentText(){var s=sentDeck[sIdx];$("sentJp").textContent=s.jp;$("sentJp").style.display=showJp?"":"none";if(sPlaced.length===0)drawSlots();}
+function refreshSentText(){var s=sentDeck[sIdx];$("sentJp").textContent=s.jp||"";$("sentJp").style.display=(showJp&&s.jp)?"":"none";if(sPlaced.length===0)drawSlots();}
 function renderSent(){
   var s=sentDeck[sIdx];sTarget=s.sentence.split(" ");sPlaced=[];
-  $("sentPic").textContent=s.pic;$("sentJp").textContent=s.jp;$("sentJp").style.display=showJp?"":"none";
+  $("sentPic").textContent=s.pic;$("sentJp").textContent=s.jp||"";$("sentJp").style.display=(showJp&&s.jp)?"":"none";
   $("sentProg").textContent=(sIdx+1)+" / "+sentDeck.length;
   $("sentResult").textContent="";$("sentResult").className="sent-result";
   $("sentNext").classList.add("hidden");
