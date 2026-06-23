@@ -226,7 +226,7 @@
     <div class="panel" style="margin-bottom:16px">
       <h3>テーマを えらぶ / Choose a topic</h3><div class="cat-row" id="catRow"></div>
     </div>
-    <div class="panel">
+    <div class="panel hidden child-admin-tools">
       <h3>ことばを ふやす / Add your own word</h3>
       <div class="form-row">
         <input class="inp" id="addW" placeholder="English (e.g. car)">
@@ -735,8 +735,8 @@ function currentStoryText(){var s=lsDeck[lIdx];if(s.storyEn)return s.storyEn;ret
 function renderListen(){
   lsAnswered=false;var s=lsDeck[lIdx];
   resetHintCard("lsCard");
-  if(s.picItem){setVisual($("lsPic"),s.picItem);}else if(s.ans){setVisual($("lsPic"),s.ans);}else{$("lsPic").textContent=s.pic||"🎧";}$("lsTxt").textContent=currentStoryText();
-  $("lsStxt").innerHTML=showJp?(escHtml(s.jp||"")+"<br><span style='font-size:18px'>"+escHtml(s.q||"")+"</span>"):"";
+  $("lsPic").textContent=s.pic;$("lsTxt").textContent=currentStoryText();
+  $("lsStxt").innerHTML=showJp?(escHtml(s.jp)+"<br><span style="font-size:18px">"+escHtml(s.q)+"</span>"):"";
   $("lsQ").textContent=s.qEn; // 日本語ヒントはカードをタップした時だけ表示
   $("listenProg").textContent=(lIdx+1)+" / "+lsDeck.length;
   var wrongs=shuffle(s.wrong.slice()).slice(0,optCount()-1);
