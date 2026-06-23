@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Admin｜English Kids Master</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EAF6FF;--paper:#fff;--ink:#2D3A4A;--soft:#708197;--sky:#37A6F0;--skyd:#1E84CC;--leaf:#5BC98A;--bad:#FF6B6B;--sun:#FFC247;--grape:#A684E8;--line:#DCE6F2;--shadow:0 8px 0 rgba(45,58,74,.12),0 14px 26px rgba(45,58,74,.14);--r:24px}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}body{margin:0;padding:16px;background:radial-gradient(900px 500px at 90% -5%,#FFF4D6 0,transparent 55%),radial-gradient(900px 500px at -10% 105%,#DCF6E7 0,transparent 55%),var(--bg);font-family:"Fredoka","M PLUS Rounded 1c",sans-serif;color:var(--ink)}
+.app{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:14px}.top{background:var(--paper);border-radius:var(--r);box-shadow:var(--shadow);padding:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(160deg,var(--sky),var(--grape));display:grid;place-items:center;color:white;font-size:24px}.title{font-weight:800;font-size:22px}.title small{display:block;font-size:12px;color:var(--soft);font-family:"M PLUS Rounded 1c"}.spacer{flex:1}.tabs{display:flex;gap:8px;flex-wrap:wrap}.tab{border:0;background:#EEF3FA;color:var(--soft);border-radius:14px;padding:10px 14px;font-family:inherit;font-weight:800;cursor:pointer}.tab.on{background:var(--sky);color:white;box-shadow:0 4px 0 var(--skyd)}.panel{background:var(--paper);border-radius:var(--r);box-shadow:var(--shadow);padding:16px}.hidden{display:none!important}h2{font-size:20px;margin:0 0 8px}h3{font-size:15px;color:var(--soft);margin:16px 0 8px;font-family:"M PLUS Rounded 1c"}.hint{font-family:"M PLUS Rounded 1c";color:var(--soft);font-weight:700;font-size:13px;line-height:1.5;margin:6px 0 12px}.row{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-bottom:10px}.inp,.sel,textarea{font-family:inherit;font-size:15px;padding:11px 12px;border:2px solid var(--line);border-radius:13px;background:#F8FBFF;color:var(--ink);min-width:140px;flex:1}.inp:focus,.sel:focus,textarea:focus{outline:0;border-color:var(--sky)}textarea{width:100%;min-height:170px;resize:vertical;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12px;line-height:1.45}.btn{border:0;border-radius:15px;padding:12px 16px;font-family:inherit;font-weight:900;font-size:15px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}.btn:active{transform:translateY(2px)}.sky{background:var(--sky);color:white;box-shadow:0 4px 0 var(--skyd)}.leaf{background:var(--leaf);color:white;box-shadow:0 4px 0 #3FA86C}.sun{background:var(--sun);color:#744F00;box-shadow:0 4px 0 #D59B15}.ghost{background:#EEF3FA;color:var(--soft);box-shadow:0 4px 0 #D6DEE9}.bad{background:#FFE3E3;color:#D84B4B}.ok{color:#229B57}.ng{color:#D84B4B}.status{font-family:"M PLUS Rounded 1c";font-weight:800;white-space:pre-wrap;margin-top:8px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:12px}.card{background:#F6FAFF;border:2px solid #E2EDF8;border-radius:16px;padding:12px}.card b{font-size:17px}.card small{display:block;color:var(--soft);font-family:"M PLUS Rounded 1c";font-weight:700;margin-top:3px}.preview{max-height:360px;overflow:auto;border:2px dashed #C7DAEE;background:#F8FBFF;border-radius:16px;padding:10px}.imgprev{width:86px;height:86px;border-radius:16px;background:#F6FAFF;border:2px solid var(--line);display:grid;place-items:center;overflow:hidden}.imgprev img{max-width:100%;max-height:100%;object-fit:contain}.warn{background:#FFF8E8;border:2px solid #F4D58D;border-radius:16px;padding:10px;font-family:"M PLUS Rounded 1c";font-size:13px;font-weight:700;color:#8A651A}.pill{display:inline-flex;padding:6px 10px;border-radius:999px;background:#EEF3FA;color:var(--soft);font-size:12px;font-weight:800;margin:2px}.dangerBox{background:#FFF0F0;border:2px solid #FFD2D2;border-radius:16px;padding:10px;font-family:"M PLUS Rounded 1c";font-size:13px;color:#B74343;font-weight:700}
+
+.veTools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0 12px}.veList{display:flex;flex-direction:column;gap:10px}.veRow{display:grid;grid-template-columns:76px minmax(110px,.8fr) minmax(120px,1fr) 120px 90px minmax(180px,1.4fr) auto;gap:8px;align-items:center;background:#F6FAFF;border:2px solid #E2EDF8;border-radius:16px;padding:10px}.vePic{width:62px;height:62px;border-radius:14px;background:white;border:2px solid var(--line);display:grid;place-items:center;overflow:hidden;font-size:30px}.vePic img{max-width:100%;max-height:100%;object-fit:contain}.veWord{font-weight:900;word-break:break-word}.veMini{font-size:13px;padding:9px 10px;min-width:70px}.veBtn{font-size:13px;padding:9px 10px;border-radius:12px}.veActions{display:flex;flex-wrap:wrap;gap:6px}@media(max-width:900px){.veRow{grid-template-columns:64px 1fr}.veActions{grid-column:1/-1}.veRow .inp,.veRow .sel{min-width:0;width:100%}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="top">
+    <div class="logo">🛠</div>
+    <div class="title">English Kids Admin<small>Word / Image ・ Vocab Edit ・ Vocab AI ・ Question / Quiz AI</small></div>
+    <div class="spacer"></div>
+    <div class="tabs">
+      <button class="tab on" data-tab="github">GitHub設定</button>
+      <button class="tab" data-tab="word">Word / Image</button>
+      <button class="tab" data-tab="vocabedit">Vocab Edit</button>
+      <button class="tab" data-tab="vocabai">Vocab AI</button>
+      <button class="tab" data-tab="questionai">Question / Quiz AI</button>
+    </div>
+  </div>
+
+  <section class="panel" id="github">
+    <h2>GitHub設定</h2>
+    <div class="hint">ここはブラウザごとに保存されます。tokenは他人に見せないでください。</div>
+    <div class="row">
+      <input class="inp" id="ghOwner" placeholder="owner 例: imainfinity">
+      <input class="inp" id="ghRepo" placeholder="repo 例: english.learning.for.kids">
+      <input class="inp" id="ghBranch" placeholder="branch" value="main">
+    </div>
+    <div class="row">
+      <input class="inp" id="ghToken" type="password" placeholder="GitHub token">
+      <button class="btn sky" id="saveSettings">設定保存</button>
+      <button class="btn ghost" id="testGithub">接続テスト</button>
+    </div>
+    <div class="status" id="githubStatus"></div>
+    <div class="dangerBox">保存できない時は Fine-grained token の repository permissions で <b>Contents: Read and write</b> を付けてください。</div>
+  </section>
+
+  <section class="panel hidden" id="word">
+    <h2>Word / Image</h2>
+    <div class="hint">単語と画像をGitHubの <b>vocab.json</b> と <b>img/カテゴリ/...</b> に保存します。画像がない場合は 🔤 で登録します。</div>
+    <div class="row">
+      <input class="inp" id="wordEn" placeholder="English ID 例: alligator">
+      <input class="inp" id="wordJp" placeholder="日本語 例: わに">
+      <select class="sel" id="wordCat"><option>animals</option><option>food</option><option>nature</option><option>colors</option><option>body</option></select>
+      <input class="inp" id="wordEmoji" placeholder="emoji 任意">
+    </div>
+    <div class="row">
+      <label class="btn ghost">📷 画像選択<input type="file" id="wordFile" accept="image/*" style="display:none"></label>
+      <div class="imgprev" id="wordImgPrev">🖼</div>
+      <input class="inp" id="wordImgPath" placeholder="img/animals/alligator_...webp">
+    </div>
+    <div class="row">
+      <button class="btn leaf" id="saveWordGithub">💾 Word保存 / GitHub</button>
+      <button class="btn ghost" id="loadVocabList">vocab.json 読込</button>
+    </div>
+    <div class="status" id="wordStatus"></div>
+    <div class="preview" id="vocabPreview"></div>
+  </section>
+
+  <section class="panel hidden" id="vocabedit">
+    <h2>Vocab Edit</h2>
+    <div class="hint">登録済みの語彙を読み込んで編集します。絵文字だけの語彙は、ここで画像を選ぶと <b>img/カテゴリ/単語_日時.webp</b> に保存され、vocab.jsonは画像表示に切り替わります。</div>
+    <div class="veTools">
+      <button class="btn ghost" id="veLoad">vocab.json 読込</button>
+      <input class="inp" id="veSearch" placeholder="検索 English / 日本語">
+      <select class="sel" id="veCatFilter"><option value="all">all</option><option>animals</option><option>food</option><option>nature</option><option>colors</option><option>body</option><option>mixed</option></select>
+    </div>
+    <div class="status" id="veStatus"></div>
+    <div class="veList" id="veList"></div>
+  </section>
+
+
+  <section class="panel hidden" id="vocabai">
+    <h2>Vocab AI</h2>
+    <div class="hint">語彙を10個、50個、100個などに増殖させるプロンプトを作ります。AIの返答JSONを貼って <b>vocab.jsonへ登録</b> します。</div>
+    <div class="row">
+      <select class="sel" id="vaCat"><option>animals</option><option>food</option><option>nature</option><option>colors</option><option>body</option><option>mixed</option></select>
+      <input class="inp" id="vaCount" type="number" min="10" max="300" value="100" placeholder="語彙数">
+      <select class="sel" id="vaLevel"><option>hard</option><option selected>very_hard</option><option>expert</option></select>
+    </div>
+    <textarea id="vaTheme" placeholder="テーマ例: reptiles, water animals, insects, farm animals, wild animals, weather, kitchen, school, emotions"></textarea>
+    <div class="row">
+      <button class="btn sun" id="makeVocabPrompt">🧠 語彙AIプロンプト作成</button>
+      <button class="btn ghost" id="copyVocabPrompt">コピー</button>
+    </div>
+    <h3>AIへ渡すプロンプト</h3>
+    <textarea id="vocabPrompt" readonly></textarea>
+    <h3>AIが返した vocab JSON を貼る</h3>
+    <textarea id="vocabJsonIn" placeholder='[{"w":"crocodile","jp":"クロコダイル","c":"animals","e":"🔤"}]'></textarea>
+    <div class="row">
+      <button class="btn ghost" id="checkVocabJson">語彙検査 / Preview</button>
+      <button class="btn leaf" id="saveVocabJson">💾 vocab.jsonへ登録</button>
+    </div>
+    <div class="status" id="vocabAiStatus"></div>
+    <div class="preview" id="vocabAiPreview"></div>
+  </section>
+
+  <section class="panel hidden" id="questionai">
+    <h2>Question / Quiz AI</h2>
+    <div class="warn">ここが設問生成です。Vocab AIで増やした語彙を使って、Riddle / Listening / Sentence の questions.json を作ります。最低10問・答えの重複を抑制します。</div>
+    <div class="row">
+      <select class="sel" id="qaType"><option>riddle</option><option>listening</option><option>sentence</option><option>mixed</option></select>
+      <select class="sel" id="qaLevel"><option>hard</option><option selected>very_hard</option><option>expert</option></select>
+      <select class="sel" id="qaCat"><option>animals</option><option>food</option><option>nature</option><option>colors</option><option>body</option><option>all</option></select>
+      <input class="inp" id="qaCount" type="number" min="10" max="200" value="20" placeholder="問題数">
+    </div>
+    <div class="row">
+      <button class="btn ghost" id="loadVocabForQuestions">vocab.jsonから語彙読込</button>
+      <button class="btn sun" id="makeQuestionPrompt">🧠 Question / Quiz AIプロンプト作成</button>
+      <button class="btn ghost" id="copyQuestionPrompt">コピー</button>
+    </div>
+    <h3>設問に使う語彙プール</h3>
+    <textarea id="qaVocabPool" placeholder="vocab.jsonから読み込むか、answerId候補を貼る"></textarea>
+    <h3>AIへ渡すプロンプト</h3>
+    <textarea id="questionPrompt" readonly></textarea>
+    <h3>AIが返した questions JSON を貼る</h3>
+    <textarea id="questionJsonIn" placeholder='[{"id":"riddle_alligator_vh_001","type":"riddle","level":"very_hard","category":"animals","promptEn":"...","hintJp":"...","answerId":"alligator","choices":["alligator","crocodile","turtle","snake"],"active":true}]'></textarea>
+    <div class="row">
+      <button class="btn ghost" id="checkQuestionJson">設問検査 / Preview</button>
+      <button class="btn sky" id="saveQuestionsDev">💾 DEVへ保存</button>
+      <button class="btn leaf" id="saveQuestionsRelease">🚀 RELEASEへ反映</button>
+    </div>
+    <div class="status" id="questionAiStatus"></div>
+    <div class="preview" id="questionAiPreview"></div>
+  </section>
+</div>
+<script>
+(function(){"use strict";
+function $(id){return document.getElementById(id)}
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]})}
+function setStatus(id,msg,bad){var el=$(id);el.textContent=msg;el.className="status "+(bad?"ng":"ok")}
+function normWord(s){return String(s||"").trim().toLowerCase().replace(/[^a-z0-9_ -]/g,"").replace(/\s+/g,"_")}
+function timeStamp(){var d=new Date();function p(n){return String(n).padStart(2,"0")}return d.getFullYear()+p(d.getMonth()+1)+p(d.getDate())+"_"+p(d.getHours())+p(d.getMinutes())+p(d.getSeconds())}
+function utf8ToB64(str){var bytes=new TextEncoder().encode(str);var bin="";for(var i=0;i<bytes.length;i+=0x8000){bin+=String.fromCharCode.apply(null,bytes.slice(i,i+0x8000))}return btoa(bin)}
+function b64ToUtf8(b64){var bin=atob(String(b64||"").replace(/\s/g,""));var bytes=new Uint8Array(bin.length);for(var i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);return new TextDecoder().decode(bytes)}
+function settings(){return {owner:$('ghOwner').value.trim(),repo:$('ghRepo').value.trim(),branch:$('ghBranch').value.trim()||'main',token:$('ghToken').value.trim()}}
+function headers(){var s=settings();return {"Accept":"application/vnd.github+json","Authorization":"Bearer "+s.token,"X-GitHub-Api-Version":"2022-11-28"}}
+function apiUrl(path){var s=settings();return "https://api.github.com/repos/"+encodeURIComponent(s.owner)+"/"+encodeURIComponent(s.repo)+"/contents/"+path}
+async function ghGet(path){var s=settings();if(!s.owner||!s.repo||!s.token)throw new Error("GitHub設定が不足しています");var url=apiUrl(path)+"?ref="+encodeURIComponent(s.branch);var r=await fetch(url,{headers:headers()});if(r.status===404)return {sha:null,text:null,json:null};if(!r.ok)throw new Error(await r.text());var j=await r.json();var text=b64ToUtf8(j.content||"");return {sha:j.sha,text:text,json:safeJson(text)}}
+async function ghPut(path,text,msg){var s=settings();var old=await ghGet(path);var body={message:msg||("Update "+path),content:utf8ToB64(text),branch:s.branch};if(old.sha)body.sha=old.sha;var r=await fetch(apiUrl(path),{method:"PUT",headers:Object.assign({"Content-Type":"application/json"},headers()),body:JSON.stringify(body)});if(!r.ok)throw new Error(await r.text());return await r.json()}
+async function ghPutBase64(path,b64,msg){var s=settings();var old=await ghGet(path);var body={message:msg||("Upload "+path),content:b64,branch:s.branch};if(old.sha)body.sha=old.sha;var r=await fetch(apiUrl(path),{method:"PUT",headers:Object.assign({"Content-Type":"application/json"},headers()),body:JSON.stringify(body)});if(!r.ok)throw new Error(await r.text());return await r.json()}
+function safeJson(t){try{return JSON.parse(t)}catch(e){return null}}
+function asArray(x){return Array.isArray(x)?x:(x&&Array.isArray(x.items)?x.items:[])}
+function mergeByKey(oldArr,newArr,key){var map={};asArray(oldArr).forEach(function(x){var k=String(x&&x[key]||"").toLowerCase();if(k)map[k]=x});asArray(newArr).forEach(function(x){var k=String(x&&x[key]||"").toLowerCase();if(k)map[k]=Object.assign({},map[k]||{},x)});return Object.keys(map).sort().map(function(k){return map[k]})}
+function validateVocab(arr){var out=[],errs=[];var seen={};asArray(arr).forEach(function(x,i){var w=normWord(x.w||x.id);if(!w){errs.push("#"+(i+1)+" wなし");return}var jp=String(x.jp||"").trim();var c=String(x.c||x.category||"mixed").trim().toLowerCase();if(!jp)errs.push(w+" jpなし");var item={w:w,jp:jp,c:c};if(x.img)item.img=String(x.img).trim();else if(x.e&&String(x.e).trim())item.e=String(x.e).trim();else item.e="🔤";if(seen[w])errs.push("重複: "+w);seen[w]=true;out.push(item)});return {items:out,errs:errs}}
+function validateQuestions(arr){var out=[],errs=[];var seen={};asArray(arr).forEach(function(q,i){q=q||{};var type=String(q.type||"").toLowerCase().trim();if(type==="listen")type="listening";if(type==="sent")type="sentence";var level=String(q.level||"").toLowerCase().trim();var cat=String(q.category||q.c||"all").toLowerCase().trim();var ans=normWord(q.answerId||q.answer||q.ans);var id=String(q.id||"").trim();if(!id&&type&&ans)id=type+"_"+ans+"_"+level+"_"+String(i+1).padStart(3,"0");if(!id)errs.push("#"+(i+1)+" idなし");if(seen[id])errs.push("id重複: "+id);seen[id]=true;if(!["riddle","listening","sentence"].includes(type))errs.push(id+" type不正: "+type);if(!["easy","normal","hard","very_hard","expert"].includes(level))errs.push(id+" level不正: "+level);if(!ans)errs.push(id+" answerIdなし");var choices=(q.choices||[]).map(normWord).filter(Boolean);if(ans&&!choices.includes(ans))choices.unshift(ans);choices=[...new Set(choices)].slice(0,4);if(choices.length<4)errs.push(id+" choicesが4未満");var n={id:id,type:type,level:level,category:cat,answerId:ans,choices:choices,active:q.active!==false};if(type==="riddle"){n.promptEn=String(q.promptEn||q.questionEn||q.clue||"").trim();n.hintJp=String(q.hintJp||q.jp||"").trim();if(!n.promptEn)errs.push(id+" promptEnなし")}if(type==="listening"){n.storyEn=String(q.storyEn||q.story||"").trim();n.questionEn=String(q.questionEn||q.question||"").trim();n.hintJp=String(q.hintJp||q.jp||"").trim();if(!n.storyEn||!n.questionEn)errs.push(id+" storyEn/questionEnなし")}if(type==="sentence"){n.sentence=String(q.sentence||q.promptEn||"").trim();n.hintJp=String(q.hintJp||q.jp||"").trim();if(!n.sentence)errs.push(id+" sentenceなし")}out.push(n)});return {items:out,errs:errs}}
+function renderVocabPreview(items,elId){$(elId).innerHTML='<div class="cards">'+items.slice(0,200).map(function(x){return '<div class="card"><b>'+esc(x.w)+'</b><small>'+esc(x.jp)+' / '+esc(x.c)+'</small><small>'+(x.img?'🖼 '+esc(x.img):'emoji '+esc(x.e||''))+'</small></div>'}).join('')+'</div>'}
+function renderQPreview(items,elId){$(elId).innerHTML='<div class="cards">'+items.slice(0,200).map(function(q){var p=q.promptEn||q.storyEn||q.sentence||'';return '<div class="card"><b>'+esc(q.id)+'</b><small>'+esc(q.type)+' / '+esc(q.level)+' / '+esc(q.category)+'</small><small>ans: '+esc(q.answerId)+'</small><small>'+esc(p).slice(0,180)+'</small></div>'}).join('')+'</div>'}
+function loadSettings(){try{var s=JSON.parse(localStorage.getItem('kidsAdminGh')||'{}');$('ghOwner').value=s.owner||'';$('ghRepo').value=s.repo||'';$('ghBranch').value=s.branch||'main';$('ghToken').value=s.token||''}catch(e){}}
+function saveSettings(){localStorage.setItem('kidsAdminGh',JSON.stringify(settings()));setStatus('githubStatus','設定を保存しました',false)}
+document.querySelectorAll('.tab').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});b.classList.add('on');['github','word','vocabedit','vocabai','questionai'].forEach(function(id){$(id).classList.add('hidden')});$(b.dataset.tab).classList.remove('hidden')})})
+$('saveSettings').onclick=saveSettings;$('testGithub').onclick=async function(){try{saveSettings();var r=await ghGet('vocab.json');setStatus('githubStatus','接続OK。vocab.json: '+(r.text?('読込 '+r.text.length+' bytes'):'未作成'),false)}catch(e){setStatus('githubStatus','接続失敗: '+e.message,true)}};
+var selectedImgB64=null;
+function resizeToWebp(file){return new Promise(function(resolve,reject){var rd=new FileReader();rd.onload=function(){var img=new Image();img.onload=function(){var max=640;var sc=Math.min(max/img.width,max/img.height,1);var w=Math.round(img.width*sc),h=Math.round(img.height*sc);var cv=document.createElement('canvas');cv.width=w;cv.height=h;cv.getContext('2d').drawImage(img,0,0,w,h);var data=cv.toDataURL('image/webp',0.86);resolve(data)};img.onerror=reject;img.src=rd.result};rd.onerror=reject;rd.readAsDataURL(file)})}
+var veItems=[];
+var vePending={};
+var veLocalImgSrc={}; // GitHub Pages反映前でも、選択直後の画像を管理画面で見せるための一時キャッシュ
+function visualHtml(x){
+  if(x&&x.img){
+    var src=veLocalImgSrc[x.img] || (x.img + (x.img.indexOf('?')>=0?'&':'?') + 'v=' + Date.now());
+    return '<img src="'+esc(src)+'" onerror="this.replaceWith(document.createTextNode(\'⏳\'))">';
+  }
+  return esc((x&&x.e)||'🔤');
+}
+function optionHtml(val){
+  return ['animals','food','nature','colors','body','mixed'].map(function(c){return '<option value="'+c+'" '+(c===val?'selected':'')+'>'+c+'</option>'}).join('');
+}
+function renderVocabEditor(){
+  var q=($('veSearch').value||'').toLowerCase().trim();
+  var cf=$('veCatFilter').value||'all';
+  var html='';
+  veItems.forEach(function(x,i){
+    if(cf!=='all'&&String(x.c||'')!==cf)return;
+    if(q&&String(x.w+' '+(x.jp||'')).toLowerCase().indexOf(q)<0)return;
+    html+='<div class="veRow" data-i="'+i+'">'+
+      '<div class="vePic" id="vePic_'+i+'">'+visualHtml(x)+'</div>'+
+      '<div class="veWord">'+esc(x.w)+'</div>'+
+      '<input class="inp veMini" id="veJp_'+i+'" value="'+esc(x.jp||'')+'" placeholder="日本語">'+
+      '<select class="sel veMini" id="veCat_'+i+'">'+optionHtml(x.c||'mixed')+'</select>'+
+      '<input class="inp veMini" id="veEmoji_'+i+'" value="'+esc(x.e||'')+'" placeholder="emoji">'+
+      '<input class="inp veMini" id="veImg_'+i+'" value="'+esc(x.img||'')+'" placeholder="img/...webp">'+
+      '<div class="veActions">'+
+        '<label class="btn ghost veBtn">📷<input type="file" accept="image/*" data-ve-file="'+i+'" style="display:none"></label>'+
+        '<button class="btn sky veBtn" data-ve-save="'+i+'">保存</button>'+
+        '<button class="btn ghost veBtn" data-ve-emoji="'+i+'">絵文字へ</button>'+
+      '</div>'+
+    '</div>';
+  });
+  $('veList').innerHTML=html||'<div class="hint">表示できる語彙がありません。vocab.json 読込を押してください。</div>';
+  document.querySelectorAll('[data-ve-file]').forEach(function(inp){
+    inp.addEventListener('change',async function(e){
+      var i=Number(inp.dataset.veFile);var f=e.target.files&&e.target.files[0];if(!f)return;
+      try{
+        var data=await resizeToWebp(f);
+        vePending[i]=data.split(',')[1];
+        var c=$('veCat_'+i).value||veItems[i].c||'mixed';
+        var w=veItems[i].w;
+        var path='img/'+c+'/'+w+'_'+timeStamp()+'.webp';
+        veLocalImgSrc[path]=data;
+        $('veImg_'+i).value=path;
+        $('veEmoji_'+i).value='';
+        $('vePic_'+i).innerHTML='<img src="'+data+'">';
+        setStatus('veStatus','画像準備OK: '+w+' / '+path,false);
+      }catch(err){setStatus('veStatus','画像変換失敗: '+err.message,true)}
+    });
+  });
+  document.querySelectorAll('[data-ve-save]').forEach(function(btn){btn.addEventListener('click',function(){saveVocabEditRow(Number(btn.dataset.veSave))})});
+  document.querySelectorAll('[data-ve-emoji]').forEach(function(btn){btn.addEventListener('click',function(){var i=Number(btn.dataset.veEmoji);$('veImg_'+i).value='';$('veEmoji_'+i).value=$('veEmoji_'+i).value||'🔤';$('vePic_'+i).textContent=$('veEmoji_'+i).value;delete vePending[i];})});
+}
+async function loadVocabEditor(){
+  try{saveSettings();var j=asArray((await ghGet('vocab.json')).json);veItems=j.map(function(x){return Object.assign({},x)});renderVocabEditor();setStatus('veStatus','vocab.json 読込: '+veItems.length+'件',false)}
+  catch(e){setStatus('veStatus','読込失敗: '+e.message,true)}
+}
+async function saveVocabEditRow(i){
+  try{
+    saveSettings();
+    var old=veItems[i];if(!old)throw new Error('行が見つかりません');
+    var w=normWord(old.w), jp=$('veJp_'+i).value.trim(), c=$('veCat_'+i).value, emoji=$('veEmoji_'+i).value.trim(), img=$('veImg_'+i).value.trim();
+    if(!w||!jp)throw new Error('English ID と日本語が必要です');
+    if(vePending[i]&&img){
+      await ghPutBase64(img,vePending[i],'Upload vocab image '+img);
+      // GitHubには保存できたか即確認。Pages表示は数十秒遅れることがあります。
+      await ghGet(img);
+      delete vePending[i];
+    }
+    var item={w:w,jp:jp,c:c};
+    if(img){item.img=img;}else{item.e=emoji||'🔤';}
+    veItems[i]=item;
+    var normalized=mergeByKey([],veItems,'w');
+    await ghPut('vocab.json',JSON.stringify(normalized,null,2),'Edit vocab '+w);
+    veItems=normalized;
+    renderVocabEditor();
+    setStatus('veStatus','保存完了: '+w+(img?' / 画像保存OK。GitHub Pages反映までは数十秒かかる場合があります':' / 絵文字表示'),false);
+  }catch(e){setStatus('veStatus','保存失敗: '+e.message,true)}
+}
+$('veLoad').onclick=loadVocabEditor;
+$('veSearch').addEventListener('input',renderVocabEditor);
+$('veCatFilter').addEventListener('change',renderVocabEditor);
+$('wordFile').addEventListener('change',async function(e){var f=e.target.files&&e.target.files[0];if(!f)return;try{var data=await resizeToWebp(f);selectedImgB64=data.split(',')[1];$('wordImgPrev').innerHTML='<img src="'+data+'">';var w=normWord($('wordEn').value)||normWord(f.name.replace(/\.[^.]+$/,''));var c=$('wordCat').value;$('wordEn').value=w;$('wordImgPath').value='img/'+c+'/'+w+'_'+timeStamp()+'.webp';setStatus('wordStatus','画像準備OK: '+$('wordImgPath').value,false)}catch(err){setStatus('wordStatus','画像変換失敗: '+err.message,true)}});
+$('saveWordGithub').onclick=async function(){try{saveSettings();var w=normWord($('wordEn').value),jp=$('wordJp').value.trim(),c=$('wordCat').value,emoji=$('wordEmoji').value.trim(),img=$('wordImgPath').value.trim();if(!w||!jp)throw new Error('English と 日本語が必要です');if(selectedImgB64&&img){await ghPutBase64(img,selectedImgB64,'Upload image '+img)}var old=(await ghGet('vocab.json')).json||[];var item={w:w,jp:jp,c:c};if(img)item.img=img;else item.e=emoji||'🔤';var merged=mergeByKey(old,[item],'w');await ghPut('vocab.json',JSON.stringify(merged,null,2),'Update vocab '+w);setStatus('wordStatus','保存完了: '+w+(img?' / '+img:''),false)}catch(e){setStatus('wordStatus','保存失敗: '+e.message,true)}};
+$('loadVocabList').onclick=async function(){try{var j=(await ghGet('vocab.json')).json||[];renderVocabPreview(asArray(j),'vocabPreview');setStatus('wordStatus','vocab.json 読込: '+asArray(j).length+'件',false)}catch(e){setStatus('wordStatus','読込失敗: '+e.message,true)}};
+$('makeVocabPrompt').onclick=async function(){var cat=$('vaCat').value,count=Number($('vaCount').value)||100,level=$('vaLevel').value,theme=$('vaTheme').value.trim();var existing=[];try{existing=asArray((await ghGet('vocab.json')).json).map(function(x){return x.w}).slice(0,300)}catch(e){}var prompt='Create English vocabulary master data for a children English learning app as VALID JSON only. No markdown, no comments.\nOutput schema: an array of objects. Required fields: w, jp, c, active. Optional field: e. Do not include img.\nRules:\n- Make exactly '+count+' vocabulary items.\n- c must be exactly "'+cat+'" unless category is mixed; if mixed, use one of animals, food, nature, colors, body.\n- w must be lowercase English id, no spaces. Use snake_case only when needed.\n- jp must be Japanese translation or short Japanese meaning.\n- active must be true.\n- Use e:"🔤" unless a very obvious emoji exists.\n- Do not duplicate existing words.\n- Target difficulty for later questions: '+level+'. Include basic words, descriptive words, action verbs, habitats, body features, comparison words, and useful clue words.\n- Avoid only easy nouns. Include vocabulary that can support riddle/listening inference questions.\nTheme/focus: '+(theme||'broad variety')+'\nExisting words to avoid: '+existing.join(', ')+'\nJapanese must appear only in jp. Return JSON array only.';$('vocabPrompt').value=prompt;setStatus('vocabAiStatus','語彙AIプロンプトを作成しました',false)};
+$('copyVocabPrompt').onclick=function(){navigator.clipboard.writeText($('vocabPrompt').value);setStatus('vocabAiStatus','コピーしました',false)};
+$('checkVocabJson').onclick=function(){try{var v=validateVocab(JSON.parse($('vocabJsonIn').value));renderVocabPreview(v.items,'vocabAiPreview');setStatus('vocabAiStatus','検査: '+v.items.length+'件\n'+(v.errs.length?v.errs.join('\n'):'OK'),!!v.errs.length)}catch(e){setStatus('vocabAiStatus','JSONエラー: '+e.message,true)}};
+$('saveVocabJson').onclick=async function(){try{saveSettings();var v=validateVocab(JSON.parse($('vocabJsonIn').value));if(!v.items.length)throw new Error('登録できる語彙がありません');var old=(await ghGet('vocab.json')).json||[];var merged=mergeByKey(old,v.items,'w');await ghPut('vocab.json',JSON.stringify(merged,null,2),'Update vocab by Vocab AI');renderVocabPreview(v.items,'vocabAiPreview');setStatus('vocabAiStatus','vocab.jsonへ登録完了。追加/更新: '+v.items.length+'件 / 合計: '+merged.length+'件\n'+(v.errs.length?'注意:\n'+v.errs.join('\n'):'OK'),!!v.errs.length)}catch(e){setStatus('vocabAiStatus','保存失敗: '+e.message,true)}};
+$('loadVocabForQuestions').onclick=async function(){try{var j=asArray((await ghGet('vocab.json')).json);var cat=$('qaCat').value;var pool=j.filter(function(x){return cat==='all'||x.c===cat}).map(function(x){return {w:x.w,jp:x.jp,c:x.c}});$('qaVocabPool').value=JSON.stringify(pool,null,2);setStatus('questionAiStatus','語彙プール読込: '+pool.length+'件',false)}catch(e){setStatus('questionAiStatus','読込失敗: '+e.message,true)}};
+$('makeQuestionPrompt').onclick=function(){var type=$('qaType').value,level=$('qaLevel').value,cat=$('qaCat').value,count=Math.max(10,Number($('qaCount').value)||10);var poolText=$('qaVocabPool').value.trim();var prompt='Create English learning questions for children as VALID JSON only. No markdown, no comments.\nOutput schema: an array of objects. Required fields: id, type, level, category, active, answerId, choices.\nTypes allowed: riddle, listening, sentence. If requested type is mixed, include a balanced mix of riddle, listening, and sentence.\nFor riddle: use promptEn and hintJp.\nFor listening: use storyEn, questionEn, hintJp.\nFor sentence: use sentence, hintJp, answerId, choices.\nJapanese must appear only in hintJp, never inside promptEn/storyEn/questionEn/sentence.\nchoices must contain answerId and 3 wrong choices. Choices must be lowercase answer IDs from the vocabulary pool.\nlevel must be exactly: '+level+'. category must be exactly: '+cat+'. type request: '+type+'.\nMake exactly '+count+' questions. Never make fewer than '+count+' questions.\nUse at least '+Math.min(8,count)+' different answerId values. Do not use the same answerId more than 2 times unless the vocabulary pool is too small.\nDo not simply rephrase the same question. Each question must test a different clue pattern: feature, comparison, habitat, action, body part, behavior, color, size, sound, usage, or short reading inference.\nVery hard/expert should require inference, comparison, or short reading comprehension. Do not make questions too obvious.\nExample id format: riddle_alligator_very_hard_001 or listening_penguin_expert_001.\nVocabulary pool to use as answerId and choices:\n'+poolText+'\nReturn JSON array only.';$('questionPrompt').value=prompt;setStatus('questionAiStatus','Question / Quiz AIプロンプトを作成しました',false)};
+$('copyQuestionPrompt').onclick=function(){navigator.clipboard.writeText($('questionPrompt').value);setStatus('questionAiStatus','コピーしました',false)};
+$('checkQuestionJson').onclick=function(){try{var v=validateQuestions(JSON.parse($('questionJsonIn').value));renderQPreview(v.items,'questionAiPreview');setStatus('questionAiStatus','検査: '+v.items.length+'問\n'+(v.errs.length?v.errs.join('\n'):'OK'),!!v.errs.length)}catch(e){setStatus('questionAiStatus','JSONエラー: '+e.message,true)}};
+async function saveQuestions(path,label){try{saveSettings();var v=validateQuestions(JSON.parse($('questionJsonIn').value));if(v.items.length<10)throw new Error('最低10問必要です。現在 '+v.items.length+'問');var old=(await ghGet(path)).json||[];var merged=mergeByKey(old,v.items,'id');await ghPut(path,JSON.stringify(merged,null,2),'Update '+path+' by Question AI');renderQPreview(v.items,'questionAiPreview');setStatus('questionAiStatus',label+' 保存完了。追加/更新: '+v.items.length+'問 / 合計: '+merged.length+'問\n'+(v.errs.length?'注意:\n'+v.errs.join('\n'):'OK'),!!v.errs.length)}catch(e){setStatus('questionAiStatus','保存失敗: '+e.message,true)}}
+$('saveQuestionsDev').onclick=function(){saveQuestions('questions_dev.json','DEV')};
+$('saveQuestionsRelease').onclick=function(){saveQuestions('questions.json','RELEASE')};
+loadSettings();
+})();
+</script>
+</body>
+</html>
