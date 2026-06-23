@@ -1,507 +1,9 @@
 [
   {
-    "w": "car",
-    "jp": "くるま",
-    "c": "nature",
-    "e": "🚗"
-  },
-  {
-    "w": "train",
-    "jp": "でんしゃ",
-    "c": "nature",
-    "e": "🚃"
-  },
-  {
-    "w": "strawberry",
-    "jp": "いちご",
-    "c": "food",
-    "e": "🍓"
-  },
-  {
-    "w": "penguin",
-    "jp": "ペンギン",
-    "c": "animals",
-    "e": "🐧"
-  },
-  {
     "w": "alligator",
     "jp": "わに",
     "c": "animals",
     "img": "img/animals/alligator.webp"
-  },
-  {
-    "w": "elephant",
-    "jp": "ぞう",
-    "c": "animals",
-    "e": "🐘"
-  },
-  {
-    "w": "rabbit",
-    "jp": "うさぎ",
-    "c": "animals",
-    "e": "🐰"
-  },
-  {
-    "w": "bear",
-    "jp": "くま",
-    "c": "animals",
-    "e": "🐻"
-  },
-  {
-    "w": "lion",
-    "jp": "ライオン",
-    "c": "animals",
-    "e": "🦁"
-  },
-  {
-    "w": "fish",
-    "jp": "さかな",
-    "c": "animals",
-    "e": "🐟"
-  },
-  {
-    "w": "bird",
-    "jp": "とり",
-    "c": "animals",
-    "e": "🐦"
-  },
-  {
-    "w": "cat",
-    "jp": "ねこ",
-    "c": "animals",
-    "e": "🐱"
-  },
-  {
-    "w": "dog",
-    "jp": "いぬ",
-    "c": "animals",
-    "e": "🐶"
-  },
-  {
-    "w": "turtle",
-    "jp": "かめ",
-    "c": "animals",
-    "e": "🐢"
-  },
-  {
-    "w": "snake",
-    "jp": "へび",
-    "c": "animals",
-    "e": "🐍"
-  },
-  {
-    "w": "frog",
-    "jp": "かえる",
-    "c": "animals",
-    "e": "🐸"
-  },
-  {
-    "w": "monkey",
-    "jp": "さる",
-    "c": "animals",
-    "e": "🐵"
-  },
-  {
-    "w": "giraffe",
-    "jp": "きりん",
-    "c": "animals",
-    "e": "🦒"
-  },
-  {
-    "w": "tiger",
-    "jp": "とら",
-    "c": "animals",
-    "e": "🐯"
-  },
-  {
-    "w": "zebra",
-    "jp": "しまうま",
-    "c": "animals",
-    "e": "🦓"
-  },
-  {
-    "w": "horse",
-    "jp": "うま",
-    "c": "animals",
-    "e": "🐴"
-  },
-  {
-    "w": "cow",
-    "jp": "うし",
-    "c": "animals",
-    "e": "🐮"
-  },
-  {
-    "w": "pig",
-    "jp": "ぶた",
-    "c": "animals",
-    "e": "🐷"
-  },
-  {
-    "w": "sheep",
-    "jp": "ひつじ",
-    "c": "animals",
-    "e": "🐑"
-  },
-  {
-    "w": "goat",
-    "jp": "やぎ",
-    "c": "animals",
-    "e": "🐐"
-  },
-  {
-    "w": "chicken",
-    "jp": "にわとり",
-    "c": "animals",
-    "e": "🐔"
-  },
-  {
-    "w": "duck",
-    "jp": "あひる",
-    "c": "animals",
-    "e": "🦆"
-  },
-  {
-    "w": "goose",
-    "jp": "がちょう",
-    "c": "animals",
-    "e": "🪿"
-  },
-  {
-    "w": "turkey",
-    "jp": "しちめんちょう",
-    "c": "animals",
-    "e": "🦃"
-  },
-  {
-    "w": "owl",
-    "jp": "ふくろう",
-    "c": "animals",
-    "e": "🦉"
-  },
-  {
-    "w": "eagle",
-    "jp": "わし",
-    "c": "animals",
-    "e": "🦅"
-  },
-  {
-    "w": "parrot",
-    "jp": "オウム",
-    "c": "animals",
-    "e": "🦜"
-  },
-  {
-    "w": "flamingo",
-    "jp": "フラミンゴ",
-    "c": "animals",
-    "e": "🦩"
-  },
-  {
-    "w": "peacock",
-    "jp": "くじゃく",
-    "c": "animals",
-    "e": "🦚"
-  },
-  {
-    "w": "swan",
-    "jp": "はくちょう",
-    "c": "animals",
-    "e": "🦢"
-  },
-  {
-    "w": "bat",
-    "jp": "こうもり",
-    "c": "animals",
-    "e": "🦇"
-  },
-  {
-    "w": "mouse",
-    "jp": "ねずみ",
-    "c": "animals",
-    "e": "🐭"
-  },
-  {
-    "w": "rat",
-    "jp": "大きなねずみ",
-    "c": "animals",
-    "e": "🐀"
-  },
-  {
-    "w": "hamster",
-    "jp": "ハムスター",
-    "c": "animals",
-    "e": "🐹"
-  },
-  {
-    "w": "squirrel",
-    "jp": "りす",
-    "c": "animals",
-    "e": "🐿️"
-  },
-  {
-    "w": "beaver",
-    "jp": "ビーバー",
-    "c": "animals",
-    "e": "🦫"
-  },
-  {
-    "w": "hedgehog",
-    "jp": "はりねずみ",
-    "c": "animals",
-    "e": "🦔"
-  },
-  {
-    "w": "fox",
-    "jp": "きつね",
-    "c": "animals",
-    "e": "🦊"
-  },
-  {
-    "w": "wolf",
-    "jp": "おおかみ",
-    "c": "animals",
-    "e": "🐺"
-  },
-  {
-    "w": "deer",
-    "jp": "しか",
-    "c": "animals",
-    "e": "🦌"
-  },
-  {
-    "w": "kangaroo",
-    "jp": "カンガルー",
-    "c": "animals",
-    "e": "🦘"
-  },
-  {
-    "w": "koala",
-    "jp": "コアラ",
-    "c": "animals",
-    "e": "🐨"
-  },
-  {
-    "w": "panda",
-    "jp": "パンダ",
-    "c": "animals",
-    "e": "🐼"
-  },
-  {
-    "w": "sloth",
-    "jp": "ナマケモノ",
-    "c": "animals",
-    "e": "🦥"
-  },
-  {
-    "w": "otter",
-    "jp": "かわうそ",
-    "c": "animals",
-    "e": "🦦"
-  },
-  {
-    "w": "raccoon",
-    "jp": "あらいぐま",
-    "c": "animals",
-    "e": "🦝"
-  },
-  {
-    "w": "skunk",
-    "jp": "スカンク",
-    "c": "animals",
-    "e": "🦨"
-  },
-  {
-    "w": "badger",
-    "jp": "あなぐま",
-    "c": "animals",
-    "e": "🦡"
-  },
-  {
-    "w": "camel",
-    "jp": "らくだ",
-    "c": "animals",
-    "e": "🐪"
-  },
-  {
-    "w": "llama",
-    "jp": "ラマ",
-    "c": "animals",
-    "e": "🦙"
-  },
-  {
-    "w": "hippo",
-    "jp": "かば",
-    "c": "animals",
-    "e": "🦛"
-  },
-  {
-    "w": "rhino",
-    "jp": "さい",
-    "c": "animals",
-    "e": "🦏"
-  },
-  {
-    "w": "leopard",
-    "jp": "ひょう",
-    "c": "animals",
-    "e": "🐆"
-  },
-  {
-    "w": "cheetah",
-    "jp": "チーター",
-    "c": "animals",
-    "e": "🔤"
-  },
-  {
-    "w": "gorilla",
-    "jp": "ゴリラ",
-    "c": "animals",
-    "e": "🦍"
-  },
-  {
-    "w": "chimpanzee",
-    "jp": "チンパンジー",
-    "c": "animals",
-    "e": "🔤"
-  },
-  {
-    "w": "orangutan",
-    "jp": "オランウータン",
-    "c": "animals",
-    "e": "🦧"
-  },
-  {
-    "w": "lemur",
-    "jp": "キツネザル",
-    "c": "animals",
-    "e": "🔤"
-  },
-  {
-    "w": "meerkat",
-    "jp": "ミーアキャット",
-    "c": "animals",
-    "e": "🔤"
-  },
-  {
-    "w": "seal",
-    "jp": "アザラシ",
-    "c": "animals",
-    "e": "🦭"
-  },
-  {
-    "w": "sea_lion",
-    "jp": "アシカ",
-    "c": "animals",
-    "e": "🔤"
-  },
-  {
-    "w": "walrus",
-    "jp": "セイウチ",
-    "c": "animals",
-    "e": "🔤"
-  },
-  {
-    "w": "whale",
-    "jp": "くじら",
-    "c": "animals",
-    "e": "🐋"
-  },
-  {
-    "w": "dolphin",
-    "jp": "イルカ",
-    "c": "animals",
-    "e": "🐬"
-  },
-  {
-    "w": "shark",
-    "jp": "サメ",
-    "c": "animals",
-    "e": "🦈"
-  },
-  {
-    "w": "octopus",
-    "jp": "たこ",
-    "c": "animals",
-    "e": "🐙"
-  },
-  {
-    "w": "squid",
-    "jp": "いか",
-    "c": "animals",
-    "e": "🦑"
-  },
-  {
-    "w": "crab",
-    "jp": "かに",
-    "c": "animals",
-    "e": "🦀"
-  },
-  {
-    "w": "lobster",
-    "jp": "ロブスター",
-    "c": "animals",
-    "e": "🦞"
-  },
-  {
-    "w": "shrimp",
-    "jp": "えび",
-    "c": "animals",
-    "e": "🦐"
-  },
-  {
-    "w": "jellyfish",
-    "jp": "くらげ",
-    "c": "animals",
-    "e": "🪼"
-  },
-  {
-    "w": "starfish",
-    "jp": "ヒトデ",
-    "c": "animals",
-    "e": "🔤"
-  },
-  {
-    "w": "seahorse",
-    "jp": "タツノオトシゴ",
-    "c": "animals",
-    "e": "🔤"
-  },
-  {
-    "w": "clam",
-    "jp": "貝",
-    "c": "animals",
-    "e": "🔤"
-  },
-  {
-    "w": "snail",
-    "jp": "かたつむり",
-    "c": "animals",
-    "e": "🐌"
-  },
-  {
-    "w": "worm",
-    "jp": "みみず",
-    "c": "animals",
-    "e": "🪱"
-  },
-  {
-    "w": "butterfly",
-    "jp": "ちょう",
-    "c": "animals",
-    "e": "🦋"
-  },
-  {
-    "w": "moth",
-    "jp": "が",
-    "c": "animals",
-    "e": "🔤"
-  },
-  {
-    "w": "bee",
-    "jp": "はち",
-    "c": "animals",
-    "e": "🐝"
   },
   {
     "w": "ant",
@@ -510,226 +12,10 @@
     "e": "🐜"
   },
   {
-    "w": "beetle",
-    "jp": "かぶとむし",
-    "c": "animals",
-    "e": "🪲"
-  },
-  {
-    "w": "ladybug",
-    "jp": "てんとうむし",
-    "c": "animals",
-    "e": "🐞"
-  },
-  {
-    "w": "dragonfly",
-    "jp": "とんぼ",
-    "c": "animals",
-    "e": "🔤"
-  },
-  {
-    "w": "grasshopper",
-    "jp": "バッタ",
-    "c": "animals",
-    "e": "🦗"
-  },
-  {
-    "w": "cricket",
-    "jp": "こおろぎ",
-    "c": "animals",
-    "e": "🦗"
-  },
-  {
-    "w": "spider",
-    "jp": "くも",
-    "c": "animals",
-    "e": "🕷️"
-  },
-  {
-    "w": "scorpion",
-    "jp": "さそり",
-    "c": "animals",
-    "e": "🦂"
-  },
-  {
-    "w": "lizard",
-    "jp": "とかげ",
-    "c": "animals",
-    "e": "🦎"
-  },
-  {
-    "w": "iguana",
-    "jp": "イグアナ",
-    "c": "animals",
-    "e": "🔤"
-  },
-  {
-    "w": "chameleon",
-    "jp": "カメレオン",
-    "c": "animals",
-    "e": "🦎"
-  },
-  {
-    "w": "gecko",
-    "jp": "ヤモリ",
-    "c": "animals",
-    "e": "🔤"
-  },
-  {
-    "w": "crocodile",
-    "jp": "クロコダイル",
-    "c": "animals",
-    "e": "🐊"
-  },
-  {
-    "w": "newt",
-    "jp": "イモリ",
-    "c": "animals",
-    "e": "🔤"
-  },
-  {
-    "w": "salamander",
-    "jp": "サンショウウオ",
-    "c": "animals",
-    "e": "🔤"
-  },
-  {
-    "w": "toad",
-    "jp": "ヒキガエル",
-    "c": "animals",
-    "e": "🔤"
-  },
-  {
-    "w": "ostrich",
-    "jp": "ダチョウ",
-    "c": "animals",
-    "e": "🪶"
-  },
-  {
-    "w": "emu",
-    "jp": "エミュー",
-    "c": "animals",
-    "e": "🔤"
-  },
-  {
-    "w": "kiwi",
-    "jp": "キーウィという鳥",
-    "c": "animals",
-    "e": "🔤"
-  },
-  {
-    "w": "toucan",
-    "jp": "オオハシ",
-    "c": "animals",
-    "e": "🔤"
-  },
-  {
-    "w": "pelican",
-    "jp": "ペリカン",
-    "c": "animals",
-    "e": "🔤"
-  },
-  {
     "w": "apple",
     "jp": "りんご",
     "c": "food",
     "e": "🍎"
-  },
-  {
-    "w": "banana",
-    "jp": "バナナ",
-    "c": "food",
-    "e": "🍌"
-  },
-  {
-    "w": "orange",
-    "jp": "オレンジ",
-    "c": "food",
-    "e": "🍊"
-  },
-  {
-    "w": "grape",
-    "jp": "ぶどう",
-    "c": "food",
-    "e": "🍇"
-  },
-  {
-    "w": "watermelon",
-    "jp": "すいか",
-    "c": "food",
-    "e": "🍉"
-  },
-  {
-    "w": "melon",
-    "jp": "メロン",
-    "c": "food",
-    "e": "🍈"
-  },
-  {
-    "w": "peach",
-    "jp": "もも",
-    "c": "food",
-    "e": "🍑"
-  },
-  {
-    "w": "pear",
-    "jp": "なし",
-    "c": "food",
-    "e": "🍐"
-  },
-  {
-    "w": "pineapple",
-    "jp": "パイナップル",
-    "c": "food",
-    "e": "🍍"
-  },
-  {
-    "w": "mango",
-    "jp": "マンゴー",
-    "c": "food",
-    "e": "🥭"
-  },
-  {
-    "w": "lemon",
-    "jp": "レモン",
-    "c": "food",
-    "e": "🍋"
-  },
-  {
-    "w": "lime",
-    "jp": "ライム",
-    "c": "food",
-    "e": "🔤"
-  },
-  {
-    "w": "cherry",
-    "jp": "さくらんぼ",
-    "c": "food",
-    "e": "🍒"
-  },
-  {
-    "w": "blueberry",
-    "jp": "ブルーベリー",
-    "c": "food",
-    "e": "🫐"
-  },
-  {
-    "w": "raspberry",
-    "jp": "ラズベリー",
-    "c": "food",
-    "e": "🔤"
-  },
-  {
-    "w": "blackberry",
-    "jp": "ブラックベリー",
-    "c": "food",
-    "e": "🔤"
-  },
-  {
-    "w": "coconut",
-    "jp": "ココナッツ",
-    "c": "food",
-    "e": "🥥"
   },
   {
     "w": "avocado",
@@ -738,100 +24,82 @@
     "e": "🥑"
   },
   {
-    "w": "tomato",
-    "jp": "トマト",
+    "w": "bacon",
+    "jp": "ベーコン",
     "c": "food",
-    "e": "🍅"
+    "e": "🥓"
   },
   {
-    "w": "carrot",
-    "jp": "にんじん",
-    "c": "food",
-    "e": "🥕"
+    "w": "badger",
+    "jp": "あなぐま",
+    "c": "animals",
+    "e": "🦡"
   },
   {
-    "w": "potato",
-    "jp": "じゃがいも",
+    "w": "bagel",
+    "jp": "ベーグル",
     "c": "food",
-    "e": "🥔"
+    "e": "🥯"
   },
   {
-    "w": "sweet_potato",
-    "jp": "さつまいも",
+    "w": "banana",
+    "jp": "バナナ",
     "c": "food",
-    "e": "🍠"
+    "e": "🍌"
   },
   {
-    "w": "corn",
-    "jp": "とうもろこし",
-    "c": "food",
-    "e": "🌽"
+    "w": "bat",
+    "jp": "こうもり",
+    "c": "animals",
+    "e": "🦇"
   },
   {
-    "w": "onion",
-    "jp": "たまねぎ",
-    "c": "food",
-    "e": "🧅"
+    "w": "bear",
+    "jp": "くま",
+    "c": "animals",
+    "e": "🐻"
   },
   {
-    "w": "garlic",
-    "jp": "にんにく",
-    "c": "food",
-    "e": "🧄"
+    "w": "beaver",
+    "jp": "ビーバー",
+    "c": "animals",
+    "e": "🦫"
   },
   {
-    "w": "cucumber",
-    "jp": "きゅうり",
-    "c": "food",
-    "e": "🥒"
+    "w": "bee",
+    "jp": "はち",
+    "c": "animals",
+    "e": "🐝"
   },
   {
-    "w": "lettuce",
-    "jp": "レタス",
-    "c": "food",
-    "e": "🥬"
-  },
-  {
-    "w": "cabbage",
-    "jp": "キャベツ",
+    "w": "beef",
+    "jp": "牛肉",
     "c": "food",
     "e": "🔤"
   },
   {
-    "w": "broccoli",
-    "jp": "ブロッコリー",
-    "c": "food",
-    "e": "🥦"
+    "w": "beetle",
+    "jp": "かぶとむし",
+    "c": "animals",
+    "e": "🪲"
   },
   {
-    "w": "spinach",
-    "jp": "ほうれんそう",
+    "w": "bird",
+    "jp": "とり",
+    "c": "animals",
+    "e": "🐦"
+  },
+  {
+    "w": "blackberry",
+    "jp": "ブラックベリー",
     "c": "food",
     "e": "🔤"
   },
   {
-    "w": "eggplant",
-    "jp": "なす",
+    "w": "blueberry",
+    "jp": "ブルーベリー",
     "c": "food",
-    "e": "🍆"
-  },
-  {
-    "w": "pumpkin",
-    "jp": "かぼちゃ",
-    "c": "food",
-    "e": "🎃"
-  },
-  {
-    "w": "mushroom",
-    "jp": "きのこ",
-    "c": "food",
-    "e": "🍄"
-  },
-  {
-    "w": "rice",
-    "jp": "ごはん",
-    "c": "food",
-    "e": "🍚"
+    "e": "🫐"
   },
   {
     "w": "bread",
@@ -840,118 +108,16 @@
     "e": "🍞"
   },
   {
-    "w": "noodle",
-    "jp": "めん",
+    "w": "broccoli",
+    "jp": "ブロッコリー",
     "c": "food",
-    "e": "🍜"
+    "e": "🥦"
   },
   {
-    "w": "pasta",
-    "jp": "パスタ",
+    "w": "burrito",
+    "jp": "ブリトー",
     "c": "food",
-    "e": "🍝"
-  },
-  {
-    "w": "pizza",
-    "jp": "ピザ",
-    "c": "food",
-    "e": "🍕"
-  },
-  {
-    "w": "hamburger",
-    "jp": "ハンバーガー",
-    "c": "food",
-    "e": "🍔"
-  },
-  {
-    "w": "sandwich",
-    "jp": "サンドイッチ",
-    "c": "food",
-    "e": "🥪"
-  },
-  {
-    "w": "soup",
-    "jp": "スープ",
-    "c": "food",
-    "e": "🍲"
-  },
-  {
-    "w": "salad",
-    "jp": "サラダ",
-    "c": "food",
-    "e": "🥗"
-  },
-  {
-    "w": "curry",
-    "jp": "カレー",
-    "c": "food",
-    "e": "🍛"
-  },
-  {
-    "w": "sushi",
-    "jp": "すし",
-    "c": "food",
-    "e": "🍣"
-  },
-  {
-    "w": "rice_ball",
-    "jp": "おにぎり",
-    "c": "food",
-    "e": "🍙"
-  },
-  {
-    "w": "dumpling",
-    "jp": "ぎょうざ",
-    "c": "food",
-    "e": "🥟"
-  },
-  {
-    "w": "pancake",
-    "jp": "パンケーキ",
-    "c": "food",
-    "e": "🥞"
-  },
-  {
-    "w": "waffle",
-    "jp": "ワッフル",
-    "c": "food",
-    "e": "🧇"
-  },
-  {
-    "w": "cereal",
-    "jp": "シリアル",
-    "c": "food",
-    "e": "🥣"
-  },
-  {
-    "w": "oatmeal",
-    "jp": "オートミール",
-    "c": "food",
-    "e": "🔤"
-  },
-  {
-    "w": "yogurt",
-    "jp": "ヨーグルト",
-    "c": "food",
-    "e": "🔤"
-  },
-  {
-    "w": "cheese",
-    "jp": "チーズ",
-    "c": "food",
-    "e": "🧀"
-  },
-  {
-    "w": "milk",
-    "jp": "ぎゅうにゅう",
-    "c": "food",
-    "e": "🥛"
-  },
-  {
-    "w": "egg",
-    "jp": "たまご",
-    "c": "food",
-    "e": "🥚"
+    "e": "🌯"
   },
   {
     "w": "butter",
@@ -960,21 +126,93 @@
     "e": "🧈"
   },
   {
-    "w": "honey",
-    "jp": "はちみつ",
-    "c": "food",
-    "e": "🍯"
+    "w": "butterfly",
+    "jp": "ちょう",
+    "c": "animals",
+    "e": "🦋"
   },
   {
-    "w": "jam",
-    "jp": "ジャム",
+    "w": "cabbage",
+    "jp": "キャベツ",
     "c": "food",
     "e": "🔤"
   },
   {
-    "w": "peanut_butter",
-    "jp": "ピーナッツバター",
+    "w": "cake",
+    "jp": "ケーキ",
     "c": "food",
+    "e": "🍰"
+  },
+  {
+    "w": "camel",
+    "jp": "らくだ",
+    "c": "animals",
+    "e": "🐪"
+  },
+  {
+    "w": "candy",
+    "jp": "キャンディー",
+    "c": "food",
+    "e": "🍬"
+  },
+  {
+    "w": "car",
+    "jp": "くるま",
+    "c": "nature",
+    "e": "🚗"
+  },
+  {
+    "w": "carrot",
+    "jp": "にんじん",
+    "c": "food",
+    "e": "🥕"
+  },
+  {
+    "w": "cat",
+    "jp": "ねこ",
+    "c": "animals",
+    "e": "🐱"
+  },
+  {
+    "w": "cereal",
+    "jp": "シリアル",
+    "c": "food",
+    "e": "🥣"
+  },
+  {
+    "w": "chameleon",
+    "jp": "カメレオン",
+    "c": "animals",
+    "e": "🦎"
+  },
+  {
+    "w": "cheese",
+    "jp": "チーズ",
+    "c": "food",
+    "e": "🧀"
+  },
+  {
+    "w": "cheetah",
+    "jp": "チーター",
+    "c": "animals",
+    "img": "img/animals/cheetah_20260623_222227.webp"
+  },
+  {
+    "w": "cherry",
+    "jp": "さくらんぼ",
+    "c": "food",
+    "e": "🍒"
+  },
+  {
+    "w": "chicken",
+    "jp": "にわとり",
+    "c": "animals",
+    "e": "🐔"
+  },
+  {
+    "w": "chimpanzee",
+    "jp": "チンパンジー",
+    "c": "animals",
     "e": "🔤"
   },
   {
@@ -984,10 +222,16 @@
     "e": "🍫"
   },
   {
-    "w": "candy",
-    "jp": "キャンディー",
+    "w": "clam",
+    "jp": "貝",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "coconut",
+    "jp": "ココナッツ",
     "c": "food",
-    "e": "🍬"
+    "e": "🥥"
   },
   {
     "w": "cookie",
@@ -996,46 +240,22 @@
     "e": "🍪"
   },
   {
-    "w": "cake",
-    "jp": "ケーキ",
+    "w": "corn",
+    "jp": "とうもろこし",
     "c": "food",
-    "e": "🍰"
+    "e": "🌽"
   },
   {
-    "w": "cupcake",
-    "jp": "カップケーキ",
-    "c": "food",
-    "e": "🧁"
+    "w": "cow",
+    "jp": "うし",
+    "c": "animals",
+    "e": "🐮"
   },
   {
-    "w": "donut",
-    "jp": "ドーナツ",
-    "c": "food",
-    "e": "🍩"
-  },
-  {
-    "w": "ice_cream",
-    "jp": "アイスクリーム",
-    "c": "food",
-    "e": "🍦"
-  },
-  {
-    "w": "pudding",
-    "jp": "プリン",
-    "c": "food",
-    "e": "🍮"
-  },
-  {
-    "w": "jelly",
-    "jp": "ゼリー",
-    "c": "food",
-    "e": "🔤"
-  },
-  {
-    "w": "popcorn",
-    "jp": "ポップコーン",
-    "c": "food",
-    "e": "🍿"
+    "w": "crab",
+    "jp": "かに",
+    "c": "animals",
+    "e": "🦀"
   },
   {
     "w": "cracker",
@@ -1044,10 +264,130 @@
     "e": "🔤"
   },
   {
-    "w": "potato_chip",
-    "jp": "ポテトチップス",
+    "w": "cricket",
+    "jp": "こおろぎ",
+    "c": "animals",
+    "e": "🦗"
+  },
+  {
+    "w": "crocodile",
+    "jp": "クロコダイル",
+    "c": "animals",
+    "e": "🐊"
+  },
+  {
+    "w": "cucumber",
+    "jp": "きゅうり",
+    "c": "food",
+    "e": "🥒"
+  },
+  {
+    "w": "cupcake",
+    "jp": "カップケーキ",
+    "c": "food",
+    "e": "🧁"
+  },
+  {
+    "w": "curry",
+    "jp": "カレー",
+    "c": "food",
+    "e": "🍛"
+  },
+  {
+    "w": "deer",
+    "jp": "しか",
+    "c": "animals",
+    "e": "🦌"
+  },
+  {
+    "w": "dog",
+    "jp": "いぬ",
+    "c": "animals",
+    "e": "🐶"
+  },
+  {
+    "w": "dolphin",
+    "jp": "イルカ",
+    "c": "animals",
+    "e": "🐬"
+  },
+  {
+    "w": "donut",
+    "jp": "ドーナツ",
+    "c": "food",
+    "e": "🍩"
+  },
+  {
+    "w": "dragonfly",
+    "jp": "とんぼ",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "duck",
+    "jp": "あひる",
+    "c": "animals",
+    "e": "🦆"
+  },
+  {
+    "w": "dumpling",
+    "jp": "ぎょうざ",
+    "c": "food",
+    "e": "🥟"
+  },
+  {
+    "w": "eagle",
+    "jp": "わし",
+    "c": "animals",
+    "e": "🦅"
+  },
+  {
+    "w": "egg",
+    "jp": "たまご",
+    "c": "food",
+    "e": "🥚"
+  },
+  {
+    "w": "eggplant",
+    "jp": "なす",
+    "c": "food",
+    "e": "🍆"
+  },
+  {
+    "w": "elephant",
+    "jp": "ぞう",
+    "c": "animals",
+    "e": "🐘"
+  },
+  {
+    "w": "emu",
+    "jp": "エミュー",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "fish",
+    "jp": "さかな",
+    "c": "animals",
+    "e": "🐟"
+  },
+  {
+    "w": "flamingo",
+    "jp": "フラミンゴ",
+    "c": "animals",
+    "e": "🦩"
+  },
+  {
+    "w": "flour",
+    "jp": "こむぎこ",
     "c": "food",
     "e": "🔤"
+  },
+  {
+    "w": "fox",
+    "jp": "きつね",
+    "c": "animals",
+    "e": "🦊"
   },
   {
     "w": "french_fries",
@@ -1056,82 +396,64 @@
     "e": "🍟"
   },
   {
-    "w": "toast",
-    "jp": "トースト",
+    "w": "fried_rice",
+    "jp": "チャーハン",
     "c": "food",
     "e": "🔤"
   },
   {
-    "w": "muffin",
-    "jp": "マフィン",
+    "w": "frog",
+    "jp": "かえる",
+    "c": "animals",
+    "e": "🐸"
+  },
+  {
+    "w": "garlic",
+    "jp": "にんにく",
     "c": "food",
+    "e": "🧄"
+  },
+  {
+    "w": "gecko",
+    "jp": "ヤモリ",
+    "c": "animals",
     "e": "🔤"
   },
   {
-    "w": "bagel",
-    "jp": "ベーグル",
-    "c": "food",
-    "e": "🥯"
+    "w": "giraffe",
+    "jp": "きりん",
+    "c": "animals",
+    "e": "🦒"
   },
   {
-    "w": "pie",
-    "jp": "パイ",
-    "c": "food",
-    "e": "🥧"
+    "w": "goat",
+    "jp": "やぎ",
+    "c": "animals",
+    "e": "🐐"
   },
   {
-    "w": "taco",
-    "jp": "タコス",
-    "c": "food",
-    "e": "🌮"
+    "w": "goose",
+    "jp": "がちょう",
+    "c": "animals",
+    "e": "🪿"
   },
   {
-    "w": "burrito",
-    "jp": "ブリトー",
-    "c": "food",
-    "e": "🌯"
+    "w": "gorilla",
+    "jp": "ゴリラ",
+    "c": "animals",
+    "e": "🦍"
   },
   {
-    "w": "quesadilla",
-    "jp": "ケサディーヤ",
+    "w": "grape",
+    "jp": "ぶどう",
     "c": "food",
-    "e": "🔤"
+    "e": "🍇"
   },
   {
-    "w": "sausage",
-    "jp": "ソーセージ",
-    "c": "food",
-    "e": "🔤"
-  },
-  {
-    "w": "bacon",
-    "jp": "ベーコン",
-    "c": "food",
-    "e": "🥓"
-  },
-  {
-    "w": "steak",
-    "jp": "ステーキ",
-    "c": "food",
-    "e": "🥩"
-  },
-  {
-    "w": "meat",
-    "jp": "おにく",
-    "c": "food",
-    "e": "🍖"
-  },
-  {
-    "w": "beef",
-    "jp": "牛肉",
-    "c": "food",
-    "e": "🔤"
-  },
-  {
-    "w": "pork",
-    "jp": "ぶた肉",
-    "c": "food",
-    "e": "🔤"
+    "w": "grasshopper",
+    "jp": "バッタ",
+    "c": "animals",
+    "e": "🦗"
   },
   {
     "w": "ham",
@@ -1140,16 +462,178 @@
     "e": "🔤"
   },
   {
-    "w": "tofu",
-    "jp": "とうふ",
+    "w": "hamburger",
+    "jp": "ハンバーガー",
+    "c": "food",
+    "e": "🍔"
+  },
+  {
+    "w": "hamster",
+    "jp": "ハムスター",
+    "c": "animals",
+    "e": "🐹"
+  },
+  {
+    "w": "hedgehog",
+    "jp": "はりねずみ",
+    "c": "animals",
+    "e": "🦔"
+  },
+  {
+    "w": "hippo",
+    "jp": "かば",
+    "c": "animals",
+    "e": "🦛"
+  },
+  {
+    "w": "honey",
+    "jp": "はちみつ",
+    "c": "food",
+    "e": "🍯"
+  },
+  {
+    "w": "horse",
+    "jp": "うま",
+    "c": "animals",
+    "e": "🐴"
+  },
+  {
+    "w": "ice_cream",
+    "jp": "アイスクリーム",
+    "c": "food",
+    "e": "🍦"
+  },
+  {
+    "w": "iguana",
+    "jp": "イグアナ",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "jam",
+    "jp": "ジャム",
     "c": "food",
     "e": "🔤"
   },
   {
-    "w": "soy_sauce",
-    "jp": "しょうゆ",
+    "w": "jelly",
+    "jp": "ゼリー",
     "c": "food",
     "e": "🔤"
+  },
+  {
+    "w": "jellyfish",
+    "jp": "くらげ",
+    "c": "animals",
+    "e": "🪼"
+  },
+  {
+    "w": "kangaroo",
+    "jp": "カンガルー",
+    "c": "animals",
+    "e": "🦘"
+  },
+  {
+    "w": "kiwi",
+    "jp": "キーウィという鳥",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "koala",
+    "jp": "コアラ",
+    "c": "animals",
+    "e": "🐨"
+  },
+  {
+    "w": "ladybug",
+    "jp": "てんとうむし",
+    "c": "animals",
+    "e": "🐞"
+  },
+  {
+    "w": "lemon",
+    "jp": "レモン",
+    "c": "food",
+    "e": "🍋"
+  },
+  {
+    "w": "lemur",
+    "jp": "キツネザル",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "leopard",
+    "jp": "ひょう",
+    "c": "animals",
+    "e": "🐆"
+  },
+  {
+    "w": "lettuce",
+    "jp": "レタス",
+    "c": "food",
+    "e": "🥬"
+  },
+  {
+    "w": "lime",
+    "jp": "ライム",
+    "c": "food",
+    "e": "🔤"
+  },
+  {
+    "w": "lion",
+    "jp": "ライオン",
+    "c": "animals",
+    "e": "🦁"
+  },
+  {
+    "w": "lizard",
+    "jp": "とかげ",
+    "c": "animals",
+    "e": "🦎"
+  },
+  {
+    "w": "llama",
+    "jp": "ラマ",
+    "c": "animals",
+    "e": "🦙"
+  },
+  {
+    "w": "lobster",
+    "jp": "ロブスター",
+    "c": "animals",
+    "e": "🦞"
+  },
+  {
+    "w": "mango",
+    "jp": "マンゴー",
+    "c": "food",
+    "e": "🥭"
+  },
+  {
+    "w": "meat",
+    "jp": "おにく",
+    "c": "food",
+    "e": "🍖"
+  },
+  {
+    "w": "meerkat",
+    "jp": "ミーアキャット",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "melon",
+    "jp": "メロン",
+    "c": "food",
+    "e": "🍈"
+  },
+  {
+    "w": "milk",
+    "jp": "ぎゅうにゅう",
+    "c": "food",
+    "e": "🥛"
   },
   {
     "w": "miso_soup",
@@ -1158,28 +642,58 @@
     "e": "🔤"
   },
   {
-    "w": "ramen",
-    "jp": "ラーメン",
+    "w": "monkey",
+    "jp": "さる",
+    "c": "animals",
+    "e": "🐵"
+  },
+  {
+    "w": "moth",
+    "jp": "が",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "mouse",
+    "jp": "ねずみ",
+    "c": "animals",
+    "e": "🐭"
+  },
+  {
+    "w": "muffin",
+    "jp": "マフィン",
+    "c": "food",
+    "e": "🔤"
+  },
+  {
+    "w": "mushroom",
+    "jp": "きのこ",
+    "c": "food",
+    "e": "🍄"
+  },
+  {
+    "w": "newt",
+    "jp": "イモリ",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "noodle",
+    "jp": "めん",
     "c": "food",
     "e": "🍜"
   },
   {
-    "w": "udon",
-    "jp": "うどん",
+    "w": "oatmeal",
+    "jp": "オートミール",
     "c": "food",
     "e": "🔤"
   },
   {
-    "w": "soba",
-    "jp": "そば",
-    "c": "food",
-    "e": "🔤"
-  },
-  {
-    "w": "tempura",
-    "jp": "てんぷら",
-    "c": "food",
-    "e": "🔤"
+    "w": "octopus",
+    "jp": "たこ",
+    "c": "animals",
+    "e": "🐙"
   },
   {
     "w": "omelet",
@@ -1188,8 +702,140 @@
     "e": "🔤"
   },
   {
-    "w": "fried_rice",
-    "jp": "チャーハン",
+    "w": "onion",
+    "jp": "たまねぎ",
+    "c": "food",
+    "e": "🧅"
+  },
+  {
+    "w": "orange",
+    "jp": "オレンジ",
+    "c": "food",
+    "e": "🍊"
+  },
+  {
+    "w": "orangutan",
+    "jp": "オランウータン",
+    "c": "animals",
+    "e": "🦧"
+  },
+  {
+    "w": "ostrich",
+    "jp": "ダチョウ",
+    "c": "animals",
+    "e": "🪶"
+  },
+  {
+    "w": "otter",
+    "jp": "かわうそ",
+    "c": "animals",
+    "e": "🦦"
+  },
+  {
+    "w": "owl",
+    "jp": "ふくろう",
+    "c": "animals",
+    "e": "🦉"
+  },
+  {
+    "w": "pancake",
+    "jp": "パンケーキ",
+    "c": "food",
+    "e": "🥞"
+  },
+  {
+    "w": "panda",
+    "jp": "パンダ",
+    "c": "animals",
+    "e": "🐼"
+  },
+  {
+    "w": "parrot",
+    "jp": "オウム",
+    "c": "animals",
+    "e": "🦜"
+  },
+  {
+    "w": "pasta",
+    "jp": "パスタ",
+    "c": "food",
+    "e": "🍝"
+  },
+  {
+    "w": "peach",
+    "jp": "もも",
+    "c": "food",
+    "e": "🍑"
+  },
+  {
+    "w": "peacock",
+    "jp": "くじゃく",
+    "c": "animals",
+    "e": "🦚"
+  },
+  {
+    "w": "peanut_butter",
+    "jp": "ピーナッツバター",
+    "c": "food",
+    "e": "🔤"
+  },
+  {
+    "w": "pear",
+    "jp": "なし",
+    "c": "food",
+    "e": "🍐"
+  },
+  {
+    "w": "pelican",
+    "jp": "ペリカン",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "penguin",
+    "jp": "ペンギン",
+    "c": "animals",
+    "e": "🐧"
+  },
+  {
+    "w": "pepper",
+    "jp": "こしょう",
+    "c": "food",
+    "e": "🔤"
+  },
+  {
+    "w": "pie",
+    "jp": "パイ",
+    "c": "food",
+    "e": "🥧"
+  },
+  {
+    "w": "pig",
+    "jp": "ぶた",
+    "c": "animals",
+    "e": "🐷"
+  },
+  {
+    "w": "pineapple",
+    "jp": "パイナップル",
+    "c": "food",
+    "e": "🍍"
+  },
+  {
+    "w": "pizza",
+    "jp": "ピザ",
+    "c": "food",
+    "e": "🍕"
+  },
+  {
+    "w": "popcorn",
+    "jp": "ポップコーン",
+    "c": "food",
+    "e": "🍿"
+  },
+  {
+    "w": "pork",
+    "jp": "ぶた肉",
     "c": "food",
     "e": "🔤"
   },
@@ -1200,9 +846,93 @@
     "e": "🔤"
   },
   {
-    "w": "stew",
-    "jp": "シチュー",
+    "w": "potato",
+    "jp": "じゃがいも",
     "c": "food",
+    "e": "🥔"
+  },
+  {
+    "w": "potato_chip",
+    "jp": "ポテトチップス",
+    "c": "food",
+    "e": "🔤"
+  },
+  {
+    "w": "pudding",
+    "jp": "プリン",
+    "c": "food",
+    "e": "🍮"
+  },
+  {
+    "w": "pumpkin",
+    "jp": "かぼちゃ",
+    "c": "food",
+    "e": "🎃"
+  },
+  {
+    "w": "quesadilla",
+    "jp": "ケサディーヤ",
+    "c": "food",
+    "e": "🔤"
+  },
+  {
+    "w": "rabbit",
+    "jp": "うさぎ",
+    "c": "animals",
+    "e": "🐰"
+  },
+  {
+    "w": "raccoon",
+    "jp": "あらいぐま",
+    "c": "animals",
+    "e": "🦝"
+  },
+  {
+    "w": "ramen",
+    "jp": "ラーメン",
+    "c": "food",
+    "e": "🍜"
+  },
+  {
+    "w": "raspberry",
+    "jp": "ラズベリー",
+    "c": "food",
+    "e": "🔤"
+  },
+  {
+    "w": "rat",
+    "jp": "大きなねずみ",
+    "c": "animals",
+    "e": "🐀"
+  },
+  {
+    "w": "rhino",
+    "jp": "さい",
+    "c": "animals",
+    "e": "🦏"
+  },
+  {
+    "w": "rice",
+    "jp": "ごはん",
+    "c": "food",
+    "e": "🍚"
+  },
+  {
+    "w": "rice_ball",
+    "jp": "おにぎり",
+    "c": "food",
+    "e": "🍙"
+  },
+  {
+    "w": "salad",
+    "jp": "サラダ",
+    "c": "food",
+    "e": "🥗"
+  },
+  {
+    "w": "salamander",
+    "jp": "サンショウウオ",
+    "c": "animals",
     "e": "🔤"
   },
   {
@@ -1212,21 +942,291 @@
     "e": "🧂"
   },
   {
+    "w": "sandwich",
+    "jp": "サンドイッチ",
+    "c": "food",
+    "e": "🥪"
+  },
+  {
+    "w": "sausage",
+    "jp": "ソーセージ",
+    "c": "food",
+    "e": "🔤"
+  },
+  {
+    "w": "scorpion",
+    "jp": "さそり",
+    "c": "animals",
+    "e": "🦂"
+  },
+  {
+    "w": "sea_lion",
+    "jp": "アシカ",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "seahorse",
+    "jp": "タツノオトシゴ",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "seal",
+    "jp": "アザラシ",
+    "c": "animals",
+    "e": "🦭"
+  },
+  {
+    "w": "shark",
+    "jp": "サメ",
+    "c": "animals",
+    "e": "🦈"
+  },
+  {
+    "w": "sheep",
+    "jp": "ひつじ",
+    "c": "animals",
+    "e": "🐑"
+  },
+  {
+    "w": "shrimp",
+    "jp": "えび",
+    "c": "animals",
+    "e": "🦐"
+  },
+  {
+    "w": "skunk",
+    "jp": "スカンク",
+    "c": "animals",
+    "e": "🦨"
+  },
+  {
+    "w": "sloth",
+    "jp": "ナマケモノ",
+    "c": "animals",
+    "e": "🦥"
+  },
+  {
+    "w": "snail",
+    "jp": "かたつむり",
+    "c": "animals",
+    "e": "🐌"
+  },
+  {
+    "w": "snake",
+    "jp": "へび",
+    "c": "animals",
+    "e": "🐍"
+  },
+  {
+    "w": "soba",
+    "jp": "そば",
+    "c": "food",
+    "e": "🔤"
+  },
+  {
+    "w": "soup",
+    "jp": "スープ",
+    "c": "food",
+    "e": "🍲"
+  },
+  {
+    "w": "soy_sauce",
+    "jp": "しょうゆ",
+    "c": "food",
+    "e": "🔤"
+  },
+  {
+    "w": "spider",
+    "jp": "くも",
+    "c": "animals",
+    "e": "🕷️"
+  },
+  {
+    "w": "spinach",
+    "jp": "ほうれんそう",
+    "c": "food",
+    "e": "🔤"
+  },
+  {
+    "w": "squid",
+    "jp": "いか",
+    "c": "animals",
+    "e": "🦑"
+  },
+  {
+    "w": "squirrel",
+    "jp": "りす",
+    "c": "animals",
+    "e": "🐿️"
+  },
+  {
+    "w": "starfish",
+    "jp": "ヒトデ",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "steak",
+    "jp": "ステーキ",
+    "c": "food",
+    "e": "🥩"
+  },
+  {
+    "w": "stew",
+    "jp": "シチュー",
+    "c": "food",
+    "e": "🔤"
+  },
+  {
+    "w": "strawberry",
+    "jp": "いちご",
+    "c": "food",
+    "e": "🍓"
+  },
+  {
     "w": "sugar",
     "jp": "さとう",
     "c": "food",
     "e": "🔤"
   },
   {
-    "w": "pepper",
-    "jp": "こしょう",
+    "w": "sushi",
+    "jp": "すし",
+    "c": "food",
+    "e": "🍣"
+  },
+  {
+    "w": "swan",
+    "jp": "はくちょう",
+    "c": "animals",
+    "e": "🦢"
+  },
+  {
+    "w": "sweet_potato",
+    "jp": "さつまいも",
+    "c": "food",
+    "e": "🍠"
+  },
+  {
+    "w": "taco",
+    "jp": "タコス",
+    "c": "food",
+    "e": "🌮"
+  },
+  {
+    "w": "tempura",
+    "jp": "てんぷら",
     "c": "food",
     "e": "🔤"
   },
   {
-    "w": "flour",
-    "jp": "こむぎこ",
+    "w": "tiger",
+    "jp": "とら",
+    "c": "animals",
+    "e": "🐯"
+  },
+  {
+    "w": "toad",
+    "jp": "ヒキガエル",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "toast",
+    "jp": "トースト",
     "c": "food",
     "e": "🔤"
+  },
+  {
+    "w": "tofu",
+    "jp": "とうふ",
+    "c": "food",
+    "e": "🔤"
+  },
+  {
+    "w": "tomato",
+    "jp": "トマト",
+    "c": "food",
+    "e": "🍅"
+  },
+  {
+    "w": "toucan",
+    "jp": "オオハシ",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "train",
+    "jp": "でんしゃ",
+    "c": "nature",
+    "e": "🚃"
+  },
+  {
+    "w": "turkey",
+    "jp": "しちめんちょう",
+    "c": "animals",
+    "e": "🦃"
+  },
+  {
+    "w": "turtle",
+    "jp": "かめ",
+    "c": "animals",
+    "e": "🐢"
+  },
+  {
+    "w": "udon",
+    "jp": "うどん",
+    "c": "food",
+    "e": "🔤"
+  },
+  {
+    "w": "waffle",
+    "jp": "ワッフル",
+    "c": "food",
+    "e": "🧇"
+  },
+  {
+    "w": "walrus",
+    "jp": "セイウチ",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "watermelon",
+    "jp": "すいか",
+    "c": "food",
+    "e": "🍉"
+  },
+  {
+    "w": "whale",
+    "jp": "くじら",
+    "c": "animals",
+    "e": "🐋"
+  },
+  {
+    "w": "wolf",
+    "jp": "おおかみ",
+    "c": "animals",
+    "e": "🐺"
+  },
+  {
+    "w": "worm",
+    "jp": "みみず",
+    "c": "animals",
+    "e": "🪱"
+  },
+  {
+    "w": "yogurt",
+    "jp": "ヨーグルト",
+    "c": "food",
+    "e": "🔤"
+  },
+  {
+    "w": "zebra",
+    "jp": "しまうま",
+    "c": "animals",
+    "e": "🦓"
   }
 ]
