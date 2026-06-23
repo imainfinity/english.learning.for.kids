@@ -153,6 +153,11 @@
   .mv img.visual-img{width:40px;height:40px;object-fit:contain;border-radius:8px;box-shadow:none;background:transparent}
   .path-hint{font-family:"M PLUS Rounded 1c";font-size:12px;color:var(--soft);font-weight:700;word-break:break-all;line-height:1.45}
   .path-hint code{background:#F6FAFF;border:1px solid #DCE6F2;border-radius:8px;padding:2px 6px;color:var(--sky-d)}
+  .gh-box{margin:10px 0 12px;background:#F6FAFF;border:2px solid #DCE6F2;border-radius:16px;padding:10px 12px}
+  .gh-box summary{cursor:pointer;font-family:"M PLUS Rounded 1c";font-weight:800;color:var(--sky-d);font-size:14px}
+  .gh-note{font-family:"M PLUS Rounded 1c";font-size:12px;color:var(--soft);font-weight:700;line-height:1.45;margin:8px 0}
+  .gh-small{font-family:"M PLUS Rounded 1c";font-size:12px;color:var(--soft);font-weight:700}
+  .secret{font-family:monospace}
   .form-row{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-bottom:9px}
   .inp{font-family:inherit;font-size:15px;padding:11px 13px;border:2px solid #DCE6F2;border-radius:13px;background:#F8FBFF;color:var(--ink);min-width:120px;flex:1}
   .inp:focus{outline:none;border-color:var(--sky)}
@@ -227,11 +232,27 @@
       </div>
       <div class="path-hint" id="imgPathHint">画像を選ぶと、English＋Categoryから GitHub保存先を自動作成します。例：<code>img/animals/alligator.webp</code></div>
       <div class="form-row">
+        <button class="btn btn-leaf" id="saveGithubBtn" style="padding:12px 22px;font-size:16px">💾 保存 / GitHub</button>
         <button class="btn btn-sky" id="addBtn" style="padding:12px 22px;font-size:16px">＋ ついか / Add</button>
         <button class="btn btn-ghost" id="manageBtn" style="padding:12px 18px;font-size:15px">🛠 かんり / Manage</button>
         <button class="btn btn-ghost" id="exportBtn" style="padding:12px 18px;font-size:15px">⬇ vocab.json</button>
         <span id="addMsg" style="font-family:'M PLUS Rounded 1c';font-weight:600;font-size:14px"></span>
       </div>
+      <details class="gh-box" id="ghSettingsBox">
+        <summary>GitHub保存設定（初回だけ）</summary>
+        <div class="gh-note">保存ボタンは、画像を <code>img/カテゴリ/単語.webp</code> にアップロードし、<code>vocab.json</code> も自動更新します。Tokenは自分のブラウザだけに保存されます。</div>
+        <div class="form-row">
+          <input class="inp" id="ghOwner" placeholder="GitHub owner / user name">
+          <input class="inp" id="ghRepo" placeholder="repo name">
+          <input class="inp" id="ghBranch" placeholder="branch" value="main" style="flex:0 0 auto;max-width:120px">
+        </div>
+        <div class="form-row">
+          <input class="inp secret" id="ghToken" type="password" placeholder="GitHub token（Contents: Read and write）">
+          <button class="btn btn-ghost" id="ghSaveSettings" style="padding:10px 14px;font-size:14px">設定保存</button>
+          <button class="btn btn-ghost" id="ghClearSettings" style="padding:10px 14px;font-size:14px">消去</button>
+          <span id="ghMsg" class="gh-small"></span>
+        </div>
+      </details>
       <textarea id="exportBox" class="inp hidden" style="width:100%;min-height:120px;margin-top:10px;font-family:monospace;font-size:12px" readonly></textarea>
     </div>
   </div>
@@ -768,7 +789,156 @@ function exportVocab(boxId){
   var box=$(boxId||"exportBox");box.classList.remove("hidden");box.value=json;
   try{box.select();document.execCommand&&document.execCommand("copy");}catch(e){}
   if(window.navigator&&window.navigator.clipboard){try{window.navigator.clipboard.writeText(json);}catch(e){}}
-  setAddMsg("vocab.json に コピー → repo へ はりつけ＆コミット",false);
+  setAddMsg("vocab.json に コピーしました。GitHub保存ボタンなら貼り替え不要です。",false);
+}
+
+/* ===================== GITHUB DIRECT SAVE ===================== */
+function ghStorageKey(){return "kidsEnglishGithubSettings";}
+function inferGhFromLocation(){
+  var r={owner:"",repo:"",branch:"main",token:""};
+  try{
+    var h=window.location.hostname||"";
+    if(/\.github\.io$/i.test(h)){
+      r.owner=h.replace(/\.github\.io$/i,"");
+      var seg=(window.location.pathname||"").split("/").filter(Boolean)[0]||"";
+      r.repo=seg||r.owner+".github.io";
+    }
+  }catch(e){}
+  return r;
+}
+function loadGhSettings(){
+  var d=inferGhFromLocation();
+  try{var s=JSON.parse(localStorage.getItem(ghStorageKey())||"{}");assign(d,s);}catch(e){}
+  return d;
+}
+function saveGhSettings(){
+  var d={
+    owner:($("ghOwner").value||"").trim(),
+    repo:($("ghRepo").value||"").trim(),
+    branch:($("ghBranch").value||"main").trim()||"main",
+    token:($("ghToken").value||"").trim()
+  };
+  localStorage.setItem(ghStorageKey(),JSON.stringify(d));
+  setGhMsg("設定を保存しました",false);
+  return d;
+}
+function fillGhSettings(){
+  var d=loadGhSettings();
+  if($("ghOwner"))$("ghOwner").value=d.owner||"";
+  if($("ghRepo"))$("ghRepo").value=d.repo||"";
+  if($("ghBranch"))$("ghBranch").value=d.branch||"main";
+  if($("ghToken"))$("ghToken").value=d.token||"";
+}
+function clearGhSettings(){
+  localStorage.removeItem(ghStorageKey());
+  if($("ghOwner"))$("ghOwner").value="";
+  if($("ghRepo"))$("ghRepo").value="";
+  if($("ghBranch"))$("ghBranch").value="main";
+  if($("ghToken"))$("ghToken").value="";
+  setGhMsg("消去しました",false);
+}
+function setGhMsg(t,bad){var m=$("ghMsg");if(!m)return;m.textContent=t;m.style.color=bad?"#D84B4B":"#3FBF6B";}
+function utf8ToB64(str){
+  var bytes=new TextEncoder().encode(str),bin="";
+  for(var i=0;i<bytes.length;i+=0x8000){bin+=String.fromCharCode.apply(null,bytes.subarray(i,i+0x8000));}
+  return btoa(bin);
+}
+function b64ToUtf8(b64){
+  var bin=atob(String(b64||"").replace(/\s/g,""));
+  var bytes=new Uint8Array(bin.length);
+  for(var i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);
+  return new TextDecoder().decode(bytes);
+}
+function formVocabItem(){
+  var w=slugify($("addW").value),jp=$("addJp").value.trim();
+  var cat=$("addCat").value||"animals",emo=$("addEmoji").value.trim(),img=$("addImg").value.trim();
+  if(!w)throw new Error("Englishを入れてください");
+  if(!jp)throw new Error("にほんごを入れてください");
+  if(!img && $("filePrev").innerHTML){img=imagePathForWord(w,cat,"image.webp");$("addImg").value=img;}
+  var item={w:w,jp:jp,c:cat};
+  if(img){item.img=img;}else if(emo){item.e=emo;}else{item.e="🔤";}
+  return item;
+}
+function upsertVocabArray(arr,item){
+  if(!Array.isArray(arr))arr=[];
+  var done=false;
+  arr=arr.map(function(x){if(x&&x.w===item.w){done=true;return item;}return x;});
+  if(!done)arr.push(item);
+  return arr;
+}
+function applyLocalVocabItem(item){
+  if(masterHas(item.w)){
+    var o={};if(item.jp)o.jp=item.jp;if(item.c)o.c=item.c;if(item.img){o.img=item.img;o.e="";}else if(item.e){o.e=item.e;}
+    overrides[item.w]=assign(overrides[item.w]||{},o);
+  }else{
+    var n=assign({custom:true},item),found=false;
+    customWords=customWords.map(function(x){if(x.w===n.w){found=true;return n;}return x;});
+    if(!found)customWords.push(n);
+  }
+}
+async function ghRequest(method,urlPath,body){
+  var d=loadGhSettings();
+  if(!d.owner||!d.repo||!d.branch||!d.token)throw new Error("GitHub設定を先に入れてください");
+  var res=await fetch("https://api.github.com"+urlPath,{
+    method:method,
+    headers:{
+      "Accept":"application/vnd.github+json",
+      "Authorization":"Bearer "+d.token,
+      "X-GitHub-Api-Version":"2022-11-28"
+    },
+    body:body?JSON.stringify(body):undefined
+  });
+  var txt=await res.text(),json=null;
+  try{json=txt?JSON.parse(txt):null;}catch(e){}
+  if(!res.ok){throw new Error((json&&json.message)||("GitHub API error "+res.status));}
+  return json;
+}
+async function ghGetFile(path){
+  var d=loadGhSettings();
+  var api="/repos/"+encodeURIComponent(d.owner)+"/"+encodeURIComponent(d.repo)+"/contents/"+path.split("/").map(encodeURIComponent).join("/")+"?ref="+encodeURIComponent(d.branch);
+  try{return await ghRequest("GET",api);}catch(e){if(String(e.message||"").indexOf("Not Found")>=0)return null;throw e;}
+}
+async function ghPutFile(path,base64Content,message){
+  var d=loadGhSettings();
+  var cur=await ghGetFile(path);
+  var api="/repos/"+encodeURIComponent(d.owner)+"/"+encodeURIComponent(d.repo)+"/contents/"+path.split("/").map(encodeURIComponent).join("/");
+  var body={message:message,content:base64Content,branch:d.branch};
+  if(cur&&cur.sha)body.sha=cur.sha;
+  return await ghRequest("PUT",api,body);
+}
+async function saveCardToGithub(){
+  var btn=$("saveGithubBtn");
+  try{
+    saveGhSettings();
+    var item=formVocabItem();
+    var imgData=item.img?sessionImgs[item.img]:null;
+    btn.disabled=true;btn.textContent="保存中…";setAddMsg("GitHubへ保存中…",false);
+
+    if(item.img&&imgData){
+      var b64img=String(imgData).split(",")[1];
+      if(!b64img)throw new Error("画像データを読み取れません");
+      await ghPutFile(item.img,b64img,"Add image for "+item.w);
+    }
+
+    var cur=await ghGetFile(VOCAB_URL);
+    var list=[];
+    if(cur&&cur.content){
+      try{list=JSON.parse(b64ToUtf8(cur.content));}catch(e){throw new Error(VOCAB_URL+" のJSON形式を確認してください");}
+    }
+    list=upsertVocabArray(list,item);
+    await ghPutFile(VOCAB_URL,utf8ToB64(JSON.stringify(list,null,2)+"\n"),"Update vocab: "+item.w);
+
+    applyLocalVocabItem(item);
+    buildCats();
+    if(!$("manage").classList.contains("hidden"))buildMgr();
+    setAddMsg("保存完了："+item.w+" / "+(item.img||item.e),false);
+    toast("GitHubへ保存しました");
+  }catch(e){
+    setAddMsg("保存失敗："+(e&&e.message?e.message:e),true);
+    var box=$("ghSettingsBox");if(box)box.open=true;
+  }finally{
+    btn.disabled=false;btn.textContent="💾 保存 / GitHub";
+  }
 }
 
 /* ===================== WORD MANAGER ===================== */
@@ -909,6 +1079,9 @@ function init(){
     $("doneHome").addEventListener("click",function(){show("home");});
 
     $("addBtn").addEventListener("click",addCustom);
+    $("saveGithubBtn").addEventListener("click",saveCardToGithub);
+    $("ghSaveSettings").addEventListener("click",saveGhSettings);
+    $("ghClearSettings").addEventListener("click",clearGhSettings);
     $("exportBtn").addEventListener("click",function(){exportVocab("exportBox");});
     $("manageBtn").addEventListener("click",startManage);
     $("mgrExport").addEventListener("click",function(){exportVocab("mgrExportBox");});
@@ -943,6 +1116,7 @@ function init(){
       if(path&&sessionImgs[path]){var n=imagePathForWord($("addW").value,$("addCat").value,path);sessionImgs[n]=sessionImgs[path];delete sessionImgs[path];$("addImg").value=n;updateImageHint(n);}
     });
 
+    fillGhSettings();
     bindToggle();
     buildCats();buildDiff();buildAddCat();applyLang();
     loadVocab(function(){ if(!$("manage").classList.contains("hidden"))buildMgr(); });
