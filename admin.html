@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Question Master Admin｜English for Kids</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EAF6FF;--paper:#fff;--ink:#2D3A4A;--soft:#708197;--sky:#37A6F0;--skyd:#1E84CC;--leaf:#5BC98A;--bad:#FF6B6B;--sun:#FFC247;--shadow:0 8px 0 rgba(45,58,74,.12),0 14px 26px rgba(45,58,74,.14);--r:24px}
+*{box-sizing:border-box} body{margin:0;padding:16px;background:radial-gradient(900px 500px at 90% -5%,#FFF4D6 0,transparent 55%),radial-gradient(900px 500px at -10% 105%,#DCF6E7 0,transparent 55%),var(--bg);font-family:"Fredoka","M PLUS Rounded 1c",sans-serif;color:var(--ink)}
+.app{max-width:1050px;margin:0 auto;display:flex;flex-direction:column;gap:14px}.top{background:var(--paper);border-radius:var(--r);padding:16px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:center;flex-wrap:wrap}.logo{width:46px;height:46px;border-radius:15px;background:linear-gradient(160deg,var(--sky),#A684E8);color:#fff;display:grid;place-items:center;font-size:26px}.title{font-size:24px;font-weight:800}.title small{display:block;font-size:13px;color:var(--soft);font-family:"M PLUS Rounded 1c"}.panel{background:var(--paper);border-radius:var(--r);padding:16px;box-shadow:var(--shadow)}.panel h2{margin:0 0 10px;font-size:17px}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:8px 0}.inp,textarea,select{font-family:inherit;font-size:15px;padding:11px 13px;border:2px solid #DCE6F2;border-radius:14px;background:#F8FBFF;color:var(--ink)}.inp:focus,textarea:focus,select:focus{outline:none;border-color:var(--sky)}.inp{flex:1;min-width:130px}textarea{width:100%;min-height:150px;font-family:ui-monospace,Consolas,monospace;font-size:13px}.btn{border:none;border-radius:16px;padding:13px 18px;font-family:inherit;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 5px 0 #D6DEE9;background:#EEF3FA;color:var(--soft)}.btn:active{transform:translateY(2px)}.sky{background:var(--sky);box-shadow:0 5px 0 var(--skyd);color:#fff}.leaf{background:var(--leaf);box-shadow:0 5px 0 #3FA86C;color:#fff}.sun{background:var(--sun);box-shadow:0 5px 0 #DFA01F;color:#7A5200}.bad{background:#FFE3E3;color:#D84B4B;box-shadow:0 5px 0 #F4BBBB}.pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:7px 12px;background:#F2F7FE;color:var(--soft);font-size:13px;font-weight:700}.msg{font-family:"M PLUS Rounded 1c";font-weight:700}.ok{color:#3FBF6B}.ng{color:#D84B4B}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:820px){.grid{grid-template-columns:1fr}}.qcard{border:2px solid #E5EEF8;background:#F8FBFF;border-radius:18px;padding:12px;margin:8px 0}.qcard b{color:var(--skyd)}.qmeta{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0}.small{font-family:"M PLUS Rounded 1c";font-size:13px;color:var(--soft);font-weight:700}.hidden{display:none!important}details summary{cursor:pointer;font-weight:800;color:var(--skyd)}code{background:#EAF4FF;color:#1E84CC;padding:2px 6px;border-radius:8px}.danger{border:2px solid #FFE0E0;background:#FFF7F7}.table{width:100%;border-collapse:collapse;font-size:13px}.table th,.table td{border-bottom:1px solid #E5EEF8;padding:8px;text-align:left}.table th{color:var(--soft)}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="top"><div class="logo">🧠</div><div class="title">Question Master Admin<small>AIで設問JSONを作り、DEV → RELEASEへ反映</small></div><span class="pill">リリースHTMLは基本変更しない</span></div>
+
+  <details class="panel" open>
+    <summary>GitHub保存設定</summary>
+    <div class="small">Tokenはこのブラウザだけに保存されます。repo権限は <b>Contents: Read and write</b> が必要です。</div>
+    <div class="row"><input id="ghOwner" class="inp" placeholder="owner 例: imainfinity"><input id="ghRepo" class="inp" placeholder="repo 例: english.learning.for.kids"><input id="ghBranch" class="inp" placeholder="branch" value="main"></div>
+    <div class="row"><input id="ghToken" class="inp" type="password" placeholder="github_pat_... / token"><button class="btn" id="saveSettings">設定保存</button><button class="btn bad" id="clearSettings">消去</button><span id="ghMsg" class="msg"></span></div>
+  </details>
+
+  <div class="grid">
+    <div class="panel">
+      <h2>1. AI生成条件</h2>
+      <div class="row"><select id="qType" class="inp"><option value="riddle">Riddle</option><option value="listening">Listening</option><option value="sentence">Sentence</option></select><select id="qLevel" class="inp"><option value="very_hard">very_hard</option><option value="expert">expert</option><option value="hard">hard</option><option value="normal">normal</option><option value="easy">easy</option></select><select id="qCategory" class="inp"><option value="animals">animals</option><option value="food">food</option><option value="nature">nature</option><option value="colors">colors</option><option value="body">body</option></select></div>
+      <div class="row"><input id="qCount" class="inp" type="number" min="1" max="50" value="10" placeholder="問題数"><input id="targetWords" class="inp" placeholder="対象単語 comma区切り 例: alligator,penguin,elephant"></div>
+      <div class="row"><button class="btn sky" id="makePrompt">AIプロンプト作成</button><button class="btn" id="copyPrompt">コピー</button><button class="btn" id="loadData">vocab/questions読込</button></div>
+      <textarea id="promptBox" placeholder="ここにAI生成用プロンプトが出ます"></textarea>
+      <div class="small">このプロンプトをChatGPT等の開発AIへ渡して、返ってきたJSONを右の欄に貼ります。</div>
+    </div>
+    <div class="panel">
+      <h2>2. AI生成JSONを貼り付け</h2>
+      <textarea id="aiJson" placeholder='[{"id":"...","type":"riddle","level":"very_hard",...}]'></textarea>
+      <div class="row"><button class="btn sky" id="validateBtn">検査 / Preview</button><button class="btn leaf" id="saveDev">DEVへ保存</button><button class="btn sun" id="publishRelease">RELEASEへ反映</button></div>
+      <div id="status" class="msg"></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Preview / Validation</h2>
+    <div id="preview" class="small">まだ検査されていません。</div>
+  </div>
+
+  <div class="panel">
+    <h2>JSON管理</h2>
+    <div class="row"><button class="btn" id="downloadDev">questions_dev.json DL</button><button class="btn" id="downloadRelease">questions.json DL</button><button class="btn bad" id="clearPaste">貼付欄クリア</button></div>
+    <div class="small">DEV保存：<code>questions_dev.json</code> に追記。RELEASE反映：検査済み設問を <code>questions.json</code> に追記/上書きして、リリース版に出します。</div>
+  </div>
+</div>
+<script>
+(function(){"use strict";
+var vocab=[], releaseQuestions=[], devQuestions=[], validated=[];
+function $(id){return document.getElementById(id)}
+function msg(t,bad){var el=$("status");el.textContent=t;el.className="msg "+(bad?"ng":"ok")}
+function ghMsg(t,bad){var el=$("ghMsg");el.textContent=t;el.className="msg "+(bad?"ng":"ok")}
+function slug(s){return String(s||"").trim().toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"_").replace(/^_+|_+$/g,"")}
+function norm(s){return String(s||"").trim().toLowerCase()}
+function esc(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function ghKey(){return "kidsEnglishGithubSettings"}
+function infer(){var d={owner:"",repo:"",branch:"main",token:""};try{var h=location.hostname;if(/\.github\.io$/i.test(h)){d.owner=h.replace(/\.github\.io$/i,"");d.repo=(location.pathname||"").split("/").filter(Boolean)[0]||""}}catch(e){}return d}
+function loadSettings(){var d=infer();try{Object.assign(d,JSON.parse(localStorage.getItem(ghKey())||"{}"))}catch(e){}return d}
+function fillSettings(){var d=loadSettings();$("ghOwner").value=d.owner||"";$("ghRepo").value=d.repo||"";$("ghBranch").value=d.branch||"main";$("ghToken").value=d.token||""}
+function saveSettings(){var d={owner:$("ghOwner").value.trim(),repo:$("ghRepo").value.trim(),branch:$("ghBranch").value.trim()||"main",token:$("ghToken").value.trim()};localStorage.setItem(ghKey(),JSON.stringify(d));ghMsg("設定保存しました",false);return d}
+function clearSettings(){localStorage.removeItem(ghKey());fillSettings();ghMsg("消去しました",false)}
+function utf8ToB64(str){var bytes=new TextEncoder().encode(str),bin="";for(var i=0;i<bytes.length;i+=0x8000)bin+=String.fromCharCode.apply(null,bytes.subarray(i,i+0x8000));return btoa(bin)}
+function b64ToUtf8(b64){var bin=atob(String(b64||"").replace(/\s/g,"")),bytes=new Uint8Array(bin.length);for(var i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);return new TextDecoder().decode(bytes)}
+async function ghRequest(method,path,body){var d=loadSettings();if(!d.owner||!d.repo||!d.branch||!d.token)throw new Error("GitHub設定が不足しています");var res=await fetch("https://api.github.com"+path,{method:method,headers:{"Accept":"application/vnd.github+json","Authorization":"Bearer "+d.token,"X-GitHub-Api-Version":"2022-11-28"},body:body?JSON.stringify(body):undefined});var txt=await res.text(),j=null;try{j=txt?JSON.parse(txt):null}catch(e){}if(!res.ok)throw new Error((j&&j.message)||("GitHub API error "+res.status));return j}
+function apiPath(file){var d=loadSettings();return "/repos/"+encodeURIComponent(d.owner)+"/"+encodeURIComponent(d.repo)+"/contents/"+file.split("/").map(encodeURIComponent).join("/")}
+async function ghGet(file){var d=loadSettings();try{return await ghRequest("GET",apiPath(file)+"?ref="+encodeURIComponent(d.branch))}catch(e){if(String(e.message).indexOf("Not Found")>=0)return null;throw e}}
+async function ghPut(file,obj,message){var d=loadSettings();var cur=await ghGet(file);var body={message:message,content:utf8ToB64(JSON.stringify(obj,null,2)+"\n"),branch:d.branch};if(cur&&cur.sha)body.sha=cur.sha;return await ghRequest("PUT",apiPath(file),body)}
+async function readJson(file,def){var cur=await ghGet(file);if(!cur||!cur.content)return def;try{return JSON.parse(b64ToUtf8(cur.content))}catch(e){throw new Error(file+" のJSONが壊れています")}}
+function asQuestions(data){if(Array.isArray(data))return data;if(data&&Array.isArray(data.questions))return data.questions;return []}
+function wrapQuestions(arr){return {version:1,updatedAt:new Date().toISOString(),questions:arr}}
+function upsert(base,items){var map={},out=[];(base||[]).forEach(function(q){if(q&&q.id){map[q.id]=out.length;out.push(q)}});(items||[]).forEach(function(q){if(q&&q.id){if(map[q.id]!=null)out[map[q.id]]=q;else{map[q.id]=out.length;out.push(q)}}});return out}
+async function loadData(){try{saveSettings();var v=await readJson("vocab.json",[]);vocab=Array.isArray(v)?v:(v.words||[]);releaseQuestions=asQuestions(await readJson("questions.json",{questions:[]}));devQuestions=asQuestions(await readJson("questions_dev.json",{questions:[]}));msg("読込完了：vocab "+vocab.length+" / release "+releaseQuestions.length+" / dev "+devQuestions.length,false)}catch(e){msg("読込失敗："+e.message,true)}}
+function defaultWords(){var cat=$("qCategory").value;var words=vocab.filter(function(x){return !cat||x.c===cat}).map(function(x){return x.w}).filter(Boolean);return words.slice(0,20).join(", ")}
+function makePrompt(){var type=$("qType").value,level=$("qLevel").value,cat=$("qCategory").value,count=$("qCount").value||10,words=$("targetWords").value.trim()||defaultWords()||"alligator, penguin, elephant, banana, tree";var p=[];p.push("Create English learning questions for children as VALID JSON only. No markdown, no comments.");p.push("Output schema: an array of objects.");p.push("Required fields: id, type, level, category, active, answerId, choices.");p.push("For riddle: use promptEn and hintJp. For listening: use storyEn, questionEn, hintJp. For sentence: use sentence, hintJp.");p.push("Japanese must appear only in hintJp, never inside promptEn/storyEn/questionEn/sentence.");p.push("choices must contain answerId and 3 wrong choices. Use lowercase answer IDs.");p.push("level must be exactly: "+level+". type must be exactly: "+type+". category must be exactly: "+cat+".");p.push("Make "+count+" questions. Target words: "+words+".");p.push("Very hard/expert should require inference, features, comparison, or short reading comprehension. Do not make questions too obvious.");p.push("Example id format: "+type+"_alligator_"+level+"_001");$("promptBox").value=p.join("\n");}
+function parseAi(){var raw=$("aiJson").value.trim();if(!raw)throw new Error("AI JSON貼付欄が空です");var data=JSON.parse(raw);return asQuestions(data).length?asQuestions(data):data}
+var levels={easy:1,normal:1,hard:1,very_hard:1,expert:1},types={riddle:1,listening:1,listen:1,sentence:1,sent:1};
+function validateOne(q,i){var errs=[];if(!q||typeof q!=="object")return ["#"+(i+1)+" objectではありません"];if(!q.id)errs.push("id必須");if(!types[String(q.type||"").toLowerCase()])errs.push("type不正");if(!levels[q.level])errs.push("level不正");if(!q.category)errs.push("category必須");if(q.active==null)q.active=true;if(!q.answerId&&q.type!=="sentence")errs.push("answerId必須");if((q.type==="riddle")&&!q.promptEn)errs.push("riddleはpromptEn必須");if((q.type==="listening"||q.type==="listen")&&(!q.storyEn||!q.questionEn))errs.push("listeningはstoryEn/questionEn必須");if((q.type==="sentence"||q.type==="sent")&&!q.sentence)errs.push("sentence必須");if(!q.hintJp)errs.push("hintJp必須");if(q.type!=="sentence"&&(!Array.isArray(q.choices)||q.choices.length<4))errs.push("choicesは4個以上");if(Array.isArray(q.choices)&&q.answerId&&!q.choices.map(norm).includes(norm(q.answerId)))errs.push("choicesにanswerIdがありません");var en=(q.promptEn||"")+" "+(q.storyEn||"")+" "+(q.questionEn||"")+" "+(q.sentence||"");if(/[ぁ-んァ-ヶ一-龠]/.test(en))errs.push("英語欄に日本語が混入しています");return errs.map(function(e){return (q.id||("#"+(i+1)))+": "+e})}
+function validate(){try{var arr=parseAi();if(!Array.isArray(arr))throw new Error("JSONは配列、または {questions:[...]} にしてください");var allErr=[];arr.forEach(function(q,i){allErr=allErr.concat(validateOne(q,i))});if(allErr.length){validated=[];renderPreview(arr,allErr);msg("検査NG："+allErr.length+"件",true);return}validated=arr.map(function(q){q.type=String(q.type).toLowerCase()==="listen"?"listening":(String(q.type).toLowerCase()==="sent"?"sentence":String(q.type).toLowerCase());q.answerId=q.answerId?slug(q.answerId):q.answerId; if(Array.isArray(q.choices))q.choices=q.choices.map(function(x){return typeof x==="string"?slug(x):x}); return q});renderPreview(validated,[]);msg("検査OK："+validated.length+"件",false)}catch(e){validated=[];msg("検査失敗："+e.message,true)}}
+function renderPreview(arr,errs){var box=$("preview");var html="";if(errs&&errs.length){html+='<div class="danger qcard"><b>Errors</b><ul>'+errs.map(function(e){return '<li>'+esc(e)+'</li>'}).join("")+'</ul></div>'}if(!arr||!arr.length){box.innerHTML=html||"なし";return}html+=arr.slice(0,50).map(function(q){return '<div class="qcard"><div><b>'+esc(q.id||"no id")+'</b></div><div class="qmeta"><span class="pill">'+esc(q.type)+'</span><span class="pill">'+esc(q.level)+'</span><span class="pill">'+esc(q.category)+'</span><span class="pill">answer: '+esc(q.answerId)+'</span></div><div>'+esc(q.promptEn||q.storyEn||q.sentence||"")+'</div><div class="small">Hint: '+esc(q.hintJp||"")+'</div></div>'}).join("");box.innerHTML=html}
+async function saveDev(){try{if(!validated.length)validate();if(!validated.length)throw new Error("検査OKの設問がありません");saveSettings();var cur=asQuestions(await readJson("questions_dev.json",{questions:[]}));var merged=upsert(cur,validated);await ghPut("questions_dev.json",wrapQuestions(merged),"Update questions_dev: "+validated.length+" items");msg("DEV保存完了：questions_dev.json / "+merged.length+"件",false)}catch(e){msg("DEV保存失敗："+e.message,true)}}
+async function publishRelease(){try{if(!validated.length)validate();if(!validated.length)throw new Error("検査OKの設問がありません");saveSettings();var cur=asQuestions(await readJson("questions.json",{questions:[]}));var merged=upsert(cur,validated);await ghPut("questions.json",wrapQuestions(merged),"Publish questions: "+validated.length+" items");msg("RELEASE反映完了：questions.json / "+merged.length+"件",false)}catch(e){msg("RELEASE反映失敗："+e.message,true)}}
+function download(name,obj){var a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(obj,null,2)+"\n"],{type:"application/json"}));a.download=name;document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},0)}
+function init(){fillSettings();$("saveSettings").onclick=saveSettings;$("clearSettings").onclick=clearSettings;$("loadData").onclick=loadData;$("makePrompt").onclick=makePrompt;$("copyPrompt").onclick=function(){navigator.clipboard&&navigator.clipboard.writeText($("promptBox").value);msg("プロンプトをコピーしました",false)};$("validateBtn").onclick=validate;$("saveDev").onclick=saveDev;$("publishRelease").onclick=publishRelease;$("downloadDev").onclick=function(){download("questions_dev.json",wrapQuestions(validated.length?validated:devQuestions))};$("downloadRelease").onclick=function(){download("questions.json",wrapQuestions(validated.length?validated:releaseQuestions))};$("clearPaste").onclick=function(){$("aiJson").value="";validated=[];renderPreview([],[]);msg("クリアしました",false)};loadData().catch(function(){})}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);else init();
+})();
+</script>
+</body>
+</html>

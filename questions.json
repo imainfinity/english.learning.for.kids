@@ -1,0 +1,289 @@
+{
+  "version": 1,
+  "questions": [
+    {
+      "id": "riddle_alligator_vh_001",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "promptEn": "I am a large reptile. I live near rivers and swamps. My body is covered with scales. I have sharp teeth and a powerful tail. I look like a crocodile, but my snout is wider and rounder. What am I?",
+      "hintJp": "大きな はちゅうるい。川や沼の近くにすむ。クロコダイルに似ているけど、口先が広く丸い。",
+      "answerId": "alligator",
+      "choices": [
+        "alligator",
+        "crocodile",
+        "lizard",
+        "turtle"
+      ]
+    },
+    {
+      "id": "riddle_penguin_vh_001",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "promptEn": "I am a bird, but I do not fly. I swim very well and live in cold places. My body is black and white. What am I?",
+      "hintJp": "鳥だけど飛ばない。泳ぐのが上手。寒いところにすむ。",
+      "answerId": "penguin",
+      "choices": [
+        "penguin",
+        "bird",
+        "fish",
+        "rabbit"
+      ]
+    },
+    {
+      "id": "riddle_elephant_vh_001",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "promptEn": "I am the largest animal on land. I have big ears, thick legs, and a long trunk that I use like a hand. What am I?",
+      "hintJp": "陸の上でいちばん大きな動物。長い鼻を手のように使う。",
+      "answerId": "elephant",
+      "choices": [
+        "elephant",
+        "lion",
+        "bear",
+        "rabbit"
+      ]
+    },
+    {
+      "id": "riddle_banana_vh_001",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "food",
+      "active": true,
+      "promptEn": "I am long and curved. I grow in a bunch with many others. I am green before I am ready, and yellow when you usually eat me. What am I?",
+      "hintJp": "細長くて曲がっている。何本もくっついて育つ。緑から黄色になる。",
+      "answerId": "banana",
+      "choices": [
+        "banana",
+        "orange",
+        "bread",
+        "egg"
+      ]
+    },
+    {
+      "id": "riddle_strawberry_vh_001",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "food",
+      "active": true,
+      "promptEn": "I am small, red, and sweet. My seeds are on the outside, not hidden inside. People often eat me with cake or cream. What am I?",
+      "hintJp": "小さくて赤くて甘い。種が外側についている。ケーキにもよく使う。",
+      "answerId": "strawberry",
+      "choices": [
+        "strawberry",
+        "apple",
+        "grape",
+        "cake"
+      ]
+    },
+    {
+      "id": "riddle_train_vh_001",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "nature",
+      "active": true,
+      "promptEn": "I carry many people at once. I move on rails, stop at stations, and I am usually longer than a car. What am I?",
+      "hintJp": "たくさんの人を運ぶ。線路の上を走る。駅に止まる。",
+      "answerId": "train",
+      "choices": [
+        "train",
+        "car",
+        "house",
+        "cloud"
+      ]
+    },
+    {
+      "id": "riddle_moon_vh_001",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "nature",
+      "active": true,
+      "promptEn": "You see me in the sky at night. I do not make my own light, but I look bright because sunlight shines on me. What am I?",
+      "hintJp": "夜の空に見える。自分で光っているのではなく、太陽の光で明るく見える。",
+      "answerId": "moon",
+      "choices": [
+        "moon",
+        "sun",
+        "star",
+        "cloud"
+      ]
+    },
+    {
+      "id": "riddle_flower_vh_001",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "nature",
+      "active": true,
+      "promptEn": "I grow from a plant. I can be many colors and often smell nice. Bees visit me to collect nectar. What am I?",
+      "hintJp": "植物から咲く。いろいろな色がある。ミツバチが蜜を集めにくる。",
+      "answerId": "flower",
+      "choices": [
+        "flower",
+        "tree",
+        "rain",
+        "cloud"
+      ]
+    },
+    {
+      "id": "listen_alligator_ex_001",
+      "type": "listening",
+      "level": "expert",
+      "category": "animals",
+      "active": true,
+      "storyEn": "Some reptiles live both on land and near water. An alligator has a wide, rounded snout, strong jaws, and a powerful tail. It is often confused with a crocodile, but they are not exactly the same.",
+      "questionEn": "Which animal has a wide, rounded snout and strong jaws?",
+      "hintJp": "水辺にすむ はちゅうるい。口先が広く丸く、あごが強い。",
+      "answerId": "alligator",
+      "choices": [
+        "alligator",
+        "penguin",
+        "rabbit",
+        "bird"
+      ]
+    },
+    {
+      "id": "listen_penguin_ex_001",
+      "type": "listening",
+      "level": "expert",
+      "category": "animals",
+      "active": true,
+      "storyEn": "This animal is a bird, but it cannot fly through the air. Instead, it uses its wings like flippers and swims under the water to catch food.",
+      "questionEn": "Which animal uses its wings like flippers?",
+      "hintJp": "鳥だけど空を飛ばず、翼をひれのように使って泳ぐ。",
+      "answerId": "penguin",
+      "choices": [
+        "penguin",
+        "bird",
+        "fish",
+        "cat"
+      ]
+    },
+    {
+      "id": "listen_tree_ex_001",
+      "type": "listening",
+      "level": "expert",
+      "category": "nature",
+      "active": true,
+      "storyEn": "This living thing has roots under the ground, a trunk above the ground, and branches with leaves. It can give shade on a sunny day.",
+      "questionEn": "What has roots, a trunk, branches, and leaves?",
+      "hintJp": "根、幹、枝、葉がある。晴れの日に影を作る。",
+      "answerId": "tree",
+      "choices": [
+        "tree",
+        "flower",
+        "cloud",
+        "house"
+      ]
+    },
+    {
+      "id": "listen_moon_ex_001",
+      "type": "listening",
+      "level": "expert",
+      "category": "nature",
+      "active": true,
+      "storyEn": "At night, this object can look round, half, or very thin. It is not a star, and it moves around Earth.",
+      "questionEn": "What moves around Earth and changes shape in the night sky?",
+      "hintJp": "地球の周りを回る。夜空で丸く見えたり細く見えたりする。",
+      "answerId": "moon",
+      "choices": [
+        "moon",
+        "sun",
+        "star",
+        "cloud"
+      ]
+    },
+    {
+      "id": "listen_hand_ex_001",
+      "type": "listening",
+      "level": "expert",
+      "category": "body",
+      "active": true,
+      "storyEn": "You use this part of your body to hold a pencil, wave hello, clap, and touch things. It has fingers.",
+      "questionEn": "Which body part has fingers?",
+      "hintJp": "鉛筆を持つ、手を振る、拍手する時に使う。指がある。",
+      "answerId": "hand",
+      "choices": [
+        "hand",
+        "foot",
+        "ear",
+        "eye"
+      ]
+    },
+    {
+      "id": "listen_eye_ex_001",
+      "type": "listening",
+      "level": "expert",
+      "category": "body",
+      "active": true,
+      "storyEn": "This body part helps you see colors, shapes, letters, and faces. You have two of them on your face.",
+      "questionEn": "Which body part helps you see?",
+      "hintJp": "色、形、文字、人の顔を見るために使う。顔に二つある。",
+      "answerId": "eye",
+      "choices": [
+        "eye",
+        "ear",
+        "nose",
+        "mouth"
+      ]
+    },
+    {
+      "id": "listen_car_vh_001",
+      "type": "listening",
+      "level": "very_hard",
+      "category": "nature",
+      "active": true,
+      "storyEn": "This vehicle usually has four wheels. People use it to travel on roads. It is smaller than a train and does not need rails.",
+      "questionEn": "Which vehicle travels on roads and does not need rails?",
+      "hintJp": "道路を走る乗り物。ふつう4つのタイヤがある。線路はいらない。",
+      "answerId": "car",
+      "choices": [
+        "car",
+        "train",
+        "house",
+        "cloud"
+      ]
+    },
+    {
+      "id": "listen_rain_vh_001",
+      "type": "listening",
+      "level": "very_hard",
+      "category": "nature",
+      "active": true,
+      "storyEn": "When dark clouds are in the sky, drops of water may fall from them. People use umbrellas or raincoats to stay dry.",
+      "questionEn": "What falls from clouds as drops of water?",
+      "hintJp": "雲から水のしずくが落ちてくる。かさやレインコートを使う。",
+      "answerId": "rain",
+      "choices": [
+        "rain",
+        "sun",
+        "star",
+        "tree"
+      ]
+    },
+    {
+      "id": "sentence_alligator_vh_001",
+      "type": "sentence",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "sentence": "An alligator lives near water",
+      "hintJp": "ワニは水辺にすむ。",
+      "answerId": "alligator"
+    },
+    {
+      "id": "sentence_penguin_vh_001",
+      "type": "sentence",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "sentence": "A penguin can swim well",
+      "hintJp": "ペンギンは泳ぐのが上手。",
+      "answerId": "penguin"
+    }
+  ]
+}
