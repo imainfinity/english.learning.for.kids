@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-23T09:46:56.319Z",
+  "updatedAt": "2026-06-23T10:10:56.837Z",
   "questions": [
     {
       "id": "riddle_penguin_very_hard_001",
@@ -240,6 +240,166 @@
         "chicken",
         "sea_lion",
         "heron"
+      ]
+    },
+    {
+      "id": "riddle_car_expert_001",
+      "type": "riddle",
+      "level": "expert",
+      "category": "nature",
+      "active": true,
+      "promptEn": "I can cross a forest road without touching rails. I carry only a few people, choose my own turns, and stop beside a tree if the driver wants. What am I?",
+      "hintJp": "森の道でも線路なしで走れ、運転する人が進む方向を選べる乗り物です。",
+      "answerId": "car",
+      "choices": [
+        "car",
+        "train",
+        "bus",
+        "bicycle"
+      ]
+    },
+    {
+      "id": "riddle_train_expert_002",
+      "type": "riddle",
+      "level": "expert",
+      "category": "nature",
+      "active": true,
+      "promptEn": "I may pass mountains, rivers, and fields, but I do not choose a new path when I feel like it. Many people can ride together while I follow two long metal lines. What am I?",
+      "hintJp": "山や川の近くを通ることがあり、多くの人を乗せて線路の上を進む乗り物です。",
+      "answerId": "train",
+      "choices": [
+        "train",
+        "car",
+        "truck",
+        "scooter"
+      ]
+    },
+    {
+      "id": "riddle_car_expert_003",
+      "type": "riddle",
+      "level": "expert",
+      "category": "nature",
+      "active": true,
+      "promptEn": "After rain, I may leave tire marks on a muddy country road. I am smaller than a bus, freer than a train, and usually parked close to a home. What am I?",
+      "hintJp": "雨の後の泥道にタイヤの跡を残し、家の近くに止めることが多い乗り物です。",
+      "answerId": "car",
+      "choices": [
+        "car",
+        "train",
+        "boat",
+        "airplane"
+      ]
+    },
+    {
+      "id": "riddle_train_expert_004",
+      "type": "riddle",
+      "level": "expert",
+      "category": "nature",
+      "active": true,
+      "promptEn": "A bird can fly over a valley, and I can cross it too, but I need a bridge or track made for me. I am long, linked, and hard to turn around quickly. What am I?",
+      "hintJp": "谷を渡るには専用の線路や橋が必要で、長くつながった車両で進む乗り物です。",
+      "answerId": "train",
+      "choices": [
+        "train",
+        "car",
+        "van",
+        "motorcycle"
+      ]
+    },
+    {
+      "id": "riddle_car_expert_005",
+      "type": "riddle",
+      "level": "expert",
+      "category": "nature",
+      "active": true,
+      "promptEn": "If a family wants to stop at a lake, a shop, and a small hill in any order, I am useful. I do not need a station, and my road can bend many times. What am I?",
+      "hintJp": "駅がなくても使え、家族が好きな順番で湖や店や丘に立ち寄りやすい乗り物です。",
+      "answerId": "car",
+      "choices": [
+        "car",
+        "train",
+        "subway",
+        "ship"
+      ]
+    },
+    {
+      "id": "riddle_train_expert_006",
+      "type": "riddle",
+      "level": "expert",
+      "category": "nature",
+      "active": true,
+      "promptEn": "I can move many travelers through snow country, but I cannot simply go around a fallen tree like a small road vehicle might. My path is fixed before the trip begins. What am I?",
+      "hintJp": "雪の地域でも多くの人を運べますが、道を自由に変えられず決まった線路を進みます。",
+      "answerId": "train",
+      "choices": [
+        "train",
+        "car",
+        "jeep",
+        "taxi"
+      ]
+    },
+    {
+      "id": "riddle_car_expert_007",
+      "type": "riddle",
+      "level": "expert",
+      "category": "nature",
+      "active": true,
+      "promptEn": "On a narrow road between farms, I can slow down for a rabbit, turn into a driveway, and carry groceries in the back. I am not pulled by a chain of coaches. What am I?",
+      "hintJp": "農場の間の細い道を走り、後ろに荷物をのせ、車両が長く連結されていない乗り物です。",
+      "answerId": "car",
+      "choices": [
+        "car",
+        "train",
+        "tram",
+        "helicopter"
+      ]
+    },
+    {
+      "id": "riddle_train_expert_008",
+      "type": "riddle",
+      "level": "expert",
+      "category": "nature",
+      "active": true,
+      "promptEn": "People inside me may watch trees flash by like pages in a book. The driver cannot steer left into the forest or right toward the river; the rails decide. What am I?",
+      "hintJp": "窓から木々が流れるように見え、運転手が森や川の方へ自由に曲がれない乗り物です。",
+      "answerId": "train",
+      "choices": [
+        "train",
+        "car",
+        "bus",
+        "horse"
+      ]
+    },
+    {
+      "id": "riddle_car_expert_009",
+      "type": "riddle",
+      "level": "expert",
+      "category": "nature",
+      "active": true,
+      "promptEn": "I can wait quietly under falling leaves, then carry one family along a winding road. I need wheels and a driver, but not a platform with a timetable. What am I?",
+      "hintJp": "落ち葉の下に止めておけて、時刻表のあるホームなしで家族を運べる乗り物です。",
+      "answerId": "car",
+      "choices": [
+        "car",
+        "train",
+        "ferry",
+        "rocket"
+      ]
+    },
+    {
+      "id": "riddle_train_expert_010",
+      "type": "riddle",
+      "level": "expert",
+      "category": "nature",
+      "active": true,
+      "promptEn": "I may sound far away before I appear between hills. I carry passengers in connected cars, yet I am not the kind of car that turns into a driveway. What am I?",
+      "hintJp": "丘の間から音が先に聞こえ、連結された車両で人を運ぶが、家の私道へ曲がる車ではありません。",
+      "answerId": "train",
+      "choices": [
+        "train",
+        "car",
+        "tractor",
+        "ambulance"
       ]
     }
   ]
