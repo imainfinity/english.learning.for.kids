@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-23T10:10:56.837Z",
+  "updatedAt": "2026-06-23T12:41:29.341Z",
   "questions": [
     {
       "id": "riddle_penguin_very_hard_001",
@@ -400,6 +400,86 @@
         "car",
         "tractor",
         "ambulance"
+      ]
+    },
+    {
+      "id": "sentence_penguin_hard_001",
+      "type": "sentence",
+      "level": "hard",
+      "category": "animals",
+      "active": true,
+      "sentence": "The ___ cannot fly like most birds, but it uses its wings to move quickly through cold water.",
+      "hintJp": "鳥ですが空を飛ばず、翼を泳ぐために使う動物です。",
+      "answerId": "penguin",
+      "choices": [
+        "penguin",
+        "alligator",
+        "parrot",
+        "rabbit"
+      ]
+    },
+    {
+      "id": "sentence_alligator_hard_002",
+      "type": "sentence",
+      "level": "hard",
+      "category": "animals",
+      "active": true,
+      "sentence": "The ___ waited almost still in the swamp, with only its eyes and nose above the water.",
+      "hintJp": "沼の水面に目と鼻だけを出して、じっと待つことがある動物です。",
+      "answerId": "alligator",
+      "choices": [
+        "alligator",
+        "penguin",
+        "eagle",
+        "horse"
+      ]
+    },
+    {
+      "id": "sentence_penguin_hard_003",
+      "type": "sentence",
+      "level": "hard",
+      "category": "animals",
+      "active": true,
+      "sentence": "Because its black back and white belly help it hide in the sea, the ___ is harder to notice from above or below.",
+      "hintJp": "背中が黒くお腹が白いため、水中で上からも下からも見つかりにくい鳥です。",
+      "answerId": "penguin",
+      "choices": [
+        "penguin",
+        "alligator",
+        "zebra",
+        "monkey"
+      ]
+    },
+    {
+      "id": "sentence_alligator_hard_004",
+      "type": "sentence",
+      "level": "hard",
+      "category": "animals",
+      "active": true,
+      "sentence": "A ___ looks like a floating log until it moves, opens its strong jaws, and surprises its prey.",
+      "hintJp": "水に浮かぶ丸太のように見えて、強いあごで獲物を捕まえる爬虫類です。",
+      "answerId": "alligator",
+      "choices": [
+        "alligator",
+        "penguin",
+        "deer",
+        "frog"
+      ]
+    },
+    {
+      "id": "sentence_penguin_hard_005",
+      "type": "sentence",
+      "level": "hard",
+      "category": "animals",
+      "active": true,
+      "sentence": "On ice the ___ may walk slowly or slide on its belly, but underwater it can chase fish with surprising speed.",
+      "hintJp": "氷の上ではゆっくり歩いたりお腹ですべったりしますが、水中では魚を速く追える鳥です。",
+      "answerId": "penguin",
+      "choices": [
+        "penguin",
+        "alligator",
+        "tiger",
+        "camel"
       ]
     }
   ]
