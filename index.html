@@ -228,6 +228,7 @@
       <h3>テーマを えらぶ / Choose a topic</h3><div class="cat-row" id="catRow"></div>
     </div>
     <!-- Word/Image registration moved to admin.html -->
+  </div>
 
   <div id="flash" class="hidden">
     <div class="scr-head" style="margin-bottom:16px">
@@ -1015,7 +1016,7 @@ async function saveCardToGithub(){
 
     applyLocalVocabItem(item);
     buildCats();
-    if(!$("manage").classList.contains("hidden"))buildMgr();
+    if($("manage") && !$("manage").classList.contains("hidden"))buildMgr();
     setAddMsg("保存完了："+item.w+" / "+(item.img||item.e),false);
     toast("GitHubへ保存しました");
   }catch(e){
@@ -1268,7 +1269,7 @@ function init(){
     buildCats();buildDiff();if($("addCat"))buildAddCat();applyLang();
     loadVocab(function(){
       loadQuestions(function(){
-        if(!$("manage").classList.contains("hidden"))buildMgr();
+        if($("manage") && !$("manage").classList.contains("hidden"))buildMgr();
       });
     });
   }catch(err){try{console.error("init error:",err);}catch(e){}}
