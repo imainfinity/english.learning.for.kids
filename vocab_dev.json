@@ -1,0 +1,602 @@
+[
+  {
+    "w": "elephant",
+    "jp": "ぞう",
+    "c": "animals",
+    "e": "🐘"
+  },
+  {
+    "w": "rabbit",
+    "jp": "うさぎ",
+    "c": "animals",
+    "e": "🐰"
+  },
+  {
+    "w": "bear",
+    "jp": "くま",
+    "c": "animals",
+    "e": "🐻"
+  },
+  {
+    "w": "lion",
+    "jp": "ライオン",
+    "c": "animals",
+    "e": "🦁"
+  },
+  {
+    "w": "fish",
+    "jp": "さかな",
+    "c": "animals",
+    "e": "🐟"
+  },
+  {
+    "w": "bird",
+    "jp": "とり",
+    "c": "animals",
+    "e": "🐦"
+  },
+  {
+    "w": "cat",
+    "jp": "ねこ",
+    "c": "animals",
+    "e": "🐱"
+  },
+  {
+    "w": "dog",
+    "jp": "いぬ",
+    "c": "animals",
+    "e": "🐶"
+  },
+  {
+    "w": "turtle",
+    "jp": "かめ",
+    "c": "animals",
+    "e": "🐢"
+  },
+  {
+    "w": "snake",
+    "jp": "へび",
+    "c": "animals",
+    "e": "🐍"
+  },
+  {
+    "w": "frog",
+    "jp": "かえる",
+    "c": "animals",
+    "e": "🐸"
+  },
+  {
+    "w": "monkey",
+    "jp": "さる",
+    "c": "animals",
+    "e": "🐵"
+  },
+  {
+    "w": "giraffe",
+    "jp": "きりん",
+    "c": "animals",
+    "e": "🦒"
+  },
+  {
+    "w": "tiger",
+    "jp": "とら",
+    "c": "animals",
+    "e": "🐯"
+  },
+  {
+    "w": "zebra",
+    "jp": "しまうま",
+    "c": "animals",
+    "e": "🦓"
+  },
+  {
+    "w": "horse",
+    "jp": "うま",
+    "c": "animals",
+    "e": "🐴"
+  },
+  {
+    "w": "cow",
+    "jp": "うし",
+    "c": "animals",
+    "e": "🐮"
+  },
+  {
+    "w": "pig",
+    "jp": "ぶた",
+    "c": "animals",
+    "e": "🐷"
+  },
+  {
+    "w": "sheep",
+    "jp": "ひつじ",
+    "c": "animals",
+    "e": "🐑"
+  },
+  {
+    "w": "goat",
+    "jp": "やぎ",
+    "c": "animals",
+    "e": "🐐"
+  },
+  {
+    "w": "chicken",
+    "jp": "にわとり",
+    "c": "animals",
+    "e": "🐔"
+  },
+  {
+    "w": "duck",
+    "jp": "あひる",
+    "c": "animals",
+    "e": "🦆"
+  },
+  {
+    "w": "goose",
+    "jp": "がちょう",
+    "c": "animals",
+    "e": "🪿"
+  },
+  {
+    "w": "turkey",
+    "jp": "しちめんちょう",
+    "c": "animals",
+    "e": "🦃"
+  },
+  {
+    "w": "owl",
+    "jp": "ふくろう",
+    "c": "animals",
+    "e": "🦉"
+  },
+  {
+    "w": "eagle",
+    "jp": "わし",
+    "c": "animals",
+    "e": "🦅"
+  },
+  {
+    "w": "parrot",
+    "jp": "オウム",
+    "c": "animals",
+    "e": "🦜"
+  },
+  {
+    "w": "flamingo",
+    "jp": "フラミンゴ",
+    "c": "animals",
+    "e": "🦩"
+  },
+  {
+    "w": "peacock",
+    "jp": "くじゃく",
+    "c": "animals",
+    "e": "🦚"
+  },
+  {
+    "w": "swan",
+    "jp": "はくちょう",
+    "c": "animals",
+    "e": "🦢"
+  },
+  {
+    "w": "bat",
+    "jp": "こうもり",
+    "c": "animals",
+    "e": "🦇"
+  },
+  {
+    "w": "mouse",
+    "jp": "ねずみ",
+    "c": "animals",
+    "e": "🐭"
+  },
+  {
+    "w": "rat",
+    "jp": "大きなねずみ",
+    "c": "animals",
+    "e": "🐀"
+  },
+  {
+    "w": "hamster",
+    "jp": "ハムスター",
+    "c": "animals",
+    "e": "🐹"
+  },
+  {
+    "w": "squirrel",
+    "jp": "りす",
+    "c": "animals",
+    "e": "🐿️"
+  },
+  {
+    "w": "beaver",
+    "jp": "ビーバー",
+    "c": "animals",
+    "e": "🦫"
+  },
+  {
+    "w": "hedgehog",
+    "jp": "はりねずみ",
+    "c": "animals",
+    "e": "🦔"
+  },
+  {
+    "w": "fox",
+    "jp": "きつね",
+    "c": "animals",
+    "e": "🦊"
+  },
+  {
+    "w": "wolf",
+    "jp": "おおかみ",
+    "c": "animals",
+    "e": "🐺"
+  },
+  {
+    "w": "deer",
+    "jp": "しか",
+    "c": "animals",
+    "e": "🦌"
+  },
+  {
+    "w": "kangaroo",
+    "jp": "カンガルー",
+    "c": "animals",
+    "e": "🦘"
+  },
+  {
+    "w": "koala",
+    "jp": "コアラ",
+    "c": "animals",
+    "e": "🐨"
+  },
+  {
+    "w": "panda",
+    "jp": "パンダ",
+    "c": "animals",
+    "e": "🐼"
+  },
+  {
+    "w": "sloth",
+    "jp": "ナマケモノ",
+    "c": "animals",
+    "e": "🦥"
+  },
+  {
+    "w": "otter",
+    "jp": "かわうそ",
+    "c": "animals",
+    "e": "🦦"
+  },
+  {
+    "w": "raccoon",
+    "jp": "あらいぐま",
+    "c": "animals",
+    "e": "🦝"
+  },
+  {
+    "w": "skunk",
+    "jp": "スカンク",
+    "c": "animals",
+    "e": "🦨"
+  },
+  {
+    "w": "badger",
+    "jp": "あなぐま",
+    "c": "animals",
+    "e": "🦡"
+  },
+  {
+    "w": "camel",
+    "jp": "らくだ",
+    "c": "animals",
+    "e": "🐪"
+  },
+  {
+    "w": "llama",
+    "jp": "ラマ",
+    "c": "animals",
+    "e": "🦙"
+  },
+  {
+    "w": "hippo",
+    "jp": "かば",
+    "c": "animals",
+    "e": "🦛"
+  },
+  {
+    "w": "rhino",
+    "jp": "さい",
+    "c": "animals",
+    "e": "🦏"
+  },
+  {
+    "w": "leopard",
+    "jp": "ひょう",
+    "c": "animals",
+    "e": "🐆"
+  },
+  {
+    "w": "cheetah",
+    "jp": "チーター",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "gorilla",
+    "jp": "ゴリラ",
+    "c": "animals",
+    "e": "🦍"
+  },
+  {
+    "w": "chimpanzee",
+    "jp": "チンパンジー",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "orangutan",
+    "jp": "オランウータン",
+    "c": "animals",
+    "e": "🦧"
+  },
+  {
+    "w": "lemur",
+    "jp": "キツネザル",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "meerkat",
+    "jp": "ミーアキャット",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "seal",
+    "jp": "アザラシ",
+    "c": "animals",
+    "e": "🦭"
+  },
+  {
+    "w": "sea_lion",
+    "jp": "アシカ",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "walrus",
+    "jp": "セイウチ",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "whale",
+    "jp": "くじら",
+    "c": "animals",
+    "e": "🐋"
+  },
+  {
+    "w": "dolphin",
+    "jp": "イルカ",
+    "c": "animals",
+    "e": "🐬"
+  },
+  {
+    "w": "shark",
+    "jp": "サメ",
+    "c": "animals",
+    "e": "🦈"
+  },
+  {
+    "w": "octopus",
+    "jp": "たこ",
+    "c": "animals",
+    "e": "🐙"
+  },
+  {
+    "w": "squid",
+    "jp": "いか",
+    "c": "animals",
+    "e": "🦑"
+  },
+  {
+    "w": "crab",
+    "jp": "かに",
+    "c": "animals",
+    "e": "🦀"
+  },
+  {
+    "w": "lobster",
+    "jp": "ロブスター",
+    "c": "animals",
+    "e": "🦞"
+  },
+  {
+    "w": "shrimp",
+    "jp": "えび",
+    "c": "animals",
+    "e": "🦐"
+  },
+  {
+    "w": "jellyfish",
+    "jp": "くらげ",
+    "c": "animals",
+    "e": "🪼"
+  },
+  {
+    "w": "starfish",
+    "jp": "ヒトデ",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "seahorse",
+    "jp": "タツノオトシゴ",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "clam",
+    "jp": "貝",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "snail",
+    "jp": "かたつむり",
+    "c": "animals",
+    "e": "🐌"
+  },
+  {
+    "w": "worm",
+    "jp": "みみず",
+    "c": "animals",
+    "e": "🪱"
+  },
+  {
+    "w": "butterfly",
+    "jp": "ちょう",
+    "c": "animals",
+    "e": "🦋"
+  },
+  {
+    "w": "moth",
+    "jp": "が",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "bee",
+    "jp": "はち",
+    "c": "animals",
+    "e": "🐝"
+  },
+  {
+    "w": "ant",
+    "jp": "あり",
+    "c": "animals",
+    "e": "🐜"
+  },
+  {
+    "w": "beetle",
+    "jp": "かぶとむし",
+    "c": "animals",
+    "e": "🪲"
+  },
+  {
+    "w": "ladybug",
+    "jp": "てんとうむし",
+    "c": "animals",
+    "e": "🐞"
+  },
+  {
+    "w": "dragonfly",
+    "jp": "とんぼ",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "grasshopper",
+    "jp": "バッタ",
+    "c": "animals",
+    "e": "🦗"
+  },
+  {
+    "w": "cricket",
+    "jp": "こおろぎ",
+    "c": "animals",
+    "e": "🦗"
+  },
+  {
+    "w": "spider",
+    "jp": "くも",
+    "c": "animals",
+    "e": "🕷️"
+  },
+  {
+    "w": "scorpion",
+    "jp": "さそり",
+    "c": "animals",
+    "e": "🦂"
+  },
+  {
+    "w": "lizard",
+    "jp": "とかげ",
+    "c": "animals",
+    "e": "🦎"
+  },
+  {
+    "w": "iguana",
+    "jp": "イグアナ",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "chameleon",
+    "jp": "カメレオン",
+    "c": "animals",
+    "e": "🦎"
+  },
+  {
+    "w": "gecko",
+    "jp": "ヤモリ",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "crocodile",
+    "jp": "クロコダイル",
+    "c": "animals",
+    "e": "🐊"
+  },
+  {
+    "w": "newt",
+    "jp": "イモリ",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "salamander",
+    "jp": "サンショウウオ",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "toad",
+    "jp": "ヒキガエル",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "ostrich",
+    "jp": "ダチョウ",
+    "c": "animals",
+    "e": "🪶"
+  },
+  {
+    "w": "emu",
+    "jp": "エミュー",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "kiwi",
+    "jp": "キーウィという鳥",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "toucan",
+    "jp": "オオハシ",
+    "c": "animals",
+    "e": "🔤"
+  },
+  {
+    "w": "pelican",
+    "jp": "ペリカン",
+    "c": "animals",
+    "e": "🔤"
+  }
+]
