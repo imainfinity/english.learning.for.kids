@@ -463,6 +463,7 @@ var sessionImgs={};     // アップロードプレビュー: path -> dataURL
 var VOCAB_URL="vocab.json";
 var QUESTIONS_URL="questions.json";
 var QUESTIONS=[];        // questions.jsonから読み込む設問マスター
+var QUESTIONS_LOADED_AT=0;
 var MIN_QUESTION_COUNT=10; // Riddle / Listening は最低10問で出題
 var lsHintShown=false, rdHintShown=false;
 
@@ -524,7 +525,7 @@ function makeChoice(id){
 }
 function qLevel(q){return normLevel(q.level||"normal");}
 function qCat(q){return normKey(q.category||q.c||"all");}
-function qType(q){var t=normKey(q.type); if(t==="listen")return "listening"; if(t==="sent")return "sentence"; return t;}
+function qType(q){var t=normKey(q.type); if(t==="listen")return "listening"; if(t==="quiz")return "riddle"; if(t==="question")return "riddle"; if(t==="sent")return "sentence"; return t;}
 function qId(q){return normKey(q.id||((q.type||"")+"_"+(q.level||"")+"_"+(q.category||"")+"_"+(q.answerId||q.answer||"")+"_"+(q.promptEn||q.storyEn||q.sentence||"")));}
 function addUniqueQuestions(out,arr){
   var seen={};
@@ -543,19 +544,27 @@ function filterQuestions(type,levelMode,catMode){
   });
 }
 function questionPool(type){
-  // まず「選択中の難易度＋テーマ」で出す。少なすぎる場合は同タイプから補完して最低10問に近づける。
+  // 難易度は絶対に混ぜない。
+  // 例: Expertを選んだら expert の questions.json だけを出す。
+  // 問題数が足りない場合でも easy/normal/hard から補完しない。
   var out=[];
   addUniqueQuestions(out,filterQuestions(type,"current","current"));
   if(out.length<MIN_QUESTION_COUNT)addUniqueQuestions(out,filterQuestions(type,"current","all"));
-  if(out.length<MIN_QUESTION_COUNT)addUniqueQuestions(out,filterQuestions(type,"all","current"));
-  if(out.length<MIN_QUESTION_COUNT)addUniqueQuestions(out,filterQuestions(type,"all","all"));
   return out;
+}
+function builtInFallbackAllowed(){
+  // 内蔵問題は低〜中難易度用。Very Hard / Expert には混ぜない。
+  return ["easy","normal","hard"].indexOf(normLevel(difficulty))>=0;
 }
 function ensureMinQuestions(arr,fallback){
   var out=(arr||[]).slice();
-  var fb=(fallback||[]).slice();
-  addUniqueQuestions(out,fb);
+  // questions.jsonに該当問題が無いときだけ、easy/normal/hardでは内蔵問題を使う。
+  if(out.length===0 && builtInFallbackAllowed()){
+    addUniqueQuestions(out,(fallback||[]).slice());
+  }
   if(out.length===0)return out;
+  // 10問未満の場合は、同じ難易度内の問題だけを繰り返して10問にする。
+  // 他難易度からの補完はしない。
   var base=out.slice();
   var i=0;
   while(out.length<MIN_QUESTION_COUNT){
@@ -661,25 +670,42 @@ function renderFlash(){
 var quizAnswered=false, quizStart=0, quizTimes=[], timerInt=null;
 function startTimer(){quizStart=Date.now();stopTimer();timerInt=setInterval(function(){$("quizTimer").textContent="⏱ "+((Date.now()-quizStart)/1000).toFixed(1);},100);}
 function stopTimer(){if(timerInt){clearInterval(timerInt);timerInt=null;}}
+function quizStage(){
+  var d=normLevel(difficulty);
+  if(d==="easy")return "visual";
+  if(d==="normal")return "visual_audio";
+  return "audio_only";
+}
+function quizAskText(){
+  var st=quizStage();
+  if(st==="visual")return showJp?"えをみて、英語をえらぼう。":"Look and choose the English word.";
+  if(st==="visual_audio")return showJp?"えをみて、音もきいて、英語をえらぼう。":"Look, listen, and choose the word.";
+  if(normLevel(difficulty)==="hard")return showJp?"音をきいて、英語をえらぼう。":"Listen and choose the word.";
+  return showJp?"音だけをたよりに、正しい英語をえらぼう。":"Listen carefully and choose the word.";
+}
 function startQuiz(){deck=getDeck();idx=0;quizTimes=[];show("quiz");renderQuiz();}
 function renderQuiz(){
   quizAnswered=false;var it=deck[idx];var emo=$("qEmoji");
-  if(DIFF[difficulty].showEmojiQuiz){setVisual(emo,it);emo.classList.remove("hide");}
-  else{emo.textContent="❓";emo.classList.add("hide");}
+  var st=quizStage();
+  if(st==="visual"||st==="visual_audio"){setVisual(emo,it);emo.classList.remove("hide");}
+  else{emo.textContent="🔊";emo.classList.add("hide");}
+  // 日本語は日本語モードONのときだけ。英語モードでは完全非表示。
   $("qJp").textContent=it.jp||"";$("qJp").style.display=(showJp&&it.jp)?"":"none";
-  $("qAsk").textContent=L("quizAsk");
+  $("qAsk").textContent=quizAskText();
   $("quizProg").textContent=(idx+1)+" / "+deck.length;
-  var pool=allWords().filter(function(x){return x.w!==it.w;});
+  var pool=allWords().filter(function(x){return normKey(x.w)!==normKey(it.w);});
   var wrongs=shuffle(pool).slice(0,optCount()-1);
   var opts=shuffle([it].concat(wrongs));
   var grid=$("qOpts");grid.innerHTML="";
   opts.forEach(function(o){var b=document.createElement("button");b.className="opt";b.textContent=o.w;
     b.addEventListener("click",function(){chooseQuiz(b,o,it);});grid.appendChild(b);});
   $("quizTimer").textContent="⏱ 0.0";startTimer();
+  // Normal以上は自動読み上げ。Hard以上は絵を出さず音声中心。
+  if(st!=="visual"){setTimeout(function(){if(!quizAnswered && !$('quiz').classList.contains('hidden'))speak(it.w,true);},250);}
 }
 function chooseQuiz(btn,chosen,correct){
   if(quizAnswered)return;
-  if(chosen.w===correct.w){
+  if(normKey(chosen.w)===normKey(correct.w)){
     quizAnswered=true;stopTimer();
     var dt=(Date.now()-quizStart)/1000;quizTimes.push(dt);
     btn.classList.add("good");speak(correct.w);addStar(1);celebrate("⭐");
@@ -702,10 +728,15 @@ function finishQuiz(){
 var lsDeck=[], lIdx=0, lsAnswered=false;
 function builtInStories(){return STORIES.slice();}
 function startListen(){
+  reloadQuestionsThen(startListenReady);
+}
+function startListenReady(){
   var ext=questionPool("listening").map(extListen);
-  // questions.jsonに該当難易度があるときは外部設問を優先。なければ従来問題で動作維持。
+  // 毎回 questions.json の最新版を読み直してから出題。難易度は絶対に混ぜない。
   lsDeck=shuffle(ensureMinQuestions(ext,builtInStories()));
+  if(!lsDeck.length){toast("No "+normLevel(difficulty)+" listening questions. Add them in admin.");show("home");return;}
   lIdx=0;show("listen");renderListen();
+  toast("Questions: "+lsDeck.length+" / unique: "+ext.length+" / "+normLevel(difficulty)+" / "+activeCat);
 }
 function currentStoryText(){var s=lsDeck[lIdx];return DIFF[difficulty].storyTwoLines?(s.s1+(s.s2?(" "+s.s2):"")):s.s1;}
 function listenHintText(s){return (s.jp||"")+(s.q?("\n"+s.q):"");}
@@ -741,9 +772,14 @@ function nextListen(){lIdx++;if(lIdx>=lsDeck.length){return showDone("🏆",L("d
 var rdDeck=[], rIdx=0, rdAnswered=false;
 function builtInRiddles(){return RIDDLES.slice();}
 function startRiddle(){
+  reloadQuestionsThen(startRiddleReady);
+}
+function startRiddleReady(){
   var ext=questionPool("riddle").map(extRiddle);
   rdDeck=shuffle(ensureMinQuestions(ext,builtInRiddles()));
+  if(!rdDeck.length){toast("No "+normLevel(difficulty)+" riddle questions. Add them in admin.");show("home");return;}
   rIdx=0;show("riddle");renderRiddle();
+  toast("Questions: "+rdDeck.length+" / unique: "+ext.length+" / "+normLevel(difficulty)+" / "+activeCat);
 }
 function updateRiddleHint(){
   var s=rdDeck[rIdx];if(!s){$("rdJp").style.display="none";return;}
@@ -965,12 +1001,18 @@ function loadVocab(cb){
 /* ===================== questions.json LOAD ===================== */
 function loadQuestions(cb){
   try{
-    window.fetch(QUESTIONS_URL,{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(data){
+    var url=QUESTIONS_URL+(QUESTIONS_URL.indexOf("?")>=0?"&":"?")+"v="+Date.now();
+    window.fetch(url,{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(data){
       var arr=Array.isArray(data)?data:(data&&data.questions)||[];
       QUESTIONS=arr.filter(function(q){return q&&q.type&&q.active!==false;});
-      if(cb)cb();
-    }).catch(function(){QUESTIONS=[];if(cb)cb();});
-  }catch(e){QUESTIONS=[];if(cb)cb();}
+      QUESTIONS_LOADED_AT=Date.now();
+      if(cb)cb(true);
+    }).catch(function(){QUESTIONS=[];QUESTIONS_LOADED_AT=Date.now();if(cb)cb(false);});
+  }catch(e){QUESTIONS=[];QUESTIONS_LOADED_AT=Date.now();if(cb)cb(false);}
+}
+function reloadQuestionsThen(fn){
+  toast("Loading latest questions...");
+  loadQuestions(function(){fn();});
 }
 
 /* ===================== DONE ===================== */
