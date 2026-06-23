@@ -16,6 +16,54 @@
     "hintJp": "水面に目と鼻だけを出して、丸太のようにじっと待つ爬虫類です。"
   },
   {
+    "id": "riddle_alligator_normal_001",
+    "type": "riddle",
+    "level": "normal",
+    "category": "animals",
+    "answerId": "alligator",
+    "choices": [
+      "alligator",
+      "crocodile",
+      "turtle",
+      "hippo"
+    ],
+    "active": true,
+    "promptEn": "I live near warm water and look like a floating log.",
+    "hintJp": "暖かい水辺で丸太のように見える爬虫類です。"
+  },
+  {
+    "id": "riddle_alligator_very_hard_002",
+    "type": "riddle",
+    "level": "very_hard",
+    "category": "animals",
+    "answerId": "alligator",
+    "choices": [
+      "alligator",
+      "crocodile",
+      "hippo",
+      "turtle"
+    ],
+    "active": true,
+    "promptEn": "In a wetland, one dark shape does not chase at first. It keeps eyes and nose above water, letting surprise do the work when prey comes close.",
+    "hintJp": "湿地で目と鼻だけを水面に出し、待ち伏せする爬虫類です。"
+  },
+  {
+    "id": "riddle_ant_expert_013",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "ant",
+    "choices": [
+      "ant",
+      "bee",
+      "beetle",
+      "spider"
+    ],
+    "active": true,
+    "promptEn": "One small body is not the full clue. Many work together, follow trails, carry food, and build busy homes underground or in wood.",
+    "hintJp": "小さな体だけでなく、仲間と働き、列を作り、すみかを作る虫です。"
+  },
+  {
     "id": "riddle_bat_expert_018",
     "type": "riddle",
     "level": "expert",
@@ -30,6 +78,70 @@
     "active": true,
     "promptEn": "I am not a bird, although I can fly. In the dark, sound can help me find small moving meals. My wings are made from skin stretched over long fingers.",
     "hintJp": "鳥ではありませんが飛べて、暗い場所で音を使って虫などを探す動物です。"
+  },
+  {
+    "id": "riddle_bat_normal_008",
+    "type": "riddle",
+    "level": "normal",
+    "category": "animals",
+    "answerId": "bat",
+    "choices": [
+      "bat",
+      "bird",
+      "owl",
+      "butterfly"
+    ],
+    "active": true,
+    "promptEn": "I fly at night, but I am not a bird.",
+    "hintJp": "鳥ではないけれど夜に飛ぶ動物です。"
+  },
+  {
+    "id": "riddle_bat_very_hard_005",
+    "type": "riddle",
+    "level": "very_hard",
+    "category": "animals",
+    "answerId": "bat",
+    "choices": [
+      "bat",
+      "owl",
+      "bird",
+      "butterfly"
+    ],
+    "active": true,
+    "promptEn": "Wings and night flight may suggest a bird, but the clue is wrong. Its wings are skin stretched over long fingers, and sound helps it hunt.",
+    "hintJp": "鳥ではないのに飛び、長い指に張った皮の翼と音が手がかりです。"
+  },
+  {
+    "id": "riddle_bear_easy_003",
+    "type": "riddle",
+    "level": "easy",
+    "category": "animals",
+    "answerId": "bear",
+    "choices": [
+      "bear",
+      "lion",
+      "dog",
+      "wolf"
+    ],
+    "active": true,
+    "promptEn": "I am big, furry, and I like honey.",
+    "hintJp": "大きくて毛があり、はちみつが好きなイメージの動物です。"
+  },
+  {
+    "id": "riddle_bear_expert_002",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "bear",
+    "choices": [
+      "bear",
+      "lion",
+      "wolf",
+      "dog"
+    ],
+    "active": true,
+    "promptEn": "The diet clue prevents a simple answer. It can take fish, fruit, or honey, and some kinds save energy through long cold-season rest.",
+    "hintJp": "肉だけでなく魚や果物も食べ、寒い季節に長く休む種類もいます。"
   },
   {
     "id": "riddle_bear_expert_003",
@@ -48,6 +160,86 @@
     "hintJp": "魚や木の実なども食べ、寒い季節に長く休む種類もいる大きな動物です。"
   },
   {
+    "id": "riddle_beaver_hard_010",
+    "type": "riddle",
+    "level": "hard",
+    "category": "animals",
+    "answerId": "beaver",
+    "choices": [
+      "beaver",
+      "otter",
+      "squirrel",
+      "raccoon"
+    ],
+    "active": true,
+    "promptEn": "I cut wood with strong teeth and change streams by building dams.",
+    "hintJp": "強い歯で木をかじり、ダムを作る動物です。"
+  },
+  {
+    "id": "riddle_beaver_very_hard_015",
+    "type": "riddle",
+    "level": "very_hard",
+    "category": "animals",
+    "answerId": "beaver",
+    "choices": [
+      "beaver",
+      "otter",
+      "squirrel",
+      "raccoon"
+    ],
+    "active": true,
+    "promptEn": "A fallen tree near a stream may not be from a storm. Strong teeth and building behavior can change the flow of water.",
+    "hintJp": "小川の近くで木をかじり、水の流れを変えるものを作る動物です。"
+  },
+  {
+    "id": "riddle_bee_expert_012",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "bee",
+    "choices": [
+      "bee",
+      "butterfly",
+      "ant",
+      "dragonfly"
+    ],
+    "active": true,
+    "promptEn": "The answer is not just a flying insect. Flowers, pollen, a stinger, and sweet food made in a group all connect to it.",
+    "hintJp": "花、花粉、針、みんなで作る甘いものが手がかりです。"
+  },
+  {
+    "id": "riddle_bee_normal_020",
+    "type": "riddle",
+    "level": "normal",
+    "category": "animals",
+    "answerId": "bee",
+    "choices": [
+      "bee",
+      "butterfly",
+      "ant",
+      "dragonfly"
+    ],
+    "active": true,
+    "promptEn": "I visit flowers and make honey.",
+    "hintJp": "花に集まり、はちみつを作る虫です。"
+  },
+  {
+    "id": "riddle_bird_easy_006",
+    "type": "riddle",
+    "level": "easy",
+    "category": "animals",
+    "answerId": "bird",
+    "choices": [
+      "bird",
+      "bat",
+      "butterfly",
+      "bee"
+    ],
+    "active": true,
+    "promptEn": "I have feathers and a beak.",
+    "hintJp": "羽とくちばしがある動物です。"
+  },
+  {
     "id": "riddle_bird_expert_006",
     "type": "riddle",
     "level": "expert",
@@ -64,6 +256,102 @@
     "hintJp": "羽、くちばし、巣、卵が手がかりになる動物の仲間です。"
   },
   {
+    "id": "riddle_butterfly_expert_014",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "butterfly",
+    "choices": [
+      "butterfly",
+      "moth",
+      "bee",
+      "dragonfly"
+    ],
+    "active": true,
+    "promptEn": "The adult clue is colorful wings, but the life-story clue is stronger. It changes from a crawling young form into a flying form.",
+    "hintJp": "幼虫から大きく姿を変え、色のある羽で飛ぶ虫です。"
+  },
+  {
+    "id": "riddle_butterfly_hard_016",
+    "type": "riddle",
+    "level": "hard",
+    "category": "animals",
+    "answerId": "butterfly",
+    "choices": [
+      "butterfly",
+      "moth",
+      "bee",
+      "dragonfly"
+    ],
+    "active": true,
+    "promptEn": "I begin life very differently, then later fly with colorful wings after a big change.",
+    "hintJp": "成長の途中で姿が大きく変わり、色のある羽で飛ぶ虫です。"
+  },
+  {
+    "id": "riddle_camel_hard_006",
+    "type": "riddle",
+    "level": "hard",
+    "category": "animals",
+    "answerId": "camel",
+    "choices": [
+      "camel",
+      "llama",
+      "horse",
+      "goat"
+    ],
+    "active": true,
+    "promptEn": "My body saves water, and my humps help me survive where rain is rare.",
+    "hintJp": "水が少ない場所で生きるための体とこぶが手がかりです。"
+  },
+  {
+    "id": "riddle_camel_very_hard_014",
+    "type": "riddle",
+    "level": "very_hard",
+    "category": "animals",
+    "answerId": "camel",
+    "choices": [
+      "camel",
+      "llama",
+      "horse",
+      "goat"
+    ],
+    "active": true,
+    "promptEn": "The place gives the clue: dry land with little water. Humps and wide feet help this animal travel where many others struggle.",
+    "hintJp": "水の少ない場所で、こぶと広い足が役に立つ動物です。"
+  },
+  {
+    "id": "riddle_cat_easy_007",
+    "type": "riddle",
+    "level": "easy",
+    "category": "animals",
+    "answerId": "cat",
+    "choices": [
+      "cat",
+      "dog",
+      "rabbit",
+      "mouse"
+    ],
+    "active": true,
+    "promptEn": "I say meow and have whiskers.",
+    "hintJp": "ニャーと鳴き、ひげがある動物です。"
+  },
+  {
+    "id": "riddle_cat_expert_003",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "cat",
+    "choices": [
+      "cat",
+      "dog",
+      "rabbit",
+      "fox"
+    ],
+    "active": true,
+    "promptEn": "A house setting can hide the wild clue. Silent steps, whisker sensing, and sudden pounces reveal an old hunting design.",
+    "hintJp": "家にいても、静かな足取りとひげ、飛びかかる動きが手がかりです。"
+  },
+  {
     "id": "riddle_cat_expert_007",
     "type": "riddle",
     "level": "expert",
@@ -78,6 +366,166 @@
     "active": true,
     "promptEn": "I can step quietly before a small animal hears me. My whiskers help me judge narrow spaces. Even when I live with people, my hunting habits still show.",
     "hintJp": "ひげでせまい場所を感じ取り、静かに動くのが得意な動物です。"
+  },
+  {
+    "id": "riddle_cheetah_hard_004",
+    "type": "riddle",
+    "level": "hard",
+    "category": "animals",
+    "answerId": "cheetah",
+    "choices": [
+      "cheetah",
+      "lion",
+      "leopard",
+      "tiger"
+    ],
+    "active": true,
+    "promptEn": "I am built for short bursts of speed, not for carrying a heavy mane or climbing tall trees.",
+    "hintJp": "たてがみではなく、短い距離をとても速く走ることが手がかりです。"
+  },
+  {
+    "id": "riddle_cheetah_very_hard_019",
+    "type": "riddle",
+    "level": "very_hard",
+    "category": "animals",
+    "answerId": "cheetah",
+    "choices": [
+      "cheetah",
+      "leopard",
+      "lion",
+      "tiger"
+    ],
+    "active": true,
+    "promptEn": "It is a big spotted cat, but the key is how it hunts. It depends on sudden speed more than strength over a long chase.",
+    "hintJp": "まだら模様の大型ネコ科で、短い距離の速さが大きな手がかりです。"
+  },
+  {
+    "id": "riddle_cow_easy_017",
+    "type": "riddle",
+    "level": "easy",
+    "category": "animals",
+    "answerId": "cow",
+    "choices": [
+      "cow",
+      "goat",
+      "sheep",
+      "horse"
+    ],
+    "active": true,
+    "promptEn": "I give milk and say moo.",
+    "hintJp": "モーと鳴き、牛乳をくれる動物です。"
+  },
+  {
+    "id": "riddle_crab_expert_011",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "crab",
+    "choices": [
+      "crab",
+      "lobster",
+      "shrimp",
+      "octopus"
+    ],
+    "active": true,
+    "promptEn": "Sideways movement is a useful clue, but so are the tools on the front. A hard shell and two pinching parts help it live near water.",
+    "hintJp": "横歩き、かたい体、二つのはさみが手がかりです。"
+  },
+  {
+    "id": "riddle_crab_normal_019",
+    "type": "riddle",
+    "level": "normal",
+    "category": "animals",
+    "answerId": "crab",
+    "choices": [
+      "crab",
+      "lobster",
+      "shrimp",
+      "octopus"
+    ],
+    "active": true,
+    "promptEn": "I walk sideways and have two claws.",
+    "hintJp": "横歩きをし、二つのはさみを持つ動物です。"
+  },
+  {
+    "id": "riddle_crocodile_expert_015",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "crocodile",
+    "choices": [
+      "crocodile",
+      "alligator",
+      "lizard",
+      "turtle"
+    ],
+    "active": true,
+    "promptEn": "A wetland reptile is not enough; compare the snout. This one is often longer and more V-shaped than its broader-snouted cousin.",
+    "hintJp": "似た爬虫類より、口先が長くとがっていることが多いのが手がかりです。"
+  },
+  {
+    "id": "riddle_crocodile_hard_019",
+    "type": "riddle",
+    "level": "hard",
+    "category": "animals",
+    "answerId": "crocodile",
+    "choices": [
+      "crocodile",
+      "alligator",
+      "lizard",
+      "turtle"
+    ],
+    "active": true,
+    "promptEn": "Compared with a broad-snouted cousin, my snout is often narrower and more pointed.",
+    "hintJp": "似た仲間より口先が細くとがっていることが多い爬虫類です。"
+  },
+  {
+    "id": "riddle_deer_normal_012",
+    "type": "riddle",
+    "level": "normal",
+    "category": "animals",
+    "answerId": "deer",
+    "choices": [
+      "deer",
+      "horse",
+      "goat",
+      "rabbit"
+    ],
+    "active": true,
+    "promptEn": "I run through forests, and some males have antlers.",
+    "hintJp": "森を走り、オスに枝のような角がある動物です。"
+  },
+  {
+    "id": "riddle_dog_easy_008",
+    "type": "riddle",
+    "level": "easy",
+    "category": "animals",
+    "answerId": "dog",
+    "choices": [
+      "dog",
+      "cat",
+      "fox",
+      "wolf"
+    ],
+    "active": true,
+    "promptEn": "I bark and wag my tail.",
+    "hintJp": "ワンワン鳴き、しっぽを振る動物です。"
+  },
+  {
+    "id": "riddle_dog_expert_004",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "dog",
+    "choices": [
+      "dog",
+      "cat",
+      "wolf",
+      "fox"
+    ],
+    "active": true,
+    "promptEn": "The clue is not just barking. Following invisible scent trails, reading humans, and working as guard or guide point to this companion animal.",
+    "hintJp": "においをたどり、人を助けたり守ったりする身近な動物です。"
   },
   {
     "id": "riddle_dog_expert_008",
@@ -112,6 +560,102 @@
     "hintJp": "海にすみますが、えらではなく空気を吸い、音を使って仲間と動く動物です。"
   },
   {
+    "id": "riddle_dolphin_normal_016",
+    "type": "riddle",
+    "level": "normal",
+    "category": "animals",
+    "answerId": "dolphin",
+    "choices": [
+      "dolphin",
+      "whale",
+      "shark",
+      "seal"
+    ],
+    "active": true,
+    "promptEn": "I breathe air, swim in groups, and make clicks.",
+    "hintJp": "空気を吸い、群れで泳ぎ、音を出す海の動物です。"
+  },
+  {
+    "id": "riddle_dolphin_very_hard_003",
+    "type": "riddle",
+    "level": "very_hard",
+    "category": "animals",
+    "answerId": "dolphin",
+    "choices": [
+      "dolphin",
+      "fish",
+      "shark",
+      "seal"
+    ],
+    "active": true,
+    "promptEn": "This animal shares the sea with gill-breathers, but it must return to the surface. Its sounds can help it find and understand things underwater.",
+    "hintJp": "海にすみますが、えらではなく空気を吸い、音を使う動物です。"
+  },
+  {
+    "id": "riddle_duck_easy_019",
+    "type": "riddle",
+    "level": "easy",
+    "category": "animals",
+    "answerId": "duck",
+    "choices": [
+      "duck",
+      "chicken",
+      "goose",
+      "bird"
+    ],
+    "active": true,
+    "promptEn": "I swim and say quack.",
+    "hintJp": "水に浮かび、ガーガー鳴く鳥です。"
+  },
+  {
+    "id": "riddle_eagle_expert_005",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "eagle",
+    "choices": [
+      "eagle",
+      "parrot",
+      "owl",
+      "duck"
+    ],
+    "active": true,
+    "promptEn": "The answer is a bird, but not one known for talking or swimming. High flight, sharp vision, and gripping claws make it a sky hunter.",
+    "hintJp": "高く飛び、鋭い目と爪で獲物をつかむ鳥です。"
+  },
+  {
+    "id": "riddle_eagle_normal_006",
+    "type": "riddle",
+    "level": "normal",
+    "category": "animals",
+    "answerId": "eagle",
+    "choices": [
+      "eagle",
+      "owl",
+      "parrot",
+      "duck"
+    ],
+    "active": true,
+    "promptEn": "I fly high and catch prey with sharp claws.",
+    "hintJp": "高く飛び、鋭い爪で獲物をつかむ鳥です。"
+  },
+  {
+    "id": "riddle_elephant_easy_001",
+    "type": "riddle",
+    "level": "easy",
+    "category": "animals",
+    "answerId": "elephant",
+    "choices": [
+      "elephant",
+      "giraffe",
+      "rhino",
+      "hippo"
+    ],
+    "active": true,
+    "promptEn": "I am very big and have a long nose.",
+    "hintJp": "長い鼻と大きな体が手がかりです。"
+  },
+  {
     "id": "riddle_elephant_expert_001",
     "type": "riddle",
     "level": "expert",
@@ -126,6 +670,38 @@
     "active": true,
     "promptEn": "I can reach leaves without climbing a tree. My nose can drink, smell, lift, and spray water. Smaller animals may move away when my heavy feet shake the ground.",
     "hintJp": "長い鼻を手のように使い、とても大きな体を持つ動物です。"
+  },
+  {
+    "id": "riddle_elephant_very_hard_020",
+    "type": "riddle",
+    "level": "very_hard",
+    "category": "animals",
+    "answerId": "elephant",
+    "choices": [
+      "elephant",
+      "rhino",
+      "hippo",
+      "giraffe"
+    ],
+    "active": true,
+    "promptEn": "The nose is more than a nose. It works like a hand, a straw, and a shower, while the animal's size changes how others behave nearby.",
+    "hintJp": "長い鼻を手やストローのように使える、とても大きな動物です。"
+  },
+  {
+    "id": "riddle_fish_easy_005",
+    "type": "riddle",
+    "level": "easy",
+    "category": "animals",
+    "answerId": "fish",
+    "choices": [
+      "fish",
+      "frog",
+      "duck",
+      "seal"
+    ],
+    "active": true,
+    "promptEn": "I swim in water and have fins.",
+    "hintJp": "水の中をひれで泳ぐ動物です。"
   },
   {
     "id": "riddle_fish_expert_005",
@@ -144,6 +720,70 @@
     "hintJp": "水の中でひれを使って泳ぎ、えらで呼吸する動物です。"
   },
   {
+    "id": "riddle_flamingo_hard_014",
+    "type": "riddle",
+    "level": "hard",
+    "category": "animals",
+    "answerId": "flamingo",
+    "choices": [
+      "flamingo",
+      "swan",
+      "heron",
+      "duck"
+    ],
+    "active": true,
+    "promptEn": "I stand in shallow water on long legs, and my pink color comes from what I eat.",
+    "hintJp": "浅い水に長い足で立ち、食べ物でピンク色になる鳥です。"
+  },
+  {
+    "id": "riddle_flamingo_very_hard_017",
+    "type": "riddle",
+    "level": "very_hard",
+    "category": "animals",
+    "answerId": "flamingo",
+    "choices": [
+      "flamingo",
+      "swan",
+      "heron",
+      "duck"
+    ],
+    "active": true,
+    "promptEn": "Pink color is a clue, but not the whole answer. It feeds in shallow water with long legs and a specially shaped bill.",
+    "hintJp": "ピンク色だけでなく、浅い水と長い足、くちばしの形が手がかりです。"
+  },
+  {
+    "id": "riddle_fox_normal_010",
+    "type": "riddle",
+    "level": "normal",
+    "category": "animals",
+    "answerId": "fox",
+    "choices": [
+      "fox",
+      "wolf",
+      "dog",
+      "cat"
+    ],
+    "active": true,
+    "promptEn": "I have a bushy tail and a clever hunter image.",
+    "hintJp": "ふさふさのしっぽがあり、賢いイメージの動物です。"
+  },
+  {
+    "id": "riddle_frog_easy_011",
+    "type": "riddle",
+    "level": "easy",
+    "category": "animals",
+    "answerId": "frog",
+    "choices": [
+      "frog",
+      "fish",
+      "rabbit",
+      "toad"
+    ],
+    "active": true,
+    "promptEn": "I jump and say ribbit near water.",
+    "hintJp": "水の近くでジャンプして鳴く動物です。"
+  },
+  {
     "id": "riddle_frog_expert_011",
     "type": "riddle",
     "level": "expert",
@@ -158,6 +798,38 @@
     "active": true,
     "promptEn": "My life may begin in water with a tail. Later, I can leap on land and catch insects with a sticky tongue. After rain, my voice may join a noisy pond chorus.",
     "hintJp": "子どもの時は水中で育ち、成長するとジャンプして虫を捕る動物です。"
+  },
+  {
+    "id": "riddle_frog_very_hard_011",
+    "type": "riddle",
+    "level": "very_hard",
+    "category": "animals",
+    "answerId": "frog",
+    "choices": [
+      "frog",
+      "fish",
+      "toad",
+      "rabbit"
+    ],
+    "active": true,
+    "promptEn": "The young form would make you think of a tiny swimmer, but the adult can leap. A sticky tongue links the water story to insect hunting.",
+    "hintJp": "子どもの時は水中で育ち、大人になるとジャンプして虫を捕ります。"
+  },
+  {
+    "id": "riddle_giraffe_easy_013",
+    "type": "riddle",
+    "level": "easy",
+    "category": "animals",
+    "answerId": "giraffe",
+    "choices": [
+      "giraffe",
+      "elephant",
+      "horse",
+      "deer"
+    ],
+    "active": true,
+    "promptEn": "I have a very long neck.",
+    "hintJp": "とても長い首がある動物です。"
   },
   {
     "id": "riddle_giraffe_expert_013",
@@ -176,6 +848,118 @@
     "hintJp": "長い首と高い足で、他の動物が届かない木の葉を食べられる動物です。"
   },
   {
+    "id": "riddle_giraffe_very_hard_008",
+    "type": "riddle",
+    "level": "very_hard",
+    "category": "animals",
+    "answerId": "giraffe",
+    "choices": [
+      "giraffe",
+      "elephant",
+      "deer",
+      "horse"
+    ],
+    "active": true,
+    "promptEn": "The best clue is not only a long neck. Long legs also raise the mouth high enough to reach food above other grassland animals.",
+    "hintJp": "首だけでなく足も高く、他の動物が届かない葉を食べます。"
+  },
+  {
+    "id": "riddle_gorilla_expert_016",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "gorilla",
+    "choices": [
+      "gorilla",
+      "monkey",
+      "chimpanzee",
+      "orangutan"
+    ],
+    "active": true,
+    "promptEn": "It is related to smaller branch movers, but size changes the answer. Powerful arms, a broad chest, and ground movement point away from a tiny climber.",
+    "hintJp": "小さな木登り動物ではなく、強い腕と大きな体を持つ類人猿です。"
+  },
+  {
+    "id": "riddle_gorilla_hard_001",
+    "type": "riddle",
+    "level": "hard",
+    "category": "animals",
+    "answerId": "gorilla",
+    "choices": [
+      "gorilla",
+      "monkey",
+      "chimpanzee",
+      "orangutan"
+    ],
+    "active": true,
+    "promptEn": "I am much larger than most tree-climbers, and I use powerful arms to move and show strength.",
+    "hintJp": "木登りする動物の中でも大きく、強い腕が大きな手がかりです。"
+  },
+  {
+    "id": "riddle_hedgehog_hard_012",
+    "type": "riddle",
+    "level": "hard",
+    "category": "animals",
+    "answerId": "hedgehog",
+    "choices": [
+      "hedgehog",
+      "porcupine",
+      "mouse",
+      "rabbit"
+    ],
+    "active": true,
+    "promptEn": "When danger comes, my soft belly disappears and sharp spines face outward.",
+    "hintJp": "危険な時に丸まり、とげで身を守る小さな動物です。"
+  },
+  {
+    "id": "riddle_hippo_expert_017",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "hippo",
+    "choices": [
+      "hippo",
+      "rhino",
+      "elephant",
+      "bear"
+    ],
+    "active": true,
+    "promptEn": "The round heavy body may mislead you into thinking it is slow everywhere. In water, it spends much time and can be very dangerous near rivers.",
+    "hintJp": "丸く重い体で、川や水中で過ごすことが多い危険な動物です。"
+  },
+  {
+    "id": "riddle_hippo_hard_002",
+    "type": "riddle",
+    "level": "hard",
+    "category": "animals",
+    "answerId": "hippo",
+    "choices": [
+      "hippo",
+      "rhino",
+      "elephant",
+      "seal"
+    ],
+    "active": true,
+    "promptEn": "I look heavy on land, but water helps hold my body as I spend time in rivers.",
+    "hintJp": "陸では重そうですが、川や水の中で過ごすことが多い動物です。"
+  },
+  {
+    "id": "riddle_horse_easy_016",
+    "type": "riddle",
+    "level": "easy",
+    "category": "animals",
+    "answerId": "horse",
+    "choices": [
+      "horse",
+      "cow",
+      "deer",
+      "zebra"
+    ],
+    "active": true,
+    "promptEn": "People can ride on my back.",
+    "hintJp": "人が背中に乗ることができる動物です。"
+  },
+  {
     "id": "riddle_kangaroo_expert_020",
     "type": "riddle",
     "level": "expert",
@@ -190,6 +974,118 @@
     "active": true,
     "promptEn": "Walking slowly is not my best way to travel. Strong back legs help me cover ground with long jumps. A baby can ride in a pouch while it grows.",
     "hintJp": "強い後ろ足でジャンプして進み、赤ちゃんをお腹のふくろで育てる動物です。"
+  },
+  {
+    "id": "riddle_kangaroo_normal_002",
+    "type": "riddle",
+    "level": "normal",
+    "category": "animals",
+    "answerId": "kangaroo",
+    "choices": [
+      "kangaroo",
+      "rabbit",
+      "deer",
+      "monkey"
+    ],
+    "active": true,
+    "promptEn": "I move with strong jumps and carry my baby in a pouch.",
+    "hintJp": "強いジャンプで進み、赤ちゃんを袋で育てる動物です。"
+  },
+  {
+    "id": "riddle_kangaroo_very_hard_007",
+    "type": "riddle",
+    "level": "very_hard",
+    "category": "animals",
+    "answerId": "kangaroo",
+    "choices": [
+      "kangaroo",
+      "rabbit",
+      "deer",
+      "monkey"
+    ],
+    "active": true,
+    "promptEn": "This animal is not built for smooth walking. Its strongest movement comes from back legs, and a growing baby may ride in a body pocket.",
+    "hintJp": "後ろ足のジャンプと赤ちゃんを入れる袋が手がかりです。"
+  },
+  {
+    "id": "riddle_koala_normal_003",
+    "type": "riddle",
+    "level": "normal",
+    "category": "animals",
+    "answerId": "koala",
+    "choices": [
+      "koala",
+      "panda",
+      "sloth",
+      "monkey"
+    ],
+    "active": true,
+    "promptEn": "I live in trees and eat leaves that smell strong.",
+    "hintJp": "木の上で暮らし、ユーカリの葉を食べる動物です。"
+  },
+  {
+    "id": "riddle_leopard_expert_019",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "leopard",
+    "choices": [
+      "leopard",
+      "cheetah",
+      "tiger",
+      "lion"
+    ],
+    "active": true,
+    "promptEn": "Do not choose the speed specialist only from spots. This spotted big cat is also famous for climbing and hiding prey in trees.",
+    "hintJp": "まだら模様だけでなく、木に登る力が手がかりの大型ネコ科です。"
+  },
+  {
+    "id": "riddle_leopard_hard_005",
+    "type": "riddle",
+    "level": "hard",
+    "category": "animals",
+    "answerId": "leopard",
+    "choices": [
+      "leopard",
+      "cheetah",
+      "tiger",
+      "lion"
+    ],
+    "active": true,
+    "promptEn": "I climb well for a big cat, and my spotted coat helps me hide in broken light.",
+    "hintJp": "木登りが得意で、まだら模様がかくれる助けになる大型のネコ科です。"
+  },
+  {
+    "id": "riddle_lion_easy_004",
+    "type": "riddle",
+    "level": "easy",
+    "category": "animals",
+    "answerId": "lion",
+    "choices": [
+      "lion",
+      "tiger",
+      "bear",
+      "cat"
+    ],
+    "active": true,
+    "promptEn": "I have a loud roar and a mane.",
+    "hintJp": "大きくほえ、たてがみがある動物です。"
+  },
+  {
+    "id": "riddle_lion_expert_001",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "lion",
+    "choices": [
+      "lion",
+      "tiger",
+      "wolf",
+      "bear"
+    ],
+    "active": true,
+    "promptEn": "A hunter in open grassland may not hunt alone. Sound warns the distance, a group helps with large prey, and a male's hair changes the silhouette.",
+    "hintJp": "草原、群れでの狩り、大きな声、オスのたてがみが手がかりです。"
   },
   {
     "id": "riddle_lion_expert_004",
@@ -208,6 +1104,38 @@
     "hintJp": "草原で大きな声を響かせ、オスにはたてがみがある肉食動物です。"
   },
   {
+    "id": "riddle_lizard_hard_018",
+    "type": "riddle",
+    "level": "hard",
+    "category": "animals",
+    "answerId": "lizard",
+    "choices": [
+      "lizard",
+      "snake",
+      "frog",
+      "gecko"
+    ],
+    "active": true,
+    "promptEn": "I sun myself on rocks, move quickly on four legs, and may lose my tail to escape.",
+    "hintJp": "岩で日なたぼっこをし、逃げるためにしっぽを切ることもある爬虫類です。"
+  },
+  {
+    "id": "riddle_monkey_easy_012",
+    "type": "riddle",
+    "level": "easy",
+    "category": "animals",
+    "answerId": "monkey",
+    "choices": [
+      "monkey",
+      "gorilla",
+      "koala",
+      "sloth"
+    ],
+    "active": true,
+    "promptEn": "I climb trees and like bananas.",
+    "hintJp": "木に登り、バナナが好きなイメージの動物です。"
+  },
+  {
     "id": "riddle_monkey_expert_012",
     "type": "riddle",
     "level": "expert",
@@ -222,6 +1150,118 @@
     "active": true,
     "promptEn": "Hands help me hold fruit, branches, and sometimes tools. I often learn by watching others in my group. A tail may help with balance, but my cleverness is also important.",
     "hintJp": "手で枝や果物をつかみ、群れで学びながら生活することが多い動物です。"
+  },
+  {
+    "id": "riddle_monkey_very_hard_012",
+    "type": "riddle",
+    "level": "very_hard",
+    "category": "animals",
+    "answerId": "monkey",
+    "choices": [
+      "monkey",
+      "lemur",
+      "sloth",
+      "cat"
+    ],
+    "active": true,
+    "promptEn": "A tail alone is not enough to identify it. Hands, group learning, branch movement, and tool-like behavior point to the answer.",
+    "hintJp": "手でつかむこと、枝を動くこと、群れで学ぶことが手がかりです。"
+  },
+  {
+    "id": "riddle_mouse_normal_009",
+    "type": "riddle",
+    "level": "normal",
+    "category": "animals",
+    "answerId": "mouse",
+    "choices": [
+      "mouse",
+      "rat",
+      "hamster",
+      "rabbit"
+    ],
+    "active": true,
+    "promptEn": "I am small, quiet, and may nibble cheese.",
+    "hintJp": "小さくてすばしっこく、チーズをかじるイメージの動物です。"
+  },
+  {
+    "id": "riddle_octopus_expert_010",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "octopus",
+    "choices": [
+      "octopus",
+      "squid",
+      "crab",
+      "jellyfish"
+    ],
+    "active": true,
+    "promptEn": "A puzzle box would not be impossible for this animal. A soft body, eight flexible arms, and changing color all help it survive.",
+    "hintJp": "やわらかい体、八本の腕、色を変える力が手がかりです。"
+  },
+  {
+    "id": "riddle_octopus_hard_020",
+    "type": "riddle",
+    "level": "hard",
+    "category": "animals",
+    "answerId": "octopus",
+    "choices": [
+      "octopus",
+      "squid",
+      "jellyfish",
+      "crab"
+    ],
+    "active": true,
+    "promptEn": "A closed jar is not always safe from me, because my soft body and clever arms can solve problems.",
+    "hintJp": "やわらかい体と器用な腕で、問題を解くような行動ができる海の動物です。"
+  },
+  {
+    "id": "riddle_octopus_normal_018",
+    "type": "riddle",
+    "level": "normal",
+    "category": "animals",
+    "answerId": "octopus",
+    "choices": [
+      "octopus",
+      "squid",
+      "crab",
+      "jellyfish"
+    ],
+    "active": true,
+    "promptEn": "I have eight arms and can hide by changing color.",
+    "hintJp": "八本の腕があり、色を変えて隠れることがある動物です。"
+  },
+  {
+    "id": "riddle_otter_expert_007",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "otter",
+    "choices": [
+      "otter",
+      "seal",
+      "beaver",
+      "dolphin"
+    ],
+    "active": true,
+    "promptEn": "It is not shaped like a fish, yet water is where it shows skill. It may float, dive, and use quick paws to handle food.",
+    "hintJp": "魚の形ではありませんが、水中で泳ぎ、手先で食べ物を扱う動物です。"
+  },
+  {
+    "id": "riddle_otter_normal_013",
+    "type": "riddle",
+    "level": "normal",
+    "category": "animals",
+    "answerId": "otter",
+    "choices": [
+      "otter",
+      "seal",
+      "beaver",
+      "dolphin"
+    ],
+    "active": true,
+    "promptEn": "I swim well and may float on my back.",
+    "hintJp": "泳ぎが得意で、背中で浮かぶこともある動物です。"
   },
   {
     "id": "riddle_owl_expert_017",
@@ -240,6 +1280,118 @@
     "hintJp": "夜に活動し、大きな目と静かな翼で小さな獲物をねらう鳥です。"
   },
   {
+    "id": "riddle_owl_normal_005",
+    "type": "riddle",
+    "level": "normal",
+    "category": "animals",
+    "answerId": "owl",
+    "choices": [
+      "owl",
+      "eagle",
+      "bat",
+      "crow"
+    ],
+    "active": true,
+    "promptEn": "I hunt at night with big eyes and quiet wings.",
+    "hintJp": "夜に大きな目と静かな翼で狩りをする鳥です。"
+  },
+  {
+    "id": "riddle_owl_very_hard_006",
+    "type": "riddle",
+    "level": "very_hard",
+    "category": "animals",
+    "answerId": "owl",
+    "choices": [
+      "owl",
+      "eagle",
+      "bat",
+      "crow"
+    ],
+    "active": true,
+    "promptEn": "The forest is dark, but this hunter does not need daylight. Quiet wings and large eyes make a small moving animal easy to catch.",
+    "hintJp": "暗い森で、大きな目と静かな翼を使って狩りをする鳥です。"
+  },
+  {
+    "id": "riddle_panda_normal_004",
+    "type": "riddle",
+    "level": "normal",
+    "category": "animals",
+    "answerId": "panda",
+    "choices": [
+      "panda",
+      "bear",
+      "koala",
+      "skunk"
+    ],
+    "active": true,
+    "promptEn": "I am black and white and eat lots of bamboo.",
+    "hintJp": "白黒の体で、竹をたくさん食べる動物です。"
+  },
+  {
+    "id": "riddle_parrot_expert_006",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "parrot",
+    "choices": [
+      "parrot",
+      "peacock",
+      "eagle",
+      "owl"
+    ],
+    "active": true,
+    "promptEn": "Colorful feathers are only one clue. The stronger clue is that this bird can copy sounds it hears from people or its surroundings.",
+    "hintJp": "あざやかな羽と、聞いた音をまねする力が手がかりです。"
+  },
+  {
+    "id": "riddle_parrot_normal_007",
+    "type": "riddle",
+    "level": "normal",
+    "category": "animals",
+    "answerId": "parrot",
+    "choices": [
+      "parrot",
+      "peacock",
+      "owl",
+      "sparrow"
+    ],
+    "active": true,
+    "promptEn": "I have bright feathers and can copy sounds.",
+    "hintJp": "あざやかな羽を持ち、音や言葉をまねできる鳥です。"
+  },
+  {
+    "id": "riddle_peacock_hard_013",
+    "type": "riddle",
+    "level": "hard",
+    "category": "animals",
+    "answerId": "peacock",
+    "choices": [
+      "peacock",
+      "parrot",
+      "flamingo",
+      "turkey"
+    ],
+    "active": true,
+    "promptEn": "My tail is not useful for hiding; it is a bright display full of eye-like patterns.",
+    "hintJp": "かくれるためではなく、目のような模様の大きな羽を見せる鳥です。"
+  },
+  {
+    "id": "riddle_penguin_easy_020",
+    "type": "riddle",
+    "level": "easy",
+    "category": "animals",
+    "answerId": "penguin",
+    "choices": [
+      "penguin",
+      "duck",
+      "seal",
+      "bird"
+    ],
+    "active": true,
+    "promptEn": "I am a black-and-white bird that swims.",
+    "hintJp": "白黒の体で泳ぐ鳥です。"
+  },
+  {
     "id": "riddle_penguin_expert_014",
     "type": "riddle",
     "level": "expert",
@@ -254,6 +1406,70 @@
     "active": true,
     "promptEn": "Feathers do not always mean skill in the sky. My wings work better like paddles in cold water. I may look slow on ice, but I become a fast hunter below the surface.",
     "hintJp": "羽はありますが空を飛ばず、冷たい水の中で速く泳ぐ鳥です。"
+  },
+  {
+    "id": "riddle_penguin_expert_020",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "penguin",
+    "choices": [
+      "penguin",
+      "duck",
+      "seal",
+      "bird"
+    ],
+    "active": true,
+    "promptEn": "The body gives mixed signals: feathers say one thing, flipper-like wings say another. The correct clue is that cold water, not the sky, reveals its skill.",
+    "hintJp": "羽はありますが、空ではなく冷たい水で能力を発揮する鳥です。"
+  },
+  {
+    "id": "riddle_penguin_very_hard_001",
+    "type": "riddle",
+    "level": "very_hard",
+    "category": "animals",
+    "answerId": "penguin",
+    "choices": [
+      "penguin",
+      "duck",
+      "seal",
+      "bird"
+    ],
+    "active": true,
+    "promptEn": "A child sees feathers and expects flight, but that guess fails. The same limbs that seem useless in air become powerful tools below cold waves.",
+    "hintJp": "羽を見ると飛ぶと思いがちですが、水中で力を発揮する鳥です。"
+  },
+  {
+    "id": "riddle_pig_easy_018",
+    "type": "riddle",
+    "level": "easy",
+    "category": "animals",
+    "answerId": "pig",
+    "choices": [
+      "pig",
+      "cow",
+      "sheep",
+      "dog"
+    ],
+    "active": true,
+    "promptEn": "I say oink and have a round nose.",
+    "hintJp": "ブーブー鳴き、丸い鼻がある動物です。"
+  },
+  {
+    "id": "riddle_rabbit_easy_002",
+    "type": "riddle",
+    "level": "easy",
+    "category": "animals",
+    "answerId": "rabbit",
+    "choices": [
+      "rabbit",
+      "mouse",
+      "cat",
+      "frog"
+    ],
+    "active": true,
+    "promptEn": "I have long ears and I hop.",
+    "hintJp": "長い耳でぴょんぴょん跳ぶ動物です。"
   },
   {
     "id": "riddle_rabbit_expert_002",
@@ -272,6 +1488,182 @@
     "hintJp": "長い耳で危険に気づき、すばやく走って穴に逃げる小さな動物です。"
   },
   {
+    "id": "riddle_raccoon_hard_008",
+    "type": "riddle",
+    "level": "hard",
+    "category": "animals",
+    "answerId": "raccoon",
+    "choices": [
+      "raccoon",
+      "skunk",
+      "badger",
+      "fox"
+    ],
+    "active": true,
+    "promptEn": "My face looks masked, and my front paws can handle food with surprising skill.",
+    "hintJp": "顔の黒い模様と器用な前足が手がかりです。"
+  },
+  {
+    "id": "riddle_raccoon_very_hard_016",
+    "type": "riddle",
+    "level": "very_hard",
+    "category": "animals",
+    "answerId": "raccoon",
+    "choices": [
+      "raccoon",
+      "skunk",
+      "fox",
+      "badger"
+    ],
+    "active": true,
+    "promptEn": "The clue is not just a striped tail. A mask-like face and clever front paws make it good at finding and handling food.",
+    "hintJp": "顔のマスクのような模様と器用な前足が手がかりです。"
+  },
+  {
+    "id": "riddle_rhino_expert_018",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "rhino",
+    "choices": [
+      "rhino",
+      "elephant",
+      "hippo",
+      "giraffe"
+    ],
+    "active": true,
+    "promptEn": "It is large and gray like another giant, but the face gives it away. The horn is the main clue, not a long nose or a tall neck.",
+    "hintJp": "大きな灰色の体と、顔の角が手がかりです。"
+  },
+  {
+    "id": "riddle_rhino_hard_003",
+    "type": "riddle",
+    "level": "hard",
+    "category": "animals",
+    "answerId": "rhino",
+    "choices": [
+      "rhino",
+      "hippo",
+      "elephant",
+      "boar"
+    ],
+    "active": true,
+    "promptEn": "My body is heavy like a small tank, and a horn on my face makes me easy to identify.",
+    "hintJp": "重い体と顔の角が手がかりになる動物です。"
+  },
+  {
+    "id": "riddle_seal_expert_008",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "seal",
+    "choices": [
+      "seal",
+      "otter",
+      "penguin",
+      "sea_lion"
+    ],
+    "active": true,
+    "promptEn": "On land it may seem awkward, but in water the body makes more sense. Flippers and smooth swimming reveal where it is skilled.",
+    "hintJp": "陸では動きにくそうでも、水中ではひれで上手に泳ぐ動物です。"
+  },
+  {
+    "id": "riddle_seal_normal_014",
+    "type": "riddle",
+    "level": "normal",
+    "category": "animals",
+    "answerId": "seal",
+    "choices": [
+      "seal",
+      "sea_lion",
+      "otter",
+      "penguin"
+    ],
+    "active": true,
+    "promptEn": "I rest on rocks and swim with flippers.",
+    "hintJp": "岩や氷の上で休み、ひれで泳ぐ動物です。"
+  },
+  {
+    "id": "riddle_shark_expert_009",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "shark",
+    "choices": [
+      "shark",
+      "dolphin",
+      "whale",
+      "seal"
+    ],
+    "active": true,
+    "promptEn": "Do not choose the air-breathing ocean animal. This sea hunter uses gills, moves with fins, and is known for teeth that make other animals cautious.",
+    "hintJp": "海でえらを使って泳ぎ、鋭い歯で知られる動物です。"
+  },
+  {
+    "id": "riddle_shark_normal_017",
+    "type": "riddle",
+    "level": "normal",
+    "category": "animals",
+    "answerId": "shark",
+    "choices": [
+      "shark",
+      "dolphin",
+      "whale",
+      "fish"
+    ],
+    "active": true,
+    "promptEn": "I swim in the sea and many animals fear my teeth.",
+    "hintJp": "海を泳ぎ、鋭い歯で知られる動物です。"
+  },
+  {
+    "id": "riddle_skunk_hard_009",
+    "type": "riddle",
+    "level": "hard",
+    "category": "animals",
+    "answerId": "skunk",
+    "choices": [
+      "skunk",
+      "raccoon",
+      "badger",
+      "cat"
+    ],
+    "active": true,
+    "promptEn": "My black-and-white warning colors matter because my strongest defense is a terrible smell.",
+    "hintJp": "白黒の体色と強いにおいで身を守る動物です。"
+  },
+  {
+    "id": "riddle_sloth_hard_007",
+    "type": "riddle",
+    "level": "hard",
+    "category": "animals",
+    "answerId": "sloth",
+    "choices": [
+      "sloth",
+      "monkey",
+      "koala",
+      "lemur"
+    ],
+    "active": true,
+    "promptEn": "Speed is not my plan; hanging from branches and moving slowly help me save energy.",
+    "hintJp": "速く動かず、枝にぶら下がってゆっくり動く動物です。"
+  },
+  {
+    "id": "riddle_snake_easy_010",
+    "type": "riddle",
+    "level": "easy",
+    "category": "animals",
+    "answerId": "snake",
+    "choices": [
+      "snake",
+      "worm",
+      "lizard",
+      "frog"
+    ],
+    "active": true,
+    "promptEn": "I have no legs and I slide.",
+    "hintJp": "足がなく、にょろにょろ動く動物です。"
+  },
+  {
     "id": "riddle_snake_expert_010",
     "type": "riddle",
     "level": "expert",
@@ -286,6 +1678,118 @@
     "active": true,
     "promptEn": "I cross grass and branches without feet. My tongue gathers clues from the air. Some kinds squeeze tightly, while others use venom to stop prey.",
     "hintJp": "足がなく、舌で周りを感じ取り、毒やしめつけで獲物を捕る種類もいます。"
+  },
+  {
+    "id": "riddle_snake_very_hard_010",
+    "type": "riddle",
+    "level": "very_hard",
+    "category": "animals",
+    "answerId": "snake",
+    "choices": [
+      "snake",
+      "lizard",
+      "worm",
+      "frog"
+    ],
+    "active": true,
+    "promptEn": "The missing body part is the clue: no legs are needed. It reads the air with its tongue and may stop prey with venom or squeezing.",
+    "hintJp": "足がなく、舌で周りを感じ、毒やしめつけを使う種類もいます。"
+  },
+  {
+    "id": "riddle_spider_hard_017",
+    "type": "riddle",
+    "level": "hard",
+    "category": "animals",
+    "answerId": "spider",
+    "choices": [
+      "spider",
+      "scorpion",
+      "ant",
+      "beetle"
+    ],
+    "active": true,
+    "promptEn": "I have eight legs and often build a net-like trap instead of chasing fast prey.",
+    "hintJp": "八本の足があり、巣のようなわなを作る動物です。"
+  },
+  {
+    "id": "riddle_spider_very_hard_018",
+    "type": "riddle",
+    "level": "very_hard",
+    "category": "animals",
+    "answerId": "spider",
+    "choices": [
+      "spider",
+      "scorpion",
+      "ant",
+      "beetle"
+    ],
+    "active": true,
+    "promptEn": "Counting legs helps, but the trap is even better evidence. Many small insects are caught by a silk structure rather than a fast chase.",
+    "hintJp": "八本足と、糸で作るわなが手がかりです。"
+  },
+  {
+    "id": "riddle_squirrel_hard_011",
+    "type": "riddle",
+    "level": "hard",
+    "category": "animals",
+    "answerId": "squirrel",
+    "choices": [
+      "squirrel",
+      "mouse",
+      "hamster",
+      "beaver"
+    ],
+    "active": true,
+    "promptEn": "I run along branches and hide nuts before the cold season.",
+    "hintJp": "枝の上を走り、木の実をかくす小さな動物です。"
+  },
+  {
+    "id": "riddle_swan_hard_015",
+    "type": "riddle",
+    "level": "hard",
+    "category": "animals",
+    "answerId": "swan",
+    "choices": [
+      "swan",
+      "duck",
+      "goose",
+      "flamingo"
+    ],
+    "active": true,
+    "promptEn": "I glide on lakes with a long neck and a body that looks graceful on water.",
+    "hintJp": "長い首で湖を優雅に進む白い鳥です。"
+  },
+  {
+    "id": "riddle_tiger_easy_014",
+    "type": "riddle",
+    "level": "easy",
+    "category": "animals",
+    "answerId": "tiger",
+    "choices": [
+      "tiger",
+      "lion",
+      "zebra",
+      "leopard"
+    ],
+    "active": true,
+    "promptEn": "I am a big cat with stripes.",
+    "hintJp": "しま模様がある大きなネコ科の動物です。"
+  },
+  {
+    "id": "riddle_turtle_easy_009",
+    "type": "riddle",
+    "level": "easy",
+    "category": "animals",
+    "answerId": "turtle",
+    "choices": [
+      "turtle",
+      "frog",
+      "snake",
+      "lizard"
+    ],
+    "active": true,
+    "promptEn": "I carry a hard shell on my back.",
+    "hintJp": "かたい甲羅を背中に持つ動物です。"
   },
   {
     "id": "riddle_turtle_expert_009",
@@ -304,6 +1808,22 @@
     "hintJp": "かたい甲羅を持ち、危険な時に体を守ることができる動物です。"
   },
   {
+    "id": "riddle_turtle_very_hard_009",
+    "type": "riddle",
+    "level": "very_hard",
+    "category": "animals",
+    "answerId": "turtle",
+    "choices": [
+      "turtle",
+      "frog",
+      "snake",
+      "lizard"
+    ],
+    "active": true,
+    "promptEn": "This animal avoids danger by carrying defense, not by winning a race. Some relatives live mostly in water, while others walk slowly on land.",
+    "hintJp": "速さではなく、甲羅で身を守ることが手がかりです。"
+  },
+  {
     "id": "riddle_whale_expert_019",
     "type": "riddle",
     "level": "expert",
@@ -318,5 +1838,85 @@
     "active": true,
     "promptEn": "I am huge and live in the ocean, but I am not a giant gill-breather. I must rise to the surface for air. Some kinds sing across long distances under the waves.",
     "hintJp": "海にすむとても大きな動物で、えらではなく空気を吸い、歌う種類もいます。"
+  },
+  {
+    "id": "riddle_whale_normal_015",
+    "type": "riddle",
+    "level": "normal",
+    "category": "animals",
+    "answerId": "whale",
+    "choices": [
+      "whale",
+      "shark",
+      "dolphin",
+      "fish"
+    ],
+    "active": true,
+    "promptEn": "I am huge and breathe air at the ocean surface.",
+    "hintJp": "海にすむ大きな動物で、水面で空気を吸います。"
+  },
+  {
+    "id": "riddle_whale_very_hard_004",
+    "type": "riddle",
+    "level": "very_hard",
+    "category": "animals",
+    "answerId": "whale",
+    "choices": [
+      "whale",
+      "shark",
+      "fish",
+      "dolphin"
+    ],
+    "active": true,
+    "promptEn": "Size alone might make you think of a giant fish, but breathing gives the answer away. This ocean animal rises for air and may sing through deep water.",
+    "hintJp": "大きな魚のように見えても、水面で空気を吸う海の動物です。"
+  },
+  {
+    "id": "riddle_wolf_normal_011",
+    "type": "riddle",
+    "level": "normal",
+    "category": "animals",
+    "answerId": "wolf",
+    "choices": [
+      "wolf",
+      "fox",
+      "dog",
+      "bear"
+    ],
+    "active": true,
+    "promptEn": "I may howl and live with a pack.",
+    "hintJp": "遠ぼえをし、群れで暮らすことがある動物です。"
+  },
+  {
+    "id": "riddle_zebra_easy_015",
+    "type": "riddle",
+    "level": "easy",
+    "category": "animals",
+    "answerId": "zebra",
+    "choices": [
+      "zebra",
+      "horse",
+      "tiger",
+      "cow"
+    ],
+    "active": true,
+    "promptEn": "I look like a horse with black and white stripes.",
+    "hintJp": "白と黒のしま模様がある馬に似た動物です。"
+  },
+  {
+    "id": "riddle_zebra_very_hard_013",
+    "type": "riddle",
+    "level": "very_hard",
+    "category": "animals",
+    "answerId": "zebra",
+    "choices": [
+      "zebra",
+      "horse",
+      "tiger",
+      "cow"
+    ],
+    "active": true,
+    "promptEn": "Its pattern is not a fashion choice. On open land, many striped bodies together can make it harder for hunters to pick one target.",
+    "hintJp": "しま模様が群れの中で見分けにくくする助けになる動物です。"
   }
 ]
