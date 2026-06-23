@@ -54,7 +54,7 @@
     border-radius:var(--radius);padding:18px 12px;box-shadow:var(--shadow);text-align:center;transition:.15s;color:var(--ink)}
   .mode-card:active{transform:translateY(3px)}
   .mode-card .ic{width:62px;height:62px;border-radius:18px;margin:0 auto 10px;display:grid;place-items:center;font-size:32px}
-  .mc1 .ic{background:#E3F1FF}.mc2 .ic{background:#FFF0DE}.mc3 .ic{background:#E6F8EE}.mc4 .ic{background:#F0EBFF}
+  .mc1 .ic{background:#E3F1FF}.mc2 .ic{background:#FFF0DE}.mc3 .ic{background:#E6F8EE}.mc4 .ic{background:#F0EBFF}.mc5 .ic{background:#F7E9FF}
   .mode-card .en{font-size:17px;font-weight:700}
   .mode-card .jp{font-family:"M PLUS Rounded 1c";color:var(--soft);font-weight:500;margin-top:3px;font-size:13px}
 
@@ -226,46 +226,7 @@
     <div class="panel" style="margin-bottom:16px">
       <h3>テーマを えらぶ / Choose a topic</h3><div class="cat-row" id="catRow"></div>
     </div>
-    <div class="panel hidden child-admin-tools">
-      <h3>ことばを ふやす / Add your own word</h3>
-      <div class="form-row">
-        <input class="inp" id="addW" placeholder="English (e.g. car)">
-        <input class="inp" id="addJp" placeholder="にほんご (れい: くるま)">
-      </div>
-      <div class="form-row">
-        <select class="inp" id="addCat" style="flex:0 0 auto;min-width:150px"></select>
-        <input class="inp" id="addEmoji" placeholder="えもじ 🚗" maxlength="4" style="flex:0 0 auto;max-width:120px">
-        <input class="inp" id="addImg" placeholder="保存先 img/animals/alligator.webp">
-        <label class="pill" style="cursor:pointer;flex:0 0 auto">📷<input type="file" id="addFile" accept="image/*" style="display:none"></label>
-        <button class="btn btn-ghost hidden" id="downloadImgBtn" style="padding:10px 14px;font-size:14px">⬇ image</button>
-        <span id="filePrev" style="flex:0 0 auto"></span>
-      </div>
-      <div class="path-hint" id="imgPathHint">画像を選ぶと、English＋Categoryから GitHub保存先を自動作成します。例：<code>img/animals/alligator.webp</code></div>
-      <div class="form-row">
-        <button class="btn btn-leaf" id="saveGithubBtn" style="padding:12px 22px;font-size:16px">💾 保存 / GitHub</button>
-        <button class="btn btn-sky" id="addBtn" style="padding:12px 22px;font-size:16px">＋ ついか / Add</button>
-        <button class="btn btn-ghost" id="manageBtn" style="padding:12px 18px;font-size:15px">🛠 かんり / Manage</button>
-        <button class="btn btn-ghost" id="exportBtn" style="padding:12px 18px;font-size:15px">⬇ vocab.json</button>
-        <span id="addMsg" style="font-family:'M PLUS Rounded 1c';font-weight:600;font-size:14px"></span>
-      </div>
-      <details class="gh-box" id="ghSettingsBox">
-        <summary>GitHub保存設定（初回だけ）</summary>
-        <div class="gh-note">保存ボタンは、画像を <code>img/カテゴリ/単語.webp</code> にアップロードし、<code>vocab.json</code> も自動更新します。Tokenは自分のブラウザだけに保存されます。</div>
-        <div class="form-row">
-          <input class="inp" id="ghOwner" placeholder="GitHub owner / user name">
-          <input class="inp" id="ghRepo" placeholder="repo name">
-          <input class="inp" id="ghBranch" placeholder="branch" value="main" style="flex:0 0 auto;max-width:120px">
-        </div>
-        <div class="form-row">
-          <input class="inp secret" id="ghToken" type="password" placeholder="GitHub token（Contents: Read and write）">
-          <button class="btn btn-ghost" id="ghSaveSettings" style="padding:10px 14px;font-size:14px">設定保存</button>
-          <button class="btn btn-ghost" id="ghClearSettings" style="padding:10px 14px;font-size:14px">消去</button>
-          <span id="ghMsg" class="gh-small"></span>
-        </div>
-      </details>
-      <textarea id="exportBox" class="inp hidden" style="width:100%;min-height:120px;margin-top:10px;font-family:monospace;font-size:12px" readonly></textarea>
-    </div>
-  </div>
+    <!-- Word/Image registration moved to admin.html -->
 
   <div id="flash" class="hidden">
     <div class="scr-head" style="margin-bottom:16px">
@@ -636,7 +597,7 @@ function getExternalOrFallback(ext,fallback){
   var list=(ext||[]).filter(qMatches);
   return shuffle((list.length?list:fallback).slice());
 }
-function show(s){["home","flash","quiz","sent","listen","riddle","manage","done"].forEach(function(x){$(x).classList.add("hidden");});$(s).classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"});}
+function show(s){["home","flash","quiz","sent","listen","riddle","manage","done"].forEach(function(x){var el=$(x);if(el)el.classList.add("hidden");});var target=$(s);if(target)target.classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"});}
 function optCount(){return DIFF[difficulty].opts;}
 
 /* ===================== LANGUAGE ===================== */
@@ -736,7 +697,7 @@ function renderListen(){
   lsAnswered=false;var s=lsDeck[lIdx];
   resetHintCard("lsCard");
   $("lsPic").textContent=s.pic;$("lsTxt").textContent=currentStoryText();
-  $("lsStxt").innerHTML=showJp?(escHtml(s.jp)+"<br><span style="font-size:18px">"+escHtml(s.q)+"</span>"):"";
+  $("lsStxt").innerHTML=showJp?(escHtml(s.jp)+"<br><span style=\"font-size:18px\">"+escHtml(s.q)+"</span>"):"";
   $("lsQ").textContent=s.qEn; // 日本語ヒントはカードをタップした時だけ表示
   $("listenProg").textContent=(lIdx+1)+" / "+lsDeck.length;
   var wrongs=shuffle(s.wrong.slice()).slice(0,optCount()-1);
@@ -1202,6 +1163,8 @@ function showDone(big,title,stats,againFn){
 }
 
 /* ===================== INIT ===================== */
+function bindIf(id, ev, fn){var el=$(id);if(el)el.addEventListener(ev,fn);return el;}
+
 function init(){
   try{
     canSpeak=("speechSynthesis" in window)&&(typeof window.SpeechSynthesisUtterance==="function")&&window.speechSynthesis!=null;
@@ -1235,15 +1198,15 @@ function init(){
     $("doneAgain").addEventListener("click",function(){if(doneAgainFn)doneAgainFn();});
     $("doneHome").addEventListener("click",function(){show("home");});
 
-    $("addBtn").addEventListener("click",addCustom);
-    $("saveGithubBtn").addEventListener("click",saveCardToGithub);
-    $("ghSaveSettings").addEventListener("click",saveGhSettings);
-    $("ghClearSettings").addEventListener("click",clearGhSettings);
-    $("exportBtn").addEventListener("click",function(){exportVocab("exportBox");});
-    $("manageBtn").addEventListener("click",startManage);
-    $("mgrExport").addEventListener("click",function(){exportVocab("mgrExportBox");});
-    $("mgrSearch").addEventListener("input",function(e){mgrQuery=e.target.value.trim();buildMgr();});
-    $("addFile").addEventListener("change",function(e){
+    bindIf("addBtn","click",addCustom);
+    bindIf("saveGithubBtn","click",saveCardToGithub);
+    bindIf("ghSaveSettings","click",saveGhSettings);
+    bindIf("ghClearSettings","click",clearGhSettings);
+    bindIf("exportBtn","click",function(){exportVocab("exportBox");});
+    bindIf("manageBtn","click",startManage);
+    bindIf("mgrExport","click",function(){exportVocab("mgrExportBox");});
+    bindIf("mgrSearch","input",function(e){mgrQuery=e.target.value.trim();buildMgr();});
+    bindIf("addFile","change",function(e){
       var f=e.target.files&&e.target.files[0];if(!f)return;
       var word=slugify($("addW").value||baseName(f.name));
       var cat=$("addCat").value||"animals";
@@ -1257,23 +1220,23 @@ function init(){
         setAddMsg(data?("画像OK。次は 💾 保存/GitHub を押すだけです → "+name):"がぞうエラー",!data);
       });
     });
-    $("downloadImgBtn").addEventListener("click",function(){
+    bindIf("downloadImgBtn","click",function(){
       var path=$("addImg").value.trim(),data=sessionImgs[path];
       if(!path||!data){setAddMsg("先に画像を選んでください",true);return;}
       var a=document.createElement("a");a.href=data;a.download=fileNameFromPath(path);
       document.body.appendChild(a);a.click();a.remove();
       setAddMsg("画像を保存しました。GitHubの "+path+" にアップロードしてください",false);
     });
-    $("addW").addEventListener("input",function(){
+    bindIf("addW","input",function(){
       if(pendingImageData)syncPendingImagePath();
     });
-    $("addCat").addEventListener("change",function(){
+    bindIf("addCat","change",function(){
       if(pendingImageData)syncPendingImagePath();
     });
 
-    fillGhSettings();
+    if($("ghOwner"))fillGhSettings();
     bindToggle();
-    buildCats();buildDiff();buildAddCat();applyLang();
+    buildCats();buildDiff();if($("addCat"))buildAddCat();applyLang();
     loadVocab(function(){
       loadQuestions(function(){
         if(!$("manage").classList.contains("hidden"))buildMgr();
