@@ -9,17 +9,20 @@
 :root{--bg:#EAF6FF;--paper:#fff;--ink:#2D3A4A;--soft:#708197;--sky:#37A6F0;--skyd:#1E84CC;--leaf:#5BC98A;--bad:#FF6B6B;--sun:#FFC247;--grape:#A684E8;--line:#DCE6F2;--shadow:0 8px 0 rgba(45,58,74,.12),0 14px 26px rgba(45,58,74,.14);--r:24px}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}body{margin:0;padding:16px;background:radial-gradient(900px 500px at 90% -5%,#FFF4D6 0,transparent 55%),radial-gradient(900px 500px at -10% 105%,#DCF6E7 0,transparent 55%),var(--bg);font-family:"Fredoka","M PLUS Rounded 1c",sans-serif;color:var(--ink)}
 .app{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:14px}.top{background:var(--paper);border-radius:var(--r);box-shadow:var(--shadow);padding:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(160deg,var(--sky),var(--grape));display:grid;place-items:center;color:white;font-size:24px}.title{font-weight:800;font-size:22px}.title small{display:block;font-size:12px;color:var(--soft);font-family:"M PLUS Rounded 1c"}.spacer{flex:1}.tabs{display:flex;gap:8px;flex-wrap:wrap}.tab{border:0;background:#EEF3FA;color:var(--soft);border-radius:14px;padding:10px 14px;font-family:inherit;font-weight:800;cursor:pointer}.tab.on{background:var(--sky);color:white;box-shadow:0 4px 0 var(--skyd)}.panel{background:var(--paper);border-radius:var(--r);box-shadow:var(--shadow);padding:16px}.hidden{display:none!important}h2{font-size:20px;margin:0 0 8px}h3{font-size:15px;color:var(--soft);margin:16px 0 8px;font-family:"M PLUS Rounded 1c"}.hint{font-family:"M PLUS Rounded 1c";color:var(--soft);font-weight:700;font-size:13px;line-height:1.5;margin:6px 0 12px}.row{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-bottom:10px}.inp,.sel,textarea{font-family:inherit;font-size:15px;padding:11px 12px;border:2px solid var(--line);border-radius:13px;background:#F8FBFF;color:var(--ink);min-width:140px;flex:1}.inp:focus,.sel:focus,textarea:focus{outline:0;border-color:var(--sky)}textarea{width:100%;min-height:170px;resize:vertical;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12px;line-height:1.45}.btn{border:0;border-radius:15px;padding:12px 16px;font-family:inherit;font-weight:900;font-size:15px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}.btn:active{transform:translateY(2px)}.sky{background:var(--sky);color:white;box-shadow:0 4px 0 var(--skyd)}.leaf{background:var(--leaf);color:white;box-shadow:0 4px 0 #3FA86C}.sun{background:var(--sun);color:#744F00;box-shadow:0 4px 0 #D59B15}.ghost{background:#EEF3FA;color:var(--soft);box-shadow:0 4px 0 #D6DEE9}.bad{background:#FFE3E3;color:#D84B4B}.ok{color:#229B57}.ng{color:#D84B4B}.status{font-family:"M PLUS Rounded 1c";font-weight:800;white-space:pre-wrap;margin-top:8px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:12px}.card{background:#F6FAFF;border:2px solid #E2EDF8;border-radius:16px;padding:12px}.card b{font-size:17px}.card small{display:block;color:var(--soft);font-family:"M PLUS Rounded 1c";font-weight:700;margin-top:3px}.preview{max-height:360px;overflow:auto;border:2px dashed #C7DAEE;background:#F8FBFF;border-radius:16px;padding:10px}.imgprev{width:86px;height:86px;border-radius:16px;background:#F6FAFF;border:2px solid var(--line);display:grid;place-items:center;overflow:hidden}.imgprev img{max-width:100%;max-height:100%;object-fit:contain}.warn{background:#FFF8E8;border:2px solid #F4D58D;border-radius:16px;padding:10px;font-family:"M PLUS Rounded 1c";font-size:13px;font-weight:700;color:#8A651A}.pill{display:inline-flex;padding:6px 10px;border-radius:999px;background:#EEF3FA;color:var(--soft);font-size:12px;font-weight:800;margin:2px}.dangerBox{background:#FFF0F0;border:2px solid #FFD2D2;border-radius:16px;padding:10px;font-family:"M PLUS Rounded 1c";font-size:13px;color:#B74343;font-weight:700}
+
+.veTools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0 12px}.veList{display:flex;flex-direction:column;gap:10px}.veRow{display:grid;grid-template-columns:76px minmax(110px,.8fr) minmax(120px,1fr) 120px 90px minmax(180px,1.4fr) auto;gap:8px;align-items:center;background:#F6FAFF;border:2px solid #E2EDF8;border-radius:16px;padding:10px}.vePic{width:62px;height:62px;border-radius:14px;background:white;border:2px solid var(--line);display:grid;place-items:center;overflow:hidden;font-size:30px}.vePic img{max-width:100%;max-height:100%;object-fit:contain}.veWord{font-weight:900;word-break:break-word}.veMini{font-size:13px;padding:9px 10px;min-width:70px}.veBtn{font-size:13px;padding:9px 10px;border-radius:12px}.veActions{display:flex;flex-wrap:wrap;gap:6px}@media(max-width:900px){.veRow{grid-template-columns:64px 1fr}.veActions{grid-column:1/-1}.veRow .inp,.veRow .sel{min-width:0;width:100%}}
 </style>
 </head>
 <body>
 <div class="app">
   <div class="top">
     <div class="logo">🛠</div>
-    <div class="title">English Kids Admin<small>Word / Image ・ Vocab AI ・ Question / Quiz AI</small></div>
+    <div class="title">English Kids Admin<small>Word / Image ・ Vocab Edit ・ Vocab AI ・ Question / Quiz AI</small></div>
     <div class="spacer"></div>
     <div class="tabs">
       <button class="tab on" data-tab="github">GitHub設定</button>
       <button class="tab" data-tab="word">Word / Image</button>
+      <button class="tab" data-tab="vocabedit">Vocab Edit</button>
       <button class="tab" data-tab="vocabai">Vocab AI</button>
       <button class="tab" data-tab="questionai">Question / Quiz AI</button>
     </div>
@@ -63,6 +66,19 @@
     <div class="status" id="wordStatus"></div>
     <div class="preview" id="vocabPreview"></div>
   </section>
+
+  <section class="panel hidden" id="vocabedit">
+    <h2>Vocab Edit</h2>
+    <div class="hint">登録済みの語彙を読み込んで編集します。絵文字だけの語彙は、ここで画像を選ぶと <b>img/カテゴリ/単語_日時.webp</b> に保存され、vocab.jsonは画像表示に切り替わります。</div>
+    <div class="veTools">
+      <button class="btn ghost" id="veLoad">vocab.json 読込</button>
+      <input class="inp" id="veSearch" placeholder="検索 English / 日本語">
+      <select class="sel" id="veCatFilter"><option value="all">all</option><option>animals</option><option>food</option><option>nature</option><option>colors</option><option>body</option><option>mixed</option></select>
+    </div>
+    <div class="status" id="veStatus"></div>
+    <div class="veList" id="veList"></div>
+  </section>
+
 
   <section class="panel hidden" id="vocabai">
     <h2>Vocab AI</h2>
@@ -142,10 +158,84 @@ function renderVocabPreview(items,elId){$(elId).innerHTML='<div class="cards">'+
 function renderQPreview(items,elId){$(elId).innerHTML='<div class="cards">'+items.slice(0,200).map(function(q){var p=q.promptEn||q.storyEn||q.sentence||'';return '<div class="card"><b>'+esc(q.id)+'</b><small>'+esc(q.type)+' / '+esc(q.level)+' / '+esc(q.category)+'</small><small>ans: '+esc(q.answerId)+'</small><small>'+esc(p).slice(0,180)+'</small></div>'}).join('')+'</div>'}
 function loadSettings(){try{var s=JSON.parse(localStorage.getItem('kidsAdminGh')||'{}');$('ghOwner').value=s.owner||'';$('ghRepo').value=s.repo||'';$('ghBranch').value=s.branch||'main';$('ghToken').value=s.token||''}catch(e){}}
 function saveSettings(){localStorage.setItem('kidsAdminGh',JSON.stringify(settings()));setStatus('githubStatus','設定を保存しました',false)}
-document.querySelectorAll('.tab').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});b.classList.add('on');['github','word','vocabai','questionai'].forEach(function(id){$(id).classList.add('hidden')});$(b.dataset.tab).classList.remove('hidden')})})
+document.querySelectorAll('.tab').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});b.classList.add('on');['github','word','vocabedit','vocabai','questionai'].forEach(function(id){$(id).classList.add('hidden')});$(b.dataset.tab).classList.remove('hidden')})})
 $('saveSettings').onclick=saveSettings;$('testGithub').onclick=async function(){try{saveSettings();var r=await ghGet('vocab.json');setStatus('githubStatus','接続OK。vocab.json: '+(r.text?('読込 '+r.text.length+' bytes'):'未作成'),false)}catch(e){setStatus('githubStatus','接続失敗: '+e.message,true)}};
 var selectedImgB64=null;
 function resizeToWebp(file){return new Promise(function(resolve,reject){var rd=new FileReader();rd.onload=function(){var img=new Image();img.onload=function(){var max=640;var sc=Math.min(max/img.width,max/img.height,1);var w=Math.round(img.width*sc),h=Math.round(img.height*sc);var cv=document.createElement('canvas');cv.width=w;cv.height=h;cv.getContext('2d').drawImage(img,0,0,w,h);var data=cv.toDataURL('image/webp',0.86);resolve(data)};img.onerror=reject;img.src=rd.result};rd.onerror=reject;rd.readAsDataURL(file)})}
+var veItems=[];
+var vePending={};
+function visualHtml(x){
+  if(x&&x.img){return '<img src="'+esc(x.img)+'?v='+Date.now()+'" onerror="this.replaceWith(document.createTextNode(\'🖼\'))">'}
+  return esc((x&&x.e)||'🔤');
+}
+function optionHtml(val){
+  return ['animals','food','nature','colors','body','mixed'].map(function(c){return '<option value="'+c+'" '+(c===val?'selected':'')+'>'+c+'</option>'}).join('');
+}
+function renderVocabEditor(){
+  var q=($('veSearch').value||'').toLowerCase().trim();
+  var cf=$('veCatFilter').value||'all';
+  var html='';
+  veItems.forEach(function(x,i){
+    if(cf!=='all'&&String(x.c||'')!==cf)return;
+    if(q&&String(x.w+' '+(x.jp||'')).toLowerCase().indexOf(q)<0)return;
+    html+='<div class="veRow" data-i="'+i+'">'+
+      '<div class="vePic" id="vePic_'+i+'">'+visualHtml(x)+'</div>'+
+      '<div class="veWord">'+esc(x.w)+'</div>'+
+      '<input class="inp veMini" id="veJp_'+i+'" value="'+esc(x.jp||'')+'" placeholder="日本語">'+
+      '<select class="sel veMini" id="veCat_'+i+'">'+optionHtml(x.c||'mixed')+'</select>'+
+      '<input class="inp veMini" id="veEmoji_'+i+'" value="'+esc(x.e||'')+'" placeholder="emoji">'+
+      '<input class="inp veMini" id="veImg_'+i+'" value="'+esc(x.img||'')+'" placeholder="img/...webp">'+
+      '<div class="veActions">'+
+        '<label class="btn ghost veBtn">📷<input type="file" accept="image/*" data-ve-file="'+i+'" style="display:none"></label>'+
+        '<button class="btn sky veBtn" data-ve-save="'+i+'">保存</button>'+
+        '<button class="btn ghost veBtn" data-ve-emoji="'+i+'">絵文字へ</button>'+
+      '</div>'+
+    '</div>';
+  });
+  $('veList').innerHTML=html||'<div class="hint">表示できる語彙がありません。vocab.json 読込を押してください。</div>';
+  document.querySelectorAll('[data-ve-file]').forEach(function(inp){
+    inp.addEventListener('change',async function(e){
+      var i=Number(inp.dataset.veFile);var f=e.target.files&&e.target.files[0];if(!f)return;
+      try{
+        var data=await resizeToWebp(f);
+        vePending[i]=data.split(',')[1];
+        var c=$('veCat_'+i).value||veItems[i].c||'mixed';
+        var w=veItems[i].w;
+        var path='img/'+c+'/'+w+'_'+timeStamp()+'.webp';
+        $('veImg_'+i).value=path;
+        $('veEmoji_'+i).value='';
+        $('vePic_'+i).innerHTML='<img src="'+data+'">';
+        setStatus('veStatus','画像準備OK: '+w+' / '+path,false);
+      }catch(err){setStatus('veStatus','画像変換失敗: '+err.message,true)}
+    });
+  });
+  document.querySelectorAll('[data-ve-save]').forEach(function(btn){btn.addEventListener('click',function(){saveVocabEditRow(Number(btn.dataset.veSave))})});
+  document.querySelectorAll('[data-ve-emoji]').forEach(function(btn){btn.addEventListener('click',function(){var i=Number(btn.dataset.veEmoji);$('veImg_'+i).value='';$('veEmoji_'+i).value=$('veEmoji_'+i).value||'🔤';$('vePic_'+i).textContent=$('veEmoji_'+i).value;delete vePending[i];})});
+}
+async function loadVocabEditor(){
+  try{saveSettings();var j=asArray((await ghGet('vocab.json')).json);veItems=j.map(function(x){return Object.assign({},x)});renderVocabEditor();setStatus('veStatus','vocab.json 読込: '+veItems.length+'件',false)}
+  catch(e){setStatus('veStatus','読込失敗: '+e.message,true)}
+}
+async function saveVocabEditRow(i){
+  try{
+    saveSettings();
+    var old=veItems[i];if(!old)throw new Error('行が見つかりません');
+    var w=normWord(old.w), jp=$('veJp_'+i).value.trim(), c=$('veCat_'+i).value, emoji=$('veEmoji_'+i).value.trim(), img=$('veImg_'+i).value.trim();
+    if(!w||!jp)throw new Error('English ID と日本語が必要です');
+    if(vePending[i]&&img){await ghPutBase64(img,vePending[i],'Upload vocab image '+img);delete vePending[i];}
+    var item={w:w,jp:jp,c:c};
+    if(img){item.img=img;}else{item.e=emoji||'🔤';}
+    veItems[i]=item;
+    var normalized=mergeByKey([],veItems,'w');
+    await ghPut('vocab.json',JSON.stringify(normalized,null,2),'Edit vocab '+w);
+    veItems=normalized;
+    renderVocabEditor();
+    setStatus('veStatus','保存完了: '+w+(img?' / 画像表示':' / 絵文字表示'),false);
+  }catch(e){setStatus('veStatus','保存失敗: '+e.message,true)}
+}
+$('veLoad').onclick=loadVocabEditor;
+$('veSearch').addEventListener('input',renderVocabEditor);
+$('veCatFilter').addEventListener('change',renderVocabEditor);
 $('wordFile').addEventListener('change',async function(e){var f=e.target.files&&e.target.files[0];if(!f)return;try{var data=await resizeToWebp(f);selectedImgB64=data.split(',')[1];$('wordImgPrev').innerHTML='<img src="'+data+'">';var w=normWord($('wordEn').value)||normWord(f.name.replace(/\.[^.]+$/,''));var c=$('wordCat').value;$('wordEn').value=w;$('wordImgPath').value='img/'+c+'/'+w+'_'+timeStamp()+'.webp';setStatus('wordStatus','画像準備OK: '+$('wordImgPath').value,false)}catch(err){setStatus('wordStatus','画像変換失敗: '+err.message,true)}});
 $('saveWordGithub').onclick=async function(){try{saveSettings();var w=normWord($('wordEn').value),jp=$('wordJp').value.trim(),c=$('wordCat').value,emoji=$('wordEmoji').value.trim(),img=$('wordImgPath').value.trim();if(!w||!jp)throw new Error('English と 日本語が必要です');if(selectedImgB64&&img){await ghPutBase64(img,selectedImgB64,'Upload image '+img)}var old=(await ghGet('vocab.json')).json||[];var item={w:w,jp:jp,c:c};if(img)item.img=img;else item.e=emoji||'🔤';var merged=mergeByKey(old,[item],'w');await ghPut('vocab.json',JSON.stringify(merged,null,2),'Update vocab '+w);setStatus('wordStatus','保存完了: '+w+(img?' / '+img:''),false)}catch(e){setStatus('wordStatus','保存失敗: '+e.message,true)}};
 $('loadVocabList').onclick=async function(){try{var j=(await ghGet('vocab.json')).json||[];renderVocabPreview(asArray(j),'vocabPreview');setStatus('wordStatus','vocab.json 読込: '+asArray(j).length+'件',false)}catch(e){setStatus('wordStatus','読込失敗: '+e.message,true)}};
