@@ -17,7 +17,7 @@
 <div class="app">
   <div class="top">
     <div class="logo">🛠</div>
-    <div class="title">English Kids Admin<small>Word / Image ・ Vocab Edit ・ Vocab AI ・ Question / Quiz AI</small></div>
+    <div class="title">English Kids Admin<small>Word / Image ・ Vocab Edit ・ Vocab AI ・ Question / Quiz AI · wordquiz-v1</small></div>
     <div class="spacer"></div>
     <div class="tabs">
       <button class="tab on" data-tab="github">GitHub設定</button>
@@ -107,16 +107,16 @@
 
   <section class="panel hidden" id="questionai">
     <h2>Question / Quiz AI</h2>
-    <div class="warn">ここが設問生成です。Vocab AIで増やした語彙を使って、Riddle / Listening / Sentence の questions.json を作ります。おすすめは「All Levels」で、Easy / Normal / Hard / Very Hard / Expert を一括生成します。</div>
+    <div class="warn">ここが設問生成です。Vocab AIで増やした語彙を使って、Word Quiz / Riddle / Listening / Sentence の questions.json を作ります。おすすめは「all_types + all_levels」で、全モード・全難易度を一括生成します。</div>
     <div class="row">
-      <select class="sel" id="qaType"><option>riddle</option><option>listening</option><option>sentence</option><option>mixed</option></select>
+      <select class="sel" id="qaType"><option value="all_types" selected>all_types</option><option>word_quiz</option><option>riddle</option><option>listening</option><option>sentence</option><option>mixed</option></select>
       <select class="sel" id="qaLevel"><option value="all_levels" selected>all_levels</option><option value="easy">easy</option><option value="normal">normal</option><option value="hard">hard</option><option value="very_hard">very_hard</option><option value="expert">expert</option></select>
       <select class="sel" id="qaCat"><option>animals</option><option>food</option><option>nature</option><option>colors</option><option>body</option><option>all</option></select>
       <input class="inp" id="qaCount" type="number" min="10" max="100" value="10" placeholder="各難易度の問題数">
     </div>
     <div class="row">
       <button class="btn ghost" id="loadVocabForQuestions">vocab.jsonから語彙読込</button>
-      <button class="btn sun" id="makeQuestionPrompt">🧠 全難易度AIプロンプト作成</button>
+      <button class="btn sun" id="makeQuestionPrompt">🧠 全モード/全難易度AIプロンプト作成</button>
       <button class="btn ghost" id="copyQuestionPrompt">コピー</button>
     </div>
     <h3>設問に使う語彙プール</h3>
@@ -153,7 +153,7 @@ function safeJson(t){try{return JSON.parse(t)}catch(e){return null}}
 function asArray(x){return Array.isArray(x)?x:(x&&Array.isArray(x.items)?x.items:[])}
 function mergeByKey(oldArr,newArr,key){var map={};asArray(oldArr).forEach(function(x){var k=String(x&&x[key]||"").toLowerCase();if(k)map[k]=x});asArray(newArr).forEach(function(x){var k=String(x&&x[key]||"").toLowerCase();if(k)map[k]=Object.assign({},map[k]||{},x)});return Object.keys(map).sort().map(function(k){return map[k]})}
 function validateVocab(arr){var out=[],errs=[];var seen={};asArray(arr).forEach(function(x,i){var w=normWord(x.w||x.id);if(!w){errs.push("#"+(i+1)+" wなし");return}var jp=String(x.jp||"").trim();var c=String(x.c||x.category||"mixed").trim().toLowerCase();if(!jp)errs.push(w+" jpなし");var item={w:w,jp:jp,c:c};if(x.img)item.img=String(x.img).trim();else if(x.e&&String(x.e).trim())item.e=String(x.e).trim();else item.e="🔤";if(seen[w])errs.push("重複: "+w);seen[w]=true;out.push(item)});return {items:out,errs:errs}}
-function validateQuestions(arr){var out=[],errs=[];var seen={};asArray(arr).forEach(function(q,i){q=q||{};var type=String(q.type||"").toLowerCase().trim();if(type==="listen")type="listening";if(type==="sent")type="sentence";var level=String(q.level||"").toLowerCase().trim();var cat=String(q.category||q.c||"all").toLowerCase().trim();var ans=normWord(q.answerId||q.answer||q.ans);var id=String(q.id||"").trim();if(!id&&type&&ans)id=type+"_"+ans+"_"+level+"_"+String(i+1).padStart(3,"0");if(!id)errs.push("#"+(i+1)+" idなし");if(seen[id])errs.push("id重複: "+id);seen[id]=true;if(!["riddle","listening","sentence"].includes(type))errs.push(id+" type不正: "+type);if(!["easy","normal","hard","very_hard","expert"].includes(level))errs.push(id+" level不正: "+level);if(!ans)errs.push(id+" answerIdなし");var choices=(q.choices||[]).map(normWord).filter(Boolean);if(ans&&!choices.includes(ans))choices.unshift(ans);choices=[...new Set(choices)].slice(0,4);if(choices.length<4)errs.push(id+" choicesが4未満");var n={id:id,type:type,level:level,category:cat,answerId:ans,choices:choices,active:q.active!==false};if(type==="riddle"){n.promptEn=String(q.promptEn||q.questionEn||q.clue||"").trim();n.hintJp=String(q.hintJp||q.jp||"").trim();if(!n.promptEn)errs.push(id+" promptEnなし")}if(type==="listening"){n.storyEn=String(q.storyEn||q.story||"").trim();n.questionEn=String(q.questionEn||q.question||"").trim();n.hintJp=String(q.hintJp||q.jp||"").trim();if(!n.storyEn||!n.questionEn)errs.push(id+" storyEn/questionEnなし")}if(type==="sentence"){n.sentence=String(q.sentence||q.promptEn||"").trim();n.hintJp=String(q.hintJp||q.jp||"").trim();if(!n.sentence)errs.push(id+" sentenceなし")}out.push(n)});return {items:out,errs:errs}}
+function validateQuestions(arr){var out=[],errs=[];var seen={};asArray(arr).forEach(function(q,i){q=q||{};var type=String(q.type||"").toLowerCase().trim();if(type==="listen")type="listening";if(type==="wordquiz"||type==="quiz"||type==="vocab_quiz")type="word_quiz";if(type==="sent")type="sentence";var level=String(q.level||"").toLowerCase().trim();var cat=String(q.category||q.c||"all").toLowerCase().trim();var ans=normWord(q.answerId||q.answer||q.ans);var id=String(q.id||"").trim();if(!id&&type&&ans)id=type+"_"+ans+"_"+level+"_"+String(i+1).padStart(3,"0");if(!id)errs.push("#"+(i+1)+" idなし");if(seen[id])errs.push("id重複: "+id);seen[id]=true;if(!["word_quiz","riddle","listening","sentence"].includes(type))errs.push(id+" type不正: "+type);if(!["easy","normal","hard","very_hard","expert"].includes(level))errs.push(id+" level不正: "+level);if(!ans)errs.push(id+" answerIdなし");var choices=(q.choices||[]).map(normWord).filter(Boolean);if(ans&&!choices.includes(ans))choices.unshift(ans);choices=[...new Set(choices)].slice(0,4);if(choices.length<4)errs.push(id+" choicesが4未満");var n={id:id,type:type,level:level,category:cat,answerId:ans,choices:choices,active:q.active!==false};if(type==="word_quiz"){n.promptEn=String(q.promptEn||q.questionEn||q.clue||"").trim();n.spokenEn=String(q.spokenEn||q.audioEn||n.promptEn||"").trim();n.hintJp=String(q.hintJp||q.jp||"").trim();if(!n.promptEn)errs.push(id+" promptEnなし")}if(type==="riddle"){n.promptEn=String(q.promptEn||q.questionEn||q.clue||"").trim();n.hintJp=String(q.hintJp||q.jp||"").trim();if(!n.promptEn)errs.push(id+" promptEnなし")}if(type==="listening"){n.storyEn=String(q.storyEn||q.story||"").trim();n.questionEn=String(q.questionEn||q.question||"").trim();n.hintJp=String(q.hintJp||q.jp||"").trim();if(!n.storyEn||!n.questionEn)errs.push(id+" storyEn/questionEnなし")}if(type==="sentence"){n.sentence=String(q.sentence||q.promptEn||"").trim();n.hintJp=String(q.hintJp||q.jp||"").trim();if(!n.sentence)errs.push(id+" sentenceなし")}out.push(n)});return {items:out,errs:errs}}
 function renderVocabPreview(items,elId){$(elId).innerHTML='<div class="cards">'+items.slice(0,200).map(function(x){return '<div class="card"><b>'+esc(x.w)+'</b><small>'+esc(x.jp)+' / '+esc(x.c)+'</small><small>'+(x.img?'🖼 '+esc(x.img):'emoji '+esc(x.e||''))+'</small></div>'}).join('')+'</div>'}
 function renderQPreview(items,elId){$(elId).innerHTML='<div class="cards">'+items.slice(0,200).map(function(q){var p=q.promptEn||q.storyEn||q.sentence||'';return '<div class="card"><b>'+esc(q.id)+'</b><small>'+esc(q.type)+' / '+esc(q.level)+' / '+esc(q.category)+'</small><small>ans: '+esc(q.answerId)+'</small><small>'+esc(p).slice(0,180)+'</small></div>'}).join('')+'</div>'}
 function loadSettings(){try{var s=JSON.parse(localStorage.getItem('kidsAdminGh')||'{}');$('ghOwner').value=s.owner||'';$('ghRepo').value=s.repo||'';$('ghBranch').value=s.branch||'main';$('ghToken').value=s.token||''}catch(e){}}
@@ -261,10 +261,11 @@ $('makeQuestionPrompt').onclick=function(){
   var count=Math.max(10,Number($('qaCount').value)||10);
   var poolText=$('qaVocabPool').value.trim();
   var levels=(level==='all_levels')?['easy','normal','hard','very_hard','expert']:[level];
-  var total=count*levels.length;
+  var typeList=(type==='all_types')?['word_quiz','riddle','listening','sentence']:(type==='mixed'?['word_quiz','riddle','listening','sentence']:[type]);
+  var total=(type==='all_types')?count*levels.length*typeList.length:count*levels.length;
   var levelInstruction=(level==='all_levels')
-    ? ('Generate exactly '+count+' questions for EACH level: easy, normal, hard, very_hard, expert. Total must be exactly '+total+' questions. The level field of each question must be one of those exact values. Do not output level: all_levels.')
-    : ('level must be exactly: '+level+'. Make exactly '+count+' questions. Never make fewer than '+count+' questions.');
+    ? ('Generate exactly '+count+' questions for EACH requested type and EACH level: easy, normal, hard, very_hard, expert. Total must be exactly '+total+' questions. The level field of each question must be one of those exact values. Do not output level: all_levels.')
+    : ('level must be exactly: '+level+'. Make exactly '+count+' questions for EACH requested type. Total must be exactly '+total+' questions. Never make fewer than '+total+' questions.');
   var progression='Difficulty progression rules:\n'
     + '- easy: direct recognition. Short clue, obvious feature, simple vocabulary.\n'
     + '- normal: one short sentence or basic listening clue. Still child-friendly but not just picture naming.\n'
@@ -295,7 +296,7 @@ $('makeQuestionPrompt').onclick=function(){
     + poolText+'\n'
     + 'Return JSON array only.';
   $('questionPrompt').value=prompt;
-  setStatus('questionAiStatus',(level==='all_levels'?'全難易度プロンプトを作成しました。合計 '+total+'問予定。':'Question / Quiz AIプロンプトを作成しました'),false)
+  setStatus('questionAiStatus',(level==='all_levels'?'全モード/全難易度プロンプトを作成しました。合計 '+total+'問予定。':'Question / Quiz AIプロンプトを作成しました'),false)
 };
 $('copyQuestionPrompt').onclick=function(){navigator.clipboard.writeText($('questionPrompt').value);setStatus('questionAiStatus','コピーしました',false)};
 $('checkQuestionJson').onclick=function(){try{var v=validateQuestions(JSON.parse($('questionJsonIn').value));renderQPreview(v.items,'questionAiPreview');setStatus('questionAiStatus','検査: '+v.items.length+'問\n'+(v.errs.length?v.errs.join('\n'):'OK'),!!v.errs.length)}catch(e){setStatus('questionAiStatus','JSONエラー: '+e.message,true)}};
