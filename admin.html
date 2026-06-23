@@ -107,16 +107,16 @@
 
   <section class="panel hidden" id="questionai">
     <h2>Question / Quiz AI</h2>
-    <div class="warn">ここが設問生成です。Vocab AIで増やした語彙を使って、Riddle / Listening / Sentence の questions.json を作ります。最低10問・答えの重複を抑制します。</div>
+    <div class="warn">ここが設問生成です。Vocab AIで増やした語彙を使って、Riddle / Listening / Sentence の questions.json を作ります。おすすめは「All Levels」で、Easy / Normal / Hard / Very Hard / Expert を一括生成します。</div>
     <div class="row">
       <select class="sel" id="qaType"><option>riddle</option><option>listening</option><option>sentence</option><option>mixed</option></select>
-      <select class="sel" id="qaLevel"><option>hard</option><option selected>very_hard</option><option>expert</option></select>
+      <select class="sel" id="qaLevel"><option value="all_levels" selected>all_levels</option><option value="easy">easy</option><option value="normal">normal</option><option value="hard">hard</option><option value="very_hard">very_hard</option><option value="expert">expert</option></select>
       <select class="sel" id="qaCat"><option>animals</option><option>food</option><option>nature</option><option>colors</option><option>body</option><option>all</option></select>
-      <input class="inp" id="qaCount" type="number" min="10" max="200" value="20" placeholder="問題数">
+      <input class="inp" id="qaCount" type="number" min="10" max="100" value="10" placeholder="各難易度の問題数">
     </div>
     <div class="row">
       <button class="btn ghost" id="loadVocabForQuestions">vocab.jsonから語彙読込</button>
-      <button class="btn sun" id="makeQuestionPrompt">🧠 Question / Quiz AIプロンプト作成</button>
+      <button class="btn sun" id="makeQuestionPrompt">🧠 全難易度AIプロンプト作成</button>
       <button class="btn ghost" id="copyQuestionPrompt">コピー</button>
     </div>
     <h3>設問に使う語彙プール</h3>
@@ -164,8 +164,12 @@ var selectedImgB64=null;
 function resizeToWebp(file){return new Promise(function(resolve,reject){var rd=new FileReader();rd.onload=function(){var img=new Image();img.onload=function(){var max=640;var sc=Math.min(max/img.width,max/img.height,1);var w=Math.round(img.width*sc),h=Math.round(img.height*sc);var cv=document.createElement('canvas');cv.width=w;cv.height=h;cv.getContext('2d').drawImage(img,0,0,w,h);var data=cv.toDataURL('image/webp',0.86);resolve(data)};img.onerror=reject;img.src=rd.result};rd.onerror=reject;rd.readAsDataURL(file)})}
 var veItems=[];
 var vePending={};
+var veLocalImgSrc={}; // GitHub Pages反映前でも、選択直後の画像を管理画面で見せるための一時キャッシュ
 function visualHtml(x){
-  if(x&&x.img){return '<img src="'+esc(x.img)+'?v='+Date.now()+'" onerror="this.replaceWith(document.createTextNode(\'🖼\'))">'}
+  if(x&&x.img){
+    var src=veLocalImgSrc[x.img] || (x.img + (x.img.indexOf('?')>=0?'&':'?') + 'v=' + Date.now());
+    return '<img src="'+esc(src)+'" onerror="this.replaceWith(document.createTextNode(\'⏳\'))">';
+  }
   return esc((x&&x.e)||'🔤');
 }
 function optionHtml(val){
@@ -202,6 +206,7 @@ function renderVocabEditor(){
         var c=$('veCat_'+i).value||veItems[i].c||'mixed';
         var w=veItems[i].w;
         var path='img/'+c+'/'+w+'_'+timeStamp()+'.webp';
+        veLocalImgSrc[path]=data;
         $('veImg_'+i).value=path;
         $('veEmoji_'+i).value='';
         $('vePic_'+i).innerHTML='<img src="'+data+'">';
@@ -222,7 +227,12 @@ async function saveVocabEditRow(i){
     var old=veItems[i];if(!old)throw new Error('行が見つかりません');
     var w=normWord(old.w), jp=$('veJp_'+i).value.trim(), c=$('veCat_'+i).value, emoji=$('veEmoji_'+i).value.trim(), img=$('veImg_'+i).value.trim();
     if(!w||!jp)throw new Error('English ID と日本語が必要です');
-    if(vePending[i]&&img){await ghPutBase64(img,vePending[i],'Upload vocab image '+img);delete vePending[i];}
+    if(vePending[i]&&img){
+      await ghPutBase64(img,vePending[i],'Upload vocab image '+img);
+      // GitHubには保存できたか即確認。Pages表示は数十秒遅れることがあります。
+      await ghGet(img);
+      delete vePending[i];
+    }
     var item={w:w,jp:jp,c:c};
     if(img){item.img=img;}else{item.e=emoji||'🔤';}
     veItems[i]=item;
@@ -230,7 +240,7 @@ async function saveVocabEditRow(i){
     await ghPut('vocab.json',JSON.stringify(normalized,null,2),'Edit vocab '+w);
     veItems=normalized;
     renderVocabEditor();
-    setStatus('veStatus','保存完了: '+w+(img?' / 画像表示':' / 絵文字表示'),false);
+    setStatus('veStatus','保存完了: '+w+(img?' / 画像保存OK。GitHub Pages反映までは数十秒かかる場合があります':' / 絵文字表示'),false);
   }catch(e){setStatus('veStatus','保存失敗: '+e.message,true)}
 }
 $('veLoad').onclick=loadVocabEditor;
@@ -244,7 +254,49 @@ $('copyVocabPrompt').onclick=function(){navigator.clipboard.writeText($('vocabPr
 $('checkVocabJson').onclick=function(){try{var v=validateVocab(JSON.parse($('vocabJsonIn').value));renderVocabPreview(v.items,'vocabAiPreview');setStatus('vocabAiStatus','検査: '+v.items.length+'件\n'+(v.errs.length?v.errs.join('\n'):'OK'),!!v.errs.length)}catch(e){setStatus('vocabAiStatus','JSONエラー: '+e.message,true)}};
 $('saveVocabJson').onclick=async function(){try{saveSettings();var v=validateVocab(JSON.parse($('vocabJsonIn').value));if(!v.items.length)throw new Error('登録できる語彙がありません');var old=(await ghGet('vocab.json')).json||[];var merged=mergeByKey(old,v.items,'w');await ghPut('vocab.json',JSON.stringify(merged,null,2),'Update vocab by Vocab AI');renderVocabPreview(v.items,'vocabAiPreview');setStatus('vocabAiStatus','vocab.jsonへ登録完了。追加/更新: '+v.items.length+'件 / 合計: '+merged.length+'件\n'+(v.errs.length?'注意:\n'+v.errs.join('\n'):'OK'),!!v.errs.length)}catch(e){setStatus('vocabAiStatus','保存失敗: '+e.message,true)}};
 $('loadVocabForQuestions').onclick=async function(){try{var j=asArray((await ghGet('vocab.json')).json);var cat=$('qaCat').value;var pool=j.filter(function(x){return cat==='all'||x.c===cat}).map(function(x){return {w:x.w,jp:x.jp,c:x.c}});$('qaVocabPool').value=JSON.stringify(pool,null,2);setStatus('questionAiStatus','語彙プール読込: '+pool.length+'件',false)}catch(e){setStatus('questionAiStatus','読込失敗: '+e.message,true)}};
-$('makeQuestionPrompt').onclick=function(){var type=$('qaType').value,level=$('qaLevel').value,cat=$('qaCat').value,count=Math.max(10,Number($('qaCount').value)||10);var poolText=$('qaVocabPool').value.trim();var prompt='Create English learning questions for children as VALID JSON only. No markdown, no comments.\nOutput schema: an array of objects. Required fields: id, type, level, category, active, answerId, choices.\nTypes allowed: riddle, listening, sentence. If requested type is mixed, include a balanced mix of riddle, listening, and sentence.\nFor riddle: use promptEn and hintJp.\nFor listening: use storyEn, questionEn, hintJp.\nFor sentence: use sentence, hintJp, answerId, choices.\nJapanese must appear only in hintJp, never inside promptEn/storyEn/questionEn/sentence.\nchoices must contain answerId and 3 wrong choices. Choices must be lowercase answer IDs from the vocabulary pool.\nlevel must be exactly: '+level+'. category must be exactly: '+cat+'. type request: '+type+'.\nMake exactly '+count+' questions. Never make fewer than '+count+' questions.\nUse at least '+Math.min(8,count)+' different answerId values. Do not use the same answerId more than 2 times unless the vocabulary pool is too small.\nDo not simply rephrase the same question. Each question must test a different clue pattern: feature, comparison, habitat, action, body part, behavior, color, size, sound, usage, or short reading inference.\nVery hard/expert should require inference, comparison, or short reading comprehension. Do not make questions too obvious.\nExample id format: riddle_alligator_very_hard_001 or listening_penguin_expert_001.\nVocabulary pool to use as answerId and choices:\n'+poolText+'\nReturn JSON array only.';$('questionPrompt').value=prompt;setStatus('questionAiStatus','Question / Quiz AIプロンプトを作成しました',false)};
+$('makeQuestionPrompt').onclick=function(){
+  var type=$('qaType').value;
+  var level=$('qaLevel').value;
+  var cat=$('qaCat').value;
+  var count=Math.max(10,Number($('qaCount').value)||10);
+  var poolText=$('qaVocabPool').value.trim();
+  var levels=(level==='all_levels')?['easy','normal','hard','very_hard','expert']:[level];
+  var total=count*levels.length;
+  var levelInstruction=(level==='all_levels')
+    ? ('Generate exactly '+count+' questions for EACH level: easy, normal, hard, very_hard, expert. Total must be exactly '+total+' questions. The level field of each question must be one of those exact values. Do not output level: all_levels.')
+    : ('level must be exactly: '+level+'. Make exactly '+count+' questions. Never make fewer than '+count+' questions.');
+  var progression='Difficulty progression rules:\n'
+    + '- easy: direct recognition. Short clue, obvious feature, simple vocabulary.\n'
+    + '- normal: one short sentence or basic listening clue. Still child-friendly but not just picture naming.\n'
+    + '- hard: 2 clues combined, e.g. habitat + action, body part + behavior.\n'
+    + '- very_hard: inference required. Compare similar things, use indirect clues, short reading comprehension.\n'
+    + '- expert: multi-clue reasoning. Avoid obvious naming. Use comparison, exception, cause/effect, habitat, behavior, or short scenario inference.';
+  var diversity='Diversity rules:\n'
+    + '- Use many different answerId values from the vocabulary pool.\n'
+    + '- For each level, use at least '+Math.min(8,count)+' different answerId values when the pool allows.\n'
+    + '- Do not use the same answerId more than 2 times per level unless the vocabulary pool is too small.\n'
+    + '- Do not simply rephrase the same clue. Each question must test a different clue pattern: feature, comparison, habitat, action, body part, behavior, color, size, sound, usage, classification, opposite, or short reading inference.\n'
+    + '- Avoid generating many questions whose answer is the same word.';
+  var prompt='Create English learning questions for children as VALID JSON only. No markdown, no comments.\n'
+    + 'Output schema: an array of objects. Required fields: id, type, level, category, active, answerId, choices.\n'
+    + 'Types allowed: riddle, listening, sentence. If requested type is mixed, include a balanced mix of riddle, listening, and sentence for EACH level.\n'
+    + 'For riddle: use promptEn and hintJp.\n'
+    + 'For listening: use storyEn, questionEn, hintJp.\n'
+    + 'For sentence: use sentence, hintJp, answerId, choices.\n'
+    + 'Japanese must appear only in hintJp, never inside promptEn/storyEn/questionEn/sentence.\n'
+    + 'choices must contain answerId and 3 wrong choices. Choices must be lowercase answer IDs from the vocabulary pool.\n'
+    + 'category must be exactly: '+cat+'. type request: '+type+'.\n'
+    + levelInstruction+'\n'
+    + progression+'\n'
+    + diversity+'\n'
+    + 'ID format examples: riddle_alligator_easy_001, listening_penguin_very_hard_001, sentence_cheetah_expert_001. IDs must be unique.\n'
+    + 'Do not include image paths. Do not invent answerId values outside the vocabulary pool.\n'
+    + 'Vocabulary pool to use as answerId and choices:\n'
+    + poolText+'\n'
+    + 'Return JSON array only.';
+  $('questionPrompt').value=prompt;
+  setStatus('questionAiStatus',(level==='all_levels'?'全難易度プロンプトを作成しました。合計 '+total+'問予定。':'Question / Quiz AIプロンプトを作成しました'),false)
+};
 $('copyQuestionPrompt').onclick=function(){navigator.clipboard.writeText($('questionPrompt').value);setStatus('questionAiStatus','コピーしました',false)};
 $('checkQuestionJson').onclick=function(){try{var v=validateQuestions(JSON.parse($('questionJsonIn').value));renderQPreview(v.items,'questionAiPreview');setStatus('questionAiStatus','検査: '+v.items.length+'問\n'+(v.errs.length?v.errs.join('\n'):'OK'),!!v.errs.length)}catch(e){setStatus('questionAiStatus','JSONエラー: '+e.message,true)}};
 async function saveQuestions(path,label){try{saveSettings();var v=validateQuestions(JSON.parse($('questionJsonIn').value));if(v.items.length<10)throw new Error('最低10問必要です。現在 '+v.items.length+'問');var old=(await ghGet(path)).json||[];var merged=mergeByKey(old,v.items,'id');await ghPut(path,JSON.stringify(merged,null,2),'Update '+path+' by Question AI');renderQPreview(v.items,'questionAiPreview');setStatus('questionAiStatus',label+' 保存完了。追加/更新: '+v.items.length+'問 / 合計: '+merged.length+'問\n'+(v.errs.length?'注意:\n'+v.errs.join('\n'):'OK'),!!v.errs.length)}catch(e){setStatus('questionAiStatus','保存失敗: '+e.message,true)}}
