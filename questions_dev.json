@@ -1,4 +1,246 @@
 {
   "version": 1,
-  "questions": []
+  "updatedAt": "2026-06-23T09:46:56.319Z",
+  "questions": [
+    {
+      "id": "riddle_penguin_very_hard_001",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "promptEn": "I wear a dark coat and a pale front, yet I never go to a party. My wings help me move fast, but not through the sky. I often trade walking speed for sliding speed. What am I?",
+      "hintJp": "空ではなく水の中で翼を使い、氷の上ではすべることもある動物です。",
+      "answerId": "penguin",
+      "choices": [
+        "penguin",
+        "seal",
+        "ostrich",
+        "polar_bear"
+      ]
+    },
+    {
+      "id": "riddle_alligator_very_hard_002",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "promptEn": "I wait like a floating log, but the log has eyes, teeth, and patience. My home is usually warm and wet, and I can stay almost still until dinner moves too close. What am I?",
+      "hintJp": "丸太のように水面でじっとして、近づく獲物を待つ爬虫類です。",
+      "answerId": "alligator",
+      "choices": [
+        "alligator",
+        "hippo",
+        "beaver",
+        "iguana"
+      ]
+    },
+    {
+      "id": "riddle_penguin_very_hard_003",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "promptEn": "I am a bird, but a race against a fish may be fairer than a race against a sparrow. On land I look awkward, yet underwater I become a quick hunter. What am I?",
+      "hintJp": "鳥ですが飛ぶより泳ぐほうが得意で、水中では魚を追います。",
+      "answerId": "penguin",
+      "choices": [
+        "penguin",
+        "duck",
+        "otter",
+        "flamingo"
+      ]
+    },
+    {
+      "id": "riddle_alligator_very_hard_004",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "promptEn": "My smile is not friendly advice. I have a broad snout, a heavy tail, and armor-like skin. I may look lazy in the sun, but my bite says otherwise. What am I?",
+      "hintJp": "広い口先、強い尾、かたい皮ふを持ち、日なたでじっとすることもある動物です。",
+      "answerId": "alligator",
+      "choices": [
+        "alligator",
+        "turtle",
+        "lizard",
+        "walrus"
+      ]
+    },
+    {
+      "id": "riddle_penguin_very_hard_005",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "promptEn": "I cannot write, but I may stand in a crowd like students in matching uniforms. If a cold wind comes, being in the middle of the group is better than being outside. What am I?",
+      "hintJp": "寒い場所で群れになり、仲間と体を寄せ合って寒さをしのぐ鳥です。",
+      "answerId": "penguin",
+      "choices": [
+        "penguin",
+        "meerkat",
+        "goose",
+        "lemur"
+      ]
+    },
+    {
+      "id": "riddle_alligator_very_hard_006",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "promptEn": "I am not a fish, but I spend much of my time in water. I am not a dragon, but my scales make children imagine one. My nose and eyes can peek above the surface while most of me stays hidden. What am I?",
+      "hintJp": "魚ではなく爬虫類で、目と鼻だけを水面に出して隠れることがあります。",
+      "answerId": "alligator",
+      "choices": [
+        "alligator",
+        "shark",
+        "frog",
+        "salamander"
+      ]
+    },
+    {
+      "id": "riddle_penguin_very_hard_007",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "promptEn": "I hatch from an egg like many birds, but my parents must protect me where the ground can feel like ice. I grow up learning that a wing can be better as a paddle than as a kite. What am I?",
+      "hintJp": "卵から生まれる鳥で、翼は飛ぶためより泳ぐために使います。",
+      "answerId": "penguin",
+      "choices": [
+        "penguin",
+        "pelican",
+        "seal",
+        "eagle"
+      ]
+    },
+    {
+      "id": "riddle_alligator_very_hard_008",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "promptEn": "If you compare me with a crocodile, my face gives a clue: mine is usually wider and more rounded. I still have a dangerous bite and a quiet way of hunting. What am I?",
+      "hintJp": "ワニに似ていますが、口先が比較的広く丸いことが手がかりです。",
+      "answerId": "alligator",
+      "choices": [
+        "alligator",
+        "crocodile",
+        "komodo_dragon",
+        "snake"
+      ]
+    },
+    {
+      "id": "riddle_penguin_very_hard_009",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "promptEn": "A child says, 'It has feathers, so it must fly.' I prove the child wrong. My body is shaped for cold water, not clouds, and my dinner often has fins. What am I?",
+      "hintJp": "羽はありますが飛べず、冷たい水で魚などを食べる鳥です。",
+      "answerId": "penguin",
+      "choices": [
+        "penguin",
+        "parrot",
+        "dolphin",
+        "swan"
+      ]
+    },
+    {
+      "id": "riddle_alligator_very_hard_010",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "promptEn": "I do not chase every meal across a field. I save energy, hide in water, and let surprise do much of the work. My tail can help me swim, but my teeth do the final job. What am I?",
+      "hintJp": "水中で待ち伏せし、尾で泳ぎ、鋭い歯を使う肉食の爬虫類です。",
+      "answerId": "alligator",
+      "choices": [
+        "alligator",
+        "lion",
+        "otter",
+        "pelican"
+      ]
+    },
+    {
+      "id": "riddle_penguin_very_hard_011",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "promptEn": "In a puzzle about animals, I am the answer when the clues point to a bird, a swimmer, a tuxedo-like pattern, and a body that prefers icy water over treetops. What am I?",
+      "hintJp": "鳥、水泳、タキシードのような色、冷たい水という手がかりがそろいます。",
+      "answerId": "penguin",
+      "choices": [
+        "penguin",
+        "puffin",
+        "raven",
+        "orca"
+      ]
+    },
+    {
+      "id": "riddle_alligator_very_hard_012",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "promptEn": "A shadow moves in the swamp, but it is not just a shadow. It has lungs, legs, scales, and a jaw built for grabbing. It may look ancient because its family is very old. What am I?",
+      "hintJp": "沼地にすみ、肺・足・うろこ・強いあごを持つ、古代的な姿の爬虫類です。",
+      "answerId": "alligator",
+      "choices": [
+        "alligator",
+        "catfish",
+        "newt",
+        "raccoon"
+      ]
+    },
+    {
+      "id": "riddle_penguin_very_hard_013",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "promptEn": "My black back can be hard to see from above in dark water, and my light belly can be hard to see from below against bright water. This trick helps me survive while I swim. What am I?",
+      "hintJp": "背中が黒くお腹が白いことで、水中で見つかりにくくなる鳥です。",
+      "answerId": "penguin",
+      "choices": [
+        "penguin",
+        "zebra",
+        "skunk",
+        "panda"
+      ]
+    },
+    {
+      "id": "riddle_alligator_very_hard_014",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "promptEn": "I am cold-blooded, so the sun can be useful to me. I can rest on land, slip into water, and close my powerful jaws around prey. My body is low, long, and armored. What am I?",
+      "hintJp": "変温動物で、日光で体を温め、水にも入り、低く長い体をしています。",
+      "answerId": "alligator",
+      "choices": [
+        "alligator",
+        "armadillo",
+        "eel",
+        "seal"
+      ]
+    },
+    {
+      "id": "riddle_penguin_very_hard_015",
+      "type": "riddle",
+      "level": "very_hard",
+      "category": "animals",
+      "active": true,
+      "promptEn": "I would lose a flying contest against most birds, but I might win a diving contest against many of them. I have feathers, flippers, and a funny walk that hides how skilled I am underwater. What am I?",
+      "hintJp": "飛ぶ競争は苦手ですが、潜って泳ぐ競争なら強い鳥です。",
+      "answerId": "penguin",
+      "choices": [
+        "penguin",
+        "chicken",
+        "sea_lion",
+        "heron"
+      ]
+    }
+  ]
 }
