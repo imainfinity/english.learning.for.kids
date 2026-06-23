@@ -1,486 +1,322 @@
-{
-  "version": 1,
-  "updatedAt": "2026-06-23T12:47:15.337Z",
-  "questions": [
-    {
-      "id": "riddle_penguin_very_hard_001",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "animals",
-      "active": true,
-      "promptEn": "I wear a dark coat and a pale front, yet I never go to a party. My wings help me move fast, but not through the sky. I often trade walking speed for sliding speed. What am I?",
-      "hintJp": "空ではなく水の中で翼を使い、氷の上ではすべることもある動物です。",
-      "answerId": "penguin",
-      "choices": [
-        "penguin",
-        "seal",
-        "ostrich",
-        "polar_bear"
-      ]
-    },
-    {
-      "id": "riddle_alligator_very_hard_002",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "animals",
-      "active": true,
-      "promptEn": "I wait like a floating log, but the log has eyes, teeth, and patience. My home is usually warm and wet, and I can stay almost still until dinner moves too close. What am I?",
-      "hintJp": "丸太のように水面でじっとして、近づく獲物を待つ爬虫類です。",
-      "answerId": "alligator",
-      "choices": [
-        "alligator",
-        "hippo",
-        "beaver",
-        "iguana"
-      ]
-    },
-    {
-      "id": "riddle_penguin_very_hard_003",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "animals",
-      "active": true,
-      "promptEn": "I am a bird, but a race against a fish may be fairer than a race against a sparrow. On land I look awkward, yet underwater I become a quick hunter. What am I?",
-      "hintJp": "鳥ですが飛ぶより泳ぐほうが得意で、水中では魚を追います。",
-      "answerId": "penguin",
-      "choices": [
-        "penguin",
-        "duck",
-        "otter",
-        "flamingo"
-      ]
-    },
-    {
-      "id": "riddle_alligator_very_hard_004",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "animals",
-      "active": true,
-      "promptEn": "My smile is not friendly advice. I have a broad snout, a heavy tail, and armor-like skin. I may look lazy in the sun, but my bite says otherwise. What am I?",
-      "hintJp": "広い口先、強い尾、かたい皮ふを持ち、日なたでじっとすることもある動物です。",
-      "answerId": "alligator",
-      "choices": [
-        "alligator",
-        "turtle",
-        "lizard",
-        "walrus"
-      ]
-    },
-    {
-      "id": "riddle_penguin_very_hard_005",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "animals",
-      "active": true,
-      "promptEn": "I cannot write, but I may stand in a crowd like students in matching uniforms. If a cold wind comes, being in the middle of the group is better than being outside. What am I?",
-      "hintJp": "寒い場所で群れになり、仲間と体を寄せ合って寒さをしのぐ鳥です。",
-      "answerId": "penguin",
-      "choices": [
-        "penguin",
-        "meerkat",
-        "goose",
-        "lemur"
-      ]
-    },
-    {
-      "id": "riddle_alligator_very_hard_006",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "animals",
-      "active": true,
-      "promptEn": "I am not a fish, but I spend much of my time in water. I am not a dragon, but my scales make children imagine one. My nose and eyes can peek above the surface while most of me stays hidden. What am I?",
-      "hintJp": "魚ではなく爬虫類で、目と鼻だけを水面に出して隠れることがあります。",
-      "answerId": "alligator",
-      "choices": [
-        "alligator",
-        "shark",
-        "frog",
-        "salamander"
-      ]
-    },
-    {
-      "id": "riddle_penguin_very_hard_007",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "animals",
-      "active": true,
-      "promptEn": "I hatch from an egg like many birds, but my parents must protect me where the ground can feel like ice. I grow up learning that a wing can be better as a paddle than as a kite. What am I?",
-      "hintJp": "卵から生まれる鳥で、翼は飛ぶためより泳ぐために使います。",
-      "answerId": "penguin",
-      "choices": [
-        "penguin",
-        "pelican",
-        "seal",
-        "eagle"
-      ]
-    },
-    {
-      "id": "riddle_alligator_very_hard_008",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "animals",
-      "active": true,
-      "promptEn": "If you compare me with a crocodile, my face gives a clue: mine is usually wider and more rounded. I still have a dangerous bite and a quiet way of hunting. What am I?",
-      "hintJp": "ワニに似ていますが、口先が比較的広く丸いことが手がかりです。",
-      "answerId": "alligator",
-      "choices": [
-        "alligator",
-        "crocodile",
-        "komodo_dragon",
-        "snake"
-      ]
-    },
-    {
-      "id": "riddle_penguin_very_hard_009",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "animals",
-      "active": true,
-      "promptEn": "A child says, 'It has feathers, so it must fly.' I prove the child wrong. My body is shaped for cold water, not clouds, and my dinner often has fins. What am I?",
-      "hintJp": "羽はありますが飛べず、冷たい水で魚などを食べる鳥です。",
-      "answerId": "penguin",
-      "choices": [
-        "penguin",
-        "parrot",
-        "dolphin",
-        "swan"
-      ]
-    },
-    {
-      "id": "riddle_alligator_very_hard_010",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "animals",
-      "active": true,
-      "promptEn": "I do not chase every meal across a field. I save energy, hide in water, and let surprise do much of the work. My tail can help me swim, but my teeth do the final job. What am I?",
-      "hintJp": "水中で待ち伏せし、尾で泳ぎ、鋭い歯を使う肉食の爬虫類です。",
-      "answerId": "alligator",
-      "choices": [
-        "alligator",
-        "lion",
-        "otter",
-        "pelican"
-      ]
-    },
-    {
-      "id": "riddle_penguin_very_hard_011",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "animals",
-      "active": true,
-      "promptEn": "In a puzzle about animals, I am the answer when the clues point to a bird, a swimmer, a tuxedo-like pattern, and a body that prefers icy water over treetops. What am I?",
-      "hintJp": "鳥、水泳、タキシードのような色、冷たい水という手がかりがそろいます。",
-      "answerId": "penguin",
-      "choices": [
-        "penguin",
-        "puffin",
-        "raven",
-        "orca"
-      ]
-    },
-    {
-      "id": "riddle_alligator_very_hard_012",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "animals",
-      "active": true,
-      "promptEn": "A shadow moves in the swamp, but it is not just a shadow. It has lungs, legs, scales, and a jaw built for grabbing. It may look ancient because its family is very old. What am I?",
-      "hintJp": "沼地にすみ、肺・足・うろこ・強いあごを持つ、古代的な姿の爬虫類です。",
-      "answerId": "alligator",
-      "choices": [
-        "alligator",
-        "catfish",
-        "newt",
-        "raccoon"
-      ]
-    },
-    {
-      "id": "riddle_penguin_very_hard_013",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "animals",
-      "active": true,
-      "promptEn": "My black back can be hard to see from above in dark water, and my light belly can be hard to see from below against bright water. This trick helps me survive while I swim. What am I?",
-      "hintJp": "背中が黒くお腹が白いことで、水中で見つかりにくくなる鳥です。",
-      "answerId": "penguin",
-      "choices": [
-        "penguin",
-        "zebra",
-        "skunk",
-        "panda"
-      ]
-    },
-    {
-      "id": "riddle_alligator_very_hard_014",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "animals",
-      "active": true,
-      "promptEn": "I am cold-blooded, so the sun can be useful to me. I can rest on land, slip into water, and close my powerful jaws around prey. My body is low, long, and armored. What am I?",
-      "hintJp": "変温動物で、日光で体を温め、水にも入り、低く長い体をしています。",
-      "answerId": "alligator",
-      "choices": [
-        "alligator",
-        "armadillo",
-        "eel",
-        "seal"
-      ]
-    },
-    {
-      "id": "riddle_penguin_very_hard_015",
-      "type": "riddle",
-      "level": "very_hard",
-      "category": "animals",
-      "active": true,
-      "promptEn": "I would lose a flying contest against most birds, but I might win a diving contest against many of them. I have feathers, flippers, and a funny walk that hides how skilled I am underwater. What am I?",
-      "hintJp": "飛ぶ競争は苦手ですが、潜って泳ぐ競争なら強い鳥です。",
-      "answerId": "penguin",
-      "choices": [
-        "penguin",
-        "chicken",
-        "sea_lion",
-        "heron"
-      ]
-    },
-    {
-      "id": "riddle_car_expert_001",
-      "type": "riddle",
-      "level": "expert",
-      "category": "nature",
-      "active": true,
-      "promptEn": "I can cross a forest road without touching rails. I carry only a few people, choose my own turns, and stop beside a tree if the driver wants. What am I?",
-      "hintJp": "森の道でも線路なしで走れ、運転する人が進む方向を選べる乗り物です。",
-      "answerId": "car",
-      "choices": [
-        "car",
-        "train",
-        "bus",
-        "bicycle"
-      ]
-    },
-    {
-      "id": "riddle_train_expert_002",
-      "type": "riddle",
-      "level": "expert",
-      "category": "nature",
-      "active": true,
-      "promptEn": "I may pass mountains, rivers, and fields, but I do not choose a new path when I feel like it. Many people can ride together while I follow two long metal lines. What am I?",
-      "hintJp": "山や川の近くを通ることがあり、多くの人を乗せて線路の上を進む乗り物です。",
-      "answerId": "train",
-      "choices": [
-        "train",
-        "car",
-        "truck",
-        "scooter"
-      ]
-    },
-    {
-      "id": "riddle_car_expert_003",
-      "type": "riddle",
-      "level": "expert",
-      "category": "nature",
-      "active": true,
-      "promptEn": "After rain, I may leave tire marks on a muddy country road. I am smaller than a bus, freer than a train, and usually parked close to a home. What am I?",
-      "hintJp": "雨の後の泥道にタイヤの跡を残し、家の近くに止めることが多い乗り物です。",
-      "answerId": "car",
-      "choices": [
-        "car",
-        "train",
-        "boat",
-        "airplane"
-      ]
-    },
-    {
-      "id": "riddle_train_expert_004",
-      "type": "riddle",
-      "level": "expert",
-      "category": "nature",
-      "active": true,
-      "promptEn": "A bird can fly over a valley, and I can cross it too, but I need a bridge or track made for me. I am long, linked, and hard to turn around quickly. What am I?",
-      "hintJp": "谷を渡るには専用の線路や橋が必要で、長くつながった車両で進む乗り物です。",
-      "answerId": "train",
-      "choices": [
-        "train",
-        "car",
-        "van",
-        "motorcycle"
-      ]
-    },
-    {
-      "id": "riddle_car_expert_005",
-      "type": "riddle",
-      "level": "expert",
-      "category": "nature",
-      "active": true,
-      "promptEn": "If a family wants to stop at a lake, a shop, and a small hill in any order, I am useful. I do not need a station, and my road can bend many times. What am I?",
-      "hintJp": "駅がなくても使え、家族が好きな順番で湖や店や丘に立ち寄りやすい乗り物です。",
-      "answerId": "car",
-      "choices": [
-        "car",
-        "train",
-        "subway",
-        "ship"
-      ]
-    },
-    {
-      "id": "riddle_train_expert_006",
-      "type": "riddle",
-      "level": "expert",
-      "category": "nature",
-      "active": true,
-      "promptEn": "I can move many travelers through snow country, but I cannot simply go around a fallen tree like a small road vehicle might. My path is fixed before the trip begins. What am I?",
-      "hintJp": "雪の地域でも多くの人を運べますが、道を自由に変えられず決まった線路を進みます。",
-      "answerId": "train",
-      "choices": [
-        "train",
-        "car",
-        "jeep",
-        "taxi"
-      ]
-    },
-    {
-      "id": "riddle_car_expert_007",
-      "type": "riddle",
-      "level": "expert",
-      "category": "nature",
-      "active": true,
-      "promptEn": "On a narrow road between farms, I can slow down for a rabbit, turn into a driveway, and carry groceries in the back. I am not pulled by a chain of coaches. What am I?",
-      "hintJp": "農場の間の細い道を走り、後ろに荷物をのせ、車両が長く連結されていない乗り物です。",
-      "answerId": "car",
-      "choices": [
-        "car",
-        "train",
-        "tram",
-        "helicopter"
-      ]
-    },
-    {
-      "id": "riddle_train_expert_008",
-      "type": "riddle",
-      "level": "expert",
-      "category": "nature",
-      "active": true,
-      "promptEn": "People inside me may watch trees flash by like pages in a book. The driver cannot steer left into the forest or right toward the river; the rails decide. What am I?",
-      "hintJp": "窓から木々が流れるように見え、運転手が森や川の方へ自由に曲がれない乗り物です。",
-      "answerId": "train",
-      "choices": [
-        "train",
-        "car",
-        "bus",
-        "horse"
-      ]
-    },
-    {
-      "id": "riddle_car_expert_009",
-      "type": "riddle",
-      "level": "expert",
-      "category": "nature",
-      "active": true,
-      "promptEn": "I can wait quietly under falling leaves, then carry one family along a winding road. I need wheels and a driver, but not a platform with a timetable. What am I?",
-      "hintJp": "落ち葉の下に止めておけて、時刻表のあるホームなしで家族を運べる乗り物です。",
-      "answerId": "car",
-      "choices": [
-        "car",
-        "train",
-        "ferry",
-        "rocket"
-      ]
-    },
-    {
-      "id": "riddle_train_expert_010",
-      "type": "riddle",
-      "level": "expert",
-      "category": "nature",
-      "active": true,
-      "promptEn": "I may sound far away before I appear between hills. I carry passengers in connected cars, yet I am not the kind of car that turns into a driveway. What am I?",
-      "hintJp": "丘の間から音が先に聞こえ、連結された車両で人を運ぶが、家の私道へ曲がる車ではありません。",
-      "answerId": "train",
-      "choices": [
-        "train",
-        "car",
-        "tractor",
-        "ambulance"
-      ]
-    },
-    {
-      "id": "sentence_penguin_hard_001",
-      "type": "sentence",
-      "level": "hard",
-      "category": "animals",
-      "active": true,
-      "sentence": "The ___ cannot fly like most birds, but it uses its wings to move quickly through cold water.",
-      "hintJp": "鳥ですが空を飛ばず、翼を泳ぐために使う動物です。",
-      "answerId": "penguin",
-      "choices": [
-        "penguin",
-        "alligator",
-        "parrot",
-        "rabbit"
-      ]
-    },
-    {
-      "id": "sentence_alligator_hard_002",
-      "type": "sentence",
-      "level": "hard",
-      "category": "animals",
-      "active": true,
-      "sentence": "The ___ waited almost still in the swamp, with only its eyes and nose above the water.",
-      "hintJp": "沼の水面に目と鼻だけを出して、じっと待つことがある動物です。",
-      "answerId": "alligator",
-      "choices": [
-        "alligator",
-        "penguin",
-        "eagle",
-        "horse"
-      ]
-    },
-    {
-      "id": "sentence_penguin_hard_003",
-      "type": "sentence",
-      "level": "hard",
-      "category": "animals",
-      "active": true,
-      "sentence": "Because its black back and white belly help it hide in the sea, the ___ is harder to notice from above or below.",
-      "hintJp": "背中が黒くお腹が白いため、水中で上からも下からも見つかりにくい鳥です。",
-      "answerId": "penguin",
-      "choices": [
-        "penguin",
-        "alligator",
-        "zebra",
-        "monkey"
-      ]
-    },
-    {
-      "id": "sentence_alligator_hard_004",
-      "type": "sentence",
-      "level": "hard",
-      "category": "animals",
-      "active": true,
-      "sentence": "A ___ looks like a floating log until it moves, opens its strong jaws, and surprises its prey.",
-      "hintJp": "水に浮かぶ丸太のように見えて、強いあごで獲物を捕まえる爬虫類です。",
-      "answerId": "alligator",
-      "choices": [
-        "alligator",
-        "penguin",
-        "deer",
-        "frog"
-      ]
-    },
-    {
-      "id": "sentence_penguin_hard_005",
-      "type": "sentence",
-      "level": "hard",
-      "category": "animals",
-      "active": true,
-      "sentence": "On ice the ___ may walk slowly or slide on its belly, but underwater it can chase fish with surprising speed.",
-      "hintJp": "氷の上ではゆっくり歩いたりお腹ですべったりしますが、水中では魚を速く追える鳥です。",
-      "answerId": "penguin",
-      "choices": [
-        "penguin",
-        "alligator",
-        "tiger",
-        "camel"
-      ]
-    }
-  ]
-}
+[
+  {
+    "id": "riddle_alligator_expert_015",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "alligator",
+    "choices": [
+      "alligator",
+      "crocodile",
+      "turtle",
+      "hippo"
+    ],
+    "active": true,
+    "promptEn": "A floating log in warm water may not be wood at all. Eyes and nose can stay above the surface while most of the body hides. Patience and sudden jaws make the trap work.",
+    "hintJp": "水面に目と鼻だけを出して、丸太のようにじっと待つ爬虫類です。"
+  },
+  {
+    "id": "riddle_bat_expert_018",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "bat",
+    "choices": [
+      "bat",
+      "bird",
+      "owl",
+      "butterfly"
+    ],
+    "active": true,
+    "promptEn": "I am not a bird, although I can fly. In the dark, sound can help me find small moving meals. My wings are made from skin stretched over long fingers.",
+    "hintJp": "鳥ではありませんが飛べて、暗い場所で音を使って虫などを探す動物です。"
+  },
+  {
+    "id": "riddle_bear_expert_003",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "bear",
+    "choices": [
+      "bear",
+      "lion",
+      "wolf",
+      "dog"
+    ],
+    "active": true,
+    "promptEn": "Calling me only a meat eater would miss part of the clue. I may eat berries, honey, or fish. Some kinds rest for a long time when the cold season arrives.",
+    "hintJp": "魚や木の実なども食べ、寒い季節に長く休む種類もいる大きな動物です。"
+  },
+  {
+    "id": "riddle_bird_expert_006",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "bird",
+    "choices": [
+      "bird",
+      "bat",
+      "frog",
+      "snake"
+    ],
+    "active": true,
+    "promptEn": "Feathers are the strongest clue, even when some kinds cannot fly well. Many of us build nests and lay eggs. A beak helps us eat without teeth.",
+    "hintJp": "羽、くちばし、巣、卵が手がかりになる動物の仲間です。"
+  },
+  {
+    "id": "riddle_cat_expert_007",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "cat",
+    "choices": [
+      "cat",
+      "dog",
+      "rabbit",
+      "monkey"
+    ],
+    "active": true,
+    "promptEn": "I can step quietly before a small animal hears me. My whiskers help me judge narrow spaces. Even when I live with people, my hunting habits still show.",
+    "hintJp": "ひげでせまい場所を感じ取り、静かに動くのが得意な動物です。"
+  },
+  {
+    "id": "riddle_dog_expert_008",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "dog",
+    "choices": [
+      "dog",
+      "cat",
+      "wolf",
+      "fox"
+    ],
+    "active": true,
+    "promptEn": "My nose can follow a story written in smells. I may guard a home, guide a person, or run beside a human friend. A moving tail often tells how I feel.",
+    "hintJp": "においをたどるのが得意で、人間の友だちになることが多い動物です。"
+  },
+  {
+    "id": "riddle_dolphin_expert_016",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "dolphin",
+    "choices": [
+      "dolphin",
+      "fish",
+      "shark",
+      "seal"
+    ],
+    "active": true,
+    "promptEn": "I live in the sea, but I am not a breathing-with-gills animal. I come to the surface for air and may move with others in a group. Clicks and whistles can help me understand the watery world.",
+    "hintJp": "海にすみますが、えらではなく空気を吸い、音を使って仲間と動く動物です。"
+  },
+  {
+    "id": "riddle_elephant_expert_001",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "elephant",
+    "choices": [
+      "elephant",
+      "giraffe",
+      "rhino",
+      "hippo"
+    ],
+    "active": true,
+    "promptEn": "I can reach leaves without climbing a tree. My nose can drink, smell, lift, and spray water. Smaller animals may move away when my heavy feet shake the ground.",
+    "hintJp": "長い鼻を手のように使い、とても大きな体を持つ動物です。"
+  },
+  {
+    "id": "riddle_fish_expert_005",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "fish",
+    "choices": [
+      "fish",
+      "frog",
+      "turtle",
+      "dolphin"
+    ],
+    "active": true,
+    "promptEn": "Legs are not needed in my usual home. I move by bending my body and using fins. Instead of breathing air the way people do, I take what I need from water.",
+    "hintJp": "水の中でひれを使って泳ぎ、えらで呼吸する動物です。"
+  },
+  {
+    "id": "riddle_frog_expert_011",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "frog",
+    "choices": [
+      "frog",
+      "fish",
+      "rabbit",
+      "turtle"
+    ],
+    "active": true,
+    "promptEn": "My life may begin in water with a tail. Later, I can leap on land and catch insects with a sticky tongue. After rain, my voice may join a noisy pond chorus.",
+    "hintJp": "子どもの時は水中で育ち、成長するとジャンプして虫を捕る動物です。"
+  },
+  {
+    "id": "riddle_giraffe_expert_013",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "giraffe",
+    "choices": [
+      "giraffe",
+      "elephant",
+      "horse",
+      "deer"
+    ],
+    "active": true,
+    "promptEn": "I can eat leaves that many grassland animals cannot reach. My height comes from more than one famous body part. Brown patches help break up my shape among trees and sunlight.",
+    "hintJp": "長い首と高い足で、他の動物が届かない木の葉を食べられる動物です。"
+  },
+  {
+    "id": "riddle_kangaroo_expert_020",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "kangaroo",
+    "choices": [
+      "kangaroo",
+      "rabbit",
+      "deer",
+      "monkey"
+    ],
+    "active": true,
+    "promptEn": "Walking slowly is not my best way to travel. Strong back legs help me cover ground with long jumps. A baby can ride in a pouch while it grows.",
+    "hintJp": "強い後ろ足でジャンプして進み、赤ちゃんをお腹のふくろで育てる動物です。"
+  },
+  {
+    "id": "riddle_lion_expert_004",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "lion",
+    "choices": [
+      "lion",
+      "bear",
+      "tiger",
+      "wolf"
+    ],
+    "active": true,
+    "promptEn": "My voice can travel far across open grassland. I often live with a group, and teamwork can help during a hunt. A grown male may carry a thick collar of hair.",
+    "hintJp": "草原で大きな声を響かせ、オスにはたてがみがある肉食動物です。"
+  },
+  {
+    "id": "riddle_monkey_expert_012",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "monkey",
+    "choices": [
+      "monkey",
+      "cat",
+      "rabbit",
+      "giraffe"
+    ],
+    "active": true,
+    "promptEn": "Hands help me hold fruit, branches, and sometimes tools. I often learn by watching others in my group. A tail may help with balance, but my cleverness is also important.",
+    "hintJp": "手で枝や果物をつかみ、群れで学びながら生活することが多い動物です。"
+  },
+  {
+    "id": "riddle_owl_expert_017",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "owl",
+    "choices": [
+      "owl",
+      "eagle",
+      "bat",
+      "crow"
+    ],
+    "active": true,
+    "promptEn": "Darkness is not a big problem for me. My large eyes and quiet wings help me hunt when many other animals rest. A mouse may be in danger before it hears me coming.",
+    "hintJp": "夜に活動し、大きな目と静かな翼で小さな獲物をねらう鳥です。"
+  },
+  {
+    "id": "riddle_penguin_expert_014",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "penguin",
+    "choices": [
+      "penguin",
+      "duck",
+      "seal",
+      "eagle"
+    ],
+    "active": true,
+    "promptEn": "Feathers do not always mean skill in the sky. My wings work better like paddles in cold water. I may look slow on ice, but I become a fast hunter below the surface.",
+    "hintJp": "羽はありますが空を飛ばず、冷たい水の中で速く泳ぐ鳥です。"
+  },
+  {
+    "id": "riddle_rabbit_expert_002",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "rabbit",
+    "choices": [
+      "rabbit",
+      "cat",
+      "frog",
+      "mouse"
+    ],
+    "active": true,
+    "promptEn": "I do not win by fighting large hunters. My long ears notice danger early, and my quick feet help me escape. A hidden hole can be safer than open grass.",
+    "hintJp": "長い耳で危険に気づき、すばやく走って穴に逃げる小さな動物です。"
+  },
+  {
+    "id": "riddle_snake_expert_010",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "snake",
+    "choices": [
+      "snake",
+      "worm",
+      "lizard",
+      "frog"
+    ],
+    "active": true,
+    "promptEn": "I cross grass and branches without feet. My tongue gathers clues from the air. Some kinds squeeze tightly, while others use venom to stop prey.",
+    "hintJp": "足がなく、舌で周りを感じ取り、毒やしめつけで獲物を捕る種類もいます。"
+  },
+  {
+    "id": "riddle_turtle_expert_009",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "turtle",
+    "choices": [
+      "turtle",
+      "frog",
+      "snake",
+      "alligator"
+    ],
+    "active": true,
+    "promptEn": "I carry my protection instead of wearing a borrowed house. Some of my relatives swim well, while others move slowly on land. When danger comes, hiding can be smarter than running.",
+    "hintJp": "かたい甲羅を持ち、危険な時に体を守ることができる動物です。"
+  },
+  {
+    "id": "riddle_whale_expert_019",
+    "type": "riddle",
+    "level": "expert",
+    "category": "animals",
+    "answerId": "whale",
+    "choices": [
+      "whale",
+      "shark",
+      "fish",
+      "dolphin"
+    ],
+    "active": true,
+    "promptEn": "I am huge and live in the ocean, but I am not a giant gill-breather. I must rise to the surface for air. Some kinds sing across long distances under the waves.",
+    "hintJp": "海にすむとても大きな動物で、えらではなく空気を吸い、歌う種類もいます。"
+  }
+]
