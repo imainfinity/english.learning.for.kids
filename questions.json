@@ -2768,5 +2768,805 @@
     "active": true,
     "promptEn": "Its pattern is not a fashion choice. On open land, many striped bodies together can make it harder for hunters to pick one target.",
     "hintJp": "しま模様が群れの中で見分けにくくする助けになる動物です。"
+  },
+  {
+    "id": "sentence_alligator_expert_004",
+    "type": "sentence",
+    "level": "expert",
+    "category": "all",
+    "answerId": "alligator",
+    "choices": [
+      "alligator",
+      "crocodile",
+      "hippo",
+      "lizard"
+    ],
+    "active": true,
+    "sentence": "An alligator often has a broader rounder snout than a crocodile.",
+    "hintJp": "似た動物より口先が広く丸いことが多い爬虫類です。"
+  },
+  {
+    "id": "sentence_alligator_hard_002",
+    "type": "sentence",
+    "level": "hard",
+    "category": "all",
+    "answerId": "alligator",
+    "choices": [
+      "alligator",
+      "crocodile",
+      "turtle",
+      "hippo"
+    ],
+    "active": true,
+    "sentence": "An alligator waits quietly with its eyes above the water.",
+    "hintJp": "水面に目を出して静かに待つ爬虫類です。"
+  },
+  {
+    "id": "sentence_apple_easy_003",
+    "type": "sentence",
+    "level": "easy",
+    "category": "all",
+    "answerId": "apple",
+    "choices": [
+      "apple",
+      "banana",
+      "carrot",
+      "bread"
+    ],
+    "active": true,
+    "sentence": "An apple can be red or green.",
+    "hintJp": "赤や緑のことがある果物です。"
+  },
+  {
+    "id": "sentence_banana_easy_004",
+    "type": "sentence",
+    "level": "easy",
+    "category": "all",
+    "answerId": "banana",
+    "choices": [
+      "banana",
+      "apple",
+      "corn",
+      "cheese"
+    ],
+    "active": true,
+    "sentence": "A banana is long and yellow.",
+    "hintJp": "長くて黄色い果物です。"
+  },
+  {
+    "id": "sentence_bat_very_hard_002",
+    "type": "sentence",
+    "level": "very_hard",
+    "category": "all",
+    "answerId": "bat",
+    "choices": [
+      "bat",
+      "bird",
+      "owl",
+      "butterfly"
+    ],
+    "active": true,
+    "sentence": "A bat can fly at night, but it is not a bird.",
+    "hintJp": "夜に飛べますが、鳥ではない動物です。"
+  },
+  {
+    "id": "sentence_beak_easy_010",
+    "type": "sentence",
+    "level": "easy",
+    "category": "all",
+    "answerId": "beak",
+    "choices": [
+      "beak",
+      "wing",
+      "claw",
+      "tail"
+    ],
+    "active": true,
+    "sentence": "A beak is a bird's hard mouth.",
+    "hintJp": "鳥のかたい口の部分です。"
+  },
+  {
+    "id": "sentence_bird_easy_006",
+    "type": "sentence",
+    "level": "easy",
+    "category": "all",
+    "answerId": "bird",
+    "choices": [
+      "bird",
+      "bat",
+      "butterfly",
+      "fish"
+    ],
+    "active": true,
+    "sentence": "A bird has feathers.",
+    "hintJp": "羽がある動物です。"
+  },
+  {
+    "id": "sentence_bread_normal_003",
+    "type": "sentence",
+    "level": "normal",
+    "category": "all",
+    "answerId": "bread",
+    "choices": [
+      "bread",
+      "rice",
+      "soup",
+      "apple"
+    ],
+    "active": true,
+    "sentence": "Bread can be toasted for breakfast.",
+    "hintJp": "朝ごはんに焼いて食べることがある食べ物です。"
+  },
+  {
+    "id": "sentence_burrow_very_hard_007",
+    "type": "sentence",
+    "level": "very_hard",
+    "category": "all",
+    "answerId": "burrow",
+    "choices": [
+      "burrow",
+      "nest",
+      "cave",
+      "pond"
+    ],
+    "active": true,
+    "sentence": "A burrow is a safe hole that some animals make underground.",
+    "hintJp": "動物が地面の下に作る安全な穴のすみかです。"
+  },
+  {
+    "id": "sentence_carrot_hard_003",
+    "type": "sentence",
+    "level": "hard",
+    "category": "all",
+    "answerId": "carrot",
+    "choices": [
+      "carrot",
+      "potato",
+      "corn",
+      "pumpkin"
+    ],
+    "active": true,
+    "sentence": "A carrot grows under the ground and is often orange.",
+    "hintJp": "土の中で育ち、オレンジ色のことが多い食べ物です。"
+  },
+  {
+    "id": "sentence_cheese_normal_004",
+    "type": "sentence",
+    "level": "normal",
+    "category": "all",
+    "answerId": "cheese",
+    "choices": [
+      "cheese",
+      "butter",
+      "egg",
+      "honey"
+    ],
+    "active": true,
+    "sentence": "Cheese can melt on hot pizza.",
+    "hintJp": "ピザの上でとけることがある食べ物です。"
+  },
+  {
+    "id": "sentence_cheetah_expert_001",
+    "type": "sentence",
+    "level": "expert",
+    "category": "all",
+    "answerId": "cheetah",
+    "choices": [
+      "cheetah",
+      "leopard",
+      "lion",
+      "tiger"
+    ],
+    "active": true,
+    "sentence": "A cheetah depends on a short burst of speed rather than a long chase.",
+    "hintJp": "長く追うより、短い距離を一気に走る速さが手がかりです。"
+  },
+  {
+    "id": "sentence_claw_normal_009",
+    "type": "sentence",
+    "level": "normal",
+    "category": "all",
+    "answerId": "claw",
+    "choices": [
+      "claw",
+      "beak",
+      "wing",
+      "hoof"
+    ],
+    "active": true,
+    "sentence": "A claw is sharp and helps an animal grip.",
+    "hintJp": "動物がつかむ時に使う鋭い体の部分です。"
+  },
+  {
+    "id": "sentence_cliff_expert_007",
+    "type": "sentence",
+    "level": "expert",
+    "category": "all",
+    "answerId": "cliff",
+    "choices": [
+      "cliff",
+      "valley",
+      "beach",
+      "meadow"
+    ],
+    "active": true,
+    "sentence": "A cliff drops steeply instead of sloping gently like a hill.",
+    "hintJp": "ゆるい坂ではなく、急に落ちる高い岩や土地です。"
+  },
+  {
+    "id": "sentence_crimson_very_hard_008",
+    "type": "sentence",
+    "level": "very_hard",
+    "category": "all",
+    "answerId": "crimson",
+    "choices": [
+      "crimson",
+      "scarlet",
+      "violet",
+      "beige"
+    ],
+    "active": true,
+    "sentence": "Crimson is a deep strong red, darker than light pink.",
+    "hintJp": "明るいピンクではなく、深く強い赤を表す言葉です。"
+  },
+  {
+    "id": "sentence_crocodile_expert_003",
+    "type": "sentence",
+    "level": "expert",
+    "category": "all",
+    "answerId": "crocodile",
+    "choices": [
+      "crocodile",
+      "alligator",
+      "lizard",
+      "turtle"
+    ],
+    "active": true,
+    "sentence": "A crocodile often has a longer pointed snout than an alligator.",
+    "hintJp": "似た動物より口先が長くとがっていることが多い爬虫類です。"
+  },
+  {
+    "id": "sentence_curry_very_hard_005",
+    "type": "sentence",
+    "level": "very_hard",
+    "category": "all",
+    "answerId": "curry",
+    "choices": [
+      "curry",
+      "soup",
+      "stew",
+      "rice"
+    ],
+    "active": true,
+    "sentence": "Curry is a warm dish with spices and often comes with rice.",
+    "hintJp": "スパイスを使い、ごはんと食べることが多い料理です。"
+  },
+  {
+    "id": "sentence_desert_hard_005",
+    "type": "sentence",
+    "level": "hard",
+    "category": "all",
+    "answerId": "desert",
+    "choices": [
+      "desert",
+      "forest",
+      "swamp",
+      "ocean"
+    ],
+    "active": true,
+    "sentence": "A desert is dry and has very little rain.",
+    "hintJp": "雨が少なく、乾いた自然の場所です。"
+  },
+  {
+    "id": "sentence_dolphin_very_hard_001",
+    "type": "sentence",
+    "level": "very_hard",
+    "category": "all",
+    "answerId": "dolphin",
+    "choices": [
+      "dolphin",
+      "fish",
+      "shark",
+      "octopus"
+    ],
+    "active": true,
+    "sentence": "A dolphin lives in the sea but comes up to breathe air.",
+    "hintJp": "海にすみますが、えらではなく空気を吸う動物です。"
+  },
+  {
+    "id": "sentence_eagle_expert_009",
+    "type": "sentence",
+    "level": "expert",
+    "category": "all",
+    "answerId": "eagle",
+    "choices": [
+      "eagle",
+      "parrot",
+      "owl",
+      "duck"
+    ],
+    "active": true,
+    "sentence": "An eagle uses sharp vision and claws to hunt from the sky.",
+    "hintJp": "鋭い目と爪を使って空から狩りをする鳥です。"
+  },
+  {
+    "id": "sentence_elephant_easy_001",
+    "type": "sentence",
+    "level": "easy",
+    "category": "all",
+    "answerId": "elephant",
+    "choices": [
+      "elephant",
+      "rabbit",
+      "cat",
+      "frog"
+    ],
+    "active": true,
+    "sentence": "An elephant has a long nose.",
+    "hintJp": "長い鼻を持つ大きな動物です。"
+  },
+  {
+    "id": "sentence_fish_easy_005",
+    "type": "sentence",
+    "level": "easy",
+    "category": "all",
+    "answerId": "fish",
+    "choices": [
+      "fish",
+      "bird",
+      "frog",
+      "duck"
+    ],
+    "active": true,
+    "sentence": "A fish swims in water.",
+    "hintJp": "水の中を泳ぐ動物です。"
+  },
+  {
+    "id": "sentence_forest_normal_005",
+    "type": "sentence",
+    "level": "normal",
+    "category": "all",
+    "answerId": "forest",
+    "choices": [
+      "forest",
+      "desert",
+      "ocean",
+      "beach"
+    ],
+    "active": true,
+    "sentence": "A forest has many trees.",
+    "hintJp": "木がたくさんある自然の場所です。"
+  },
+  {
+    "id": "sentence_golden_normal_007",
+    "type": "sentence",
+    "level": "normal",
+    "category": "all",
+    "answerId": "golden",
+    "choices": [
+      "golden",
+      "silver",
+      "violet",
+      "beige"
+    ],
+    "active": true,
+    "sentence": "A golden color looks like shiny treasure.",
+    "hintJp": "宝物のような金色を表す言葉です。"
+  },
+  {
+    "id": "sentence_habitat_very_hard_006",
+    "type": "sentence",
+    "level": "very_hard",
+    "category": "all",
+    "answerId": "habitat",
+    "choices": [
+      "habitat",
+      "forest",
+      "river",
+      "nest"
+    ],
+    "active": true,
+    "sentence": "A habitat is the natural home where a living thing can survive.",
+    "hintJp": "動物や植物が自然にくらせる場所全体です。"
+  },
+  {
+    "id": "sentence_honey_hard_004",
+    "type": "sentence",
+    "level": "hard",
+    "category": "all",
+    "answerId": "honey",
+    "choices": [
+      "honey",
+      "jam",
+      "sugar",
+      "butter"
+    ],
+    "active": true,
+    "sentence": "Honey is a sweet food made by bees.",
+    "hintJp": "小さな虫が作る甘い食べ物です。"
+  },
+  {
+    "id": "sentence_horn_normal_010",
+    "type": "sentence",
+    "level": "normal",
+    "category": "all",
+    "answerId": "horn",
+    "choices": [
+      "horn",
+      "mane",
+      "paw",
+      "tail"
+    ],
+    "active": true,
+    "sentence": "A horn grows on an animal's head.",
+    "hintJp": "動物の頭にあるかたい体の部分です。"
+  },
+  {
+    "id": "sentence_kelp_expert_005",
+    "type": "sentence",
+    "level": "expert",
+    "category": "all",
+    "answerId": "kelp",
+    "choices": [
+      "kelp",
+      "seaweed",
+      "fish",
+      "clam"
+    ],
+    "active": true,
+    "sentence": "Kelp is a large sea plant used to add flavor to soup.",
+    "hintJp": "海でとれる大きな海そうで、スープやだしの味に使われます。"
+  },
+  {
+    "id": "sentence_leopard_expert_002",
+    "type": "sentence",
+    "level": "expert",
+    "category": "all",
+    "answerId": "leopard",
+    "choices": [
+      "leopard",
+      "cheetah",
+      "lion",
+      "tiger"
+    ],
+    "active": true,
+    "sentence": "A leopard is a spotted big cat that can hide prey in trees.",
+    "hintJp": "まだら模様の大型ネコ科で、木に獲物を隠すことがあります。"
+  },
+  {
+    "id": "sentence_mane_hard_009",
+    "type": "sentence",
+    "level": "hard",
+    "category": "all",
+    "answerId": "mane",
+    "choices": [
+      "mane",
+      "horn",
+      "claw",
+      "wing"
+    ],
+    "active": true,
+    "sentence": "A mane is thick hair around an animal's neck.",
+    "hintJp": "動物の首のまわりにあるふさふさした毛です。"
+  },
+  {
+    "id": "sentence_mountain_easy_008",
+    "type": "sentence",
+    "level": "easy",
+    "category": "all",
+    "answerId": "mountain",
+    "choices": [
+      "mountain",
+      "river",
+      "lake",
+      "beach"
+    ],
+    "active": true,
+    "sentence": "A mountain is very high.",
+    "hintJp": "とても高い自然の場所です。"
+  },
+  {
+    "id": "sentence_ocean_normal_006",
+    "type": "sentence",
+    "level": "normal",
+    "category": "all",
+    "answerId": "ocean",
+    "choices": [
+      "ocean",
+      "river",
+      "lake",
+      "pond"
+    ],
+    "active": true,
+    "sentence": "The ocean is full of salty water.",
+    "hintJp": "しょっぱい水がたくさんある大きな海です。"
+  },
+  {
+    "id": "sentence_octopus_very_hard_003",
+    "type": "sentence",
+    "level": "very_hard",
+    "category": "all",
+    "answerId": "octopus",
+    "choices": [
+      "octopus",
+      "squid",
+      "crab",
+      "jellyfish"
+    ],
+    "active": true,
+    "sentence": "An octopus can use eight arms and change color to hide.",
+    "hintJp": "八本の腕を使い、色を変えて隠れることがある動物です。"
+  },
+  {
+    "id": "sentence_otter_expert_010",
+    "type": "sentence",
+    "level": "expert",
+    "category": "all",
+    "answerId": "otter",
+    "choices": [
+      "otter",
+      "seal",
+      "beaver",
+      "dolphin"
+    ],
+    "active": true,
+    "sentence": "An otter is not a fish, but it swims skillfully and handles food with quick paws.",
+    "hintJp": "魚ではありませんが、上手に泳ぎ、前足で食べ物を扱う動物です。"
+  },
+  {
+    "id": "sentence_penguin_hard_001",
+    "type": "sentence",
+    "level": "hard",
+    "category": "all",
+    "answerId": "penguin",
+    "choices": [
+      "penguin",
+      "duck",
+      "seal",
+      "bird"
+    ],
+    "active": true,
+    "sentence": "A penguin is a bird that swims well in cold water.",
+    "hintJp": "鳥ですが、冷たい水の中で上手に泳ぎます。"
+  },
+  {
+    "id": "sentence_rabbit_easy_002",
+    "type": "sentence",
+    "level": "easy",
+    "category": "all",
+    "answerId": "rabbit",
+    "choices": [
+      "rabbit",
+      "dog",
+      "mouse",
+      "frog"
+    ],
+    "active": true,
+    "sentence": "A rabbit has long ears.",
+    "hintJp": "長い耳がある小さな動物です。"
+  },
+  {
+    "id": "sentence_river_easy_007",
+    "type": "sentence",
+    "level": "easy",
+    "category": "all",
+    "answerId": "river",
+    "choices": [
+      "river",
+      "mountain",
+      "forest",
+      "desert"
+    ],
+    "active": true,
+    "sentence": "A river flows through the land.",
+    "hintJp": "土地の中を流れる水の道です。"
+  },
+  {
+    "id": "sentence_scale_hard_010",
+    "type": "sentence",
+    "level": "hard",
+    "category": "all",
+    "answerId": "scale",
+    "choices": [
+      "scale",
+      "fur",
+      "feather",
+      "whisker"
+    ],
+    "active": true,
+    "sentence": "A scale protects the skin of a fish or snake.",
+    "hintJp": "魚やヘビの体をおおう小さな部分です。"
+  },
+  {
+    "id": "sentence_snake_normal_002",
+    "type": "sentence",
+    "level": "normal",
+    "category": "all",
+    "answerId": "snake",
+    "choices": [
+      "snake",
+      "worm",
+      "lizard",
+      "frog"
+    ],
+    "active": true,
+    "sentence": "A snake moves without legs.",
+    "hintJp": "足がなく、体をくねらせて動く動物です。"
+  },
+  {
+    "id": "sentence_spotted_normal_008",
+    "type": "sentence",
+    "level": "normal",
+    "category": "all",
+    "answerId": "spotted",
+    "choices": [
+      "spotted",
+      "striped",
+      "golden",
+      "transparent"
+    ],
+    "active": true,
+    "sentence": "A spotted coat has many small marks.",
+    "hintJp": "小さな丸い模様がたくさんある様子です。"
+  },
+  {
+    "id": "sentence_striped_hard_007",
+    "type": "sentence",
+    "level": "hard",
+    "category": "all",
+    "answerId": "striped",
+    "choices": [
+      "striped",
+      "spotted",
+      "transparent",
+      "silver"
+    ],
+    "active": true,
+    "sentence": "A striped animal has long lines on its body.",
+    "hintJp": "体に長い線の模様がある様子です。"
+  },
+  {
+    "id": "sentence_sushi_very_hard_004",
+    "type": "sentence",
+    "level": "very_hard",
+    "category": "all",
+    "answerId": "sushi",
+    "choices": [
+      "sushi",
+      "rice_ball",
+      "sandwich",
+      "noodle"
+    ],
+    "active": true,
+    "sentence": "Sushi often uses rice and seafood in small pieces.",
+    "hintJp": "ごはんと魚などを小さく合わせた料理です。"
+  },
+  {
+    "id": "sentence_swamp_hard_006",
+    "type": "sentence",
+    "level": "hard",
+    "category": "all",
+    "answerId": "swamp",
+    "choices": [
+      "swamp",
+      "desert",
+      "mountain",
+      "meadow"
+    ],
+    "active": true,
+    "sentence": "A swamp is wet, muddy, and good for frogs.",
+    "hintJp": "ぬれていて泥が多く、カエルなどがすむ場所です。"
+  },
+  {
+    "id": "sentence_transparent_hard_008",
+    "type": "sentence",
+    "level": "hard",
+    "category": "all",
+    "answerId": "transparent",
+    "choices": [
+      "transparent",
+      "golden",
+      "striped",
+      "beige"
+    ],
+    "active": true,
+    "sentence": "Transparent glass lets you see through it.",
+    "hintJp": "ガラスのように向こう側が見える様子です。"
+  },
+  {
+    "id": "sentence_turquoise_expert_008",
+    "type": "sentence",
+    "level": "expert",
+    "category": "all",
+    "answerId": "turquoise",
+    "choices": [
+      "turquoise",
+      "violet",
+      "silver",
+      "beige"
+    ],
+    "active": true,
+    "sentence": "Turquoise looks like a color between blue and green.",
+    "hintJp": "青と緑の間のような色を表す言葉です。"
+  },
+  {
+    "id": "sentence_turtle_normal_001",
+    "type": "sentence",
+    "level": "normal",
+    "category": "all",
+    "answerId": "turtle",
+    "choices": [
+      "turtle",
+      "frog",
+      "snake",
+      "fish"
+    ],
+    "active": true,
+    "sentence": "A turtle carries a hard shell on its back.",
+    "hintJp": "背中にかたい甲羅を持つ動物です。"
+  },
+  {
+    "id": "sentence_valley_very_hard_009",
+    "type": "sentence",
+    "level": "very_hard",
+    "category": "all",
+    "answerId": "valley",
+    "choices": [
+      "valley",
+      "mountain",
+      "cliff",
+      "meadow"
+    ],
+    "active": true,
+    "sentence": "A valley is low land between mountains or hills.",
+    "hintJp": "山や丘の間にある低い土地です。"
+  },
+  {
+    "id": "sentence_vinegar_expert_006",
+    "type": "sentence",
+    "level": "expert",
+    "category": "all",
+    "answerId": "vinegar",
+    "choices": [
+      "vinegar",
+      "sugar",
+      "salt",
+      "oil"
+    ],
+    "active": true,
+    "sentence": "Vinegar makes food taste sharp and sour, unlike sugar.",
+    "hintJp": "砂糖と違い、食べ物をすっぱくする調味料です。"
+  },
+  {
+    "id": "sentence_whisker_very_hard_010",
+    "type": "sentence",
+    "level": "very_hard",
+    "category": "all",
+    "answerId": "whisker",
+    "choices": [
+      "whisker",
+      "claw",
+      "tail",
+      "paw"
+    ],
+    "active": true,
+    "sentence": "A whisker helps a cat sense narrow spaces.",
+    "hintJp": "ネコがせまい場所を感じ取るための細いひげです。"
+  },
+  {
+    "id": "sentence_wing_easy_009",
+    "type": "sentence",
+    "level": "easy",
+    "category": "all",
+    "answerId": "wing",
+    "choices": [
+      "wing",
+      "beak",
+      "paw",
+      "horn"
+    ],
+    "active": true,
+    "sentence": "A wing helps many birds fly.",
+    "hintJp": "多くの鳥が飛ぶために使う体の部分です。"
   }
 ]
