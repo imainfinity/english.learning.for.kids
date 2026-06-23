@@ -23,9 +23,9 @@
       radial-gradient(1000px 600px at -10% 110%, #DCF6E7 0%, transparent 55%),
       var(--bg);
     color:var(--ink);min-height:100%;
-    display:flex;flex-direction:column;align-items:center;padding:16px;padding-bottom:calc(120px + env(safe-area-inset-bottom));overflow-x:hidden;
+    display:flex;flex-direction:column;align-items:center;padding:16px;overflow-x:hidden;
   }
-  .app{width:100%;max-width:880px;display:flex;flex-direction:column;gap:16px;padding-bottom:120px}
+  .app{width:100%;max-width:880px;display:flex;flex-direction:column;gap:16px}
 
   .topbar{display:flex;align-items:center;gap:10px;background:var(--paper);
     border-radius:var(--radius);padding:12px 16px;box-shadow:var(--shadow);flex-wrap:wrap}
@@ -54,7 +54,7 @@
     border-radius:var(--radius);padding:18px 12px;box-shadow:var(--shadow);text-align:center;transition:.15s;color:var(--ink)}
   .mode-card:active{transform:translateY(3px)}
   .mode-card .ic{width:62px;height:62px;border-radius:18px;margin:0 auto 10px;display:grid;place-items:center;font-size:32px}
-  .mc1 .ic{background:#E3F1FF}.mc2 .ic{background:#FFF0DE}.mc3 .ic{background:#E6F8EE}.mc4 .ic{background:#F0EBFF}.mc5 .ic{background:#F7E9FF}
+  .mc1 .ic{background:#E3F1FF}.mc2 .ic{background:#FFF0DE}.mc3 .ic{background:#E6F8EE}.mc4 .ic{background:#F0EBFF}
   .mode-card .en{font-size:17px;font-weight:700}
   .mode-card .jp{font-family:"M PLUS Rounded 1c";color:var(--soft);font-weight:500;margin-top:3px;font-size:13px}
 
@@ -106,7 +106,6 @@
     display:flex;align-items:center;justify-content:center;gap:10px}
   .opt:active{transform:translateY(3px)}
   .opt .oe{font-size:28px}
-  .opt .oe img.visual-img{width:42px;height:42px;object-fit:contain;border-radius:10px;box-shadow:none;background:transparent}
   .opt.good{background:var(--good);color:#fff;box-shadow:0 6px 0 #2E9A53;animation:pop .3s}
   .opt.bad{background:var(--bad);color:#fff;box-shadow:0 6px 0 #D84B4B}
   @keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.08)}100%{transform:scale(1)}}
@@ -116,16 +115,6 @@
   .story .txt{font-size:25px;font-weight:600;margin-top:10px;line-height:1.4;color:var(--ink)}
   .story .stxt{font-family:"M PLUS Rounded 1c";color:var(--soft);font-weight:500;margin-top:8px;font-size:15px}
   .story .ques{font-family:"M PLUS Rounded 1c";font-size:21px;font-weight:700;color:var(--sky-d);margin-top:14px}
-
-  .story.hint-card{cursor:pointer;position:relative;transition:transform .18s ease, box-shadow .18s ease;}
-  .story.hint-card:active{transform:translateY(3px) scale(.995)}
-  .story.hint-card .stxt{display:none!important;background:#F6FAFF;border:2px dashed #C7DAEE;border-radius:18px;padding:12px;margin:14px auto 0;max-width:92%;line-height:1.55;color:var(--sky-d);font-weight:700;}
-  .story.hint-card.show-hint .stxt{display:block!important;animation:hintPop .18s ease;}
-  .story.hint-card.show-hint{background:#FFFDF6;border-color:#FCEFCB;}
-  .story.hint-card.show-hint .txt{opacity:.55;}
-  .story.hint-card::after{content:"タップで日本語ヒント";display:inline-block;margin-top:12px;font-family:"M PLUS Rounded 1c";font-size:12px;font-weight:800;color:#9AA8BA;background:#EEF3FA;border-radius:999px;padding:6px 10px;}
-  .story.hint-card.show-hint::after{content:"もう一度タップで英語に戻る";color:#C8881A;background:#FFF6E0;}
-  @keyframes hintPop{0%{transform:scale(.98);opacity:.2}100%{transform:scale(1);opacity:1}}
 
   .sent-pic{font-size:84px;text-align:center}
   .sent-jp{font-family:"M PLUS Rounded 1c";font-size:21px;font-weight:700;color:var(--sky-d);text-align:center}
@@ -157,18 +146,8 @@
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
   .visual-img{width:1em;height:1em;object-fit:contain;border-radius:.16em;display:inline-block;vertical-align:middle;box-shadow:0 4px 12px rgba(0,0,0,.14)}
-  .fc-emoji,.q-emoji,.sent-pic,.story .pic{display:flex;align-items:center;justify-content:center}
-  .fc-emoji img.visual-img{width:min(86%,420px);height:156px;max-height:156px;object-fit:contain;border-radius:18px;box-shadow:none;background:transparent}
-  .q-emoji img.visual-img{width:min(86%,380px);height:150px;max-height:150px;object-fit:contain;border-radius:18px;box-shadow:none;background:transparent}
-  .story .pic img.visual-img,.sent-pic img.visual-img{width:min(86%,360px);height:130px;max-height:130px;object-fit:contain;border-radius:18px;box-shadow:none;background:transparent}
-  .mv img.visual-img{width:40px;height:40px;object-fit:contain;border-radius:8px;box-shadow:none;background:transparent}
-  .path-hint{font-family:"M PLUS Rounded 1c";font-size:12px;color:var(--soft);font-weight:700;word-break:break-all;line-height:1.45}
-  .path-hint code{background:#F6FAFF;border:1px solid #DCE6F2;border-radius:8px;padding:2px 6px;color:var(--sky-d)}
-  .gh-box{margin:10px 0 12px;background:#F6FAFF;border:2px solid #DCE6F2;border-radius:16px;padding:10px 12px}
-  .gh-box summary{cursor:pointer;font-family:"M PLUS Rounded 1c";font-weight:800;color:var(--sky-d);font-size:14px}
-  .gh-note{font-family:"M PLUS Rounded 1c";font-size:12px;color:var(--soft);font-weight:700;line-height:1.45;margin:8px 0}
-  .gh-small{font-family:"M PLUS Rounded 1c";font-size:12px;color:var(--soft);font-weight:700}
-  .secret{font-family:monospace}
+  .fc-emoji .visual-img,.q-emoji .visual-img{width:min(82vw,360px);height:180px;max-width:100%;object-fit:contain;box-shadow:none}
+  .mv .visual-img{width:40px;height:40px}
   .form-row{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-bottom:9px}
   .inp{font-family:inherit;font-size:15px;padding:11px 13px;border:2px solid #DCE6F2;border-radius:13px;background:#F8FBFF;color:var(--ink);min-width:120px;flex:1}
   .inp:focus{outline:none;border-color:var(--sky)}
@@ -227,7 +206,27 @@
     <div class="panel" style="margin-bottom:16px">
       <h3>テーマを えらぶ / Choose a topic</h3><div class="cat-row" id="catRow"></div>
     </div>
-    <!-- Word/Image registration moved to admin.html -->
+    <div class="panel hidden" id="wordAddPanel">
+      <h3>ことばを ふやす / Add your own word</h3>
+      <div class="form-row">
+        <input class="inp" id="addW" placeholder="English (e.g. car)">
+        <input class="inp" id="addJp" placeholder="にほんご (れい: くるま)">
+      </div>
+      <div class="form-row">
+        <select class="inp" id="addCat" style="flex:0 0 auto;min-width:150px"></select>
+        <input class="inp" id="addEmoji" placeholder="えもじ 🚗" maxlength="4" style="flex:0 0 auto;max-width:120px">
+        <input class="inp" id="addImg" placeholder="がぞうパス img/car.jpg">
+        <label class="pill" style="cursor:pointer;flex:0 0 auto">📷<input type="file" id="addFile" accept="image/*" style="display:none"></label>
+        <span id="filePrev" style="flex:0 0 auto"></span>
+      </div>
+      <div class="form-row">
+        <button class="btn btn-sky" id="addBtn" style="padding:12px 22px;font-size:16px">＋ ついか / Add</button>
+        <button class="btn btn-ghost" id="manageBtn" style="padding:12px 18px;font-size:15px">🛠 かんり / Manage</button>
+        <button class="btn btn-ghost" id="exportBtn" style="padding:12px 18px;font-size:15px">⬇ vocab.json</button>
+        <span id="addMsg" style="font-family:'M PLUS Rounded 1c';font-weight:600;font-size:14px"></span>
+      </div>
+      <textarea id="exportBox" class="inp hidden" style="width:100%;min-height:120px;margin-top:10px;font-family:monospace;font-size:12px" readonly></textarea>
+    </div>
   </div>
 
   <div id="flash" class="hidden">
@@ -274,7 +273,7 @@
       <div class="spacer"></div><div class="progress" id="listenProg">1 / 1</div>
     </div>
     <div class="stage">
-      <div class="story hint-card" id="lsCard">
+      <div class="story">
         <div class="pic" id="lsPic">🐱</div>
         <div class="txt" id="lsTxt">The cat is black.</div>
         <div class="stxt" id="lsStxt">ねこは くろいよ</div>
@@ -292,7 +291,7 @@
       <div class="spacer"></div><div class="progress" id="riddleProg">1 / 1</div>
     </div>
     <div class="stage">
-      <div class="story hint-card" id="rdCard">
+      <div class="story">
         <div class="pic">🧠</div>
         <div class="txt" id="rdTxt">Long, yellow, and sweet...</div>
         <div class="stxt" id="rdJp"></div>
@@ -422,11 +421,9 @@ var RIDDLES = [
   {clue:"Small and bright. You see it at night in the sky. What is it?",jp:"ちいさくて あかるい。よるの そらに ある。",ans:{w:"star",e:"⭐"},wrong:[{w:"sun",e:"☀️"},{w:"moon",e:"🌙"},{w:"flower",e:"🌸"}]}
 ];
 var DIFF = {
-  easy:      {opts:3, showEmojiQuiz:true,  storyTwoLines:false, label:"やさしい",       en:"Easy",      e:"🟢"},
-  normal:    {opts:4, showEmojiQuiz:true,  storyTwoLines:true,  label:"ふつう",         en:"Normal",    e:"🟡"},
-  hard:      {opts:4, showEmojiQuiz:false, storyTwoLines:true,  label:"むずかしい",     en:"Hard",      e:"🔴"},
-  very_hard: {opts:4, showEmojiQuiz:false, storyTwoLines:true,  label:"とてもむずかしい", en:"Very Hard", e:"🟣"},
-  expert:    {opts:4, showEmojiQuiz:false, storyTwoLines:true,  label:"エキスパート",   en:"Expert",    e:"⚫"}
+  easy:  {opts:3, showEmojiQuiz:true,  storyTwoLines:false, label:"やさしい", en:"Easy",   e:"🟢"},
+  normal:{opts:4, showEmojiQuiz:true,  storyTwoLines:true,  label:"ふつう",   en:"Normal", e:"🟡"},
+  hard:  {opts:4, showEmojiQuiz:false, storyTwoLines:true,  label:"むずかしい",en:"Hard",   e:"🔴"}
 };
 var T = {
   homeTitle:{jp:"なにを する？",en:"What do you want to do?"},
@@ -461,16 +458,7 @@ var deck=[], idx=0, canSpeak=false;
 var overrides={};       // master上書き: w -> {jp?,e?,img?,c?}
 var customWords=[];     // 新規追加: {w,jp,e?,img?,c,custom:true}
 var sessionImgs={};     // アップロードプレビュー: path -> dataURL
-var pendingImagePath="";  // 直近で選択した画像のGitHub保存先
-var pendingImageData="";  // 直近で選択した画像のdataURL
-var pendingImageName="";  // 元ファイル名
-var VOCAB_PATH="vocab.json";
-var VOCAB_URL=VOCAB_PATH+"?v="+Date.now();
-var QUESTIONS_PATH="questions.json";
-var QUESTIONS_URL=QUESTIONS_PATH+"?v="+Date.now();
-var Q_LISTENING=[];   // questions.json から読み込む Listening
-var Q_RIDDLES=[];     // questions.json から読み込む Riddle
-var Q_SENTENCES=[];   // questions.json から読み込む Sentence
+var VOCAB_URL="vocab.json";
 
 /* ===================== HELPERS ===================== */
 function $(id){return document.getElementById(id);}
@@ -484,98 +472,14 @@ function effectiveWords(){
 function allWords(){return effectiveWords();}
 function assign(t,s){if(s){for(var k in s){if(Object.prototype.hasOwnProperty.call(s,k))t[k]=s[k];}}return t;}
 function hasEmoji(item){return item&&item.e&&String(item.e).trim()&&item.e!=="🔤";}
-function imgSrc(p){
-  if(!p)return p;
-  if(sessionImgs[p])return sessionImgs[p];
-  if(/^data:|^blob:/i.test(String(p)))return p;
-  var sep=String(p).indexOf("?")>=0?"&":"?";
-  return p+sep+"v="+Date.now();
-}
-function escAttr(s){return String(s||"").replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");}
-function escHtml(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
-function normWord(s){return String(s||"").trim().toLowerCase().replace(/\s+/g," ");}
-function isSameAnswer(a,b){return normWord(a&&a.w?a.w:a)===normWord(b&&b.w?b.w:b);}
-function resetHintCard(id){var c=$(id);if(c)c.classList.remove("show-hint");}
-function toggleHintCard(id){var c=$(id);if(c)c.classList.toggle("show-hint");}
-function imgTag(p,cls,fallback){
-  var fb=escAttr(fallback||"🔤");
-  return '<img'+(cls?' class="'+cls+'"':'')+' src="'+escAttr(imgSrc(p))+'" alt="" onerror="this.replaceWith(document.createTextNode(\u0027'+fb+'\u0027))">';
-}
+function imgSrc(p){return (p&&sessionImgs[p])||p;}
+function imgTag(p,cls){return '<img'+(cls?' class="'+cls+'"':'')+' src="'+imgSrc(p)+'" alt="" onerror="this.replaceWith(document.createTextNode(\u0027🖼\u0027))">';}
 function setVisual(el,item){
+  if(!el)return;
   el.innerHTML="";
-  if(!item){el.textContent="🔤";return;}
-  // GitHub画像を優先。ただし画像ロード失敗時は絵文字・🔤へ戻す。
-  var fb=hasEmoji(item)?item.e:"🔤";
-  if(item.img){el.innerHTML=imgTag(item.img,"visual-img",fb);}
+  if(item&&item.img){el.innerHTML=imgTag(item.img,"visual-img");}
   else if(hasEmoji(item)){el.textContent=item.e;}
   else{el.textContent="🔤";}
-}
-function slugify(s){
-  return String(s||"").trim().toLowerCase()
-    .normalize("NFKD").replace(/[\u0300-\u036f]/g,"")
-    .replace(/[^a-z0-9]+/g,"_").replace(/^_+|_+$/g,"") || "image";
-}
-function baseName(fileName){
-  var n=String(fileName||"image").split(/[\\/]/).pop();
-  return n.replace(/\.[^.]+$/,"");
-}
-function imagePathForWord(word,cat,fileName){
-  var safeCat=slugify(cat||"animals");
-  var safeWord=slugify(word||baseName(fileName)||"image");
-  return "img/"+safeCat+"/"+safeWord+".webp";
-}
-function normalizeVocabItem(x){
-  var w=slugify(x&&x.w);
-  if(!w)return null;
-  var c=x.c||"animals";
-  var item={w:w,jp:x.jp||"",c:c};
-  if(x.img){item.img=x.img;item.e=x.e||"";}
-  else if(x.e && x.e!=="🔤"){item.e=x.e;}
-  else{
-    // 旧バグで e:"🔤" だけ保存された単語は、GitHub上の標準画像パスを自動で見に行く
-    item.img=imagePathForWord(w,c,w+".webp");
-    item.e="";
-  }
-  return item;
-}
-function fileNameFromPath(path){
-  return String(path||"image.webp").split("/").pop()||"image.webp";
-}
-function updateImageHint(path){
-  var el=$("imgPathHint"); if(!el)return;
-  el.innerHTML='GitHub保存先：<code>'+escAttr(path||"img/animals/alligator.webp")+'</code>　※💾保存/GitHubで画像本体とvocab.jsonをまとめて保存します。';
-}
-function rememberSelectedImage(path,data,fileName){
-  pendingImagePath=path||"";
-  pendingImageData=data||"";
-  pendingImageName=fileName||"image.webp";
-  if(path&&data)sessionImgs[path]=data;
-}
-function syncPendingImagePath(){
-  if(!pendingImageData)return ($("addImg")&&$("addImg").value.trim())||"";
-  var w=slugify(($("addW")&&$("addW").value)||baseName(pendingImageName)||baseName(pendingImagePath)||"image");
-  var cat=($("addCat")&&$("addCat").value)||"animals";
-  var next=imagePathForWord(w,cat,pendingImageName||pendingImagePath||"image.webp");
-  if(pendingImagePath&&pendingImagePath!==next&&sessionImgs[pendingImagePath])delete sessionImgs[pendingImagePath];
-  pendingImagePath=next;
-  sessionImgs[next]=pendingImageData;
-  if($("addImg"))$("addImg").value=next;
-  updateImageHint(next);
-  return next;
-}
-function currentUploadData(path){
-  if(path&&sessionImgs[path])return sessionImgs[path];
-  if(pendingImageData){
-    var synced=syncPendingImagePath();
-    if(path&&synced!==path){sessionImgs[path]=pendingImageData;return pendingImageData;}
-    return pendingImageData;
-  }
-  return null;
-}
-function resetAddForm(){
-  $("addW").value="";$("addJp").value="";$("addEmoji").value="";$("addImg").value="";$("filePrev").innerHTML="";
-  pendingImagePath="";pendingImageData="";pendingImageName="";
-  $("downloadImgBtn").classList.add("hidden");updateImageHint("");
 }
 function speak(text,slow){
   if(!canSpeak)return;
@@ -594,36 +498,13 @@ function addStar(n){stars+=(n||1);$("starCount").textContent=stars;}
 function celebrate(b){var p=$("popFeedback");$("popBadge").textContent=b||"⭐";p.classList.add("show");setTimeout(function(){p.classList.remove("show");},800);}
 var toastT=null;
 function toast(msg){var t=$("toast");t.textContent=msg;t.classList.add("show");clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove("show");},1400);}
-function findWord(id){
-  var key=normWord(id);
-  var arr=allWords();
-  for(var i=0;i<arr.length;i++){if(normWord(arr[i].w)===key)return arr[i];}
-  return {w:key,jp:"",e:"🔤",c:""};
-}
-function choiceObj(x){
-  if(typeof x==="string"){var w=findWord(x);return {w:w.w,e:w.e||"",img:w.img||"",jp:w.jp||"",c:w.c||""};}
-  var id=(x&& (x.answerId||x.id||x.w||x.word)) || "";
-  var base=findWord(id);
-  return {w:slugify(id||base.w),e:(x&&x.e)||base.e||"",img:(x&&x.img)||base.img||"",jp:(x&&x.jp)||base.jp||"",c:(x&&x.c)||base.c||""};
-}
 function getDeck(){var src=allWords();var l=activeCat==="all"?src:src.filter(function(x){return x.c===activeCat;});return shuffle(l);}
-function qMatches(q){
-  if(!q)return false;
-  if(q.active===false)return false;
-  if(q.level&&q.level!==difficulty)return false;
-  if(activeCat!=="all" && q.c && q.c!==activeCat)return false;
-  return true;
-}
-function getExternalOrFallback(ext,fallback){
-  var list=(ext||[]).filter(qMatches);
-  return shuffle((list.length?list:fallback).slice());
-}
-function show(s){["home","flash","quiz","sent","listen","riddle","manage","done"].forEach(function(x){var el=$(x);if(el)el.classList.add("hidden");});var target=$(s);if(target)target.classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"});}
+function show(s){["home","flash","quiz","sent","listen","riddle","manage","done"].forEach(function(x){$(x).classList.add("hidden");});$(s).classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"});}
 function optCount(){return DIFF[difficulty].opts;}
 
 /* ===================== LANGUAGE ===================== */
 function applyLang(){
-  ["fcJp","qJp","sentJp"].forEach(function(id){var el=$(id);if(el)el.style.display=showJp?"":"none";});
+  ["fcJp","qJp","sentJp","lsStxt"].forEach(function(id){var el=$(id);if(el)el.style.display=showJp?"":"none";});
   $("homeTitle").textContent=L("homeTitle");$("homeSub").textContent=L("homeSub");
   $("flashSub").textContent=L("flashSub");$("quizSub").textContent=L("quizSub");
   $("listenSub").textContent=L("listenSub");$("riddleSub").textContent=L("riddleSub");$("sentSub").textContent=L("sentSub");
@@ -685,10 +566,7 @@ function renderQuiz(){
   var wrongs=shuffle(pool).slice(0,optCount()-1);
   var opts=shuffle([it].concat(wrongs));
   var grid=$("qOpts");grid.innerHTML="";
-  opts.forEach(function(o){var b=document.createElement("button");b.className="opt";
-    var sp=document.createElement("span");sp.className="oe";setVisual(sp,o);
-    var tx=document.createElement("span");tx.textContent=o.w;
-    b.appendChild(sp);b.appendChild(tx);
+  opts.forEach(function(o){var b=document.createElement("button");b.className="opt";b.textContent=o.w;
     b.addEventListener("click",function(){chooseQuiz(b,o,it);});grid.appendChild(b);});
   $("quizTimer").textContent="⏱ 0.0";startTimer();
 }
@@ -715,54 +593,48 @@ function finishQuiz(){
 
 /* ===================== LISTENING ===================== */
 var lsDeck=[], lIdx=0, lsAnswered=false;
-function startListen(){lsDeck=getExternalOrFallback(Q_LISTENING,STORIES);lIdx=0;show("listen");renderListen();}
-function currentStoryText(){var s=lsDeck[lIdx];if(s.storyEn)return s.storyEn;return DIFF[difficulty].storyTwoLines?(s.s1+" "+s.s2):s.s1;}
+function startListen(){lsDeck=shuffle(STORIES.slice());lIdx=0;show("listen");renderListen();}
+function currentStoryText(){var s=lsDeck[lIdx];return DIFF[difficulty].storyTwoLines?(s.s1+" "+s.s2):s.s1;}
 function renderListen(){
   lsAnswered=false;var s=lsDeck[lIdx];
-  resetHintCard("lsCard");
   $("lsPic").textContent=s.pic;$("lsTxt").textContent=currentStoryText();
-  $("lsStxt").innerHTML=showJp?(escHtml(s.jp)+"<br><span style=\"font-size:18px\">"+escHtml(s.q)+"</span>"):"";
-  $("lsQ").textContent=s.qEn; // 日本語ヒントはカードをタップした時だけ表示
+  $("lsStxt").textContent=s.jp;$("lsStxt").style.display=showJp?"":"none";
+  $("lsQ").textContent=showJp?s.q:s.qEn;
   $("listenProg").textContent=(lIdx+1)+" / "+lsDeck.length;
   var wrongs=shuffle(s.wrong.slice()).slice(0,optCount()-1);
   var opts=shuffle([s.ans].concat(wrongs));
   var grid=$("lsOpts");grid.innerHTML="";
   opts.forEach(function(o){var b=document.createElement("button");b.className="opt";
-    var sp=document.createElement("span");sp.className="oe";setVisual(sp,o);
-    var tx=document.createElement("span");tx.textContent=o.w;
-    b.appendChild(sp);b.appendChild(tx);
+    b.innerHTML='<span class="oe">'+o.e+'</span><span>'+o.w+'</span>';
     b.addEventListener("click",function(){chooseListen(b,o,s.ans);});grid.appendChild(b);});
   speakSequence([currentStoryText(), s.qEn]);
 }
 function chooseListen(btn,chosen,ans){
   if(lsAnswered)return;
-  if(isSameAnswer(chosen,ans)){lsAnswered=true;btn.classList.add("good");speak(chosen.w);addStar(2);celebrate("⭐");setTimeout(nextListen,1000);}
+  if(chosen.w===ans.w){lsAnswered=true;btn.classList.add("good");speak(chosen.w);addStar(2);celebrate("⭐");setTimeout(nextListen,1000);}
   else{btn.classList.add("bad");btn.disabled=true;speak("try again");}
 }
 function nextListen(){lIdx++;if(lIdx>=lsDeck.length){return showDone("🏆",L("doneListen"),[{v:lsDeck.length+(showJp?"もん":""),l:L("stAns")}],startListen);}renderListen();}
 
 /* ===================== RIDDLE ===================== */
 var rdDeck=[], rIdx=0, rdAnswered=false;
-function startRiddle(){rdDeck=getExternalOrFallback(Q_RIDDLES,RIDDLES);rIdx=0;show("riddle");renderRiddle();}
+function startRiddle(){rdDeck=shuffle(RIDDLES.slice());rIdx=0;show("riddle");renderRiddle();}
 function renderRiddle(){
   rdAnswered=false;var s=rdDeck[rIdx];
-  resetHintCard("rdCard");
   $("rdTxt").textContent=s.clue;
-  $("rdJp").innerHTML=showJp?escHtml(s.jp):"";
+  $("rdJp").textContent=s.jp;$("rdJp").style.display=showJp?"":"none";
   $("riddleProg").textContent=(rIdx+1)+" / "+rdDeck.length;
   var wrongs=shuffle(s.wrong.slice()).slice(0,optCount()-1);
   var opts=shuffle([s.ans].concat(wrongs));
   var grid=$("rdOpts");grid.innerHTML="";
   opts.forEach(function(o){var b=document.createElement("button");b.className="opt";
-    var sp=document.createElement("span");sp.className="oe";setVisual(sp,o);
-    var tx=document.createElement("span");tx.textContent=o.w;
-    b.appendChild(sp);b.appendChild(tx);
+    b.innerHTML='<span class="oe">'+o.e+'</span><span>'+o.w+'</span>';
     b.addEventListener("click",function(){chooseRiddle(b,o,s.ans);});grid.appendChild(b);});
   speakSequence([s.clue]);
 }
 function chooseRiddle(btn,chosen,ans){
   if(rdAnswered)return;
-  if(isSameAnswer(chosen,ans)){rdAnswered=true;btn.classList.add("good");
+  if(chosen.w===ans.w){rdAnswered=true;btn.classList.add("good");
     speak("yes! a "+ans.w);addStar(3);celebrate(ans.e||"🎉");
     toast((showJp?"せいかい！ ":"Yes! ")+"a "+ans.w+"!");setTimeout(nextRiddle,1300);}
   else{btn.classList.add("bad");btn.disabled=true;speak("try again");}
@@ -771,11 +643,11 @@ function nextRiddle(){rIdx++;if(rIdx>=rdDeck.length){return showDone("🧠",L("d
 
 /* ===================== SENTENCE ===================== */
 var sentDeck=[], sIdx=0, sTarget=[], sPlaced=[];
-function startSent(){sentDeck=getExternalOrFallback(Q_SENTENCES,SENTENCES);sIdx=0;show("sent");renderSent();}
+function startSent(){sentDeck=shuffle(SENTENCES.slice());sIdx=0;show("sent");renderSent();}
 function refreshSentText(){var s=sentDeck[sIdx];$("sentJp").textContent=s.jp;$("sentJp").style.display=showJp?"":"none";if(sPlaced.length===0)drawSlots();}
 function renderSent(){
   var s=sentDeck[sIdx];sTarget=s.sentence.split(" ");sPlaced=[];
-  if(s.picItem){setVisual($("sentPic"),s.picItem);}else{$("sentPic").textContent=s.pic||"🧩";}$("sentJp").textContent=s.jp||s.hintJp||"";$("sentJp").style.display=showJp?"":"none";
+  $("sentPic").textContent=s.pic;$("sentJp").textContent=s.jp;$("sentJp").style.display=showJp?"":"none";
   $("sentProg").textContent=(sIdx+1)+" / "+sentDeck.length;
   $("sentResult").textContent="";$("sentResult").className="sent-result";
   $("sentNext").classList.add("hidden");
@@ -813,45 +685,38 @@ function setAddMsg(t,bad){var m=$("addMsg");m.textContent=t;m.style.color=bad?"#
 function resizeImage(file,cb){
   try{var reader=new FileReader();
     reader.onload=function(){var img=new Image();
-      img.onload=function(){var max=640,sc=Math.min(max/img.width,max/img.height,1);
+      img.onload=function(){var max=256,sc=Math.min(max/img.width,max/img.height,1);
         var w=Math.round(img.width*sc),h=Math.round(img.height*sc);
         var cv=document.createElement("canvas");cv.width=w;cv.height=h;
         cv.getContext("2d").drawImage(img,0,0,w,h);
-        try{
-          var data=cv.toDataURL("image/webp",0.86);
-          if(!/^data:image\/webp/.test(data)){data=cv.toDataURL("image/png");}
-          cb(data);
-        }catch(e){cb(null);}
-      };
+        try{cb(cv.toDataURL("image/jpeg",0.82));}catch(e){cb(null);}};
       img.onerror=function(){cb(null);};img.src=reader.result;};
     reader.onerror=function(){cb(null);};reader.readAsDataURL(file);
   }catch(e){cb(null);}
 }
 function addCustom(){
-  var w=slugify($("addW").value),jp=$("addJp").value.trim();
-  var cat=$("addCat").value||"animals",emo=$("addEmoji").value.trim(),img=$("addImg").value.trim();
+  var w=$("addW").value.trim(),jp=$("addJp").value.trim();
+  var cat=$("addCat").value,emo=$("addEmoji").value.trim(),img=$("addImg").value.trim();
   if(!w){setAddMsg("えいごを いれてね / Enter English",true);return;}
   if(!jp){setAddMsg("にほんごを いれてね",true);return;}
-  if(!img && $("filePrev").innerHTML){img=imagePathForWord(w,cat,"image.webp");$("addImg").value=img;}
   if(masterHas(w)){  // 既存マスター語 → 上書き(override)
-    var o={};if(jp)o.jp=jp;if(cat)o.c=cat;if(img){o.img=img;o.e="";}else if(emo){o.e=emo;}
+    var o={};if(jp)o.jp=jp;if(cat)o.c=cat;if(emo){o.e=emo;}if(img){o.img=img;o.e=emo||"";}
     overrides[w]=assign(overrides[w]||{},o);
-    setAddMsg("一時上書きしました（このブラウザだけ）。全端末で使うには 💾 保存/GitHub を使ってください。",false);
+    setAddMsg("マスター語 "+w+" を うわがき(override)しました",false);
   }else{
-    var item={w:w,jp:jp,c:cat,custom:true};
-    if(img){item.img=img;item.e="";}else if(emo){item.e=emo;}else{item.e="🔤";}
+    var item={w:w,jp:jp,c:cat||"animals",custom:true};
+    if(emo)item.e=emo;if(img)item.img=img;if(!emo&&!img)item.e="🔤";
     customWords.push(item);
-    setAddMsg("一時追加しました（このブラウザだけ）。全端末で使うには 💾 保存/GitHub を使ってください。",false);
+    setAddMsg("ついか！ ("+customWords.length+"こ) ⬇で vocab.json",false);
   }
-  resetAddForm();
+  $("addW").value="";$("addJp").value="";$("addEmoji").value="";$("addImg").value="";$("filePrev").innerHTML="";
 }
 function buildExportList(){
   var list=[];
   Object.keys(overrides).forEach(function(w){
     var o=overrides[w];var e={w:w};
     if("jp" in o)e.jp=o.jp;if("c" in o)e.c=o.c;
-    if("img" in o&&o.img)e.img=o.img;
-    if("e" in o&&String(o.e||"").trim())e.e=o.e;
+    if("e" in o)e.e=o.e;if("img" in o)e.img=o.img;
     list.push(e);
   });
   customWords.forEach(function(x){
@@ -866,165 +731,7 @@ function exportVocab(boxId){
   var box=$(boxId||"exportBox");box.classList.remove("hidden");box.value=json;
   try{box.select();document.execCommand&&document.execCommand("copy");}catch(e){}
   if(window.navigator&&window.navigator.clipboard){try{window.navigator.clipboard.writeText(json);}catch(e){}}
-  setAddMsg("vocab.json に コピーしました。GitHub保存ボタンなら貼り替え不要です。",false);
-}
-
-/* ===================== GITHUB DIRECT SAVE ===================== */
-function ghStorageKey(){return "kidsEnglishGithubSettings";}
-function inferGhFromLocation(){
-  var r={owner:"",repo:"",branch:"main",token:""};
-  try{
-    var h=window.location.hostname||"";
-    if(/\.github\.io$/i.test(h)){
-      r.owner=h.replace(/\.github\.io$/i,"");
-      var seg=(window.location.pathname||"").split("/").filter(Boolean)[0]||"";
-      r.repo=seg||r.owner+".github.io";
-    }
-  }catch(e){}
-  return r;
-}
-function loadGhSettings(){
-  var d=inferGhFromLocation();
-  try{var s=JSON.parse(localStorage.getItem(ghStorageKey())||"{}");assign(d,s);}catch(e){}
-  return d;
-}
-function saveGhSettings(){
-  var d={
-    owner:($("ghOwner").value||"").trim(),
-    repo:($("ghRepo").value||"").trim(),
-    branch:($("ghBranch").value||"main").trim()||"main",
-    token:($("ghToken").value||"").trim()
-  };
-  localStorage.setItem(ghStorageKey(),JSON.stringify(d));
-  setGhMsg("設定を保存しました",false);
-  return d;
-}
-function fillGhSettings(){
-  var d=loadGhSettings();
-  if($("ghOwner"))$("ghOwner").value=d.owner||"";
-  if($("ghRepo"))$("ghRepo").value=d.repo||"";
-  if($("ghBranch"))$("ghBranch").value=d.branch||"main";
-  if($("ghToken"))$("ghToken").value=d.token||"";
-}
-function clearGhSettings(){
-  localStorage.removeItem(ghStorageKey());
-  if($("ghOwner"))$("ghOwner").value="";
-  if($("ghRepo"))$("ghRepo").value="";
-  if($("ghBranch"))$("ghBranch").value="main";
-  if($("ghToken"))$("ghToken").value="";
-  setGhMsg("消去しました",false);
-}
-function setGhMsg(t,bad){var m=$("ghMsg");if(!m)return;m.textContent=t;m.style.color=bad?"#D84B4B":"#3FBF6B";}
-function utf8ToB64(str){
-  var bytes=new TextEncoder().encode(str),bin="";
-  for(var i=0;i<bytes.length;i+=0x8000){bin+=String.fromCharCode.apply(null,bytes.subarray(i,i+0x8000));}
-  return btoa(bin);
-}
-function b64ToUtf8(b64){
-  var bin=atob(String(b64||"").replace(/\s/g,""));
-  var bytes=new Uint8Array(bin.length);
-  for(var i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);
-  return new TextDecoder().decode(bytes);
-}
-function formVocabItem(){
-  var w=slugify($("addW").value),jp=$("addJp").value.trim();
-  var cat=$("addCat").value||"animals",emo=$("addEmoji").value.trim(),img=$("addImg").value.trim();
-  if(!w)throw new Error("Englishを入れてください");
-  if(!jp)throw new Error("にほんごを入れてください");
-
-  // 画像を選択済みなら、必ず English＋Category から保存先を確定し、vocabにもimgを保存する。
-  if(pendingImageData){img=syncPendingImagePath();}
-
-  var item={w:w,jp:jp,c:cat};
-  if(img){item.img=img;}
-  else if(emo){item.e=emo;}
-  else{throw new Error("画像を選ぶか、絵文字を入れてください。画像カードにする場合は📷で画像を選んでから保存してください");}
-  return item;
-}
-function upsertVocabArray(arr,item){
-  if(!Array.isArray(arr))arr=[];
-  var done=false;
-  arr=arr.map(function(x){if(x&&slugify(x.w)===item.w){done=true;return item;}return x;});
-  if(!done)arr.push(item);
-  return arr;
-}
-function applyLocalVocabItem(item){
-  if(masterHas(item.w)){
-    var o={};if(item.jp)o.jp=item.jp;if(item.c)o.c=item.c;if(item.img){o.img=item.img;o.e="";}else if(item.e){o.e=item.e;}
-    overrides[item.w]=assign(overrides[item.w]||{},o);
-  }else{
-    var n=assign({custom:true},item),found=false;
-    customWords=customWords.map(function(x){if(x.w===n.w){found=true;return n;}return x;});
-    if(!found)customWords.push(n);
-  }
-}
-async function ghRequest(method,urlPath,body){
-  var d=loadGhSettings();
-  if(!d.owner||!d.repo||!d.branch||!d.token)throw new Error("GitHub設定を先に入れてください");
-  var res=await fetch("https://api.github.com"+urlPath,{
-    method:method,
-    headers:{
-      "Accept":"application/vnd.github+json",
-      "Authorization":"Bearer "+d.token,
-      "X-GitHub-Api-Version":"2022-11-28"
-    },
-    body:body?JSON.stringify(body):undefined
-  });
-  var txt=await res.text(),json=null;
-  try{json=txt?JSON.parse(txt):null;}catch(e){}
-  if(!res.ok){throw new Error((json&&json.message)||("GitHub API error "+res.status));}
-  return json;
-}
-async function ghGetFile(path){
-  var d=loadGhSettings();
-  var api="/repos/"+encodeURIComponent(d.owner)+"/"+encodeURIComponent(d.repo)+"/contents/"+path.split("/").map(encodeURIComponent).join("/")+"?ref="+encodeURIComponent(d.branch);
-  try{return await ghRequest("GET",api);}catch(e){if(String(e.message||"").indexOf("Not Found")>=0)return null;throw e;}
-}
-async function ghPutFile(path,base64Content,message){
-  var d=loadGhSettings();
-  var cur=await ghGetFile(path);
-  var api="/repos/"+encodeURIComponent(d.owner)+"/"+encodeURIComponent(d.repo)+"/contents/"+path.split("/").map(encodeURIComponent).join("/");
-  var body={message:message,content:base64Content,branch:d.branch};
-  if(cur&&cur.sha)body.sha=cur.sha;
-  return await ghRequest("PUT",api,body);
-}
-async function saveCardToGithub(){
-  var btn=$("saveGithubBtn");
-  try{
-    saveGhSettings();
-    var item=formVocabItem();
-    var imgData=item.img?currentUploadData(item.img):null;
-    btn.disabled=true;btn.textContent="保存中…";setAddMsg("GitHubへ保存中…",false);
-
-    if(item.img&&imgData){
-      var b64img=String(imgData).split(",")[1];
-      if(!b64img)throw new Error("画像データを読み取れません");
-      await ghPutFile(item.img,b64img,"Upload image: "+item.w);
-    }else if(item.img){
-      // パスだけ入力された場合は、GitHub上に画像が存在するか確認。なければJSONだけの空振りを防ぐ。
-      var remoteImg=await ghGetFile(item.img);
-      if(!remoteImg)throw new Error("画像ファイルが未選択、またはGitHub上に見つかりません："+item.img+"。📷で画像を選び直してから保存してください");
-    }
-
-    var cur=await ghGetFile(VOCAB_PATH);
-    var list=[];
-    if(cur&&cur.content){
-      try{list=JSON.parse(b64ToUtf8(cur.content));}catch(e){throw new Error(VOCAB_PATH+" のJSON形式を確認してください");}
-    }
-    list=upsertVocabArray(list,item);
-    await ghPutFile(VOCAB_PATH,utf8ToB64(JSON.stringify(list,null,2)+"\n"),"Update vocab: "+item.w);
-
-    applyLocalVocabItem(item);
-    buildCats();
-    if($("manage") && !$("manage").classList.contains("hidden"))buildMgr();
-    setAddMsg("保存完了："+item.w+" / "+(item.img||item.e),false);
-    toast("GitHubへ保存しました");
-  }catch(e){
-    setAddMsg("保存失敗："+(e&&e.message?e.message:e),true);
-    var box=$("ghSettingsBox");if(box)box.open=true;
-  }finally{
-    btn.disabled=false;btn.textContent="💾 保存 / GitHub";
-  }
+  setAddMsg("vocab.json に コピー → repo へ はりつけ＆コミット",false);
 }
 
 /* ===================== WORD MANAGER ===================== */
@@ -1082,9 +789,9 @@ function buildMgr(){
     var lab=document.createElement("label");lab.className="mupl";lab.textContent="📷";
     var fi=document.createElement("input");fi.type="file";fi.accept="image/*";fi.style.display="none";
     fi.addEventListener("change",function(e){var f=e.target.files&&e.target.files[0];if(!f)return;
-      var name=imagePathForWord(eff.w,cat.value||eff.c,f.name);
+      var name=("img/"+f.name).replace(/\s+/g,"_");
       resizeImage(f,function(data){if(data)sessionImgs[name]=data;img.value=name;emo.value="";
-        apply("img",name,{k:"e",v:""});toast("画像パス: "+name+" / 実画像をGitHubへアップロード");});});
+        apply("img",name,{k:"e",v:""});});});
     lab.appendChild(fi);row.appendChild(lab);
 
     // action
@@ -1107,75 +814,15 @@ function loadVocab(cb){
   try{
     window.fetch(VOCAB_URL,{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(data){
       var arr=Array.isArray(data)?data:(data&&data.words)||[];
-      customWords=[];overrides={};
       arr.forEach(function(x){
-        var item=normalizeVocabItem(x);
-        if(!item)return;
-        if(masterHas(item.w)){
-          var o={};
-          if("jp" in item)o.jp=item.jp;if("c" in item)o.c=item.c;
-          if(item.img){o.img=item.img;o.e=item.e||"";}else if("e" in item){o.e=item.e;}
-          overrides[item.w]=assign(overrides[item.w]||{},o);
+        if(!x||!x.w)return;
+        if(masterHas(x.w)){
+          var o={};if("jp" in x)o.jp=x.jp;if("c" in x)o.c=x.c;if("e" in x)o.e=x.e;if("img" in x)o.img=x.img;
+          overrides[x.w]=assign(overrides[x.w]||{},o);
         }else{
-          if(!item.jp)return;
-          item.custom=true;
-          customWords=customWords.filter(function(y){return normWord(y.w)!==normWord(item.w);});
-          customWords.push(item);
+          if(!x.jp)return;
+          customWords.push({w:x.w,jp:x.jp,e:x.e||"🔤",img:x.img||null,c:x.c||"animals",custom:true});
         }
-      });
-      if(cb)cb();
-    }).catch(function(){if(cb)cb();});
-  }catch(e){if(cb)cb();}
-}
-
-
-/* ===================== questions.json LOAD ===================== */
-function normalizeQuestion(q){
-  if(!q||q.active===false)return null;
-  var type=String(q.type||q.mode||"").toLowerCase();
-  var level=q.level||q.difficulty||"normal";
-  var cat=q.category||q.c||"";
-  var ansId=q.answerId||q.answer||q.ans||"";
-  var ans=choiceObj(ansId);
-  var choices=(Array.isArray(q.choices)?q.choices:[]).map(choiceObj);
-  if(ans.w && !choices.some(function(x){return isSameAnswer(x,ans);})){choices.unshift(ans);}
-  var wrong=choices.filter(function(x){return !isSameAnswer(x,ans);});
-
-  if(type==="riddle"){
-    var clue=q.promptEn||q.clue||q.questionEn||q.textEn||"";
-    if(!clue||!ans.w)return null;
-    return {qid:q.id||("riddle_"+ans.w+"_"+level),level:level,c:cat||ans.c,clue:clue,jp:q.hintJp||q.jp||"",ans:ans,wrong:wrong,active:q.active!==false};
-  }
-  if(type==="listening"||type==="listen"){
-    var story=q.storyEn||q.promptEn||q.textEn||"";
-    var qEn=q.questionEn||q.askEn||"What is the answer?";
-    if(!story||!ans.w)return null;
-    return {qid:q.id||("listen_"+ans.w+"_"+level),level:level,c:cat||ans.c,storyEn:story,qEn:qEn,q:q.hintQuestionJp||q.q||"",jp:q.hintJp||q.jp||"",ans:ans,wrong:wrong,active:q.active!==false};
-  }
-  if(type==="sentence"||type==="sent"){
-    var sentence=q.sentence||q.sentenceEn||q.promptEn||"";
-    if(!sentence)return null;
-    var picItem=ansId?choiceObj(ansId):null;
-    return {qid:q.id||("sentence_"+slugify(sentence)+"_"+level),level:level,c:cat||((picItem&&picItem.c)||""),pic:q.pic||"🧩",picItem:picItem,jp:q.hintJp||q.jp||"",sentence:sentence,active:q.active!==false};
-  }
-  return null;
-}
-function loadQuestions(cb){
-  try{
-    window.fetch(QUESTIONS_URL,{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(data){
-      var raw=[];
-      if(Array.isArray(data)) raw=data;
-      else if(data&&Array.isArray(data.questions)) raw=data.questions;
-      else if(data){
-        if(Array.isArray(data.riddles)) raw=raw.concat(data.riddles.map(function(x){x.type=x.type||"riddle";return x;}));
-        if(Array.isArray(data.listening)) raw=raw.concat(data.listening.map(function(x){x.type=x.type||"listening";return x;}));
-        if(Array.isArray(data.sentences)) raw=raw.concat(data.sentences.map(function(x){x.type=x.type||"sentence";return x;}));
-      }
-      Q_LISTENING=[];Q_RIDDLES=[];Q_SENTENCES=[];
-      raw.forEach(function(q){var n=normalizeQuestion(q);if(!n)return;
-        if(String(q.type||"").toLowerCase()==="riddle")Q_RIDDLES.push(n);
-        else if(String(q.type||"").toLowerCase()==="sentence"||String(q.type||"").toLowerCase()==="sent")Q_SENTENCES.push(n);
-        else Q_LISTENING.push(n);
       });
       if(cb)cb();
     }).catch(function(){if(cb)cb();});
@@ -1193,8 +840,6 @@ function showDone(big,title,stats,againFn){
 }
 
 /* ===================== INIT ===================== */
-function bindIf(id, ev, fn){var el=$(id);if(el)el.addEventListener(ev,fn);return el;}
-
 function init(){
   try{
     canSpeak=("speechSynthesis" in window)&&(typeof window.SpeechSynthesisUtterance==="function")&&window.speechSynthesis!=null;
@@ -1218,8 +863,6 @@ function init(){
     $("qSpeak").addEventListener("click",function(){speak(deck[idx].w,true);});
     $("lsSpeak").addEventListener("click",function(){var s=lsDeck[lIdx];speakSequence([currentStoryText(),s.qEn]);});
     $("rdSpeak").addEventListener("click",function(){speakSequence([rdDeck[rIdx].clue]);});
-    $("lsCard").addEventListener("click",function(){toggleHintCard("lsCard");});
-    $("rdCard").addEventListener("click",function(){toggleHintCard("rdCard");});
     $("sentClear").addEventListener("click",function(){
       var ts=document.querySelectorAll("#sentBank .tile");Array.prototype.forEach.call(ts,function(b){b.classList.remove("used");});
       sPlaced=[];$("sentResult").textContent="";$("sentResult").className="sent-result";$("sentNext").classList.add("hidden");drawSlots();});
@@ -1228,50 +871,23 @@ function init(){
     $("doneAgain").addEventListener("click",function(){if(doneAgainFn)doneAgainFn();});
     $("doneHome").addEventListener("click",function(){show("home");});
 
-    bindIf("addBtn","click",addCustom);
-    bindIf("saveGithubBtn","click",saveCardToGithub);
-    bindIf("ghSaveSettings","click",saveGhSettings);
-    bindIf("ghClearSettings","click",clearGhSettings);
-    bindIf("exportBtn","click",function(){exportVocab("exportBox");});
-    bindIf("manageBtn","click",startManage);
-    bindIf("mgrExport","click",function(){exportVocab("mgrExportBox");});
-    bindIf("mgrSearch","input",function(e){mgrQuery=e.target.value.trim();buildMgr();});
-    bindIf("addFile","change",function(e){
+    $("addBtn").addEventListener("click",addCustom);
+    $("exportBtn").addEventListener("click",function(){exportVocab("exportBox");});
+    $("manageBtn").addEventListener("click",startManage);
+    $("mgrExport").addEventListener("click",function(){exportVocab("mgrExportBox");});
+    $("mgrSearch").addEventListener("input",function(e){mgrQuery=e.target.value.trim();buildMgr();});
+    $("addFile").addEventListener("change",function(e){
       var f=e.target.files&&e.target.files[0];if(!f)return;
-      var word=slugify($("addW").value||baseName(f.name));
-      var cat=$("addCat").value||"animals";
-      var name=imagePathForWord(word,cat,f.name);$("filePrev").textContent="…";
-      resizeImage(f,function(data){
-        if(data)rememberSelectedImage(name,data,f.name);
+      var name=("img/"+f.name).replace(/\s+/g,"_");$("filePrev").textContent="…";
+      resizeImage(f,function(data){if(data)sessionImgs[name]=data;
         $("addImg").value=name;$("addEmoji").value="";
-        updateImageHint(name);
-        $("filePrev").innerHTML=data?('<img src="'+escAttr(data)+'" style="width:60px;height:40px;object-fit:contain;border-radius:7px;vertical-align:middle">'):"";
-        $("downloadImgBtn").classList.toggle("hidden",!data);
-        setAddMsg(data?("画像OK。次は 💾 保存/GitHub を押すだけです → "+name):"がぞうエラー",!data);
-      });
-    });
-    bindIf("downloadImgBtn","click",function(){
-      var path=$("addImg").value.trim(),data=sessionImgs[path];
-      if(!path||!data){setAddMsg("先に画像を選んでください",true);return;}
-      var a=document.createElement("a");a.href=data;a.download=fileNameFromPath(path);
-      document.body.appendChild(a);a.click();a.remove();
-      setAddMsg("画像を保存しました。GitHubの "+path+" にアップロードしてください",false);
-    });
-    bindIf("addW","input",function(){
-      if(pendingImageData)syncPendingImagePath();
-    });
-    bindIf("addCat","change",function(){
-      if(pendingImageData)syncPendingImagePath();
+        $("filePrev").innerHTML=data?('<img src="'+data+'" style="width:34px;height:34px;object-fit:contain;border-radius:7px;vertical-align:middle">'):"";
+        setAddMsg(data?("プレビュー中。実画像 "+name+" を repo に upload"):"がぞうエラー",!data);});
     });
 
-    if($("ghOwner"))fillGhSettings();
     bindToggle();
-    buildCats();buildDiff();if($("addCat"))buildAddCat();applyLang();
-    loadVocab(function(){
-      loadQuestions(function(){
-        if($("manage") && !$("manage").classList.contains("hidden"))buildMgr();
-      });
-    });
+    buildCats();buildDiff();buildAddCat();applyLang();
+    loadVocab(function(){ if(!$("manage").classList.contains("hidden"))buildMgr(); });
   }catch(err){try{console.error("init error:",err);}catch(e){}}
 }
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",init);}else{init();}
