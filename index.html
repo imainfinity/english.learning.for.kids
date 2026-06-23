@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<!-- build: quizdiff-v2-english-default-difficulty-fixed -->
+<!-- build: questionmark-sentenceai-v1 -->
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <title>えいご れんしゅう｜English for Kids</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
@@ -16,7 +16,7 @@
     --radius:26px;
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
-  html,body{height:100%}
+  html,body{min-height:100%}
   body{
     font-family:"Fredoka","M PLUS Rounded 1c",sans-serif;
     background:
@@ -24,9 +24,11 @@
       radial-gradient(1000px 600px at -10% 110%, #DCF6E7 0%, transparent 55%),
       var(--bg);
     color:var(--ink);min-height:100%;
-    display:flex;flex-direction:column;align-items:center;padding:16px;overflow-x:hidden;
+    display:flex;flex-direction:column;align-items:center;
+    padding:16px 16px calc(180px + env(safe-area-inset-bottom, 0px));
+    overflow-x:hidden;
   }
-  .app{width:100%;max-width:880px;display:flex;flex-direction:column;gap:16px}
+  .app{width:100%;max-width:880px;display:flex;flex-direction:column;gap:16px;padding-bottom:calc(170px + env(safe-area-inset-bottom, 0px))}
 
   .topbar{display:flex;align-items:center;gap:10px;background:var(--paper);
     border-radius:var(--radius);padding:12px 16px;box-shadow:var(--shadow);flex-wrap:wrap}
@@ -100,11 +102,17 @@
   .q-emoji.hide{font-size:88px;opacity:.6}
   .q-jp{font-family:"M PLUS Rounded 1c";font-size:25px;font-weight:700;color:var(--sky-d);margin-top:8px}
   .q-ask{font-family:"M PLUS Rounded 1c";color:var(--soft);font-weight:600;margin-top:6px}
+  .q-prompt.learn-word{cursor:pointer}
+  .q-prompt.learn-word .q-emoji{font-size:52px}
+  .q-prompt.learn-word .q-ask{font-size:22px;line-height:1.35;color:var(--ink);max-width:440px;margin:12px auto 0;font-weight:700}
+  .q-prompt.learn-word .q-jp{font-size:18px;line-height:1.45;margin-top:12px;color:var(--sky-d)}
   .opt-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;max-width:520px}
+  #qOpts,#lsOpts,#rdOpts{margin-bottom:calc(190px + env(safe-area-inset-bottom, 0px));scroll-margin-bottom:calc(190px + env(safe-area-inset-bottom, 0px))}
+  #quiz .stage,#listen .stage,#riddle .stage{padding-bottom:calc(120px + env(safe-area-inset-bottom, 0px))}
   @media(max-width:480px){.opt-grid{grid-template-columns:1fr}}
   .opt{border:none;cursor:pointer;font-family:inherit;font-weight:700;font-size:23px;padding:20px;
     border-radius:20px;background:var(--paper);color:var(--ink);box-shadow:var(--shadow);transition:.12s;
-    display:flex;align-items:center;justify-content:center;gap:10px}
+    display:flex;align-items:center;justify-content:center;gap:10px;min-height:84px;position:relative;z-index:2;touch-action:manipulation}
   .opt:active{transform:translateY(3px)}
   .opt .oe{font-size:28px}
   .opt.good{background:var(--good);color:#fff;box-shadow:0 6px 0 #2E9A53;animation:pop .3s}
@@ -184,7 +192,7 @@
 
   <div class="topbar">
     <div class="brand"><span class="logo">🌟</span>
-      <span>えいご れんしゅう<small>English for Kids · build quizdiff-v2</small></span></div>
+      <span>えいご れんしゅう<small>English for Kids · build questionmark-sentenceai-v1</small></span></div>
     <div class="spacer"></div>
     <button class="pill" id="jpToggle">A English</button>
     <div class="stars">⭐ <span class="num" id="starCount">0</span></div>
@@ -199,7 +207,7 @@
       <button class="mode-card mc2" data-mode="quiz"><div class="ic">🎯</div><div class="en">Word Quiz</div><div class="jp">たんご えらび</div></button>
       <button class="mode-card mc3" data-mode="sent"><div class="ic">🧩</div><div class="en">Sentence</div><div class="jp">ぶんしょう づくり</div></button>
       <button class="mode-card mc4" data-mode="listen"><div class="ic">🎧</div><div class="en">Listening</div><div class="jp">おはなし クイズ</div></button>
-      <button class="mode-card mc5" data-mode="riddle"><div class="ic">🧠</div><div class="en">Riddle</div><div class="jp">なぞなぞ</div></button>
+      <button class="mode-card mc5" data-mode="riddle"><div class="ic">❓</div><div class="en">Riddle</div><div class="jp">なぞなぞ</div></button>
     </div>
     <div class="panel" style="margin-bottom:16px">
       <h3 id="diffTitle">Difficulty</h3><div class="cat-row" id="diffRow"></div>
@@ -293,7 +301,7 @@
     </div>
     <div class="stage">
       <div class="story">
-        <div class="pic">🧠</div>
+        <div class="pic">❓</div>
         <div class="txt" id="rdTxt">Long, yellow, and sweet...</div>
         <div class="stxt" id="rdJp"></div>
       </div>
@@ -467,6 +475,7 @@ var QUESTIONS=[];        // questions.jsonから読み込む設問マスター
 var QUESTIONS_LOADED_AT=0;
 var MIN_QUESTION_COUNT=10; // Riddle / Listening は最低10問で出題
 var lsHintShown=false, rdHintShown=false;
+var quizIsQuestionMode=false, quizQDeck=[]; // Word Quizをriddle準備用の「文字＋音声」形式にするための設問デッキ
 
 /* ===================== HELPERS ===================== */
 function $(id){return document.getElementById(id);}
@@ -526,7 +535,7 @@ function makeChoice(id){
 }
 function qLevel(q){return normLevel(q.level||"normal");}
 function qCat(q){return normKey(q.category||q.c||"all");}
-function qType(q){var t=normKey(q.type); if(t==="listen")return "listening"; if(t==="quiz")return "riddle"; if(t==="question")return "riddle"; if(t==="sent")return "sentence"; return t;}
+function qType(q){var t=normKey(q.type).replace(/[\s-]+/g,"_"); if(t==="listen")return "listening"; if(t==="wordquiz"||t==="word_quiz"||t==="vocab_quiz"||t==="quiz")return "word_quiz"; if(t==="question")return "riddle"; if(t==="sent")return "sentence"; return t;}
 function qId(q){return normKey(q.id||((q.type||"")+"_"+(q.level||"")+"_"+(q.category||"")+"_"+(q.answerId||q.answer||"")+"_"+(q.promptEn||q.storyEn||q.sentence||"")));}
 function addUniqueQuestions(out,arr){
   var seen={};
@@ -590,6 +599,37 @@ function extListen(q){
   var wrong=ch.filter(function(x){return normKey(x)!==normKey(ans.answerId||ans.w);}).map(makeChoice);
   return {id:q.id,pic:(q.pic||"🎧"),s1:q.storyEn||q.promptEn||"",s2:"",jp:q.hintJp||q.jp||"",q:q.hintQuestionJp||"",qEn:q.questionEn||"What is the answer?",ans:ans,wrong:wrong,level:q.level,c:q.category};
 }
+function extSentence(q){
+  var ans=wordItem(q.answerId||q.answer||q.ans);
+  var sentence=String(q.sentence||q.promptEn||q.questionEn||"").trim();
+  return {id:q.id,item:ans,pic:(ans&&ans.e)||"🧩",jp:q.hintJp||q.jp||"",sentence:sentence,level:q.level,c:q.category};
+}
+
+function extWordQuiz(q){
+  var ans=makeChoice(q.answerId||q.answer||q.ans);
+  var ch=Array.isArray(q.choices)?q.choices.slice():[];
+  if(ch.map(normKey).indexOf(normKey(ans.answerId||ans.w))<0)ch.unshift(ans.answerId||ans.w);
+  var wrong=ch.filter(function(x){return normKey(x)!==normKey(ans.answerId||ans.w);}).map(makeChoice);
+  var clue=q.promptEn||q.questionEn||q.clue||q.storyEn||q.sentence||"";
+  var spoken=q.spokenEn||q.audioEn||clue||ans.w;
+  var jp=q.hintJp||q.jp||"";
+  return {id:q.id,clue:clue,spokenEn:spoken,jp:jp,ans:ans,wrong:wrong,level:q.level,c:q.category};
+}
+function wordQuizQuestionPool(){
+  // Word QuizのHard以上は、riddle/listeningへ進む前段階として
+  // questions.jsonの word_quiz / riddle / listening を同じ難易度だけから拾う。
+  // 足りない場合も他難易度からは補完しない。
+  var out=[];
+  addUniqueQuestions(out,filterQuestions("word_quiz","current","current"));
+  addUniqueQuestions(out,filterQuestions("riddle","current","current"));
+  addUniqueQuestions(out,filterQuestions("listening","current","current"));
+  if(out.length<MIN_QUESTION_COUNT){
+    addUniqueQuestions(out,filterQuestions("word_quiz","current","all"));
+    addUniqueQuestions(out,filterQuestions("riddle","current","all"));
+    addUniqueQuestions(out,filterQuestions("listening","current","all"));
+  }
+  return ensureMinQuestions(out.map(extWordQuiz).filter(function(q){return q.clue&&q.ans&&q.ans.w;}),[]);
+}
 function speak(text,slow){
   if(!canSpeak)return;
   try{window.speechSynthesis.cancel();
@@ -610,6 +650,20 @@ function toast(msg){var t=$("toast");t.textContent=msg;t.classList.add("show");c
 function getDeck(){var src=allWords();var l=activeCat==="all"?src:src.filter(function(x){return x.c===activeCat;});return shuffle(l);}
 function show(s){["home","flash","quiz","sent","listen","riddle","manage","done"].forEach(function(x){$(x).classList.add("hidden");});$(s).classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"});}
 function optCount(){return DIFF[difficulty].opts;}
+function keepOptionsClearOfBrowserBar(grid){
+  // Mobile Safari/Chrome bottom bars can cover the last answer choice.
+  // Add CSS bottom space and gently make sure the option area is scrollable.
+  if(!grid) return;
+  setTimeout(function(){
+    try{
+      if(window.innerWidth<=520 && grid.lastElementChild){
+        var r=grid.lastElementChild.getBoundingClientRect();
+        var limit=(window.innerHeight||document.documentElement.clientHeight)-120;
+        if(r.bottom>limit){window.scrollBy({top:Math.min(180,r.bottom-limit+80),behavior:"smooth"});}
+      }
+    }catch(e){}
+  },80);
+}
 
 /* ===================== LANGUAGE ===================== */
 function applyLang(){
@@ -678,15 +732,36 @@ function quizStage(){
   return "audio_only";
 }
 function quizAskText(){
+  if(quizIsQuestionMode){
+    return showJp?"文を読み、音声を聞いて、答えの英語を選ぼう。":"Read, listen, and choose the word.";
+  }
   var st=quizStage();
   if(st==="visual")return showJp?"えをみて、英語をえらぼう。":"Look and choose the English word.";
   if(st==="visual_audio")return showJp?"えをみて、音もきいて、英語をえらぼう。":"Look, listen, and choose the word.";
   if(normLevel(difficulty)==="hard")return showJp?"音をきいて、英語をえらぼう。":"Listen and choose the word.";
-  return showJp?"音だけをたよりに、正しい英語をえらぼう。":"Listen carefully and choose the word.";
+  return showJp?"音と文字をたよりに、正しい英語をえらぼう。":"Use the text and sound to choose the word.";
 }
-function startQuiz(){deck=getDeck();idx=0;quizTimes=[];show("quiz");renderQuiz();}
+function startQuiz(){
+  var lv=normLevel(difficulty);
+  if(["hard","very_hard","expert"].indexOf(lv)>=0){
+    refreshQuestions(function(){beginQuiz();});
+  }else{
+    beginQuiz();
+  }
+}
+function beginQuiz(){
+  quizTimes=[];idx=0;quizIsQuestionMode=false;quizQDeck=[];
+  var lv=normLevel(difficulty);
+  if(["hard","very_hard","expert"].indexOf(lv)>=0){
+    quizQDeck=shuffle(wordQuizQuestionPool());
+    if(quizQDeck.length){quizIsQuestionMode=true;show("quiz");renderQuizQuestion();toast("Word Quiz: "+quizQDeck.length+" / "+lv+" / "+activeCat);return;}
+  }
+  deck=getDeck();show("quiz");renderQuiz();
+}
 function renderQuiz(){
-  quizAnswered=false;var it=deck[idx];var emo=$("qEmoji");
+  quizAnswered=false;quizIsQuestionMode=false;var it=deck[idx];var emo=$("qEmoji");
+  $("qEmoji").parentNode.classList.remove("learn-word");
+  $("qAsk").classList.remove("quiz-clue");
   var st=quizStage();
   if(st==="visual"||st==="visual_audio"){setVisual(emo,it);emo.classList.remove("hide");}
   else{emo.textContent="🔊";emo.classList.add("hide");}
@@ -700,9 +775,28 @@ function renderQuiz(){
   var grid=$("qOpts");grid.innerHTML="";
   opts.forEach(function(o){var b=document.createElement("button");b.className="opt";b.textContent=o.w;
     b.addEventListener("click",function(){chooseQuiz(b,o,it);});grid.appendChild(b);});
+  keepOptionsClearOfBrowserBar(grid);
   $("quizTimer").textContent="⏱ 0.0";startTimer();
   // Normal以上は自動読み上げ。Hard以上は絵を出さず音声中心。
-  if(st!=="visual"){setTimeout(function(){if(!quizAnswered && !$('quiz').classList.contains('hidden'))speak(it.w,true);},250);}
+  if(st!=="visual"){setTimeout(function(){if(!quizAnswered && !$("quiz").classList.contains("hidden"))speak(it.w,true);},250);}
+}
+function renderQuizQuestion(){
+  quizAnswered=false;quizIsQuestionMode=true;var q=quizQDeck[idx];
+  var prompt=$("qEmoji").parentNode;
+  prompt.classList.add("learn-word");
+  $("qAsk").classList.add("quiz-clue");
+  $("qEmoji").textContent="❓";$("qEmoji").classList.remove("hide");
+  $("qAsk").textContent=q.clue||"Listen and choose the word.";
+  $("qJp").textContent=q.jp||"";$("qJp").style.display=(showJp&&q.jp)?"":"none";
+  $("quizProg").textContent=(idx+1)+" / "+quizQDeck.length;
+  var wrongs=shuffle((q.wrong||[]).slice()).slice(0,optCount()-1);
+  var opts=shuffle([q.ans].concat(wrongs));
+  var grid=$("qOpts");grid.innerHTML="";
+  opts.forEach(function(o){var b=document.createElement("button");b.className="opt";b.textContent=o.w;
+    b.addEventListener("click",function(){chooseQuizQuestion(b,o,q.ans);});grid.appendChild(b);});
+  keepOptionsClearOfBrowserBar(grid);
+  $("quizTimer").textContent="⏱ 0.0";startTimer();
+  setTimeout(function(){if(!quizAnswered && !$("quiz").classList.contains("hidden"))speakSequence([q.spokenEn||q.clue]);},250);
 }
 function chooseQuiz(btn,chosen,correct){
   if(quizAnswered)return;
@@ -713,7 +807,16 @@ function chooseQuiz(btn,chosen,correct){
     toast("⏱ "+dt.toFixed(1)+L("sec"));setTimeout(nextQuiz,1000);
   }else{btn.classList.add("bad");btn.disabled=true;speak("try again");}
 }
-function nextQuiz(){idx++;if(idx>=deck.length){return finishQuiz();}renderQuiz();}
+function chooseQuizQuestion(btn,chosen,correct){
+  if(quizAnswered)return;
+  if(normKey(chosen.answerId||chosen.w)===normKey(correct.answerId||correct.w)){
+    quizAnswered=true;stopTimer();
+    var dt=(Date.now()-quizStart)/1000;quizTimes.push(dt);
+    btn.classList.add("good");speak(correct.w);addStar(1);celebrate("⭐");
+    toast("Yes! "+correct.w+" / "+dt.toFixed(1)+L("sec"));setTimeout(nextQuiz,1000);
+  }else{btn.classList.add("bad");btn.disabled=true;speak("try again");}
+}
+function nextQuiz(){idx++;var len=quizIsQuestionMode?quizQDeck.length:deck.length;if(idx>=len){return finishQuiz();}if(quizIsQuestionMode)renderQuizQuestion();else renderQuiz();}
 function finishQuiz(){
   stopTimer();var n=quizTimes.length;
   var sum=quizTimes.reduce(function(a,b){return a+b;},0);var avg=n?sum/n:0;
@@ -760,6 +863,7 @@ function renderListen(){
   opts.forEach(function(o){var b=document.createElement("button");b.className="opt";
     b.innerHTML=choiceHtml(o);
     b.addEventListener("click",function(){chooseListen(b,o,s.ans);});grid.appendChild(b);});
+  keepOptionsClearOfBrowserBar(grid);
   speakSequence([currentStoryText(), s.qEn]);
 }
 function chooseListen(btn,chosen,ans){
@@ -800,6 +904,7 @@ function renderRiddle(){
   opts.forEach(function(o){var b=document.createElement("button");b.className="opt";
     b.innerHTML=choiceHtml(o);
     b.addEventListener("click",function(){chooseRiddle(b,o,s.ans);});grid.appendChild(b);});
+  keepOptionsClearOfBrowserBar(grid);
   speakSequence([s.clue]);
 }
 function chooseRiddle(btn,chosen,ans){
@@ -809,15 +914,24 @@ function chooseRiddle(btn,chosen,ans){
     toast((showJp?"せいかい！ ":"Yes! ")+ans.w+"!");setTimeout(nextRiddle,1300);}
   else{btn.classList.add("bad");btn.disabled=true;speak("try again");}
 }
-function nextRiddle(){rIdx++;if(rIdx>=rdDeck.length){return showDone("🧠",L("doneRiddle"),[{v:rdDeck.length+(showJp?"もん":""),l:L("stAns")}],startRiddle);}renderRiddle();}
+function nextRiddle(){rIdx++;if(rIdx>=rdDeck.length){return showDone("❓",L("doneRiddle"),[{v:rdDeck.length+(showJp?"もん":""),l:L("stAns")}],startRiddle);}renderRiddle();}
 
 /* ===================== SENTENCE ===================== */
 var sentDeck=[], sIdx=0, sTarget=[], sPlaced=[];
-function startSent(){sentDeck=shuffle(SENTENCES.slice());sIdx=0;show("sent");renderSent();}
+function builtInSentences(){return SENTENCES.slice();}
+function startSent(){reloadQuestionsThen(startSentReady);}
+function startSentReady(){
+  var ext=questionPool("sentence").map(extSentence).filter(function(q){return q.sentence;});
+  sentDeck=shuffle(ensureMinQuestions(ext,builtInSentences()));
+  if(!sentDeck.length){toast("No "+normLevel(difficulty)+" sentence questions. Add them in admin.");show("home");return;}
+  sIdx=0;show("sent");renderSent();
+  toast("Questions: "+sentDeck.length+" / unique: "+ext.length+" / "+normLevel(difficulty)+" / "+activeCat);
+}
 function refreshSentText(){var s=sentDeck[sIdx];$("sentJp").textContent=s.jp||"";$("sentJp").style.display=(showJp&&s.jp)?"":"none";if(sPlaced.length===0)drawSlots();}
 function renderSent(){
-  var s=sentDeck[sIdx];sTarget=s.sentence.split(" ");sPlaced=[];
-  $("sentPic").textContent=s.pic;$("sentJp").textContent=s.jp||"";$("sentJp").style.display=(showJp&&s.jp)?"":"none";
+  var s=sentDeck[sIdx];sTarget=String(s.sentence||"").split(/\s+/).filter(Boolean);sPlaced=[];
+  if(s.item){setVisual($("sentPic"),s.item);}else{$("sentPic").textContent=s.pic||"🧩";}
+  $("sentJp").textContent=s.jp||"";$("sentJp").style.display=(showJp&&s.jp)?"":"none";
   $("sentProg").textContent=(sIdx+1)+" / "+sentDeck.length;
   $("sentResult").textContent="";$("sentResult").className="sent-result";
   $("sentNext").classList.add("hidden");
@@ -1047,7 +1161,7 @@ function init(){
     $("fcSpeak").addEventListener("click",function(e){e.stopPropagation();speak(deck[idx].w,true);});
     $("fcNext").addEventListener("click",function(){idx=(idx+1)%deck.length;renderFlash();});
     $("fcPrev").addEventListener("click",function(){idx=(idx-1+deck.length)%deck.length;renderFlash();});
-    $("qSpeak").addEventListener("click",function(){speak(deck[idx].w,true);});
+    $("qSpeak").addEventListener("click",function(){if(quizIsQuestionMode&&quizQDeck[idx]){speakSequence([quizQDeck[idx].spokenEn||quizQDeck[idx].clue]);}else if(deck[idx]){speak(deck[idx].w,true);}});
     $("lsSpeak").addEventListener("click",function(){var s=lsDeck[lIdx];speakSequence([currentStoryText(),s.qEn]);});
     $("rdSpeak").addEventListener("click",function(){speakSequence([rdDeck[rIdx].clue]);});
     $("lsTxt").parentNode.addEventListener("click",function(){ if(!$("listen").classList.contains("hidden"))toggleListenHint(); });

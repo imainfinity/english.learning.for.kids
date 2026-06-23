@@ -17,7 +17,7 @@
 <div class="app">
   <div class="top">
     <div class="logo">🛠</div>
-    <div class="title">English Kids Admin<small>Word / Image ・ Vocab Edit ・ Vocab AI ・ Question / Quiz AI · wordquiz-v1</small></div>
+    <div class="title">English Kids Admin<small>Word / Image ・ Vocab Edit ・ Vocab AI ・ Question / Quiz AI · alltypes-sentence-listening-v1</small></div>
     <div class="spacer"></div>
     <div class="tabs">
       <button class="tab on" data-tab="github">GitHub設定</button>
@@ -116,7 +116,7 @@
     </div>
     <div class="row">
       <button class="btn ghost" id="loadVocabForQuestions">vocab.jsonから語彙読込</button>
-      <button class="btn sun" id="makeQuestionPrompt">🧠 全モード/全難易度AIプロンプト作成</button>
+      <button class="btn sun" id="makeQuestionPrompt">❓ 全モード/全難易度AIプロンプト作成</button>
       <button class="btn ghost" id="copyQuestionPrompt">コピー</button>
     </div>
     <h3>設問に使う語彙プール</h3>
@@ -280,17 +280,23 @@ $('makeQuestionPrompt').onclick=function(){
     + '- Avoid generating many questions whose answer is the same word.';
   var prompt='Create English learning questions for children as VALID JSON only. No markdown, no comments.\n'
     + 'Output schema: an array of objects. Required fields: id, type, level, category, active, answerId, choices.\n'
-    + 'Types allowed: riddle, listening, sentence. If requested type is mixed, include a balanced mix of riddle, listening, and sentence for EACH level.\n'
-    + 'For riddle: use promptEn and hintJp.\n'
-    + 'For listening: use storyEn, questionEn, hintJp.\n'
-    + 'For sentence: use sentence, hintJp, answerId, choices.\n'
-    + 'Japanese must appear only in hintJp, never inside promptEn/storyEn/questionEn/sentence.\n'
-    + 'choices must contain answerId and 3 wrong choices. Choices must be lowercase answer IDs from the vocabulary pool.\n'
+    + 'Types allowed: word_quiz, riddle, listening, sentence. If requested type is all_types or mixed, generate ALL FOUR types for EACH level: word_quiz, riddle, listening, sentence.\n'
+    + 'For word_quiz: use promptEn, spokenEn, hintJp. promptEn should be a short English clue that makes children read/listen and choose the word. Do not use only a picture clue.\n'
+    + 'For riddle: use promptEn and hintJp. promptEn is a riddle clue, not the answer word itself.\n'
+    + 'For listening: use storyEn, questionEn, hintJp. storyEn must be a short child-friendly English mini story or clue; questionEn asks what to choose.\n'
+    + 'For sentence: use sentence, hintJp, answerId, choices. sentence must be a complete English sentence that children can build from word tiles. Keep it short for easy/normal and longer for hard+.\n'
+    + 'Japanese must appear only in hintJp, never inside promptEn/storyEn/questionEn/sentence/spokenEn.\n'
+    + 'choices must contain answerId and exactly 3 wrong choices. Choices must be lowercase answer IDs from the vocabulary pool.\n'
     + 'category must be exactly: '+cat+'. type request: '+type+'.\n'
     + levelInstruction+'\n'
     + progression+'\n'
     + diversity+'\n'
-    + 'ID format examples: riddle_alligator_easy_001, listening_penguin_very_hard_001, sentence_cheetah_expert_001. IDs must be unique.\n'
+    + 'Mode design rules:\n'
+    + '- word_quiz should train reading/listening before riddle. Use clue sentences like: "I run fast and have spots."\n'
+    + '- riddle should require inference. Avoid simply saying the answer word.\n'
+    + '- listening should include storyEn + questionEn so the app can read it aloud and ask a question.\n'
+    + '- sentence should create a meaningful sentence using the answerId concept, suitable for word ordering.\n'
+    + 'ID format examples: word_quiz_cheetah_easy_001, riddle_alligator_easy_001, listening_penguin_very_hard_001, sentence_cheetah_expert_001. IDs must be unique.\n'
     + 'Do not include image paths. Do not invent answerId values outside the vocabulary pool.\n'
     + 'Vocabulary pool to use as answerId and choices:\n'
     + poolText+'\n'
